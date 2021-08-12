@@ -63,7 +63,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ## Data de Entrega
 
-  - Serão 3 dias de projeto.
+  - Serão 2 dias de projeto.
   - Data de entrega para avaliação final do projeto: `24/08/2021 - 14:00h`.
 
 ---
