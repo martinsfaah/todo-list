@@ -26,3 +26,14 @@ function changeBackgroundColor(event) {
 }
 
 tasksList.addEventListener('click', changeBackgroundColor);
+
+function strikeThrough(event) {
+  const li = event;
+  if (li.target.className !== 'completed') {
+    li.target.className = 'completed';
+  } else {
+    li.target.className = '';
+  }
+}
+
+tasksList.addEventListener('dblclick', strikeThrough);
