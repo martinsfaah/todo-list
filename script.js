@@ -23,3 +23,21 @@ taskList.addEventListener('click', (task) => {
   const selectedTask = task;
   selectedTask.target.style.backgroundColor = 'rgb(128, 128, 128)';
 });
+
+function checkForSelected(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] === 'completed') {
+      return true;
+    }
+  }
+  return false;
+}
+
+taskList.addEventListener('dblclick', (task) => {
+  const classes = task.target.classList;
+  if (checkForSelected(classes)) {
+    classes.remove('completed');
+  } else {
+    classes.add('completed');
+  }
+});
