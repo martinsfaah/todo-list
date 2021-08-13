@@ -2,6 +2,7 @@ const taskInput = document.getElementById('texto-tarefa');
 const taskButtonAdd = document.getElementById('criar-tarefa');
 const taskList = document.getElementById('lista-tarefas');
 const eraseAllButton = document.getElementById('apaga-tudo');
+const removeDoneButton = document.getElementById('remover-finalizados');
 
 // Add task to list
 taskButtonAdd.addEventListener('click', () => {
@@ -47,4 +48,17 @@ taskList.addEventListener('dblclick', (task) => {
 // Erase all
 eraseAllButton.addEventListener('click', () => {
   taskList.innerHTML = '';
+});
+
+eraseAllButton.addEventListener('click', () => {
+  taskList.innerHTML = '';
+});
+
+removeDoneButton.addEventListener('click', () => {
+  const tasks = taskList.children;
+  for (let i = tasks.length - 1; i >= 0; i -= 1) {
+    if (tasks[i].className === 'completed') {
+      tasks[i].remove();
+    }
+  }
 });
