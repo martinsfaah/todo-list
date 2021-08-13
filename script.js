@@ -83,3 +83,55 @@ function saveList() {
 }
 
 saveButton.addEventListener('click', saveList);
+
+function checkClassAndChange(elemLi, elemP) {
+  const li = elemLi;
+  const prev = elemP;
+  if (li.className === 'completed' && elemP.className !== 'completed') {
+    li.className = '';
+    prev.className = 'completed';
+  }
+}
+
+function moveSelectedUp() {
+  let change = true;
+  const liList = document.getElementsByTagName('li');
+  for (let i = 0; i < liList.length; i += 1) {
+    const liStyle = getComputedStyle(liList[i]);
+    const prevElem = liList[i].previousElementSibling;
+    if (liStyle.backgroundColor === backColor && prevElem !== null && change) {
+      const prevText = prevElem.innerText;
+      prevElem.innerText = liList[i].innerText;
+      liList[i].innerText = prevText;
+      clearBackground();
+      prevElem.style.backgroundColor = backColor;
+      checkClassAndChange(liList[i], prevElem);
+      change = false;
+    }
+  }
+  change = true;
+}
+
+function moveSelectedDown() {
+  const liList = document.getElementsByTagName('li');
+  let change = true;
+  for (let i = 0; i < liList.length; i += 1) {
+    const liStyle = getComputedStyle(liList[i]);
+    const prevElem = liList[i].nextElementSibling;
+    if (liStyle.backgroundColor === backColor && prevElem !== null && change) {
+      const prevText = prevElem.innerText;
+      prevElem.innerText = liList[i].innerText;
+      liList[i].innerText = prevText;
+      clearBackground();
+      prevElem.style.backgroundColor = backColor;
+      checkClassAndChange(liList[i], prevElem);
+      change = false;
+    }
+  }
+  change = true;
+}
+
+const upButton = document.getElementById('mover-cima');
+const downButton = document.getElementById('mover-baixo');
+upButton.addEventListener('click', moveSelectedUp);
+downButton.addEventListener('click', moveSelectedDown);
