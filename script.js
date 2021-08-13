@@ -3,6 +3,20 @@ const input = document.getElementById('texto-tarefa');
 const tasksList = document.getElementById('lista-tarefas');
 const backColor = 'rgb(128, 128, 128)';
 
+function checkStorage() {
+  if (sessionStorage.length !== 0) {
+    for (let i = 0; i < (sessionStorage.length - 1) / 2; i += 1) {
+      const li = document.createElement('li');
+      li.innerText = sessionStorage.getItem(i);
+      li.className = sessionStorage.getItem(`classe${i}`);
+      tasksList.appendChild(li);
+    }
+  }
+  sessionStorage.clear();
+}
+
+checkStorage();
+
 function addTask() {
   const newLi = document.createElement('li');
   newLi.innerText = input.value;
@@ -57,3 +71,15 @@ function removeCompleted() {
 }
 
 finishedButton.addEventListener('click', removeCompleted);
+
+const saveButton = document.getElementById('salvar-tarefas');
+
+function saveList() {
+  const li = document.getElementsByTagName('li');
+  for (let index = 0; index < li.length; index += 1) {
+    sessionStorage.setItem(index, li[index].innerText);
+    sessionStorage.setItem(`classe${index}`, li[index].className);
+  }
+}
+
+saveButton.addEventListener('click', saveList);
