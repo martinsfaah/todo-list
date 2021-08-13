@@ -37,3 +37,11 @@ function strikeThrough(event) {
 }
 
 tasksList.addEventListener('dblclick', strikeThrough);
+
+const deleteButton = document.getElementById('apaga-tudo');
+
+function clearAll() {
+  tasksList.innerHTML = '';
+}
+
+deleteButton.addEventListener('click', clearAll);
