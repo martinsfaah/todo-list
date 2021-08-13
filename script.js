@@ -1,6 +1,7 @@
 const taskInput = document.getElementById('texto-tarefa');
 const taskButtonAdd = document.getElementById('criar-tarefa');
 const taskList = document.getElementById('lista-tarefas');
+const eraseAllButton = document.getElementById('apaga-tudo');
 
 // Add task to list
 taskButtonAdd.addEventListener('click', () => {
@@ -33,6 +34,7 @@ function checkForSelected(array) {
   return false;
 }
 
+// Cross tasks
 taskList.addEventListener('dblclick', (task) => {
   const classes = task.target.classList;
   if (checkForSelected(classes)) {
@@ -40,4 +42,9 @@ taskList.addEventListener('dblclick', (task) => {
   } else {
     classes.add('completed');
   }
+});
+
+// Erase all
+eraseAllButton.addEventListener('click', () => {
+  taskList.innerHTML = '';
 });
