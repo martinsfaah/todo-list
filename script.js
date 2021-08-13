@@ -127,3 +127,13 @@ function moveTheSelected() {
   })
 }
 moveTheSelected()
+
+//remover selecionado
+function removeSelect() {
+  const bot = document.getElementById('remover-selecionado')
+  const ol = document.getElementById('lista-tarefas')
+  bot.addEventListener('click', (_) => {
+    ol.removeChild(document.querySelector('.selected'))
+  })
+}
+removeSelect()
