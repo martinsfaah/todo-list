@@ -45,3 +45,15 @@ function clearAll() {
 }
 
 deleteButton.addEventListener('click', clearAll);
+
+const finishedButton = document.getElementById('remover-finalizados');
+
+function removeCompleted() {
+  const completed = document.getElementsByClassName('completed');
+  const completedLength = completed.length;
+  for (let i = completedLength - 1; i >= 0; i -= 1) {
+    completed[i].remove();
+  }
+}
+
+finishedButton.addEventListener('click', removeCompleted);
