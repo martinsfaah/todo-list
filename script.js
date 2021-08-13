@@ -6,6 +6,7 @@ function addItem() {
     const input = document.getElementById('texto-tarefa')
     const li = document.createElement('li')
     li.innerHTML = input.value
+    li.className = 'list-values'
     ol.appendChild(li)
     input.value = ''
   })
@@ -17,7 +18,11 @@ addItem()
 function changeColor() {
   const ol = document.getElementById('lista-tarefas')
   ol.addEventListener('click', (e) => {
-    e.target.style.backgroundColor = 'rgb(128, 128, 128)'
+    const li = document.getElementsByClassName('list-values')
+    for (let item of li) {
+      item.className = 'list-values'
+    }
+    e.target.className = 'list-values selected'
   })
 }
 changeColor()
