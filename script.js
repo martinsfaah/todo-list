@@ -135,3 +135,17 @@ const upButton = document.getElementById('mover-cima');
 const downButton = document.getElementById('mover-baixo');
 upButton.addEventListener('click', moveSelectedUp);
 downButton.addEventListener('click', moveSelectedDown);
+
+const removeButton = document.getElementById('remover-selecionado');
+
+function removeSelected() {
+  const li = document.getElementsByTagName('li');
+  for (let i = 0; i < li.length; i += 1) {
+    const liStyle = getComputedStyle(li[i]);
+    if (liStyle.backgroundColor === backColor) {
+      li[i].remove();
+    }
+  }
+}
+
+removeButton.addEventListener('click', removeSelected);
