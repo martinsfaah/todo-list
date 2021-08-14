@@ -50,7 +50,19 @@ function clearAll() {
     }
   });
 }
+
+function clearCompleted() {
+  const completedBtn = document.getElementById('remover-finalizados');
+
+  completedBtn.addEventListener('click', () => {
+    const allCompleted = document.querySelectorAll('.completed');
+    for (let index = 0; index < allCompleted.length; index += 1) {
+      allCompleted[index].remove();
+    }
+  });
+}
 createTask();
 selectTask();
 completeTask();
 clearAll();
+clearCompleted();
