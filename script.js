@@ -39,6 +39,18 @@ function completeTask() {
     }
   });
 }
+
+function clearAll() {
+  const clearBtn = document.getElementById('apaga-tudo');
+
+  clearBtn.addEventListener('click', () => {
+    const allTasks = document.querySelectorAll('li');
+    for (let i = 0; i < allTasks.length; i += 1) {
+      allTasks[i].remove();
+    }
+  });
+}
 createTask();
 selectTask();
 completeTask();
+clearAll();
