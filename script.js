@@ -12,10 +12,26 @@ function createTask() {
     ('texto-tarefa');
 
     const inputElement = document.getElementById('texto-tarefa');
-    console.log(inputElement.value);
     createTaskHelper(inputElement.value);
     inputElement.value = '';
   });
 }
+function selectTaskHelper(item) {
+  const selectedItem = document.querySelector('.selected');
+  if (selectedItem === null) {
+    item.classList.add('selected');
+  } else {
+    selectedItem.classList.remove('selected');
+    item.classList.add('selected');
+  }
+}
+function selectTask() {
+  const ordenedList = document.getElementById('lista-tarefas');
 
+  ordenedList.addEventListener('click', (evento) => {
+    const taskItem = evento.target;
+    selectTaskHelper(taskItem);
+  });
+}
 createTask();
+selectTask();
