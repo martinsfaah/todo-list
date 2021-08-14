@@ -1,10 +1,4 @@
-function createTaskHelper(str) {
-  const parentElement = document.getElementById('lista-tarefas');
-  const newLi = document.createElement('li');
-
-  newLi.innerHTML = str;
-  parentElement.appendChild(newLi);
-}
+const ORDENEDLIST = document.getElementById('lista-tarefas');
 
 function createTask() {
   const taskBtn = document.getElementById('criar-tarefa');
@@ -12,26 +6,39 @@ function createTask() {
     ('texto-tarefa');
 
     const inputElement = document.getElementById('texto-tarefa');
-    createTaskHelper(inputElement.value);
+    const newLi = document.createElement('li');
+
+    newLi.innerHTML = inputElement.value;
+    ORDENEDLIST.appendChild(newLi);
     inputElement.value = '';
   });
 }
-function selectTaskHelper(item) {
-  const selectedItem = document.querySelector('.selected');
-  if (selectedItem === null) {
-    item.classList.add('selected');
-  } else {
-    selectedItem.classList.remove('selected');
-    item.classList.add('selected');
-  }
-}
-function selectTask() {
-  const ordenedList = document.getElementById('lista-tarefas');
 
-  ordenedList.addEventListener('click', (evento) => {
+function selectTask() {
+  ORDENEDLIST.addEventListener('click', (evento) => {
     const taskItem = evento.target;
-    selectTaskHelper(taskItem);
+    const selectedItem = document.querySelector('.selected');
+    if (selectedItem === null) {
+      taskItem.classList.add('selected');
+    } else if (taskItem.classList.contains('selected')) {
+      taskItem.classList.remove('selected');
+    } else {
+      selectedItem.classList.remove('selected');
+      taskItem.classList.add('selected');
+    }
+  });
+}
+
+function completeTask() {
+  ORDENEDLIST.addEventListener('dblclick', (evento) => {
+    const item = evento.target;
+    if (item.classList.contains('completed')) {
+      item.classList.remove('completed');
+    } else {
+      item.classList.add('completed');
+    }
   });
 }
 createTask();
 selectTask();
+completeTask();
