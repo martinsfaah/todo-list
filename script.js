@@ -104,26 +104,42 @@ function moveTheSelected() {
   const up = document.getElementById('mover-cima')
   const down = document.getElementById('mover-baixo')
   up.addEventListener('click',(_) => {
+    const ol = document.getElementById('lista-tarefas')
     let itens = document.getElementsByClassName('list-values')
+    let arr = []
     for(let c = 0; c < itens.length; c += 1) {
-      if (itens[c].className.split(' ').includes('selected')) {
-        if(itens[c - 1] != undefined) {
-          itens[c].className = 'list-values'
-          itens[c - 1].className = 'list-values selected'
-        }
-      }
+      arr.push(itens[c])
     }
+    if(arr.findIndex(e => e.className.split(' ').includes('selected')) === -1) {
+      return ''
+    }
+    let index = arr.findIndex(e => e.className.split(' ').includes('selected'))
+    if(arr[index - 1] !== undefined) {
+      let prev = arr[index - 1]
+      arr[index - 1] = arr[index]
+      arr[index] = prev
+    }
+    arr.forEach(e => ol.appendChild(e))
   })
   down.addEventListener('click',(_) => {
     let itens = document.getElementsByClassName('list-values')
-    for(let c = itens.length - 1; c >= 0; c -= 1) {
-      if (itens[c].className.split(' ').includes('selected')) {
-        if(itens[c + 1] != undefined) {
-          itens[c].className = 'list-values'
-          itens[c + 1].className = 'list-values selected'
-        }
-      }
+    const ol = document.getElementById('lista-tarefas')
+    let arr = []
+    for(let c = 0; c < itens.length; c += 1) {
+      arr.push(itens[c])
     }
+    if(arr.findIndex(e => e.className.split(' ').includes('selected')) === -1) {
+      return ''
+    }
+    let index = arr.findIndex(e => e.className.split(' ').includes('selected'))
+    if(arr[index + 1] !== undefined) {
+      let prox = arr[index + 1]
+      arr[index + 1] = arr[index]
+      arr[index] = prox
+    }
+    arr.forEach(e => ol.appendChild(e))
+    
+    
   })
 }
 moveTheSelected()
