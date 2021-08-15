@@ -7,6 +7,8 @@ const saveAllButton = document.getElementById('salvar-tarefas');
 const selectedColor = 'rgb(128, 128, 128)';
 const moveUpButton = document.getElementById('mover-cima');
 const moveDownButton = document.getElementById('mover-baixo');
+const removeSelectedButton = document.getElementById('remover-selecionado');
+const selectedSelector = '[style="background-color: rgb(128, 128, 128);"]';
 
 // Add task to list
 taskButtonAdd.addEventListener('click', () => {
@@ -118,7 +120,7 @@ function createList() {
 
 createList();
 
-// Mover selecionados;
+// Mover selecionado;
 moveUpButton.addEventListener('click', () => {
   const tasks = taskList.children;
   for (let i = 1; i < tasks.length; i += 1) {
@@ -135,4 +137,10 @@ moveDownButton.addEventListener('click', () => {
       taskList.insertBefore(tasks[i + 1], tasks[i]);
     }
   }
+});
+
+// Remover selecionado
+removeSelectedButton.addEventListener('click', () => {
+  const selectedTask = document.querySelector(selectedSelector);
+  selectedTask.remove();
 });
