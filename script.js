@@ -48,6 +48,7 @@ function clearAll() {
     for (let i = 0; i < allTasks.length; i += 1) {
       allTasks[i].remove();
     }
+    localStorage.clear();
   });
 }
 
@@ -61,8 +62,41 @@ function clearCompleted() {
     }
   });
 }
+
+function saveTasks() {
+  const saveBtn = document.getElementById('salvar-tarefas');
+
+  saveBtn.addEventListener('click', () => {
+    const taskToStorage = [];
+    const classToStorage = [];
+    const allTasks = document.querySelectorAll('li');
+
+    for (let i = 0; i < allTasks.length; i += 1) {
+      taskToStorage.push(allTasks[i].innerHTML);
+      classToStorage.push(allTasks[i].className);
+    }
+    localStorage.setItem('tasks', JSON.stringify(taskToStorage));
+    localStorage.setItem('class', JSON.stringify(classToStorage));
+  });
+}
+
+function loadTasks() {
+  const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+  const storedClass = JSON.parse(localStorage.getItem('class'));
+  if (storedTasks !== null) {
+    for (let i = 0; i < storedTasks.length; i += 1) {
+      const newLi = document.createElement('li');
+      newLi.innerHTML = storedTasks[i];
+      newLi.className = storedClass[i];
+      ORDENEDLIST.appendChild(newLi);
+    }
+  }
+}
+
 createTask();
 selectTask();
 completeTask();
 clearAll();
 clearCompleted();
+saveTasks();
+loadTasks();
