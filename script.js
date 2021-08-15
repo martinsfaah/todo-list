@@ -3,6 +3,8 @@ const taskButtonAdd = document.getElementById('criar-tarefa');
 const taskList = document.getElementById('lista-tarefas');
 const eraseAllButton = document.getElementById('apaga-tudo');
 const removeDoneButton = document.getElementById('remover-finalizados');
+const saveAllButton = document.getElementById('salvar-tarefas');
+const selectedColor = 'rgb(128, 128, 128)';
 
 // Add task to list
 taskButtonAdd.addEventListener('click', () => {
@@ -23,7 +25,7 @@ function clearSelected() {
 taskList.addEventListener('click', (task) => {
   clearSelected();
   const selectedTask = task;
-  selectedTask.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  selectedTask.target.style.backgroundColor = selectedColor;
 });
 
 function checkForSelected(array) {
@@ -54,6 +56,7 @@ eraseAllButton.addEventListener('click', () => {
   taskList.innerHTML = '';
 });
 
+// Remove crossed out
 removeDoneButton.addEventListener('click', () => {
   const tasks = taskList.children;
   for (let i = tasks.length - 1; i >= 0; i -= 1) {
@@ -62,3 +65,55 @@ removeDoneButton.addEventListener('click', () => {
     }
   }
 });
+
+function getTaskObjectList() {
+  const tasksElements = document.getElementsByTagName('li');
+  const list = [];
+  for (let i = 0; i < tasksElements.length; i += 1) {
+    const styles = getComputedStyle(tasksElements[i]);
+    console.log(typeof (styles.backgroundColor));
+    const taskObj = {
+      name: tasksElements[i].innerText,
+      isDone: styles.textDecoration.includes('line-through'),
+      isSelected: styles.backgroundColor.includes(selectedColor),
+    };
+    list.push(taskObj);
+  }
+  return list;
+}
+
+// Save tasks
+saveAllButton.addEventListener('click', () => {
+  const tasksObj = getTaskObjectList();
+  const tasksObjArray = [];
+  for (let i = 0; i < tasksObj.length; i += 1) {
+    tasksObjArray.push(tasksObj[i]);
+  }
+  localStorage.tasksListObj = JSON.stringify(tasksObjArray);
+});
+
+// Load tasks from storage
+function loadTasksFromStorage() {
+  if (localStorage.tasksListObj !== undefined) {
+    console.log(JSON.parse(localStorage.getItem('tasksListObj')));
+    return JSON.parse(localStorage.getItem('tasksListObj'));
+  }
+  return {};
+}
+
+function createList() {
+  const tasksObjArray = loadTasksFromStorage();
+  for (let i = 0; i < tasksObjArray.length; i += 1) {
+    const taskItem = document.createElement('li');
+    taskItem.innerText = tasksObjArray[i].name;
+    if (tasksObjArray[i].isSelected) {
+      taskItem.style.backgroundColor = selectedColor;
+    }
+    if (tasksObjArray[i].isDone) {
+      taskItem.classList.add('completed');
+    }
+    taskList.appendChild(taskItem);
+  }
+}
+
+createList();
