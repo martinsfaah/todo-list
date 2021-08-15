@@ -5,6 +5,8 @@ const eraseAllButton = document.getElementById('apaga-tudo');
 const removeDoneButton = document.getElementById('remover-finalizados');
 const saveAllButton = document.getElementById('salvar-tarefas');
 const selectedColor = 'rgb(128, 128, 128)';
+const moveUpButton = document.getElementById('mover-cima');
+const moveDownButton = document.getElementById('mover-baixo');
 
 // Add task to list
 taskButtonAdd.addEventListener('click', () => {
@@ -71,7 +73,6 @@ function getTaskObjectList() {
   const list = [];
   for (let i = 0; i < tasksElements.length; i += 1) {
     const styles = getComputedStyle(tasksElements[i]);
-    console.log(typeof (styles.backgroundColor));
     const taskObj = {
       name: tasksElements[i].innerText,
       isDone: styles.textDecoration.includes('line-through'),
@@ -95,7 +96,6 @@ saveAllButton.addEventListener('click', () => {
 // Load tasks from storage
 function loadTasksFromStorage() {
   if (localStorage.tasksListObj !== undefined) {
-    console.log(JSON.parse(localStorage.getItem('tasksListObj')));
     return JSON.parse(localStorage.getItem('tasksListObj'));
   }
   return {};
@@ -117,3 +117,22 @@ function createList() {
 }
 
 createList();
+
+// Mover selecionados;
+moveUpButton.addEventListener('click', () => {
+  const tasks = taskList.children;
+  for (let i = 1; i < tasks.length; i += 1) {
+    if (tasks[i].style.backgroundColor === selectedColor) {
+      taskList.insertBefore(tasks[i], tasks[i - 1]);
+    }
+  }
+});
+
+moveDownButton.addEventListener('click', () => {
+  const tasks = document.querySelectorAll('li');
+  for (let i = 0; i < tasks.length - 1; i += 1) {
+    if (tasks[i].style.backgroundColor === selectedColor) {
+      taskList.insertBefore(tasks[i + 1], tasks[i]);
+    }
+  }
+});
