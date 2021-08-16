@@ -11,3 +11,13 @@ function createElements(){
 }
 
 createElements();
+
+function createInput() {
+    const body = document.querySelector('body');
+    const input = document.createElement('input');
+    input.id = 'texto-tarefa';
+
+    body.appendChild(input);
+}
+
+createInput();
