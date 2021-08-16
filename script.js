@@ -12,11 +12,17 @@ function selectItem(event) {
   listItem.classList.add('selected');
 }
 
+function completeItem(event) {
+  const listItem = event.target;
+  listItem.classList.toggle('completed');
+}
+
 function addListItemListener() {
   const listItens = document.getElementsByClassName('list-item');
   for (let i = 0; i < listItens.length; i += 1) {
     const item = listItens[i];
     item.addEventListener('click', selectItem);
+    item.addEventListener('dblclick', completeItem);
   }
 }
 
