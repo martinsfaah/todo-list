@@ -39,3 +39,7 @@ body{
   color: white;
   font-weight: bold;
 }
+
+.liSelecionada{
+  background:rgb(128, 128, 128);
+}

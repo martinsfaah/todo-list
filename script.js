@@ -6,8 +6,13 @@ botao.addEventListener("click", event => {
 
   const textoInput = document.querySelector("#texto-tarefa").value;
 
+  if (textoInput === "") {
+    return alert("Digite sua tarefa por favor")
+  }
+
   limparInput();
   criarLi(textoInput);
+  
 
 });
 
@@ -25,4 +30,31 @@ function criarLi(textoInput) {
   li.innerText = textoInput;
 
   ol.appendChild(li);
+
+  liSelecionada();
 }
+
+//Alterar a cor ao clicar em um item da lista 
+function liSelecionada() {
+
+  let li = document.querySelectorAll("li");
+
+  
+  li.forEach(li => {
+  
+    li.addEventListener("click", event => {
+
+      let tagTask = document.querySelector(".liSelecionada");
+      
+      if (tagTask){
+        tagTask.classList.remove("liSelecionada");
+      }
+
+      event.target.classList.add("liSelecionada");
+
+    });
+  });
+
+}
+
+
