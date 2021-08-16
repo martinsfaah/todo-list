@@ -1,5 +1,6 @@
 const tarefas = [];
 const botaoTarefa = document.getElementById('criar-tarefa');
+const todoList = document.getElementById('lista-tarefas');
 
 function addLista() {
   const tarefa = tarefas[tarefas.length - 1];
@@ -23,3 +24,18 @@ function armazenarTarefa() {
   }
 }
 botaoTarefa.addEventListener('click', armazenarTarefa);
+
+function limpaBg() {
+  const lista = document.querySelectorAll('li');
+  for (let i = 0; i < lista.length; i += 1) {
+    lista[i].style.backgroundColor = '';
+  }
+}
+
+function changeBg(clicado) {
+  limpaBg();
+  const alvo = clicado;
+  alvo.target.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
+todoList.addEventListener('click', changeBg);
