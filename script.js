@@ -98,9 +98,11 @@ removeSelectedButton.addEventListener('click', removeSelected);
 // Move selected up
 function moveUp() {
   const upTask = document.querySelector('li[style]');
-  const previousTask = upTask.previousSibling;
-  if (previousTask !== null) {
-    list.insertBefore(upTask, previousTask);
+  if (upTask !== null) {
+    const previousTask = upTask.previousSibling;
+    if (previousTask !== null) {
+      list.insertBefore(upTask, previousTask);
+    }
   }
 }
 
@@ -109,9 +111,11 @@ moveUpButton.addEventListener('click', moveUp);
 // Move selected down
 function moveDown() {
   const downTask = document.querySelector('li[style]');
-  const nextTask = downTask.nextSibling;
-  if (nextTask !== null) {
-    list.insertBefore(nextTask, downTask);
+  if (downTask !== null) {
+    const nextTask = downTask.nextSibling;
+    if (nextTask !== null) {
+      list.insertBefore(nextTask, downTask);
+    }
   }
 }
 
