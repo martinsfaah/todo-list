@@ -4,6 +4,7 @@ let taskList = document.getElementById("lista-tarefas");
 
 buttonCreateTask.addEventListener('click', createTask);
 taskList.addEventListener('click', changeColor);
+taskList.addEventListener('dblclick', completeTask);
 
 function createTask (){
     let taskValue = inputTask.value;
@@ -20,6 +21,15 @@ function changeColor(event) {
   }
   let task = event.target;
   task.className = 'selected';
+}
+
+function completeTask(event){
+    let completed = document.querySelector('.completed');
+    if (completed != null) {
+        completed.classList.remove('completed');
+    }
+    let task = event.target;
+    task.className = 'completed';
 }
 
 
