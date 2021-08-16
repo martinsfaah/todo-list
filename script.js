@@ -69,20 +69,24 @@ if (localStorage.getItem('classes')) {
   }
 }
 
+// Função para mover tarefas acima
 function moveAcima() {
   const tarefaSelecionada = document.querySelector('.selected');
   if (tarefaSelecionada && tarefaSelecionada.previousSibling) {
     tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, tarefaSelecionada.previousSibling);
   }
 }
+
+//função para mover tarefas abaixo
 function moveAbaixo() {
   const tarefaSelecionada = document.querySelector('.selected');
-  if (tarefaSelecionada && tarefaSelecionada.nextSibling) {
-    const posicaoAbaixo = tarefaSelecionada.nextSibling.nextSibling;
-    tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, posicaoAbaixo);
+  const proximaTarefa = tarefaSelecionada.nextSibling;
+  if (tarefaSelecionada && proximaTarefa) {
+    tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, proximaTarefa.nextSibling);
   }
 }
 
+//função para remover tarefas
 function removeSelecionado() {
   const tarefa = document.querySelector('.selected');
   if (tarefa) tarefa.remove();
