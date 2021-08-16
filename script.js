@@ -10,14 +10,25 @@ function createInput() {
   li.innerText = elemento;
   ol.appendChild(li);
   document.getElementById('texto-tarefa').value = '';
+  li.addEventListener('dblclick', itemClopleted);
 } // 5 e 6 ok
 
 function changeBackgroundColor(evt) {
   let selected = document.querySelector('.selected');
-  if (selected) selected.classList.remove('selected');// quando apenas uma coisa é verificada não precisa de colchetes
+  if (selected) selected.classList.remove('selected'); // quando apenas uma coisa é verificada não precisa de colchetes
   if (evt.target.classList.contains('selected')) {
     evt.target.classList.remove('selected');
   } else {
     evt.target.classList.add('selected');
   }
-} // 7 ok
+} // 7 e 8 ok
+
+function itemClopleted(evt) {
+  let completed = evt.target;
+  if (!completed.className.includes('completed')) {
+    completed.classList.add('completed');
+    completed.classList.remove('selected');
+  }else {
+    completed.classList.remove('completed');
+  }
+}
