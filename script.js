@@ -1,6 +1,11 @@
 let criarTarefa = document.getElementById('criar-tarefa');
 criarTarefa.addEventListener('click', adicionaItem);
 
+let apagaTodos= document.getElementById("apaga-tudo");
+apagaTodos.addEventListener("click", apagaTudo);
+
+let apagaSelec= document.getElementById("remover-finalizados");
+apagaSelec.addEventListener("click", apagaSelecionados);
 
 
 function adicionaItem() {
@@ -46,5 +51,23 @@ function riscaItem(evento){
     }
     else{
         itemAnalisado.classList.remove("completed");
+    }
+}
+
+function apagaTudo(){
+    let elementos= document.getElementById("lista-tarefas").children;
+    console.log(elementos);
+    for(let i = elementos.length-1; i>=0; i -= 1){
+        elementos[i].remove();
+    }
+}
+
+function apagaSelecionados(){
+    let elementos= document.getElementById("lista-tarefas").children;
+    console.log(elementos);
+    for(let i = elementos.length-1; i>=0; i -= 1){
+        if(elementos[i].className==="completed"){
+            elementos[i].remove();
+        }
     }
 }
