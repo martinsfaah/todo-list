@@ -33,3 +33,12 @@ function completaTarefa (event) {
         event.target.classList.add('completed');
     }
 }
+const buttonApagaTudo = document.getElementById('apaga-tudo');
+buttonApagaTudo.addEventListener('click', apagaTudo);
+function apagaTudo () {
+    let tarefas = document.getElementsByClassName('tarefa');
+    let listaTarefas = document.getElementById('lista-tarefas');
+    for (let index = tarefas.length-1; index >= 0; index -=1) {
+        listaTarefas.removeChild(tarefas[index]);
+    }
+}
