@@ -1,0 +1,12 @@
+body{
+  align-items:baseline;
+}
+
+li{
+  background-color: white;
+}
+
+#criar-tarefa {
+  width: 70px;
+  height: 20px;
+}
