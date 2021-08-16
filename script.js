@@ -22,15 +22,23 @@ function deleteTasks() {
     for (let i = 0; i < getTasks.length; i += 1) {
       getTasks[i].remove();
     }
-  })
+  });
 }
 
 deleteTasks();
 
 // Altera background-color do item selecionado
-function selectedTask(task) {
+function taskRemoveBgColor() {
+  const getTasks = document.querySelectorAll('li');
+  for (let i = 0; i < getTasks.length; i += 1) {
+    getTasks[i].style.backgroundColor = ''
+  }
+}
+
+function taskChangeBgColor(task) {
+  taskRemoveBgColor();
   const clickedTask = task.target;
   clickedTask.style.backgroundColor = 'rgb(128,128,128)';
 }
 
-taskList.addEventListener('click', selectedTask);
+taskList.addEventListener('click', taskChangeBgColor);
