@@ -17,9 +17,23 @@ function addFromInputToList(event) {
 
 function colorChanger(event) {
     let actualListElement = event.target
-    if (actualListElement.style.backgroundColor !== "rgb(128,128,128)") {
-        actualListElement.style.backgroundColor = "rgb(128,128,128)"
-    } else {
-        actualListElement.style.backgroundColor = "white"
+
+    for(index = 0; index < listElements.length; index += 1) {
+        listElements[index].style.backgroundColor = "white"
     }
+    
+    if (actualListElement.style.backgroundColor === 'rgb(128,128,128)') {
+        actualListElement.removeAttribute("style")
+    } else {
+        actualListElement.style.backgroundColor = 'rgb(128,128,128)'
+    }
+    
+}
+
+for (index = 0; index < listElements.length; index += 1) {
+    listElements[index].addEventListener("click", selectedClass)
+}
+
+function selectedClass(event) {
+
 }
