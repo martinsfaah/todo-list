@@ -10,12 +10,22 @@ function addListItem() {
     let li = document.getElementsByTagName('li');
 for(let index of li) {
     index.addEventListener('click', addGreyColor);
+    index.addEventListener('dblclick', lineThrough);
 }
 }
+
 function addGreyColor(event) {
     let li = document.getElementsByTagName('li');
     for(const index of li) {
         index.style.backgroundColor = 'white';
     }
     event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
+function lineThrough(event) {
+    if(event.target.className === 'completed') {
+        event.target.classList.remove('completed');
+    } else {
+    event.target.classList.add('completed');
+}
 }
