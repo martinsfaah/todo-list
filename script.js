@@ -12,9 +12,9 @@ function selectTask(event) {
 }
 
 function completeTask(event) {
-  let task = event.target;
+  const task = event.target;
   if (task.className === '') {
-  task.className = 'completed';
+    task.className = 'completed';
   } else {
     task.className = '';
   }
@@ -30,3 +30,18 @@ function addTask() {
 }
 
 btnAddTask.addEventListener('click', addTask);
+
+const btnClearList = document.getElementById('apaga-tudo');
+
+function clearList() {
+  taskList.innerHTML = '';
+}
+
+// Outra forma de apagar a lista:
+// function clearList() {
+//   for (let i = 1; i <= taskList.childElementCount; i += 0) {
+//     taskList.removeChild(taskList.lastElementChild);
+//   }
+// }
+
+btnClearList.addEventListener('click', clearList);
