@@ -3,6 +3,14 @@ const lista = document.getElementById('lista-tarefas');
 const textTask = document.querySelector('#texto-tarefa');
 const limparLista = document.getElementById('apaga-tudo');
 const removeFinal = document.getElementById('remover-finalizados');
+const salvar = document.getElementById('salvar-tarefas');
+const rmvSel = document.getElementById('remover-selecionado');
+
+function carregaLista() {
+  lista.innerHTML = localStorage.getItem('lista-tarefas');
+}
+
+window.onload = carregaLista;
 
 // Adiciona nova tarefa
 function novaTarefa() {
@@ -72,3 +80,13 @@ function salvarLista() {
   localStorage.setItem('lista-tarefas', lista.innerHTML);
   alert('Lista de Tarefas salva.');
 }
+
+salvar.addEventListener('click', salvarLista);
+
+// Remover item selecionado
+function removeSel() {
+  const selecionado = document.querySelector('li[style]');
+  selecionado.remove();
+}
+
+rmvSel.addEventListener('click', removeSel);
