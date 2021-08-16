@@ -1,6 +1,6 @@
 header {
   padding: 35px;
-  background-color: rgb(111, 133, 255);
+  background-color: rgb(111 , 133 , 255);
   color: white;
 
 }
@@ -13,21 +13,25 @@ button {
 
 }
 
-header, input, button {
+header , input , button {
   text-align: center;
+
 }
 
 li {
   font-size: 20px;
-  font-family: Georgia;
+  font-family: Georgia, sans-serif;
   margin-left: 40px;
   padding: 20px;
+
 }
 
 .completed {
-  text-decoration: line-through solid white;
+  text-decoration: line-through solid rgb(0, 0, 0);
+
 }
 
 #apaga-tudo {
   background-color: red;
+
 }
