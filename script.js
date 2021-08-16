@@ -54,12 +54,23 @@ function itemListCompleted() {
   })
 }
 
+function clearList() {
+  let button = document.getElementById('apaga-tudo');
+
+  button.addEventListener('click', () => {
+    const list = document.querySelectorAll('li');
+
+    for (let i = 0; i < list.length; i += 1 ) {
+      currentLi = list[i];
+      currentLi.remove();
+    }
+  })
+}
 
 
 
 
-
-
+clearList()
 itemListCompleted()
 itemClickColor()
 createListItem()
