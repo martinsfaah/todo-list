@@ -10,6 +10,16 @@ function selectTask(event) {
   taskElement.classList.add('selecionada');
 }
 
+function completTask(event) {
+  const elementTask = event.target;
+  const classCompleted = elementTask.classList.contains('completed');
+  if (!classCompleted) {
+    elementTask.classList.add('completed');
+  } else {
+    elementTask.classList.remove('completed');
+  }
+}
+
 // Função para incluir tarefas na lista
 function createTask() {
   const button = document.getElementById('criar-tarefa');
@@ -21,6 +31,7 @@ function createTask() {
       task.className = 'tarefa';
       task.innerHTML = textInput.value;
       task.addEventListener('click', selectTask);
+      task.addEventListener('dblclick', completTask);
       taskList.append(task);
       textInput.value = '';
     } else {
