@@ -22,4 +22,9 @@ function paintTask(event) {
   }
 }
 
+//Adiciona taxado com o duplo click
+listTasks.addEventListener('dblclick', riskTask);
 
+function riskTask (event) {   
+    event.target.classList.toggle('completed');
+}
