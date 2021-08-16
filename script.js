@@ -28,6 +28,7 @@ const createNewElement = (element, elementContent, location, qttofElements, sele
 
 const newEvent = (location, event, func) => {
   location.addEventListener(event, func);
+  return console.log(func.target);
 };
 
 const addNewTask = () => {
@@ -38,6 +39,14 @@ const addNewTask = () => {
   inputAddNewTask.value = null;
 };
 
+const highLightItem = (location) => {
+  location.addEventListener('click', (object) => {
+    const event = object;
+    console.log(event.target.style.backgroudColor);
+    // window.getComputedStyle(event.target).backgroundColor = 'rgb(128, 128, 128)';
+    event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  });
+};
 // #REQ 1
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
 
@@ -50,7 +59,11 @@ createNewElement('input', '', sectionListControl, 1, 'id', 'texto-tarefa');
 // #REQ 4
 createNewElement('ol', '', sectionListContent, 1, 'id', 'lista-tarefas');
 
-// #REQ 5, 6 E  7
+// #REQ 5 e 6
 createNewElement('button', 'Adicionar', sectionListControl, 1, 'id', 'criar-tarefa');
 const buttonAddNewTask = document.getElementById('criar-tarefa');
 newEvent(buttonAddNewTask, 'click', addNewTask);
+
+// #REQ 7
+const taskList = document.getElementById('lista-tarefas');
+highLightItem(taskList);
