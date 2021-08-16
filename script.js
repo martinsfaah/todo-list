@@ -3,6 +3,7 @@ const taskList = document.getElementById('lista-tarefas');
 const createButton = document.getElementById('criar-tarefa');
 const clearButton = document.getElementById('apaga-tudo');
 const clearFinishedButton = document.getElementById('remover-finalizados');
+const buttonSave = document.getElementById('salvar-tarefas')
 let taskItens = document.getElementsByTagName('li');
 
 //Function to create new task according to inputed text, clearing what the user typed and adding event listener to change background color when clicked
@@ -56,3 +57,33 @@ function clearFinished() {
 }
 
 clearFinishedButton.addEventListener('click', clearFinished);
+
+//Function to save tasks on local storage
+function saveTasks() {
+    for(let index = 0; index < taskItens.length; index = index + 1) {
+        let setTask = 'task' + (index + 1);
+        let taskClassKey = 'classname' + (index + 1);
+        let value = taskItens[index].innerHTML;
+        let taskClass = taskItens[index].className;
+        localStorage.setItem(setTask, value);
+        localStorage.setItem(taskClassKey, taskClass);
+    }
+    localStorage.setItem('numberOfTasks', taskItens.length);
+}
+
+buttonSave.addEventListener('click', saveTasks);
+
+//Function to get tasks from local storage and append them to the ordered list using the classname to keep the functionality
+window.onload = function getItens() {
+    let numberOfTasks = localStorage.getItem('numberOfTasks');
+    for(let index = 0; index < numberOfTasks; index += 1) {
+        const getTask = document.createElement('li');
+        let currentTask = 'task' + (index + 1);
+        let currentTaskKey = 'classname' + (index + 1);
+        getTask.innerHTML = localStorage.getItem(currentTask);
+        getTask.className = localStorage.getItem(currentTaskKey);
+        taskList.appendChild(getTask);
+        getTask.addEventListener('click', colorClick);
+        getTask.addEventListener('dblclick', lineThrough);
+    }
+}
