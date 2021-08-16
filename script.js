@@ -2,6 +2,7 @@ const button=document.getElementById("criar-tarefa");
 const input = document.getElementById("texto-tarefa");
 const listaOrdenada = document.getElementById("lista-tarefas");
 const lista = document.querySelector('.listaDeTarefas');
+const apagaTudo=document.getElementById("apaga-tudo");
 
 function adicionaTarefa ()
 {
@@ -33,3 +34,21 @@ function itemCompleto (event)
      
 }
 listaOrdenada.addEventListener('dblclick',itemCompleto);
+
+function apaga (event)
+{
+    let tamanhoLista = document.querySelector('ol');
+console.log(document.getElementsByTagName('li')[0]);
+tamanhoLista.innerHTML="";
+
+
+   /*  for ( let i=0;i<tamanhoLista.length;i+=1)
+            {
+                
+                let teste=document.getElementsByTagName('li')[i];
+                teste.innerHTML="";
+                console.log(tamanhoLista[i]);
+            } 
+    */
+}
+apagaTudo.addEventListener('click',apaga);
