@@ -1,11 +1,10 @@
 const taskList = document.getElementById('lista-tarefas');
 const inputTask = document.getElementById('texto-tarefa');
 inputTask.value = '';
-
+let selectedTask = document.getElementById('selected-task')
 const btnAddTask = document.getElementById('criar-tarefa');
 
 function selectTask(event) {
-  let selectedTask = document.getElementById('selected-task');
   if (selectedTask !== null) {
     selectedTask.id = '';
   }
@@ -73,4 +72,4 @@ window.onload = function init() {
       taskList.childNodes[i].addEventListener('dblclick', completeTask);
     }
   }
-}
+};
