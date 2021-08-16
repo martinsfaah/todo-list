@@ -6,12 +6,18 @@ btnCriarTarefa.addEventListener('click', createInput);
 function createInput() {
   let elemento = document.getElementById('texto-tarefa').value;
   let li = document.createElement('li');
-  li.addEventListener('click', changeBackgroundColor) ;
+  li.addEventListener('click', changeBackgroundColor);
   li.innerText = elemento;
   ol.appendChild(li);
   document.getElementById('texto-tarefa').value = '';
-} // 5 ok
+} // 5 e 6 ok
 
 function changeBackgroundColor(evt) {
-  evt.target.style.backgroundColor = 'rgb(128, 128, 128)';
-}
+  let selected = document.querySelector('.selected');
+  if (selected) selected.classList.remove('selected');// quando apenas uma coisa é verificada não precisa de colchetes
+  if (evt.target.classList.contains('selected')) {
+    evt.target.classList.remove('selected');
+  } else {
+    evt.target.classList.add('selected');
+  }
+} // 7 ok
