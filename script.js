@@ -40,19 +40,27 @@ button.addEventListener('click', addListItem);
 
 // Desafio 6 check
 
-// Desafio 7
-const taskListTarget = document.getElementById('lista-tarefas');
-
-function paintLine(event) {
-  reset();
-  event.target.style.background = 'rgb(128, 128, 128';
-}
-
-taskListTarget.addEventListener('click', paintLine);
-
-function reset() {
+// Desafio 7 e 8
+function resetColor() {
   const liTarget = document.querySelectorAll('li');
   for (let index = 0; index < liTarget.length; index += 1) {
     document.querySelectorAll('li')[index].style.backgroundColor = '';
   }
 }
+const taskListTarget = document.getElementById('lista-tarefas');
+
+function paintLine(event) {
+  resetColor();
+  event.target.style.background = 'rgb(128, 128, 128';
+}
+taskListTarget.addEventListener('click', paintLine);
+
+// Desafio 9
+function riskLine(event) {
+    if (event.target.className !== 'completed') {
+    event.target.className = 'completed';
+  } else {
+    event.target.className = '';
+  }
+}
+taskListTarget.addEventListener('dblclick', riskLine);
