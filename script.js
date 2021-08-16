@@ -30,5 +30,19 @@ window.onload = function() {
     }
   })
 
-  
+  const getClearButton = document.querySelector('#apaga-tudo');
+
+  getClearButton.addEventListener('click', function() {
+    const getLi = document.querySelectorAll('li');
+    for (let index = 0; index < getLi.length; index += 1) {
+      getLi[index].remove();
+    }
+  })
+//   ### 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista
+
+// **O que será verificado:**
+
+// - Será verificado que existe um elemento `button` com o id `apaga-tudo`
+
+// - Será verificado que, dado que uma lista possui tarefas, um clique no botão a deixa vazia
 }
