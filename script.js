@@ -1,5 +1,6 @@
 //  Constante usada varias vezes
 const ol = document.getElementById('lista-tarefas');
+const classeList = 'list-values';
 
 //  Carregar
 function initialState() {
@@ -9,8 +10,9 @@ function initialState() {
     valores.forEach((e) => {
       const arr = e.split('--');
       const li = document.createElement('li');
-      li.innerHTML = arr[2];
-      li.className = arr[1];
+      const [a, b] = [1, 2];
+      li.className = arr[a];
+      li.innerHTML = arr[b];
       ol.appendChild(li);
     });
   }
@@ -24,7 +26,7 @@ function addItem() {
     const input = document.getElementById('texto-tarefa');
     const li = document.createElement('li');
     li.innerHTML = input.value;
-    li.className = 'list-values';
+    li.className = classeList;
     ol.appendChild(li);
     input.value = '';
   });
@@ -34,10 +36,10 @@ addItem();
 //  selecionar
 function select() {
   ol.addEventListener('click', (e) => {
-    const li = document.getElementsByClassName('list-values');
+    const li = document.getElementsByClassName(classeList);
     for (let c = 0; c < li.length; c += 1) {
       if (li[c].className.split(' ').includes('selected')) {
-        li[c].className = 'list-values';
+        li[c].className = classeList;
       }
     }
     if (e.target.className.split(' ').includes('completed') === false) {
@@ -51,7 +53,7 @@ select();
 function mark() {
   ol.addEventListener('dblclick', (e) => {
     if (e.target.className.split(' ').includes('completed')) {
-      e.target.className = 'list-values';
+      e.target.className = classeList;
     } else {
       e.target.className = 'list-values completed';
     }
@@ -73,7 +75,7 @@ clear();
 function removeFinish() {
   const bot = document.getElementById('remover-finalizados');
   bot.addEventListener('click', (_) => {
-    const items = document.getElementsByClassName('list-values');
+    const items = document.getElementsByClassName(classeList);
     const excluir = [];
     for (let c = 0; c < items.length; c += 1) {
       if (items[c].className.split(' ').includes('completed')) {
@@ -90,7 +92,7 @@ function save() {
   const bot = document.getElementById('salvar-tarefas');
   bot.addEventListener('click', (_) => {
     localStorage.clear();
-    const itens = document.getElementsByClassName('list-values');
+    const itens = document.getElementsByClassName(classeList);
     for (let c = 0; c < itens.length; c += 1) {
       localStorage[c] = `${c + 1}--${itens[c].className}--${itens[c].innerHTML}`;
     }
@@ -102,7 +104,7 @@ save();
 function moveUP() {
   const up = document.getElementById('mover-cima');
   up.addEventListener('click', (_) => {
-    const itens = document.getElementsByClassName('list-values');
+    const itens = document.getElementsByClassName(classeList);
     const arr = [];
     for (let c = 0; c < itens.length; c += 1) {
       arr.push(itens[c]);
@@ -125,7 +127,7 @@ moveUP();
 function moveDOWN() {
   const down = document.getElementById('mover-baixo');
   down.addEventListener('click', (_) => {
-    const itens = document.getElementsByClassName('list-values');
+    const itens = document.getElementsByClassName(classeList);
     const arr = [];
     for (let c = 0; c < itens.length; c += 1) {
       arr.push(itens[c]);
