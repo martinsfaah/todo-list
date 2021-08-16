@@ -1,0 +1,56 @@
+body {
+    align-items: center;
+    background-color: rgb(56, 36, 36);
+    color: white;
+    display: flex;
+    flex-flow: column wrap;
+    font-family: Montserrat, sans-serif;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+
+main {
+    width: 70%;
+    height: 50%;
+    background-color:rgb(85, 42, 42);
+    border-radius: 15px;
+    border-color: rgb(56, 36, 36);
+    border: 15px;
+    border-width: 15px;   
+    display: grid;
+    align-items: center;
+    align-content: center;
+    margin-left: 10%;
+}
+header {
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin: 0%;
+}
+#funcionamento {
+    font-size: 10px;
+    background-color: black;
+    width: fit-content;
+}
+.block {
+    width: 30%;
+    height: 30%;
+    background-color:rgb(85, 42, 42);
+    border-radius: 15px;
+    border-color: rgb(56, 36, 36);
+    border: 15px;
+    border-width: 15px;   
+    display: grid;
+    align-items: center;
+    align-content: center;
+    margin-left: 38%; 
+}
+
+#texto-tarefa {
+    height: 20px;
+    width: 200px;
+    border-radius: 10px;    
+}
