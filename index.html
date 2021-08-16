@@ -20,6 +20,14 @@
     p.innerHTML = 'Clique duas vezes em um item  para marcá-lo como completo'
     p.id = 'funcionamento'
 
+    let input = document.createElement('input')
+    input.id = 'texto-tarefa'
+    body.appendChild(input)
+    input.placeholder = 'Digite aqui sua tarefa'
+
+    let listaDeTarefas = document.createElement('ol')
+    body.appendChild(listaDeTarefas)
+    listaDeTarefas.id = 'lista-tarefas'
 
 
 </script>
