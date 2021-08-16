@@ -28,14 +28,27 @@ botaoTarefa.addEventListener('click', armazenarTarefa);
 function limpaBg() {
   const lista = document.querySelectorAll('li');
   for (let i = 0; i < lista.length; i += 1) {
-    lista[i].style.backgroundColor = '';
+    if (lista[i].classList.contains('selected')) {
+      lista[i].classList.remove('selected');
+    }
   }
 }
 
 function changeBg(clicado) {
   limpaBg();
   const alvo = clicado;
-  alvo.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  alvo.target.classList.add('selected');
 }
 
 todoList.addEventListener('click', changeBg);
+
+function completo(clicado) {
+  const compl = clicado;
+  if (compl.target.classList.contains('completed')) {
+    compl.target.classList.remove('completed');
+  } else {
+    compl.target.classList.add('completed');
+  }
+}
+
+todoList.addEventListener('dblclick', completo);
