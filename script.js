@@ -11,13 +11,13 @@ chamarEl.appendChild(botao);
 
 let listaO = document.querySelector('.lista')
 let list = document.createElement('ol')
-list.id = 'lista-tarefa';
+list.id = 'lista-tarefas';
 listaO.appendChild(list);
 
 
 function add () {
     const input = document.querySelector('#texto-tarefa')
-    const button = document.querySelector('#criar-tarefa')
+    const button = document.querySelector('#criar-tarefas')
     const ol = document.querySelector('#lista-tarefa')
     
     button.addEventListener("click", function () {
