@@ -16,16 +16,21 @@ function completaTarefa(evento) {
 }
 
 // Função para criar tarefas na lista
-function criaTarefa() {
-  if (document.querySelector('#texto-tarefa').value) {
-    const tarefa = document.querySelector('#texto-tarefa');
+function criaTarefa(classe, texto) {
+  if (texto) {
     const novoElementoLista = document.createElement('li');
-    novoElementoLista.innerText = tarefa.value;
+    novoElementoLista.innerText = texto;
     novoElementoLista.addEventListener('click', selecionaTarefa);
     novoElementoLista.addEventListener('dblclick', completaTarefa);
+    if (classe) novoElementoLista.className = classe;
     document.querySelector('#lista-tarefas').appendChild(novoElementoLista);
-    tarefa.value = '';
+    document.querySelector('#texto-tarefa').value = '';
   }
+}
+
+// Função do botão para poder colocar parâmetros na função de criar tarefa
+function botaoCriar() {
+  criaTarefa('', document.querySelector('#texto-tarefa').value);
 }
 
 // Função para apagar lista de tarefas
@@ -36,13 +41,36 @@ function apagaTudo() {
   }
 }
 
-// Função para apagar lista de tarefas
+// Função para remover tarefas finalizadas
 function removeFinalizados() {
-    const completos = document.getElementsByClassName('completed');
-    while (completos[0]) completos[0].parentNode.removeChild(completos[0]);
+  const completos = document.getElementsByClassName('completed');
+  while (completos[0]) completos[0].parentNode.removeChild(completos[0]);
+}
+
+// Função para remover tarefas finalizadas
+function salvaTarefas() {
+  const tarefas = document.getElementsByTagName('li');
+  const classesTarefa = [];
+  const textosTarefa = [];
+  for (let i = 0; i < tarefas.length; i += 1) {
+    classesTarefa.push(tarefas[i].className);
+    textosTarefa.push(tarefas[i].innerText);
+  }
+  localStorage.setItem('classes', classesTarefa);
+  localStorage.setItem('textos', textosTarefa);
+}
+
+// Chama as tarefas salvas e coloca elas na lista quando a página é iniciada
+if (localStorage.getItem('classes')) {
+  const classeTarefas = localStorage.getItem('classes').split(',');
+  const textoTarefas = localStorage.getItem('textos').split(',');
+  for (let i = 0; i < classeTarefas.length; i += 1) {
+    criaTarefa(classeTarefas[i], textoTarefas[i]);
+  }
 }
 
 // Criando os eventos para os elementos criados no html
-document.querySelector('#criar-tarefa').onclick = criaTarefa;
+document.querySelector('#criar-tarefa').addEventListener('click', botaoCriar);
 document.querySelector('#apaga-tudo').onclick = apagaTudo;
 document.querySelector('#remover-finalizados').onclick = removeFinalizados;
+document.querySelector('#salvar-tarefas').onclick = salvaTarefas;
