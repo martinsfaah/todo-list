@@ -1,10 +1,14 @@
 let inputTask = document.getElementById("texto-tarefa");
 let buttonCreateTask = document.getElementById("criar-tarefa");
 let taskList = document.getElementById("lista-tarefas");
+let buttonEraseList = document.getElementById("apaga-tudo");
+let items = document.getElementsByTagName('li');
 
 buttonCreateTask.addEventListener('click', createTask);
 taskList.addEventListener('click', changeColor);
 taskList.addEventListener('dblclick', completeTask);
+buttonEraseList.addEventListener('click', eraseList);
+body.addEventListener("dblclick", checkItem2);
 
 function createTask (){
     let taskValue = inputTask.value;
@@ -23,13 +27,15 @@ function changeColor(event) {
   task.className = 'selected';
 }
 
-function completeTask(event){
+function completeTask(event) {
     let completed = document.querySelector('.completed');
     if (completed != null) {
-        completed.classList.remove('completed');
+      completed.classList.remove('completed');
     }
     let task = event.target;
     task.className = 'completed';
+  }
+  
+function eraseList(){
+    taskList.innerHTML = '';
 }
-
-
