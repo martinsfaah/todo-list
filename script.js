@@ -4,15 +4,22 @@ function createTag(tagName) {
 }
 
 const btnCreateItem = document.querySelector('#criar-tarefa');
-const listItems = document.querySelector('#lista-tarefas');
+const list = document.querySelector('#lista-tarefas');
 // const textInput = document.getElementById('texto-tarefa');
+const listItems = document.querySelectorAll('ol li');
+const btnEraseAll = document.getElementById('apaga-tudo');
 
 function createListItems() {
-  const item = listItems.appendChild(createTag('li'));
+  const item = list.appendChild(createTag('li'));
   const itemText = document.querySelector('#texto-tarefa').value;
   item.innerText = itemText;
   document.getElementById('texto-tarefa').value = '';
   return item;
 }
 
+function eraseAll() {
+  list.remove(listItems);
+}
+
 btnCreateItem.addEventListener('click', createListItems);
+btnEraseAll.addEventListener('click', eraseAll);
