@@ -12,6 +12,7 @@ function createTask() {
     ol.appendChild(task);
     input.value = '';
     task.addEventListener('click', changeColor);
+    task.addEventListener('dblclick', taskCompleted);
   }
 }
 
@@ -29,4 +30,8 @@ function changeColor() {
     }
     event.target.style.backgroundColor = 'rgb(128,128,128)';
   }
+}
+
+function taskCompleted() {
+  event.target.classList.toggle('completed');
 }
