@@ -1,10 +1,19 @@
 
+const listOfOrder = document.querySelector("#lista-tarefas")
+const createOrder = document.querySelector("#criar-tarefa")
+const inputButton = document.querySelector("#texto-tarefa")
 
  function createListOrder() {
-  const listOfOrder = document.querySelector("#lista-tarefas")
-  const createOrder = documen.querySelector("#criar-tarefa")
-  const inputButton = document.querySelector("texto-tarefa")
   const elementList = document.createElement("li");
+  elementList.innerText = inputButton.value;
+  inputButton.value = "";
 listOfOrder.appendChild(elementList);
-   addEventListener(createOrder).value;
- }
+}
+createOrder.addEventListener("click", createListOrder);
+/*
+   pegar o que está no input e colocar dentro da lista ordenada. 
+   é preciso criar uma "li" para colocar os itens da lista ordenada em sequência.
+   colocar o que está dentro do input na "li". 
+   apagar o que está dentro do input após o item ir para a lista. 
+
+*/
