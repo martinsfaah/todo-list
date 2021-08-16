@@ -11,6 +11,7 @@ function addFromInputToList(event) {
     listItem.innerHTML = item;
     list.appendChild(listItem)
     list.addEventListener("click", colorChanger)
+    list.addEventListener("dblclick", completedItem)
     input.value = "";
 }
 
@@ -30,10 +31,7 @@ function colorChanger(event) {
     
 }
 
-for (index = 0; index < listElements.length; index += 1) {
-    listElements[index].addEventListener("click", selectedClass)
-}
-
-function selectedClass(event) {
-
+function completedItem(event) {
+    let actualListElement = event.target
+    actualListElement.className = "completed"
 }
