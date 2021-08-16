@@ -8,10 +8,20 @@ function inputText() {
   list.appendChild(li);
   text.value = '';
 }
-
 adicionar.addEventListener('click', inputText);
 
 function backPrint(event) {
-  const evento = (event.target.style.background = 'rgb(128, 128, 128)');  
+  whiteLine()
+  const evento = event.target
+  evento.style.backgroundColor = 'rgb(128, 128, 128)'
 }
 list.addEventListener('click', backPrint);
+
+
+function whiteLine() {
+  const resetLine = document.querySelectorAll('li')
+  for (let index = 0; index < resetLine.length; index += 1) {
+   resetLine[index].style.backgroundColor = 'white'
+  }
+}
+  
