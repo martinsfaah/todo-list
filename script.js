@@ -25,7 +25,14 @@ function itemClickColor() {
   let list = document.querySelector('#lista-tarefas');
 
   list.addEventListener('click', function(event) {
-   event.target.style.backgroundColor = 'rgb(128, 128, 128)'
+    let li = document.getElementsByTagName('li');
+
+    for (let i = 0; i < li.length; i += 1) {
+      let currentLi = li[i];
+      currentLi.style.backgroundColor = '';
+    }
+
+   event.target.style.backgroundColor = 'rgb(128, 128, 128)';
   })
 }
 
