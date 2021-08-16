@@ -4,6 +4,8 @@ const botaoCriar = document.getElementById('criar-tarefa');
 const botaoApagar = document.getElementById('apaga-tudo');
 const botaoFinalizados = document.getElementById('remover-finalizados');
 const botaoSalvar = document.getElementById('salvar-tarefas');
+const botaoCima = document.getElementById('mover-cima');
+const botaoBaixo = document.getElementById('mover-baixo');
 
 function adicionarEventos(elemento, evento, funcao) {
   if (elemento.length > 0) {
@@ -80,11 +82,35 @@ function recarregarElementosSalvos() {
   }
 }
 
+function moverPraCima() {
+  const selecionado = document.querySelector('.selected');
+  const listaItens = lista.childNodes;
+  for (let index = 0; index < listaItens.length; index += 1) {
+    if (selecionado === listaItens[index]) {
+      lista.insertBefore(selecionado, listaItens[index - 1]);
+      break;
+    }
+  }
+}
+
+function moverPraBaixo() {
+  const selecionado = document.querySelector('.selected');
+  const listaItens = lista.childNodes;
+  for (let index = 0; index < listaItens.length; index += 1) {
+    if (selecionado === listaItens[index]) {
+      lista.insertBefore(selecionado, listaItens[index + 2]);
+      break;
+    }
+  }
+}
+
 function carregarPagina() {
   adicionarEventos(botaoCriar, 'click', criarElementosLista);
   adicionarEventos(botaoApagar, 'click', apagarElementosLista);
   adicionarEventos(botaoFinalizados, 'click', apagarElementosFinalizados);
   adicionarEventos(botaoSalvar, 'click', salvarItens);
+  adicionarEventos(botaoCima, 'click', moverPraCima);
+  adicionarEventos(botaoBaixo, 'click', moverPraBaixo);
 
   recarregarElementosSalvos();
 }
