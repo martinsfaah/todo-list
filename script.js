@@ -16,6 +16,8 @@ function adicionaItem(event) {
   const novoItem = document.createElement('li');
   novoItem.innerText = textoInput.innerText;
   novoItem.addEventListener('click', corCinza);
+  novoItem.addEventListener('dblclick', sublinha);
+
   listaTarefas.appendChild(novoItem);
   input.value = '';
 }
@@ -28,4 +30,14 @@ function corCinza(event) {
     selecionado.classList.remove('selecionado');
   }
   event.target.classList.add('selecionado');
+}
+
+function sublinha(event) {
+  // let completo = document.querySelector('.completed');
+  // let classeClicado = event.target.classList.value;
+  if (event.target.classList.contains('completed')) {
+    event.target.classList.remove('completed');
+  } else {
+    event.target.classList.add('completed');
+  }
 }
