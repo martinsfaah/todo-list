@@ -63,3 +63,36 @@ function removeDone() {
   }
 }
 
+// ex 12 
+
+// ex 13
+
+function up(){
+  let classLi = document.querySelectorAll(".classLi");
+
+  for (let i = 1; i < classLi.length; i += 1 ){
+    if (classLi[i].style.backgroundColor === colorSelected) {
+      ol.insertBefore(classLi[i], classLi[i - 1])
+    }
+  }
+}
+let colorSelected = 'rgb(128, 128, 128)'
+let botaoUp = document.getElementById('mover-cima');
+botaoUp.addEventListener('click', up);
+
+function down() {
+  let classLi = document.querySelectorAll(".classLi");
+  for (let i = 0; i < classLi.length - 1; i += 1 ) {
+    if (classLi[i].style.backgroundColor === colorSelected) {
+      ol.insertBefore(classLi[i + 1], classLi[i])
+    }
+  }
+}
+
+let botaoDown = document.getElementById('mover-baixo');
+botaoDown.addEventListener('click', down);
+
+
+
+
+
