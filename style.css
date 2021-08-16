@@ -40,3 +40,28 @@ input {
 ol {
   margin: 30px auto;
 }
+
+li {
+  color: rgb(148 , 161 , 178);
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  font-weight: 570;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+button {
+  background-color: rgb(127 , 90 , 240);
+  color: rgb(255 , 255 , 254);
+  border: none;
+  padding: 6px 15px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(44 , 182 , 125);
+}
