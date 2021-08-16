@@ -137,3 +137,14 @@ function moveDown() {
   downBt.addEventListener('click', onClick);
 }
 moveDown();
+
+function deleteSelected() {
+  function onClick() {
+    const selected = document.querySelector('.selected');
+    const parent = selected.parentElement;
+    parent.removeChild(selected);
+  }
+  const rmvSelected = document.querySelector('#remover-selecionado');
+  rmvSelected.addEventListener('click', onClick);
+}
+deleteSelected();
