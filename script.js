@@ -3,11 +3,39 @@ window.onload = function() {
   criaTarefa.addEventListener("click", function() {
     let entrada = document.getElementById("texto-tarefa");
     let novaTarefa = document.createElement("li");
+
+    novaTarefa.addEventListener("click", function(evento) {
+      let todasTarefas = document.getElementsByTagName("li");
+
+      for (let index = 0; index < todasTarefas.length; index += 1) {
+        if (todasTarefas[index].classList.contains("selected") == true) {
+          todasTarefas[index].classList.remove("selected");
+        }
+      }
+      
+      if (evento.target.classList.contains("selected") == true) {
+        evento.target.classList.remove("selected");
+      }
+      else {
+        evento.target.classList.add("selected");
+      }
+    })
+
+    novaTarefa.addEventListener("dblclick", function(evento) {
+      if (evento.target.classList.contains("completed") == true) {
+        evento.target.classList.remove("completed");
+      }
+      else {
+        evento.target.classList.add("completed");
+      }
+    })
+
     let lista = document.getElementById("lista-tarefas");
     novaTarefa.innerHTML = entrada.value;
 
     if (entrada.value != ""){
       lista.appendChild(novaTarefa);
+      adicionaNoStorage(novaTarefa.innerHTML);
 
       entrada.value = "";
     }
@@ -17,33 +45,32 @@ window.onload = function() {
 
   let itensLista = document.getElementsByTagName("li");
 
-  for (let index = 0; index < itensLista.length; itensLista += 1) {
-    itensLista[index].addEventListener("click", function(evento) {
-      itensLista[index].style.backgroundColor = "red";
-      evento.target.style.backgroundColor = "rgb(128, 128, 128";
-      console.log(evento.target)
 
-      if (itensLista[index].classList.contains("selected") == true) {
-        itensLista[index].classList.remove("selected");
-      }
-      else {
-        itensLista[index].classList.add("selected");
-      }
-    });
-  }
 
-  for (let index = 0; index < itensLista.length; index += 1) {
-    itensLista[index].addEventListener("dblclick", function() {
+  let apagaTudo = document.getElementById("apaga-tudo");
+  apagaTudo.addEventListener("click", function() {
+    let lista = document.getElementById("lista-tarefas");
+    lista.innerHTML = "";
+    localStorage.clear();
+  })
+
+  let apagaFinalizados = document.getElementById("remover-finalizados");
+  apagaFinalizados.addEventListener("click", function() {
+    for (let index = 0; index < itensLista.length; index += 1) {
       if (itensLista[index].classList.contains("completed") == true) {
-        itensLista[index].classList.remove("completed");
+        let listaInteira = document.getElementById("lista-tarefas");
+        listaInteira.removeChild(itensLista[index]);
       }
-      else {
-        itensLista[index].classList.add("completed");
-      }
-    });
-  }
+    }
+  })
 
-
-
+  
 }
 
+function adicionaNoStorage(item) {
+  localStorage.setItem(item, item);
+}
+
+function removeDoStorage(item) {
+  localStorage.removeItem(item);
+}
