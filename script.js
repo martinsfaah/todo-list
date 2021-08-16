@@ -21,5 +21,11 @@ function eraseAll() {
   list.remove(listItems);
 }
 
+function listItemsInteract(event) {
+  if (event.target.tagName === 'LI') {
+    event.target.classList.add('selected');
+  }
+}
+list.addEventListener('click', listItemsInteract, false);
 btnCreateItem.addEventListener('click', createListItems);
 btnEraseAll.addEventListener('click', eraseAll);
