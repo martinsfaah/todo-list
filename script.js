@@ -78,19 +78,67 @@ function getSavedList() {
   }
 }
 
-// function moveItem() {
-//   const listItems = document.getElementsByTagName('li');
-//   let atualPosition = -1;
-//   for (let index = 0; index < listItems.length; index += 1) {
-//     if (listItems[index].style.backgroundColor === 'rgb(128, 128, 128)') {
-//       atualPosition = index;
-//       break;
-//     }
-//   }
-// }
+// busca qual das li está selecionada. se nao tiver nenhuma selecionada retorna -1;
+function getSelectedPosition() {
+  const listItems = document.getElementsByTagName('li');
+  let atualPosition = -1;
+  for (let index = 0; index < listItems.length; index += 1) {
+    if (listItems[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+      atualPosition = index;
+      break;
+    }
+  }
+  return atualPosition;
+}
+
+function moveUp() {
+  const selectedIndex = getSelectedPosition();
+  const listOfItens = document.getElementsByTagName('li');
+  if (selectedIndex > 0) {
+    const selectedItem = listOfItens[selectedIndex];
+    const aboveItem = listOfItens[selectedIndex - 1];
+    const auxInner = aboveItem.innerHTML;
+    const auxBg = aboveItem.style.backgroundColor;
+    const auxClass = aboveItem.className;
+    aboveItem.innerHTML = selectedItem.innerHTML;
+    aboveItem.style.backgroundColor = selectedItem.style.backgroundColor;
+    aboveItem.className = selectedItem.className;
+    selectedItem.innerHTML = auxInner;
+    selectedItem.style.backgroundColor = auxBg;
+    selectedItem.className = auxClass;
+  }
+}
+
+function moveDwn() {
+  const selectedIndex = getSelectedPosition();
+  const listOfItens = document.getElementsByTagName('li');
+  if (selectedIndex >= 0 && selectedIndex < listOfItens.length - 1) {
+    const selectedItem = listOfItens[selectedIndex];
+    const aboveItem = listOfItens[selectedIndex + 1];
+    const auxInner = aboveItem.innerHTML;
+    const auxBg = aboveItem.style.backgroundColor;
+    const auxClass = aboveItem.className;
+    aboveItem.innerHTML = selectedItem.innerHTML;
+    aboveItem.style.backgroundColor = selectedItem.style.backgroundColor;
+    aboveItem.className = selectedItem.className;
+    selectedItem.innerHTML = auxInner;
+    selectedItem.style.backgroundColor = auxBg;
+    selectedItem.className = auxClass;
+  }
+}
+
+
+
+function moveItem() {
+  const bttnUp = document.getElementById('mover-cima');
+  const bttnDown = document.getElementById('mover-baixo');
+  bttnUp.addEventListener('click', moveUp);
+  bttnDown.addEventListener('click', moveDwn);
+}
 
 addTasks();
 removeAll();
 removeFinished();
 getSavedList();
 saveList();
+moveItem();
