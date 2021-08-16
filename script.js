@@ -22,13 +22,24 @@ function createOrderList() {
 }
 createOrderList();
 
+const itensLista = document.getElementsByClassName('itens-lista-individuais');
+
 function colorListItem(event) {
-  const itensLista = document.getElementsByClassName('itens-lista-individuais');
   const alvo2 = event.target;
   for (let i = 0; i < itensLista.length; i += 1) {
     itensLista[i].style.backgroundColor = 'transparent';
     alvo2.style.backgroundColor = 'rgb(128, 128, 128)';
   }
+}
+
+function strikeItem(event) {
+  const alvo3 = event.target;
+  // if (!alvo3.classList.contains('completed')) {
+  //   alvo3.classList.add('completed');
+  // } else {
+  //   alvo3.classList.remove('completed');
+  // }
+  alvo3.classList.toggle('completed');
 }
 
 function addTask() {
@@ -40,6 +51,7 @@ function addTask() {
   listItem.innerText = inputField.value;
   inputField.value = '';
   listItem.addEventListener('click', colorListItem);
+  listItem.addEventListener('dblclick', strikeItem);
 }
 
 const buttonAdd = document.querySelector('#criar-tarefa');
