@@ -1,0 +1,11 @@
+.listaDeTarefas
+{
+    border: 1px solid;
+
+}
+.selected
+{
+    background-color: rgb(128, 128, 128);
+
+
+}
