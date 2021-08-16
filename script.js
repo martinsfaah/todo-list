@@ -12,7 +12,6 @@ function inputText() {
 adicionar.addEventListener('click', inputText);
 
 function backPrint(event) {
-  const evento = (event.target.style.background = 'rgb(128, 128, 128)');
+  const evento = (event.target.style.background = 'rgb(128, 128, 128)');  
 }
-
-list.addEventListener('dblclick', backPrint);
+list.addEventListener('click', backPrint);
