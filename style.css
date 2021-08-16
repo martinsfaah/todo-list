@@ -1,56 +1,47 @@
 body {
-    align-items: center;
-    background-color: rgb(56, 36, 36);
-    color: white;
-    display: flex;
-    flex-flow: column wrap;
-    font-family: Montserrat, sans-serif;
-    height: 100vh;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-  }
+  align-items: center;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-flow: column wrap;
+  font-family: Montserrat, sans-serif;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
 
 main {
-    width: 70%;
-    height: 50%;
-    background-color:rgb(85, 42, 42);
-    border-radius: 15px;
-    border-color: rgb(56, 36, 36);
-    border: 15px;
-    border-width: 15px;   
-    display: grid;
+    width: fit-content;
+    margin-left: 0%;
     align-items: center;
-    align-content: center;
-    margin-left: 10%;
 }
 header {
-    font-size: 30px;
-    margin-bottom: 30px;
-    margin: 0%;
+  font-size: 50px;  
+  margin: 0%;  
 }
 #funcionamento {
-    font-size: 10px;
-    background-color: black;
-    width: fit-content;
+  font-size: 10px;
+  background-color: black;
+  width: fit-content;
+  margin-left: 20%;
 }
-.block {
-    width: 30%;
-    height: 30%;
-    background-color:rgb(85, 42, 42);
-    border-radius: 15px;
-    border-color: rgb(56, 36, 36);
-    border: 15px;
-    border-width: 15px;   
-    display: grid;
-    align-items: center;
-    align-content: center;
-    margin-left: 38%; 
+
+.button-and-input {
+  margin-left: 700px;
+  display:inline-block;
 }
 
 #texto-tarefa {
-    height: 20px;
-    width: 200px;
-    border-radius: 10px;    
+  height: 20px;
+  width: 200px;
+  border-radius: 10px;
+  margin-left: 90px;
+}
+#button {
+ background-color: black;
+ font-style: italic;
+ color: aqua;
+ opacity: 30%;
 }
