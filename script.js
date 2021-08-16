@@ -12,7 +12,20 @@ caixaTexto.id = 'texto-tarefa';
 main.appendChild(caixaTexto);
 
 // Requisito 4 :adiciona uma lista ordenada
-
 const lista = document.createElement('ol');
 lista.id = 'lista-tarefas';
 main.appendChild(lista);
+
+// Requisito 5: adiciona botao, add informacao na ol e limpa o input
+function adicionaTexto() {
+    let botaoAdiciona = document.querySelector('#criar-tarefa');
+    let listaOl = document.querySelector('#lista-tarefas');
+
+    botaoAdiciona.addEventListener('click', function eventoClick() {
+        const itemLista = document.createElement('li');
+        itemLista.innerText = document.getElementById('texto-tarefa').value;
+        listaOl.appendChild(itemLista);
+        document.getElementById('texto-tarefa').value = null;
+    })
+}
+adicionaTexto();
