@@ -1,20 +1,3 @@
-function addItem() {
-  const addButton = document.getElementById('criar-tarefa');
-  addButton.addEventListener('click', () => {
-    const li = document.createElement('li');
-    const value = document.getElementById('texto-tarefa');
-    document.getElementById('lista-tarefas').appendChild(li);
-    li.className = 'tarefas';
-    li.innerHTML = value.value;
-
-    value.value = '';
-    // li.addEventListener('click', () => {
-    //   li.style.backgroundColor = 'rgb(128, 128, 128)';
-    // });
-    click();
-  });
-}
-
 function click() {
   const lisTarefa = document.querySelectorAll('.tarefas');
 
@@ -29,6 +12,33 @@ function click() {
       limpLis();
       e.classList.add('selected');
     });
+  });
+}
+
+function line() {
+  const lis = document.querySelectorAll('.tarefas');
+
+  lis.forEach((e) => {
+    // e.addEventListener('click', () => {
+    e.classList.remove('completed');
+    e.classList.toggle('completed');
+    //   });
+  });
+}
+
+function addItem() {
+  const addButton = document.getElementById('criar-tarefa');
+  addButton.addEventListener('click', () => {
+    const li = document.createElement('li');
+    const value = document.getElementById('texto-tarefa');
+    document.getElementById('lista-tarefas').appendChild(li);
+    li.className = 'tarefas';
+    li.innerHTML = value.value;
+
+    value.value = '';
+    click();
+
+    li.addEventListener('dblclick', line);
   });
 }
 

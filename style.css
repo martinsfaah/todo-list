@@ -2,6 +2,10 @@ body {
   background-color: aquamarine;
 }
 
-.selected{
-  background-color: rgb(128,128,128);
+.selected {
+  background-color: grey;
+}
+
+.completed {
+  text-decoration: line-through solid black;
 }
