@@ -20,7 +20,6 @@ function line() {
 
   lis.forEach((e) => {
     // e.addEventListener('click', () => {
-    e.classList.remove('completed');
     e.classList.toggle('completed');
     //   });
   });
