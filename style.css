@@ -1,0 +1,11 @@
+body {
+    background-color: aquamarine;
+}
+header {
+    background-color: azure;
+    width: 30%;
+    border-radius: 5px;
+    height: 300px;
+    margin: 30px;
+    padding-left: 20px;
+}
