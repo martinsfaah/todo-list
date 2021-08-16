@@ -23,11 +23,16 @@ function createElements(){
 
 createElements();
 
+function changeColor() {
+    event.currentTarget.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
 function createTask(){
     const writtenTask = document.querySelector('#texto-tarefa').value;
     const list = document.querySelector('#lista-tarefas');
     const newTask = document.createElement('li');
     newTask.innerText = writtenTask;
+    newTask.addEventListener('click', changeColor);
     list.appendChild(newTask);
     document.querySelector('#texto-tarefa').value = '';
 }
