@@ -10,6 +10,7 @@ addTaskBtn.addEventListener('click', () => {
   taskList.appendChild(taskLi);
   taskToAddText.value = '';
   makeTasksClicable(taskLi);
+  toggleTaskCompletion(taskLi);
   fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
 });
 
@@ -28,4 +29,10 @@ function makeTasksClicable(whichTask) {
         thisTaskClasses.add('selected');
       }
     })
+}
+
+function toggleTaskCompletion(whichTask) {
+  whichTask.addEventListener('dblclick', (task) => {
+    task.target.classList.toggle("completed");
+  })
 }
