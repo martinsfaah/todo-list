@@ -6,3 +6,11 @@ function createParagraph() {
   paragraph.innerHTML = 'Clique duas vezes em um item para marcá-lo como completo'; 
 }
 createParagraph();
+
+function createInput() {
+  let input = document.createElement('input'); 
+  const mySection = document.querySelector('section'); 
+  mySection.appendChild(input); 
+  input.id = "texto-tarefa"; 
+}
+createInput();
