@@ -1,3 +1,5 @@
+const listaTarefas = 'lista-tarefas';
+
 function selectTask(event) {
   const eventObj = event;
   const todoList = document.getElementsByTagName('li');
@@ -11,7 +13,6 @@ function selectTask(event) {
 
 function riskTask(event) {
   const eventObj = event;
-  console.log(eventObj.target);
   if (eventObj.target.className !== 'completed') {
     eventObj.target.className = 'completed';
   } else {
@@ -22,7 +23,7 @@ function riskTask(event) {
 function addTasks() {
   const button = document.getElementById('criar-tarefa');
   const inputText = document.getElementById('texto-tarefa');
-  const todoList = document.getElementById('lista-tarefas');
+  const todoList = document.getElementById(listaTarefas);
   button.addEventListener('click', () => {
     const newItem = document.createElement('li');
     newItem.addEventListener('click', selectTask);
@@ -36,7 +37,7 @@ function addTasks() {
 function removeAll() {
   const button = document.getElementById('apaga-tudo');
   button.addEventListener('click', () => {
-    document.getElementById('lista-tarefas').innerHTML = '';
+    document.getElementById(listaTarefas).innerHTML = '';
   });
 }
 
@@ -56,18 +57,37 @@ function removeFinished() {
 function saveList() {
   const saveBttn = document.getElementById('salvar-tarefas');
   saveBttn.addEventListener('click', () => {
-    const listaAtual = document.getElementById('lista-tarefas');
-    console.log(listaAtual.innerHTML);
+    const listaAtual = document.getElementById(listaTarefas);
     localStorage.setItem('lista', listaAtual.innerHTML);
   });
 }
 
 function getSavedList() {
   if (localStorage.getItem('lista') !== null) {
-    const listaSalva = document.getElementById('lista-tarefas');
-    listaSalva.innerHTML = localStorage.getItem('lista');
+    const savedString = localStorage.getItem('lista');
+    const dummyDOM = document.createElement('html');
+    dummyDOM.innerHTML = savedString;
+    const savedItens = dummyDOM.getElementsByTagName('li');
+    const numberOfItens = savedItens.length;
+    const todoList = document.getElementById(listaTarefas);
+    for (let index = 0; index < numberOfItens; index += 1) {
+      savedItens[0].addEventListener('click', selectTask);
+      savedItens[0].addEventListener('dblclick', riskTask);
+      todoList.appendChild(savedItens[0]);
+    }
   }
 }
+
+// function moveItem() {
+//   const listItems = document.getElementsByTagName('li');
+//   let atualPosition = -1;
+//   for (let index = 0; index < listItems.length; index += 1) {
+//     if (listItems[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+//       atualPosition = index;
+//       break;
+//     }
+//   }
+// }
 
 addTasks();
 removeAll();
