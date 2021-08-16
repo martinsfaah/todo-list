@@ -1,6 +1,7 @@
 const addTask = document.querySelector('#criar-tarefa');
 const lista = document.getElementById('lista-tarefas');
 const textTask = document.querySelector('#texto-tarefa');
+const limparLista = document.getElementById('apaga-tudo');
 
 // Adiciona nova tarefa
 function novaTarefa() {
@@ -27,7 +28,6 @@ function trocaCor(evento) {
 
 lista.addEventListener('click', trocaCor);
 
-
 // Elementos Completos
 function riscaCompletos(evento) {
   const elemento = evento.target;
@@ -39,3 +39,16 @@ function riscaCompletos(evento) {
 }
 
 lista.addEventListener('dblclick', riscaCompletos);
+
+// Limpar lista
+function limpaLista() {
+  const itens = document.getElementsByTagName('li');
+  if (itens.length !== 0) {
+    for (let i = itens.length - 1; i >= 0; i -= 1) {
+      const item = itens[i];
+      item.remove();
+    }
+  }
+}
+
+limparLista.addEventListener('click', limpaLista);
