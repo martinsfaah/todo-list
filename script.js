@@ -2,6 +2,7 @@ const addTask = document.querySelector('#criar-tarefa');
 const lista = document.getElementById('lista-tarefas');
 const textTask = document.querySelector('#texto-tarefa');
 const limparLista = document.getElementById('apaga-tudo');
+const removeFinal = document.getElementById('remover-finalizados');
 
 // Adiciona nova tarefa
 function novaTarefa() {
@@ -52,3 +53,16 @@ function limpaLista() {
 }
 
 limparLista.addEventListener('click', limpaLista);
+
+// Remove finalizados
+function rmvFinal() {
+  const itensFin = document.getElementsByClassName('completed');
+  if (itensFin.length !== 0) {
+    for (let i = itensFin.length - 1; i >= 0; i -= 1) {
+      const item = itensFin[i];
+      item.remove();
+    }
+  }
+}
+
+removeFinal.addEventListener('click', rmvFinal);
