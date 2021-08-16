@@ -39,13 +39,6 @@ function clearList() {
   taskList.innerHTML = '';
 }
 
-// Outra forma de apagar a lista:
-// function clearList() {
-//   for (let i = 1; i <= taskList.childElementCount; i += 0) {
-  //     taskList.removeChild(taskList.lastElementChild);
-  //   }
-// }
-
 btnClearList.addEventListener('click', clearList);
 
 const btnClearCompletedTasks = document.getElementById('remover-finalizados');
@@ -59,19 +52,18 @@ function clearCompletedTasks() {
 
 btnClearCompletedTasks.addEventListener('click', clearCompletedTasks);
 
-btnSaveList = document.getElementById('salvar-tarefas');
+const btnSaveList = document.getElementById('salvar-tarefas');
 
 function saveList() {
   localStorage.setItem('tasklist', JSON.stringify(taskList.innerHTML));
-  
 }
 
 btnSaveList.addEventListener('click', saveList);
 
-window.onload = function () {
+window.onload = function init() {
   const savedList = JSON.parse(localStorage.getItem('tasklist'));
   taskList.innerHTML = savedList;
-  let selectedTask = document.getElementById('selected-task');
+  const selectedTask = document.getElementById('selected-task');
   if (selectedTask !== null) {
     selectedTask.id = '';
   }
