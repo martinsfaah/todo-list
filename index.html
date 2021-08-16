@@ -7,19 +7,24 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <title>Project ToDoList</title>   
+    <title>Project To.Do.List</title>   
     </head>
 
-    <body>
-      
+    <body>      
       <header>
+
         <h1>Minha Lista de Tarefas</h1>
 
         <p id="funcionamento"> Clique duas vezes em um item para marcá-lo como completo </p>
 
-        <input id="texto-tarefa"> </input>
-        <ol id="lista-tarefas"></ol> 
+        <input type="text"id="texto-tarefa" placeholder="Digite sua tarefa!"> </input>
 
+      
+        <button id="criar-tarefa"> Nova tarefa</button>
+
+        <div id="task-list-container">
+          <ol id="lista-tarefas"></ol>
+        </div>
 
       </header>
 

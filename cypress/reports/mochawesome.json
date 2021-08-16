@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 0,
-    "start": "2021-08-16T17:25:42.788Z",
-    "end": "2021-08-16T17:25:45.987Z",
-    "duration": 3199,
+    "start": "2021-08-16T20:14:43.960Z",
+    "end": "2021-08-16T20:14:47.975Z",
+    "duration": 4015,
     "testsRegistered": 28,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d975cad1-add9-4494-b62c-584cd573513b",
+      "uuid": "9893c79f-a941-4d0a-94c0-4b8faaeb8332",
       "title": "",
       "fullFile": "cypress/integration/project.spec.js",
       "file": "cypress/integration/project.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5632ab3d-233f-4a03-93a5-8efc4cc55094",
+          "uuid": "a55cc9be-7a25-4a21-a3fe-d2d914693acd",
           "title": "1 - Adicone à sua lista o título \"Minha Lista de Tarefas\" em uma tag <header>",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Será verificado se sua página possui uma tag `header` com o conteúdo `Minha Lista de Tarefas`",
               "fullTitle": "1 - Adicone à sua lista o título \"Minha Lista de Tarefas\" em uma tag <header> Será verificado se sua página possui uma tag `header` com o conteúdo `Minha Lista de Tarefas`",
               "timedOut": null,
-              "duration": 271,
+              "duration": 337,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -47,12 +47,12 @@
               "context": null,
               "code": "cy.get('header').contains(TODO_PAGE_TITLE);",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '1 - Adicone à sua lista o t...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '1 - Adicone à sua lista o t...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '1 - Adicone à sua lista o t...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '1 - Adicone à sua lista o t...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "e537bd6b-6aa1-4f02-86aa-9c2456510718",
-              "parentUUID": "5632ab3d-233f-4a03-93a5-8efc4cc55094",
+              "uuid": "731adf3c-c4ee-40e0-881c-9885314e703e",
+              "parentUUID": "a55cc9be-7a25-4a21-a3fe-d2d914693acd",
               "isHook": false,
               "skipped": false
             }
@@ -60,17 +60,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "e537bd6b-6aa1-4f02-86aa-9c2456510718"
+            "731adf3c-c4ee-40e0-881c-9885314e703e"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 271,
+          "duration": 337,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "d5815272-e010-4b9f-b4c6-eefea82ff858",
+          "uuid": "a8362b48-64fb-4a61-aef2-c1f7a802ded6",
           "title": "2 - Adicione abaixo do título um pequeno e discreto parágrafo com id=\"funcionamento\" e com o texto \"Clique duas vezes em um item para marcá-lo como completo\"",
           "fullFile": "",
           "file": "",
@@ -81,7 +81,7 @@
               "title": "Será verificado que existe na sua página um elemento com o id `funcionamento` com o conteúdo `Clique duas vezes em um item para marcá-lo como completo`",
               "fullTitle": "2 - Adicione abaixo do título um pequeno e discreto parágrafo com id=\"funcionamento\" e com o texto \"Clique duas vezes em um item para marcá-lo como completo\" Será verificado que existe na sua página um elemento com o id `funcionamento` com o conteúdo `Clique duas vezes em um item para marcá-lo como completo`",
               "timedOut": null,
-              "duration": 222,
+              "duration": 352,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -90,12 +90,12 @@
               "context": null,
               "code": "cy.get(TODO_PAGE_DESCRIPTION_SELECTOR).contains(TODO_PAGE_DESCRIPTION);",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '2 - Adicione abaixo do títu...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '2 - Adicione abaixo do títu...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '2 - Adicione abaixo do títu...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '2 - Adicione abaixo do títu...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "ed88f1fc-8626-4bde-937b-7614d7ec1fd4",
-              "parentUUID": "d5815272-e010-4b9f-b4c6-eefea82ff858",
+              "uuid": "7a8ff270-3b4c-478d-bad2-4654ea3a1920",
+              "parentUUID": "a8362b48-64fb-4a61-aef2-c1f7a802ded6",
               "isHook": false,
               "skipped": false
             }
@@ -103,17 +103,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "ed88f1fc-8626-4bde-937b-7614d7ec1fd4"
+            "7a8ff270-3b4c-478d-bad2-4654ea3a1920"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 222,
+          "duration": 352,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "05923066-b56e-4b36-816e-aa0790e7792e",
+          "uuid": "5bb3de7d-2a92-4103-bb0b-f47a40aab184",
           "title": "3 - Adicione um input com o id=\"texto-tarefa\" onde o usuário poderá digitar o nome do item que deseja adicionar à lista",
           "fullFile": "",
           "file": "",
@@ -124,7 +124,7 @@
               "title": "Será verificada a existência de um elemento do tipo `input` com o id `texto-tarefa`",
               "fullTitle": "3 - Adicione um input com o id=\"texto-tarefa\" onde o usuário poderá digitar o nome do item que deseja adicionar à lista Será verificada a existência de um elemento do tipo `input` com o id `texto-tarefa`",
               "timedOut": null,
-              "duration": 218,
+              "duration": 316,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -133,12 +133,12 @@
               "context": null,
               "code": "cy.get(TODO_ADD_INPUT_SELECTOR).should('exist');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '3 - Adicione um input com o...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '3 - Adicione um input com o...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '3 - Adicione um input com o...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '3 - Adicione um input com o...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "a4883516-299e-49ed-9231-d08f36ca7fd6",
-              "parentUUID": "05923066-b56e-4b36-816e-aa0790e7792e",
+              "uuid": "f28fea67-84ec-4561-ae4d-753e0dbe8b8d",
+              "parentUUID": "5bb3de7d-2a92-4103-bb0b-f47a40aab184",
               "isHook": false,
               "skipped": false
             }
@@ -146,17 +146,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "a4883516-299e-49ed-9231-d08f36ca7fd6"
+            "f28fea67-84ec-4561-ae4d-753e0dbe8b8d"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 218,
+          "duration": 316,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "be172975-6bc0-49f7-b5b7-a692c6bf131a",
+          "uuid": "8e9cf4d1-52d2-445b-a63e-1e897100fecb",
           "title": "4 - Adicione uma lista ordenada de tarefas com o id=\"lista-tarefas\"",
           "fullFile": "",
           "file": "",
@@ -167,7 +167,7 @@
               "title": "Será verificada a existência de um elemento `ol` com o id `lista-tarefas`",
               "fullTitle": "4 - Adicione uma lista ordenada de tarefas com o id=\"lista-tarefas\" Será verificada a existência de um elemento `ol` com o id `lista-tarefas`",
               "timedOut": null,
-              "duration": 247,
+              "duration": 233,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -176,12 +176,12 @@
               "context": null,
               "code": "cy.get(TODO_LIST_SELECTOR).should('exist');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '4 - Adicione uma lista orde...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '4 - Adicione uma lista orde...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '4 - Adicione uma lista orde...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '4 - Adicione uma lista orde...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "9a352284-44fa-4f01-9d92-562c4bd07023",
-              "parentUUID": "be172975-6bc0-49f7-b5b7-a692c6bf131a",
+              "uuid": "50b6fb89-176c-4bc8-abe3-03e03c496ea1",
+              "parentUUID": "8e9cf4d1-52d2-445b-a63e-1e897100fecb",
               "isHook": false,
               "skipped": false
             }
@@ -189,17 +189,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "9a352284-44fa-4f01-9d92-562c4bd07023"
+            "50b6fb89-176c-4bc8-abe3-03e03c496ea1"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 247,
+          "duration": 233,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "cb20eb3d-c709-4c4c-b823-1f45c088f1d7",
+          "uuid": "2859ed0c-87c3-4a63-a803-27d6b5007c63",
           "title": "5 - Adicione um botão com id=\"criar-tarefa\" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo",
           "fullFile": "",
           "file": "",
@@ -210,7 +210,7 @@
               "title": "Será verificada a existência de um elemento do tipo `button` com o id `criar-tarefa",
               "fullTitle": "5 - Adicione um botão com id=\"criar-tarefa\" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo Será verificada a existência de um elemento do tipo `button` com o id `criar-tarefa",
               "timedOut": null,
-              "duration": 168,
+              "duration": 263,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -219,12 +219,12 @@
               "context": null,
               "code": "cy.get(TODO_ADD_BUTTON_SELECTOR).should('exist');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '5 - Adicione um botão com i...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '5 - Adicione um botão com i...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '5 - Adicione um botão com i...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '5 - Adicione um botão com i...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "b5cad1dd-809e-4142-b896-3ce411ce632e",
-              "parentUUID": "cb20eb3d-c709-4c4c-b823-1f45c088f1d7",
+              "uuid": "b24c2a2f-3735-4852-a87d-e6714239e502",
+              "parentUUID": "2859ed0c-87c3-4a63-a803-27d6b5007c63",
               "isHook": false,
               "skipped": false
             },
@@ -241,8 +241,8 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'minha primeira tarefa'\n};\naddTodo(todo1);\ncheckTodoList([todo1]);\ncy.get(TODO_ADD_INPUT_SELECTOR).should('have.value', '');",
               "err": {},
-              "uuid": "560ea52f-6fff-4329-988a-6cf4f0b7fa62",
-              "parentUUID": "cb20eb3d-c709-4c4c-b823-1f45c088f1d7",
+              "uuid": "ef7c326e-3707-4e34-baf0-91a9b645a5d0",
+              "parentUUID": "2859ed0c-87c3-4a63-a803-27d6b5007c63",
               "isHook": false,
               "skipped": true
             },
@@ -259,8 +259,8 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'minha primeira tarefa'\n};\nvar todo2 = {\n  content: 'minha segunda tarefa'\n};\naddTodo(todo1);\ncheckTodoList([todo1]);\naddTodo(todo2);\ncheckTodoList([todo1, todo2]);\ncy.get(TODO_ADD_INPUT_SELECTOR).should('have.value', '');",
               "err": {},
-              "uuid": "9e9c0b67-59cf-4096-afb2-d7bf69150d2d",
-              "parentUUID": "cb20eb3d-c709-4c4c-b823-1f45c088f1d7",
+              "uuid": "5e3853ab-1e24-4304-be5c-4b5e7e3f74f6",
+              "parentUUID": "2859ed0c-87c3-4a63-a803-27d6b5007c63",
               "isHook": false,
               "skipped": true
             }
@@ -268,20 +268,20 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "b5cad1dd-809e-4142-b896-3ce411ce632e"
+            "b24c2a2f-3735-4852-a87d-e6714239e502"
           ],
           "pending": [],
           "skipped": [
-            "560ea52f-6fff-4329-988a-6cf4f0b7fa62",
-            "9e9c0b67-59cf-4096-afb2-d7bf69150d2d"
+            "ef7c326e-3707-4e34-baf0-91a9b645a5d0",
+            "5e3853ab-1e24-4304-be5c-4b5e7e3f74f6"
           ],
-          "duration": 168,
+          "duration": 263,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "cad469f8-cf2a-4b51-818c-9584349c15e9",
+          "uuid": "3d41d617-a2c9-4a85-9415-cce065286d5e",
           "title": "6 - Ordene os itens da lista de tarefas por ordem de criação",
           "fullFile": "",
           "file": "",
@@ -292,7 +292,7 @@
               "title": "Três itens serão criados na lista e será checado se eles estão ordenados por ordem de criação - ou seja, primeiro o primeiro item criado, depois o segundo, e assim por diante",
               "fullTitle": "6 - Ordene os itens da lista de tarefas por ordem de criação Três itens serão criados na lista e será checado se eles estão ordenados por ordem de criação - ou seja, primeiro o primeiro item criado, depois o segundo, e assim por diante",
               "timedOut": null,
-              "duration": 185,
+              "duration": 226,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -301,12 +301,12 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'minha tarefa'\n};\nvar todo2 = {\n  content: 'minha outra tarefa'\n};\nvar todo3 = {\n  content: 'minha terceira tarefa'\n};\naddTodo(todo1);\ncheckTodoList([todo1]);\naddTodo(todo2);\ncheckTodoList([todo1, todo2]);\naddTodo(todo3);\ncheckTodoList([todo1, todo2, todo3]);",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '6 - Ordene os itens da list...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '6 - Ordene os itens da list...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '6 - Ordene os itens da list...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '6 - Ordene os itens da list...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "2d4929b3-3050-4814-832e-fdffeaf07c35",
-              "parentUUID": "cad469f8-cf2a-4b51-818c-9584349c15e9",
+              "uuid": "939f6e0a-36da-4649-8074-24d973983bd1",
+              "parentUUID": "3d41d617-a2c9-4a85-9415-cce065286d5e",
               "isHook": false,
               "skipped": false
             }
@@ -314,17 +314,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "2d4929b3-3050-4814-832e-fdffeaf07c35"
+            "939f6e0a-36da-4649-8074-24d973983bd1"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 185,
+          "duration": 226,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "dbfa35e5-90c8-4c2a-b7e0-48f2b1bb1483",
+          "uuid": "f68bf8c4-037c-40af-b2d6-999bb6490155",
           "title": "7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)",
           "fullFile": "",
           "file": "",
@@ -335,7 +335,7 @@
               "title": "Será verificado que, ao se carregar a página, os itens da lista **não tem** o estilo CSS `background-color: rgb(128, 128, 128)`",
               "fullTitle": "7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128) Será verificado que, ao se carregar a página, os itens da lista **não tem** o estilo CSS `background-color: rgb(128, 128, 128)`",
               "timedOut": null,
-              "duration": 166,
+              "duration": 278,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -344,12 +344,12 @@
               "context": null,
               "code": "var todos = [{\n  content: 'uma tarefa qualquer'\n}, {\n  content: 'uma outra tarefa atoa'\n}];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.css', 'background-color', 'rgb(128, 128, 128)');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '7 - Clicar em um item da li...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '7 - Clicar em um item da li...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '7 - Clicar em um item da li...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '7 - Clicar em um item da li...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "18caa5d3-0149-4bef-95c2-65228eacdb7b",
-              "parentUUID": "dbfa35e5-90c8-4c2a-b7e0-48f2b1bb1483",
+              "uuid": "c79d5b66-884b-497d-902c-7fbd8c175015",
+              "parentUUID": "f68bf8c4-037c-40af-b2d6-999bb6490155",
               "isHook": false,
               "skipped": false
             },
@@ -366,8 +366,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'uma tarefa qualquer'\n}, {\n  content: 'uma outra tarefa atoa'\n}];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().click().then(function ($li) {\n  expect($li).to.have.css('background-color', 'rgb(128, 128, 128)');\n});",
               "err": {},
-              "uuid": "01a421df-8ab7-40d1-880b-74b08dda7eb9",
-              "parentUUID": "dbfa35e5-90c8-4c2a-b7e0-48f2b1bb1483",
+              "uuid": "1eb6784d-23eb-45aa-9729-6ab4e3b32f61",
+              "parentUUID": "f68bf8c4-037c-40af-b2d6-999bb6490155",
               "isHook": false,
               "skipped": true
             }
@@ -375,19 +375,19 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "18caa5d3-0149-4bef-95c2-65228eacdb7b"
+            "c79d5b66-884b-497d-902c-7fbd8c175015"
           ],
           "pending": [],
           "skipped": [
-            "01a421df-8ab7-40d1-880b-74b08dda7eb9"
+            "1eb6784d-23eb-45aa-9729-6ab4e3b32f61"
           ],
-          "duration": 166,
+          "duration": 278,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "9dbcc1d7-4d72-4687-b2e4-cc37970ea06a",
+          "uuid": "1c2d347f-8976-4e19-b87d-6c40e4f68539",
           "title": "8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo",
           "fullFile": "",
           "file": "",
@@ -398,7 +398,7 @@
               "title": "Será verificado que, quando um elemento da lista é selecionado, o elemento selecionado previamente deixa de sê-lo. Isso é verificado através da presença ou não do estilo `background-color: rgb(128, 128, 128)` no elemento",
               "fullTitle": "8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo Será verificado que, quando um elemento da lista é selecionado, o elemento selecionado previamente deixa de sê-lo. Isso é verificado através da presença ou não do estilo `background-color: rgb(128, 128, 128)` no elemento",
               "timedOut": null,
-              "duration": 230,
+              "duration": 273,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -407,12 +407,12 @@
               "context": null,
               "code": "var todos = [{\n  content: 'uma tarefa qualquer'\n}, {\n  content: 'uma outra tarefa atoa'\n}];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.css', 'background-color', 'rgb(128, 128, 128)');\ncy.get(TODO_LIST_LINE_SELECTOR).first().click().then(function ($li) {\n  expect($li).to.have.css('background-color', 'rgb(128, 128, 128)');\n});\ncy.get(TODO_LIST_LINE_SELECTOR).last().click().then(function ($li) {\n  expect($li).to.have.css('background-color', 'rgb(128, 128, 128)');\n});\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.css', 'background-color', 'rgb(128, 128, 128)');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '8 - Não deve ser possível s...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '8 - Não deve ser possível s...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '8 - Não deve ser possível s...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '8 - Não deve ser possível s...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "bc38d5ae-567b-4b4b-8083-a45a6bd77e33",
-              "parentUUID": "9dbcc1d7-4d72-4687-b2e4-cc37970ea06a",
+              "uuid": "ba02a850-53ba-4072-b16b-462d2d7931cf",
+              "parentUUID": "1c2d347f-8976-4e19-b87d-6c40e4f68539",
               "isHook": false,
               "skipped": false
             }
@@ -420,17 +420,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "bc38d5ae-567b-4b4b-8083-a45a6bd77e33"
+            "ba02a850-53ba-4072-b16b-462d2d7931cf"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 230,
+          "duration": 273,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "d8bb653b-8f49-42ca-8ad9-947be5c4e7a0",
+          "uuid": "e5fbf982-e22e-40ce-be95-dd4b14ae9da8",
           "title": "9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item",
           "fullFile": "",
           "file": "",
@@ -441,7 +441,7 @@
               "title": "Será verificado que, antes da ação ser disparada, o elemento adicionado à lista não tem nem a classe `completed` nem o estilo `line-through solid rgb(0, 0, 0)`",
               "fullTitle": "9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item Será verificado que, antes da ação ser disparada, o elemento adicionado à lista não tem nem a classe `completed` nem o estilo `line-through solid rgb(0, 0, 0)`",
               "timedOut": null,
-              "duration": 173,
+              "duration": 238,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -450,12 +450,12 @@
               "context": null,
               "code": "var todos = [{\n  content: 'já terminei essa tarefa'\n}, {\n  content: 'está eu ainda não terminei'\n}];\naddTodos(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.class', 'completed');\ncy.get(TODO_LIST_LINE_SELECTOR).should('not.have.css', 'text-decoration', 'line-through solid rgb(0, 0, 0)');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '9 - Clicar duas vezes em um...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '9 - Clicar duas vezes em um...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '9 - Clicar duas vezes em um...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '9 - Clicar duas vezes em um...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "475c566d-5101-4867-84dd-671c379087d7",
-              "parentUUID": "d8bb653b-8f49-42ca-8ad9-947be5c4e7a0",
+              "uuid": "ed535a9c-1985-4ee3-98ae-16fac2bc45c0",
+              "parentUUID": "e5fbf982-e22e-40ce-be95-dd4b14ae9da8",
               "isHook": false,
               "skipped": false
             },
@@ -472,8 +472,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'já terminei essa tarefa'\n}, {\n  content: 'está eu ainda não terminei'\n}];\naddTodos(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().dblclick();\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('have.class', 'completed');\ncy.get('.completed').should('have.css', 'text-decoration', 'line-through solid rgb(0, 0, 0)');",
               "err": {},
-              "uuid": "9d620465-b57e-4b9e-9b26-5b1d47ed84a0",
-              "parentUUID": "d8bb653b-8f49-42ca-8ad9-947be5c4e7a0",
+              "uuid": "fa8320c1-1717-4162-9d3a-de630cf54743",
+              "parentUUID": "e5fbf982-e22e-40ce-be95-dd4b14ae9da8",
               "isHook": false,
               "skipped": true
             },
@@ -490,8 +490,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'já terminei essa tarefa'\n}, {\n  content: 'está eu ainda não terminei'\n}];\naddTodos(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().dblclick().dblclick();\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.class', 'completed');\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.css', 'text-decoration', 'line-through solid rgb(0, 0, 0)');",
               "err": {},
-              "uuid": "c7ed9237-bef8-467e-b6b3-a2baab164889",
-              "parentUUID": "d8bb653b-8f49-42ca-8ad9-947be5c4e7a0",
+              "uuid": "61629f5a-8241-4ad0-9bcd-c2fea96534e6",
+              "parentUUID": "e5fbf982-e22e-40ce-be95-dd4b14ae9da8",
               "isHook": false,
               "skipped": true
             }
@@ -499,20 +499,20 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "475c566d-5101-4867-84dd-671c379087d7"
+            "ed535a9c-1985-4ee3-98ae-16fac2bc45c0"
           ],
           "pending": [],
           "skipped": [
-            "9d620465-b57e-4b9e-9b26-5b1d47ed84a0",
-            "c7ed9237-bef8-467e-b6b3-a2baab164889"
+            "fa8320c1-1717-4162-9d3a-de630cf54743",
+            "61629f5a-8241-4ad0-9bcd-c2fea96534e6"
           ],
-          "duration": 173,
+          "duration": 238,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "2bfc9bfc-859a-4815-be9f-a8ce7e92a6bd",
+          "uuid": "78b5bfca-6581-40ed-a6fd-a358631404e2",
           "title": "10 - Adicione um botão com id=\"apaga-tudo\" que quando clicado deve apagar todos os itens da lista",
           "fullFile": "",
           "file": "",
@@ -523,7 +523,7 @@
               "title": "Será verificado que existe um elemento `button` com o id `apaga-tudo`",
               "fullTitle": "10 - Adicione um botão com id=\"apaga-tudo\" que quando clicado deve apagar todos os itens da lista Será verificado que existe um elemento `button` com o id `apaga-tudo`",
               "timedOut": null,
-              "duration": 200,
+              "duration": 265,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -532,12 +532,12 @@
               "context": null,
               "code": "cy.get(TODO_REMOVE_ALL_BUTTON_SELECTOR).should('exist');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '10 - Adicione um botão com ...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '10 - Adicione um botão com ...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '10 - Adicione um botão com ...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '10 - Adicione um botão com ...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "921d9476-dced-4b91-8917-0d75862c6693",
-              "parentUUID": "2bfc9bfc-859a-4815-be9f-a8ce7e92a6bd",
+              "uuid": "e174f4dc-215c-4825-a03c-f7363c383b76",
+              "parentUUID": "78b5bfca-6581-40ed-a6fd-a358631404e2",
               "isHook": false,
               "skipped": false
             },
@@ -554,8 +554,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'blablabla'\n}, {\n  content: 'hahahahaha'\n}];\naddTodos(todos);\ncy.get(TODO_REMOVE_ALL_BUTTON_SELECTOR).click();\ncheckTodoList();",
               "err": {},
-              "uuid": "5b3407d2-3fae-4250-b8bb-09bc9cb1a17a",
-              "parentUUID": "2bfc9bfc-859a-4815-be9f-a8ce7e92a6bd",
+              "uuid": "9a26da2b-7eb4-4b84-adc7-d57a35b02c6f",
+              "parentUUID": "78b5bfca-6581-40ed-a6fd-a358631404e2",
               "isHook": false,
               "skipped": true
             }
@@ -563,19 +563,19 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "921d9476-dced-4b91-8917-0d75862c6693"
+            "e174f4dc-215c-4825-a03c-f7363c383b76"
           ],
           "pending": [],
           "skipped": [
-            "5b3407d2-3fae-4250-b8bb-09bc9cb1a17a"
+            "9a26da2b-7eb4-4b84-adc7-d57a35b02c6f"
           ],
-          "duration": 200,
+          "duration": 265,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "b4c6da67-e837-4b9d-b3f4-248f8fad814d",
+          "uuid": "f732a869-51f7-4d51-a452-df1b1d466448",
           "title": "11 - Adicione um botão com id=\"remover-finalizados\" que quando clicado remove **somente** os elementos finalizados da sua lista",
           "fullFile": "",
           "file": "",
@@ -586,7 +586,7 @@
               "title": "Será verificado que existe um elemento `button` com o id `remover-finalizados`",
               "fullTitle": "11 - Adicione um botão com id=\"remover-finalizados\" que quando clicado remove **somente** os elementos finalizados da sua lista Será verificado que existe um elemento `button` com o id `remover-finalizados`",
               "timedOut": null,
-              "duration": 170,
+              "duration": 227,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -595,12 +595,12 @@
               "context": null,
               "code": "cy.get(TODO_REMOVE_DONE_BUTTON_SELECTOR).should('exist');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '11 - Adicione um botão com ...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '11 - Adicione um botão com ...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '11 - Adicione um botão com ...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '11 - Adicione um botão com ...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "6cf7783f-4d58-45cd-9571-674a19101c4c",
-              "parentUUID": "b4c6da67-e837-4b9d-b3f4-248f8fad814d",
+              "uuid": "6123e85c-c3d9-4fe1-87d0-a6610db5625e",
+              "parentUUID": "f732a869-51f7-4d51-a452-df1b1d466448",
               "isHook": false,
               "skipped": false
             },
@@ -617,8 +617,8 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'vou terminar essa tarefa logo'\n};\nvar todo2 = {\n  content: 'essa tarefa eu vou demorar para finalizar'\n};\nvar todo3 = {\n  content: 'essa tarefa tbm vai demorar...'\n};\nvar todos = [todo1, todo2, todo3];\naddTodos(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(2)\")).dblclick();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(3)\")).dblclick();\ncy.get(TODO_REMOVE_DONE_BUTTON_SELECTOR).click();\ncheckTodoList([todo1]);",
               "err": {},
-              "uuid": "493dc662-7c98-42da-a7df-b80309e9ef9e",
-              "parentUUID": "b4c6da67-e837-4b9d-b3f4-248f8fad814d",
+              "uuid": "e85ca46f-b151-475e-8e10-d94b0ba0dcea",
+              "parentUUID": "f732a869-51f7-4d51-a452-df1b1d466448",
               "isHook": false,
               "skipped": true
             }
@@ -626,19 +626,19 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "6cf7783f-4d58-45cd-9571-674a19101c4c"
+            "6123e85c-c3d9-4fe1-87d0-a6610db5625e"
           ],
           "pending": [],
           "skipped": [
-            "493dc662-7c98-42da-a7df-b80309e9ef9e"
+            "e85ca46f-b151-475e-8e10-d94b0ba0dcea"
           ],
-          "duration": 170,
+          "duration": 227,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "a3ed30ba-ba99-408b-9791-d6d7eff9788c",
+          "uuid": "1f04338f-6279-4f45-b580-54b3439b5c23",
           "title": "12 - Adicione um botão com id=\"salvar-tarefas\" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava",
           "fullFile": "",
           "file": "",
@@ -649,7 +649,7 @@
               "title": "Será verificado que existe um elemento `button` com o id `salvar-tarefas`",
               "fullTitle": "12 - Adicione um botão com id=\"salvar-tarefas\" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava Será verificado que existe um elemento `button` com o id `salvar-tarefas`",
               "timedOut": null,
-              "duration": 224,
+              "duration": 228,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -658,12 +658,12 @@
               "context": null,
               "code": "cy.get(TODO_SAVE_LIST_BUTTON_SELECTOR).should('exist');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '12 - Adicione um botão com ...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '12 - Adicione um botão com ...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '12 - Adicione um botão com ...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '12 - Adicione um botão com ...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "259fb5f3-5291-4465-8f4e-6b68e7f6c59f",
-              "parentUUID": "a3ed30ba-ba99-408b-9791-d6d7eff9788c",
+              "uuid": "af3b8f10-e3e0-494a-9db8-88f646b67d56",
+              "parentUUID": "1f04338f-6279-4f45-b580-54b3439b5c23",
               "isHook": false,
               "skipped": false
             },
@@ -680,8 +680,8 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'primeira tarefa a ser salva'\n};\nvar todo2 = {\n  content: 'esta tarefa será salva também'\n};\nvar todo3 = {\n  content: 'mais uma para salvar'\n};\nvar todos = [todo1, todo2, todo3];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().dblclick();\ncy.get(TODO_SAVE_LIST_BUTTON_SELECTOR).click();\ncy.reload();\nvar newTodosState = [(0, _objectSpread2[\"default\"])({}, todo1, {\n  done: true\n}), todo2, todo3];\ncheckTodoList(newTodosState);",
               "err": {},
-              "uuid": "375be4bf-b7d7-4ae8-ac77-8fa4a13eefb8",
-              "parentUUID": "a3ed30ba-ba99-408b-9791-d6d7eff9788c",
+              "uuid": "79d16e48-d392-48cd-8b37-864fe4162385",
+              "parentUUID": "1f04338f-6279-4f45-b580-54b3439b5c23",
               "isHook": false,
               "skipped": true
             }
@@ -689,19 +689,19 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "259fb5f3-5291-4465-8f4e-6b68e7f6c59f"
+            "af3b8f10-e3e0-494a-9db8-88f646b67d56"
           ],
           "pending": [],
           "skipped": [
-            "375be4bf-b7d7-4ae8-ac77-8fa4a13eefb8"
+            "79d16e48-d392-48cd-8b37-864fe4162385"
           ],
-          "duration": 224,
+          "duration": 228,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "0a1657cb-cae4-40f7-9cb0-3356f061c085",
+          "uuid": "d26798f5-3f11-4fcd-b5b1-f84bbc35544d",
           "title": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas",
           "fullFile": "",
           "file": "",
@@ -712,7 +712,7 @@
               "title": "Será verificada a existência de dois elementos `button`, um com o id `mover-cima` e o outro com o id `mover-baixo`",
               "fullTitle": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas Será verificada a existência de dois elementos `button`, um com o id `mover-cima` e o outro com o id `mover-baixo`",
               "timedOut": null,
-              "duration": 191,
+              "duration": 270,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -721,12 +721,12 @@
               "context": null,
               "code": "cy.get(TODO_MOVE_UP_BUTTON_SELECTOR).should('exist');\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).should('exist');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '13 - Adicione dois botões, ...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '13 - Adicione dois botões, ...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '13 - Adicione dois botões, ...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '13 - Adicione dois botões, ...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "dbf037ff-b9f4-4c13-a076-b98e60e9a3df",
-              "parentUUID": "0a1657cb-cae4-40f7-9cb0-3356f061c085",
+              "uuid": "127ff829-c058-4e2c-b888-a2da9b615ea6",
+              "parentUUID": "d26798f5-3f11-4fcd-b5b1-f84bbc35544d",
               "isHook": false,
               "skipped": false
             },
@@ -743,8 +743,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'primeira tarefa'\n}, {\n  content: 'segunda tarefa'\n}, {\n  content: 'terceira tarefa'\n}, {\n  content: 'quarta tarefa'\n}];\nvar newTodosState = [todos[3], todos[2], todos[1], todos[0]];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(2)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(4)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(3)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(1)\")).click();\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(4)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(3)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(newTodosState);",
               "err": {},
-              "uuid": "ad4cb0cb-36ed-43e0-9e81-fba5cfe9d0f4",
-              "parentUUID": "0a1657cb-cae4-40f7-9cb0-3356f061c085",
+              "uuid": "b691c655-ed20-41b8-809a-ae37ec6b51f3",
+              "parentUUID": "d26798f5-3f11-4fcd-b5b1-f84bbc35544d",
               "isHook": false,
               "skipped": true
             },
@@ -761,8 +761,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'primeira tarefa',\n  done: true\n}, {\n  content: 'segunda tarefa'\n}];\naddTodos(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(1)\")).click().dblclick();\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(todos);",
               "err": {},
-              "uuid": "30d958f2-4c85-4fd8-9d5b-6649c682b92f",
-              "parentUUID": "0a1657cb-cae4-40f7-9cb0-3356f061c085",
+              "uuid": "42a0f252-64fb-4563-9d5a-009223c55422",
+              "parentUUID": "d26798f5-3f11-4fcd-b5b1-f84bbc35544d",
               "isHook": false,
               "skipped": true
             },
@@ -779,8 +779,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'primeira tarefa'\n}, {\n  content: 'segunda tarefa'\n}, {\n  content: 'terceira tarefa'\n}, {\n  content: 'quarta tarefa'\n}];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(todos);",
               "err": {},
-              "uuid": "8baec225-18a4-484d-bf33-18f96d1725c5",
-              "parentUUID": "0a1657cb-cae4-40f7-9cb0-3356f061c085",
+              "uuid": "4da2f086-39d9-491d-9620-babcddda3279",
+              "parentUUID": "d26798f5-3f11-4fcd-b5b1-f84bbc35544d",
               "isHook": false,
               "skipped": true
             },
@@ -797,8 +797,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'primeira tarefa'\n}, {\n  content: 'segunda tarefa'\n}];\naddTodos(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(1)\")).click();\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\nvar newTodos = [{\n  content: 'segunda tarefa'\n}, {\n  content: 'primeira tarefa'\n}];\ncheckTodoList(newTodos);\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(todos);",
               "err": {},
-              "uuid": "ff3f4c3e-5e00-411f-b2c5-4302e997314c",
-              "parentUUID": "0a1657cb-cae4-40f7-9cb0-3356f061c085",
+              "uuid": "faace6ec-f5a3-474a-ad43-3034952ae057",
+              "parentUUID": "d26798f5-3f11-4fcd-b5b1-f84bbc35544d",
               "isHook": false,
               "skipped": true
             },
@@ -815,8 +815,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'primeira tarefa'\n}, {\n  content: 'segunda tarefa'\n}];\naddTodos(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(1)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(2)\")).click();\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\ncheckTodoList(todos);",
               "err": {},
-              "uuid": "1ec986c3-a589-4170-b3b8-b0faf3888c91",
-              "parentUUID": "0a1657cb-cae4-40f7-9cb0-3356f061c085",
+              "uuid": "1e23cab9-2327-41d0-8a1f-86b7761c20bb",
+              "parentUUID": "d26798f5-3f11-4fcd-b5b1-f84bbc35544d",
               "isHook": false,
               "skipped": true
             }
@@ -824,23 +824,23 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "dbf037ff-b9f4-4c13-a076-b98e60e9a3df"
+            "127ff829-c058-4e2c-b888-a2da9b615ea6"
           ],
           "pending": [],
           "skipped": [
-            "ad4cb0cb-36ed-43e0-9e81-fba5cfe9d0f4",
-            "30d958f2-4c85-4fd8-9d5b-6649c682b92f",
-            "8baec225-18a4-484d-bf33-18f96d1725c5",
-            "ff3f4c3e-5e00-411f-b2c5-4302e997314c",
-            "1ec986c3-a589-4170-b3b8-b0faf3888c91"
+            "b691c655-ed20-41b8-809a-ae37ec6b51f3",
+            "42a0f252-64fb-4563-9d5a-009223c55422",
+            "4da2f086-39d9-491d-9620-babcddda3279",
+            "faace6ec-f5a3-474a-ad43-3034952ae057",
+            "1e23cab9-2327-41d0-8a1f-86b7761c20bb"
           ],
-          "duration": 191,
+          "duration": 270,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "c8a6fecf-53c1-4cbc-a3c6-bc647679ae15",
+          "uuid": "8c14bcf8-9f29-4ae5-85ad-abe188cdc2c0",
           "title": "14 - Adicione um botão com id=\"remover-selecionado\" que, quando clicado, remove o item selecionado",
           "fullFile": "",
           "file": "",
@@ -851,7 +851,7 @@
               "title": "Será verificada a presença de um elemento `button` com um id `remover-selecionado`",
               "fullTitle": "14 - Adicione um botão com id=\"remover-selecionado\" que, quando clicado, remove o item selecionado Será verificada a presença de um elemento `button` com um id `remover-selecionado`",
               "timedOut": null,
-              "duration": 261,
+              "duration": 219,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -860,12 +860,12 @@
               "context": null,
               "code": "cy.get(TODO_REMOVE_SELECTED_BUTTON_SELECTOR).should('exist');",
               "err": {
-                "message": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '14 - Adicione um botão com ...'",
-                "estack": "CypressError: cy.visit() failed trying to load:\n\n./index.html\n\nWe failed looking for this file at the path:\n\n/home/gabriel/projetos-trybe/sd-015-a-project-todo-list/index.html\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '14 - Adicione um botão com ...'\n    at cypressErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:37565/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:37565/__cypress/runner/cypress_runner.js:149915:3)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138814:34\n    at visitFailedByErr (http://localhost:37565/__cypress/runner/cypress_runner.js:138327:12)\n    at http://localhost:37565/__cypress/runner/cypress_runner.js:138795:22\n    at tryCatcher (http://localhost:37565/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:37565/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:37565/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:37565/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:37565/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:37565/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:37565/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '14 - Adicione um botão com ...'",
+                "estack": "Uncaught ReferenceError: addInputButton is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '14 - Adicione um botão com ...'\n    at createItem (http://localhost:43777/script.js:8:5)\n    at http://localhost:43777/script.js:23:1",
                 "diff": null
               },
-              "uuid": "688f5924-edab-45e9-bbba-f3f28e1edfa0",
-              "parentUUID": "c8a6fecf-53c1-4cbc-a3c6-bc647679ae15",
+              "uuid": "dba66423-ab9e-4b91-bc63-1adfb01d0cfc",
+              "parentUUID": "8c14bcf8-9f29-4ae5-85ad-abe188cdc2c0",
               "isHook": false,
               "skipped": false
             },
@@ -882,8 +882,8 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'não posso remover essa tarefa'\n};\nvar todo2 = {\n  content: 'essa tarefa aqui eu posso remover'\n};\nvar todos = [todo1, todo2];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).last().click();\ncy.get(TODO_REMOVE_SELECTED_BUTTON_SELECTOR).click();\ncheckTodoList([todo1]);",
               "err": {},
-              "uuid": "692d02e0-3ac8-4e36-b550-f498ed3afacd",
-              "parentUUID": "c8a6fecf-53c1-4cbc-a3c6-bc647679ae15",
+              "uuid": "28d55876-41c8-47b1-a98c-553255bdb34b",
+              "parentUUID": "8c14bcf8-9f29-4ae5-85ad-abe188cdc2c0",
               "isHook": false,
               "skipped": true
             }
@@ -891,13 +891,13 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "688f5924-edab-45e9-bbba-f3f28e1edfa0"
+            "dba66423-ab9e-4b91-bc63-1adfb01d0cfc"
           ],
           "pending": [],
           "skipped": [
-            "692d02e0-3ac8-4e36-b550-f498ed3afacd"
+            "28d55876-41c8-47b1-a98c-553255bdb34b"
           ],
-          "duration": 261,
+          "duration": 219,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
