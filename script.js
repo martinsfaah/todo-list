@@ -51,3 +51,10 @@ function apagaFinalizados () {
         listaTarefas.removeChild(finalizados[index]);
     }
 }
+const buttonRemoveSelecionado= document.getElementById('remover-selecionado');
+buttonRemoveSelecionado.addEventListener('click', apagaSelecionado);
+function apagaSelecionado () {
+    let selecionado = document.querySelector('.selected');
+    let listaTarefas = document.getElementById('lista-tarefas');
+    listaTarefas.removeChild(selecionado);
+}
