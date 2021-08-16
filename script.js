@@ -61,11 +61,26 @@ function cleanCompletedItens() {
   }
 }
 
-const addButton = document.getElementById('criar-tarefa');
-addButton.addEventListener('click', addTask);
+function saveTasks() {
+  const listContent = list.innerHTML;
+  localStorage.setItem('listContent', listContent);
+}
 
-const cleanButton = document.getElementById('apaga-tudo');
-cleanButton.addEventListener('click', cleanList);
+function pageInit() {
+  list.innerHTML = localStorage.getItem('listContent');
+  const addButton = document.getElementById('criar-tarefa');
+  addButton.addEventListener('click', addTask);
 
-const completedCleanButton = document.getElementById('remover-finalizados');
-completedCleanButton.addEventListener('click', cleanCompletedItens);
+  const cleanButton = document.getElementById('apaga-tudo');
+  cleanButton.addEventListener('click', cleanList);
+
+  const completedCleanButton = document.getElementById('remover-finalizados');
+  completedCleanButton.addEventListener('click', cleanCompletedItens);
+
+  const saveListButton = document.getElementById('salvar-tarefas');
+  saveListButton.addEventListener('click', saveTasks);
+
+  addListItemListener();
+}
+
+pageInit();
