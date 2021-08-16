@@ -92,6 +92,44 @@ function loadTasks() {
     }
   }
 }
+function moveHelper(task) {
+  if (task !== null) return true;
+}
+
+function moveUp() {
+  const upBtn = document.getElementById('mover-cima');
+
+  upBtn.addEventListener('click', () => {
+    const taskSelected = document.querySelector('.selected');
+    if (moveHelper(taskSelected) && taskSelected.previousElementSibling) {
+      taskSelected.parentNode.insertBefore(taskSelected, taskSelected.previousElementSibling);
+      // taskSelected.classList.remove('selected');
+    }
+  });
+}
+
+function moveDown() {
+  const downBtn = document.getElementById('mover-baixo');
+
+  downBtn.addEventListener('click', () => {
+    const taskSelected = document.querySelector('.selected');
+
+    if (moveHelper(taskSelected) && taskSelected.nextElementSibling) {
+      taskSelected.parentNode.insertBefore(taskSelected.nextElementSibling, taskSelected);
+      // taskSelected.classList.remove('selected');
+    }
+  });
+}
+
+function removeSelected() {
+  const removeSelectedBtn = document.getElementById('remover-selecionado');
+
+  removeSelectedBtn.addEventListener('click', () => {
+    const taskSelected = document.querySelector('.selected');
+
+    taskSelected.remove();
+  });
+}
 
 createTask();
 selectTask();
@@ -100,3 +138,6 @@ clearAll();
 clearCompleted();
 saveTasks();
 loadTasks();
+moveUp();
+moveDown();
+removeSelected();
