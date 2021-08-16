@@ -11,3 +11,19 @@ function createTask() {
 }
 
 createTaskButton.addEventListener('click', createTask);
+
+// Changes task background-color
+function removeBackgroundColor() {
+  if (document.querySelector('li[style]') !== null) {
+    document.querySelector('li[style]').removeAttribute('style');
+  }
+}
+
+function taskBackgroundColor(event) {
+  removeBackgroundColor();
+  const clickedTask = event.target;
+  clickedTask.style.backgroundColor = 'rgb(128, 128, 128)';
+  clickedTask.style.color = 'rgb(44, 182, 125)';
+}
+
+list.addEventListener('click', taskBackgroundColor);
