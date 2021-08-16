@@ -17,3 +17,18 @@ function listTasks() {
   buttonNewTask.addEventListener('click', receiveTask);
 }
 listTasks();
+
+const task = document.getElementById('lista-tarefas');
+
+function clearColor() {
+  const tasks = task.children;
+  for (let i = 0; i < tasks.length; i += 1) {
+    tasks[i].style.backgroundColor = 'white';
+  }
+}
+
+task.addEventListener('click', (task2) => {
+  clearColor();
+  const selectedTask = task2;
+  selectedTask.target.style.backgroundColor = 'rgb(128,128,128)';
+});
