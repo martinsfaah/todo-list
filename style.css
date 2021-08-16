@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(76 ,175 ,80);
+  background-color: rgb(76 , 175 , 80);
   font-family: sans-serif;
 }
 
@@ -21,21 +21,21 @@ button {
 }
 
 #remover-selecionado , #apaga-tudo {
-  background-color: rgb(244 ,67 ,54);
+  background-color: rgb(244 , 67 , 54);
   color: white;
 }
 
 #mover-cima , #mover-baixo {
-  background-color: rgb(231 ,231 ,231);
+  background-color: rgb(231 , 231 , 231);
   color: black;
 }
 
 #criar-tarefa , #remover-finalizados {
-  background-color: rgb(0 ,140 ,186);
+  background-color: rgb(0 , 140 , 186);
   color: white;
 }
 
 #salvar-tarefas {
-  background-color: rgb(76 ,175 ,80);
+  background-color: rgb(76 , 175 , 80);
   color: white;
 }
