@@ -40,3 +40,14 @@ function createTask() {
   });
 }
 createTask();
+
+function deleteButton() {
+  const button = document.getElementById('apaga-tudo');
+  button.addEventListener('click', () => {
+    const taskList = document.getElementById('lista-tarefas');
+    console.log('ok');
+    taskList.innerHTML = '';
+  });
+}
+
+deleteButton();
