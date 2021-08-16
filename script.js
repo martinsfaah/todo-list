@@ -9,3 +9,8 @@ let input = document.createElement('input');
 input.type = 'text';
 input.id = 'texto-tarefa';
 document.body.appendChild(input);
+
+//ol
+let ol = document.createElement('ol');
+ol.id = 'lista-tarefas'
+document.body.appendChild(ol);
