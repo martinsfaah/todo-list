@@ -25,3 +25,14 @@ function selecTarefa(evento){
 }
 
 listaTarefas.addEventListener('click', selecTarefa);
+
+function riscarTarefa(evento){
+  const aux = evento;
+  if (aux.target.className === 'completed'){
+    aux.target.className = 'notCompleted';
+  } else {
+    aux.target.className = 'completed';
+  }
+}
+
+listaTarefas.addEventListener('dblclick', riscarTarefa);
