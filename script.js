@@ -29,12 +29,12 @@ function addList() {
   } else {
     let li = document.createElement('li');
     li.innerText = getTarefasValue;
-    li.addEventListener('ondblclick', function(event) {
+    li.addEventListener('click', function(event) {
     event.target.style.backgroundColor = "rgb(128,128,128)"
     ;
   })
-  document.querySelector('ol').appendChild(li);
-  getTarefasValue = ""
+  document.querySelector('ol').appendChild(li);  
   }
+  document.getElementById('texto-tarefa').value = ''
 }
 getButton.addEventListener('click', addList)
