@@ -1,6 +1,7 @@
 const textInput = document.querySelector('#texto-tarefa');
 const buttonCreateTask = document.querySelector('#criar-tarefa');
 const listTask = document.querySelector('#lista-tarefas');
+const clearAll = document.querySelector('#apaga-tudo');
 
 function createTask() {
   const newTask = document.createElement('li');
@@ -22,3 +23,27 @@ function changeColorTask(event) {
 }
 
 listTask.addEventListener('click', changeColorTask);
+
+function riskTaskCompleted(event) {
+  const task = event.target;
+  const taskClasses = task.classList;
+  console.log(task.classList[1]);
+
+  if (taskClasses[1] === 'completed') {
+    taskClasses.remove('completed');
+  } else {
+    taskClasses.add('completed');
+  }
+}
+
+listTask.addEventListener('dblclick', riskTaskCompleted);
+
+function clearAllTask() {
+  const tasks = document.querySelectorAll('.task');
+
+  for (let i = 0; i < tasks.length; i += 1) {
+    tasks[i].parentElement.removeChild(tasks[i]);
+  }
+}
+
+clearAll.addEventListener('click', clearAllTask);
