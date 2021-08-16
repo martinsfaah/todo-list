@@ -1,0 +1,9 @@
+.listItem-Selected {
+    background-color:rgb(128, 128, 128);
+    cursor: pointer;
+
+}
+
+.listItem:hover {
+    cursor: pointer;
+}
