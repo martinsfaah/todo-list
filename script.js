@@ -39,17 +39,34 @@ function completedItens() {
   });
 }
 
-let eraseButton = document.querySelector('#apaga-tudo');
-eraseButton.addEventListener('click', function eraseList() {
-
+function eraseList() {
+  let eraseButton = document.querySelector('#apaga-tudo');
+  eraseButton.addEventListener('click', function () {
     let eachItem = document.querySelectorAll('.item-List');
 
-    for (let idx2 = 0; idx2 < eachItem.length; idx2 +=1){
+    for (let idx2 = 0; idx2 < eachItem.length; idx2 += 1) {
       eachItem[idx2].remove();
     }
+  });
+}
 
-});
+eraseList();
 
+function eraseCompleted() {
+  let eraseCompleted = document.querySelector('#remover-finalizados');
+  eraseCompleted.addEventListener('click', function erasing() {
+    let completedItem = document.querySelectorAll('.completed');
+
+    console.log(completedItem);
+    for (let idx3 = 0; idx3 < completedItem.length; idx3 += 1) {
+      completedItem[idx3].remove();
+      // if (completedItem[idx3].classList.includes('completed')) {
+      // }
+    }
+  });
+}
+
+eraseCompleted();
 
 // Remover item por item
 // let eraseButton = document.querySelector('#apaga-tudo');
@@ -57,8 +74,6 @@ eraseButton.addEventListener('click', function eraseList() {
 //   let eachItem = document.querySelector('.item-List');
 //   eachItem.remove();
 // });
-
-
 
 createOl();
 createList();
