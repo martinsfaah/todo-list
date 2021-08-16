@@ -63,6 +63,15 @@ const clearList = () => {
   itemList.remove();
   createNewElement('ol', '', sectionListContent, 1, 'id', 'lista-tarefas');
 };
+const clearCompleted = (location) => {
+  location.addEventListener('click', () => {
+    const completedItens = document.getElementsByClassName('completed');
+    const list = document.querySelector('ol');
+    for (let index = completedItens.length - 1; index >= 0; index -= 1) {
+      list.removeChild(completedItens[index]);
+    }
+  });
+};
 // #REQ 1
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
 
@@ -91,3 +100,9 @@ underScoreItem(taskList);
 createNewElement('button', 'Limpar Lista', sectionItemControl, 1, 'id', 'apaga-tudo');
 const buttonClearList = document.getElementById('apaga-tudo');
 newEvent(buttonClearList, 'click', clearList);
+
+// #REQ 11
+createNewElement('button', 'Limpar Finalizados', sectionItemControl, 1, 'id', 'remover-finalizados');
+const buttonClearCompleted = document.getElementById('remover-finalizados');
+// newEvent(buttonClearCompleted, 'click', clearCompleted);
+clearCompleted(buttonClearCompleted);
