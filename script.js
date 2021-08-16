@@ -118,3 +118,15 @@ function moveDown() {
 
 moveUp();
 moveDown();
+
+function deleteSelected() {
+  const button = document.getElementById('remover-selecionado');
+  button.addEventListener('click', () => {
+    const task = document.querySelector('.selected');
+    if (task !== null) {
+      taskList.removeChild(task);
+    }
+  });
+}
+
+deleteSelected();
