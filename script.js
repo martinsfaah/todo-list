@@ -3,6 +3,14 @@ const inputTask = document.getElementById('texto-tarefa');
 const createTaskButton = document.getElementById('criar-tarefa');
 const deleteButton = document.getElementById('apaga-tudo');
 const completedRemoveButton = document.getElementById('remover-finalizados');
+const saveButton = document.getElementById('salvar-tarefas');
+
+// Loads saved tasks
+function loadList() {
+  list.innerHTML = localStorage.getItem('tasks');
+}
+
+window.onload = loadList;
 
 // Creates task
 function createTask() {
@@ -67,3 +75,12 @@ function deleteCompleted() {
 }
 
 completedRemoveButton.addEventListener('click', deleteCompleted);
+
+// Saving tasks to local storage
+function saveList() {
+  localStorage.setItem('tasks', list.innerHTML);
+  alert('Tarefas salvas!');
+}
+
+saveButton.addEventListener('click', saveList);
+
