@@ -27,3 +27,18 @@ function criarTarefa() {
 
 const botao = document.querySelector('#criar-tarefa');
 botao.addEventListener('click', criarTarefa);
+
+/* function limpaTarefas() {
+  // ref: http://devfuria.com.br/javascript/dom-remove-child/
+  const lista = document.getElementsByTagName('ol');
+  const itens = document.getElementsByTagName('li');
+  lista.removeChild(itens[0]);
+} */
+
+function limpaTarefas() {
+  const lista = document.getElementById('lista-tarefas');
+  lista.innerHTML = '';
+}
+
+const limpar = document.getElementById('apaga-tudo');
+limpar.addEventListener('click', limpaTarefas);
