@@ -17,3 +17,24 @@ function criarTag() {
   sectionLista.appendChild(criarListaOrdenada);
 }
 criarTag();
+
+function CriarBotaoAddTarefa() {
+  const sectionPrincipal = document.querySelector('#section-principal');
+  const criarBotão = document.createElement('button');
+  criarBotão.id = 'criar-tarefa';
+  criarBotão.innerText = 'adicionar';
+  sectionPrincipal.appendChild(criarBotão);
+}
+CriarBotaoAddTarefa();
+
+function pegarValorDoInput() {
+  const listaOrdenada = document.querySelector('#lista-tarefas');
+  const resgateInput = document.querySelector('#texto-tarefa');
+  let criarLista = document.createElement('li');
+  criarLista.innerText = resgateInput.value;
+  listaOrdenada.appendChild(criarLista);
+  resgateInput.value = '';
+}
+
+let restateBotãoAdd = document.querySelector('#criar-tarefa');
+restateBotãoAdd.addEventListener('click', pegarValorDoInput);
