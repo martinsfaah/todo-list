@@ -4,8 +4,17 @@ criarTarefa.addEventListener('click', adicionaItem);
 let apagaTodos= document.getElementById("apaga-tudo");
 apagaTodos.addEventListener("click", apagaTudo);
 
-let apagaSelec= document.getElementById("remover-finalizados");
-apagaSelec.addEventListener("click", apagaSelecionados);
+let apagaFinal= document.getElementById("remover-finalizados");
+apagaFinal.addEventListener("click", apagaFinalizados);
+
+let apagaSelec= document.getElementById("remover-selecionado");
+apagaSelec.addEventListener("click", apagaSelecionado);
+
+let subirElemento= document.getElementById("mover-cima");
+subirElemento.addEventListener("click", paraCima);
+
+let descerElemento= document.getElementById("mover-baixo");
+descerElemento.addEventListener("click", paraBaixo);
 
 
 
@@ -30,7 +39,7 @@ function trocaCor(evento){
 function apagaCores(alvo){
     let itensChecagem = document.querySelectorAll("li");
     for (let i=0; i<itensChecagem.length; i += 1){
-        if(itensChecagem[i].className==="selected"){
+        if(itensChecagem[i].classList.contains("selected")){
             itensChecagem[i].classList.remove("selected");
         }
     }
@@ -64,12 +73,52 @@ function apagaTudo(){
     }
 }
 
-function apagaSelecionados(){
+function apagaFinalizados(){
     let elementos= document.getElementById("lista-tarefas").children;
     console.log(elementos);
     for(let i = elementos.length-1; i>=0; i -= 1){
         if(elementos[i].classList.contains("completed")){
             elementos[i].remove();
+        }
+    }
+}
+
+function apagaSelecionado(){
+    let elementos= document.getElementById("lista-tarefas").children;
+    console.log(elementos);
+    for(let i = elementos.length-1; i>=0; i -= 1){
+        if(elementos[i].classList.contains("selected")){
+            elementos[i].remove();
+        }
+    }
+}
+
+function paraCima(){
+    let elementoSelecionado = document.getElementsByClassName("selected")[0];
+    if (elementoSelecionado!= undefined){
+    let elementoAnterior = elementoSelecionado.previousElementSibling;
+    let temporaria= undefined;
+    if (elementoAnterior != null){
+        temporaria = elementoAnterior.innerHTML;
+        elementoAnterior.innerHTML=elementoSelecionado.innerHTML;
+        elementoSelecionado.innerHTML=temporaria;
+        elementoAnterior.classList.add("selected");
+        elementoSelecionado.classList.remove("selected");
+    }
+}
+}
+
+function paraBaixo(){
+        let elementoSelecionado = document.getElementsByClassName("selected")[0];
+        if (elementoSelecionado!= undefined){
+        let elementoSeguinte = elementoSelecionado.nextElementSibling;
+        let temporaria= undefined;
+        if (elementoSeguinte != null){
+            temporaria = elementoSeguinte.innerHTML;
+            elementoSeguinte.innerHTML=elementoSelecionado.innerHTML;
+            elementoSelecionado.innerHTML=temporaria;
+            elementoSeguinte.classList.add("selected");
+            elementoSelecionado.classList.remove("selected");
         }
     }
 }
