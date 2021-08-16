@@ -77,7 +77,7 @@ function moveAcima() {
   }
 }
 
-//função para mover tarefas abaixo
+// Função para mover tarefas abaixo
 function moveAbaixo() {
   const tarefaSelecionada = document.querySelector('.selected');
   const proximaTarefa = tarefaSelecionada.nextSibling;
@@ -86,7 +86,7 @@ function moveAbaixo() {
   }
 }
 
-//função para remover tarefas
+// Função para remover tarefas
 function removeSelecionado() {
   const tarefa = document.querySelector('.selected');
   if (tarefa) tarefa.remove();
