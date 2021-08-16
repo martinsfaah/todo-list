@@ -19,7 +19,6 @@ function listTasks() {
 listTasks();
 
 const task = document.getElementById('lista-tarefas');
-const allTasks = task.children;
 function clearColor() {
   const tasks = task.children;
   for (let i = 0; i < tasks.length; i += 1) {
