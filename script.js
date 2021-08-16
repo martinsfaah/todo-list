@@ -30,11 +30,11 @@ CriarBotaoAddTarefa();
 function pegarValorDoInput() {
   const listaOrdenada = document.querySelector('#lista-tarefas');
   const resgateInput = document.querySelector('#texto-tarefa');
-  let criarLista = document.createElement('li');
+  const criarLista = document.createElement('li');
   criarLista.innerText = resgateInput.value;
   listaOrdenada.appendChild(criarLista);
   resgateInput.value = '';
 }
 
-let restateBotãoAdd = document.querySelector('#criar-tarefa');
+const restateBotãoAdd = document.querySelector('#criar-tarefa');
 restateBotãoAdd.addEventListener('click', pegarValorDoInput);
