@@ -24,3 +24,16 @@ function selectItem() {
   list.addEventListener('click', onClick);
 }
 selectItem();
+
+function completItem() {
+  function onClick(event) {
+    const evento = event.target;
+    if (evento.className === 'item completed selected' || evento.className === 'item completed') {
+      evento.classList.remove('completed');
+    } else {
+      evento.classList.add('completed');
+    }
+  }
+  list.addEventListener('dblclick', onClick);
+}
+completItem();
