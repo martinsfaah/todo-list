@@ -20,9 +20,12 @@ function selectTask() {
     const selectedItem = document.querySelector('.selected');
     if (selectedItem === null) {
       taskItem.classList.add('selected');
-    } else if (taskItem.classList.contains('selected')) {
-      taskItem.classList.remove('selected');
     } else {
+    // i think it'd be interesting to implement this feature to unslect a selected item but due to 13 requisit it's impossible;
+    // else if (taskItem.classList.contains('selected')) {
+    //   taskItem.classList.remove('selected');
+    // }
+
       selectedItem.classList.remove('selected');
       taskItem.classList.add('selected');
     }
