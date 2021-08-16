@@ -1,8 +1,8 @@
 const list = document.querySelector('#lista-tarefas');
 function inputButton () {
-  const listItem = document.createElement('li');
-  listItem.className = 'item';
   function onClik () {
+    const listItem = document.createElement('li');
+    listItem.className = 'item';
     const inputText = document.querySelector('#texto-tarefa').value;
     listItem.innerHTML = inputText;
     list.appendChild(listItem);
@@ -12,4 +12,4 @@ function inputButton () {
 }
 inputButton();
 
-function
+// function
