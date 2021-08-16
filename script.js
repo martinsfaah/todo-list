@@ -11,20 +11,29 @@ function addTask() {
     taskList.appendChild(newLi);
     const taskListLastElementChild = taskList.lastElementChild;
     taskListLastElementChild.innerHTML = inputValue;
+    taskListLastElementChild.style.width = '80%'
+    taskListLastElementChild.style.marginLeft = '10%'
+    taskListLastElementChild.style.marginRight = '10%'
     document.getElementById('texto-tarefa').value = '';
   });
 }
 
-// Criando função que adicionará a classe "selected" quando determinado <li> for  clicado:
+// Criando função que adicionará a classe "selected" quando determinado <li> for clicado.
 // Além disso, o fundo do elemento clicado mudará  de cor.
-function selectLi() {
+// Por último, o elemento perderá a classe "selected" caso a pessoa clique sobre ele novamente.
+function selectUnselectLi() {
   taskList.addEventListener('click', function (event) {
     const taskListArray = document.querySelector('#lista-tarefas').children;
-    for (const li of taskListArray) {
-      li.classList.remove('selected');
-      li.style.backgroundColor = 'blueviolet';
-      event.target.classList.add('selected');
-      event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+    if (event.target.classList.contains('selected') ===  true) {
+      event.target.classList.remove('selected');
+      event.target.style.backgroundColor = 'blueviolet';
+    } else {
+      for (const li of taskListArray) {
+        li.classList.remove('selected');
+        li.style.backgroundColor = 'blueviolet';
+        event.target.classList.add('selected');
+        event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+      }
     }
   });
 }
@@ -48,7 +57,7 @@ function excludeSelected() {
   deleteSelectedTaskBtn.addEventListener ('click', function () {
     const taskListArray = document.querySelector('#lista-tarefas').children;
 
-    for (let li of taskListArray) {
+    for (const li of taskListArray) {
       if (li.classList.contains('selected') === true) {
         taskList.removeChild(li);
       }
@@ -84,7 +93,7 @@ function deleteAllTasks() {
 
 window.onload = function () {
   addTask();
-  selectLi();
+  selectUnselectLi();
   tickUntickLi();
   excludeSelected();
   deleteAllConcludedTasks();
