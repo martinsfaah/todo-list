@@ -1,155 +1,154 @@
+//  Constante usada varias vezes
+const ol = document.getElementById('lista-tarefas');
+
 //  Carregar
 function initialState() {
-  if(localStorage !== undefined) {
-    let valores = Object.values(localStorage)
-    valores.sort()
-    const ol = document.getElementById('lista-tarefas')
-    valores.forEach(e => {
-      let arr = e.split('--')
-      let li = document.createElement('li')
-      li.innerHTML = arr[2]
-      li.className = arr[1]
-      ol.appendChild(li)
-    })
+  if (localStorage !== undefined) {
+    const valores = Object.values(localStorage);
+    valores.sort();
+    valores.forEach((e) => {
+      const arr = e.split('--');
+      const li = document.createElement('li');
+      li.innerHTML = arr[2];
+      li.className = arr[1];
+      ol.appendChild(li);
+    });
   }
 }
-initialState()
-
+initialState();
 
 //  Adicionar item a lista
 function addItem() {
-  const bot = document.getElementById('criar-tarefa')
-  const ol = document.getElementById('lista-tarefas')
+  const bot = document.getElementById('criar-tarefa');
   bot.addEventListener('click', (_) => {
-    const input = document.getElementById('texto-tarefa')
-    const li = document.createElement('li')
-    li.innerHTML = input.value
-    li.className = 'list-values'
-    ol.appendChild(li)
-    input.value = ''
-  })
+    const input = document.getElementById('texto-tarefa');
+    const li = document.createElement('li');
+    li.innerHTML = input.value;
+    li.className = 'list-values';
+    ol.appendChild(li);
+    input.value = '';
+  });
 }
-addItem()
-
+addItem();
 
 //  selecionar
 function select() {
-  const ol = document.getElementById('lista-tarefas')
   ol.addEventListener('click', (e) => {
-    const li = document.getElementsByClassName('list-values')
-    for (let item of li) {
-      if(item.className.split(' ').includes('selected')) {
-        item.className = 'list-values'
+    const li = document.getElementsByClassName('list-values');
+    for (let c = 0; c < li.length; c += 1) {
+      if (li[c].className.split(' ').includes('selected')) {
+        li[c].className = 'list-values';
       }
     }
-    if(e.target.className.split(' ').includes('completed') === false){
-      e.target.className += ' selected'
+    if (e.target.className.split(' ').includes('completed') === false) {
+      e.target.className += ' selected';
     }
-  })
+  });
 }
-select()
+select();
 
 //  marcar item
 function mark() {
-  const ol = document.getElementById('lista-tarefas')
   ol.addEventListener('dblclick', (e) => {
-    if(e.target.className.split(' ').includes('completed')){
-      e.target.className = 'list-values'
-    }else {
-      e.target.className = 'list-values completed'
+    if (e.target.className.split(' ').includes('completed')) {
+      e.target.className = 'list-values';
+    } else {
+      e.target.className = 'list-values completed';
     }
-  })
+  });
 }
-mark()
+mark();
 
 //  botão apagar tudo
 function clear() {
-  const bot = document.getElementById('apaga-tudo')
-  const ol = document.getElementById('lista-tarefas')
+  const bot = document.getElementById('apaga-tudo');
   bot.addEventListener('click', (_) => {
-    localStorage.clear()
-    ol.innerHTML = ''
-  })
+    localStorage.clear();
+    ol.innerHTML = '';
+  });
 }
-clear()
+clear();
 
 //  botão remover finalizados
 function removeFinish() {
-  const bot = document.getElementById('remover-finalizados')
-  const ol = document.getElementById('lista-tarefas')
+  const bot = document.getElementById('remover-finalizados');
   bot.addEventListener('click', (_) => {
-    let items = document.getElementsByClassName('list-values')
-    let excluir = []
-    for(let c = 0; c < items.length; c += 1) {
-      if(items[c].className.split(' ').includes('completed')) {
-        excluir.push(items[c])
+    const items = document.getElementsByClassName('list-values');
+    const excluir = [];
+    for (let c = 0; c < items.length; c += 1) {
+      if (items[c].className.split(' ').includes('completed')) {
+        excluir.push(items[c]);
       }
     }
-    excluir.forEach(e => ol.removeChild(e))
-  })
+    excluir.forEach((e) => ol.removeChild(e));
+  });
 }
-removeFinish()
+removeFinish();
 
 //  salvar
 function save() {
-  localStorage.clear()
-  const itens = document.getElementsByClassName('list-values')
-  for(let c = 0; c < itens.length; c += 1) {
-    localStorage[c] = `${c + 1}--${itens[c].className}--${itens[c].innerHTML}`
-  }
-}
-
-// mover o selecionado
-function moveTheSelected() {
-  const up = document.getElementById('mover-cima')
-  const down = document.getElementById('mover-baixo')
-  up.addEventListener('click',(_) => {
-    const ol = document.getElementById('lista-tarefas')
-    let itens = document.getElementsByClassName('list-values')
-    let arr = []
-    for(let c = 0; c < itens.length; c += 1) {
-      arr.push(itens[c])
-    }
-    if(arr.findIndex(e => e.className.split(' ').includes('selected')) === -1) {
-      return ''
-    }
-    let index = arr.findIndex(e => e.className.split(' ').includes('selected'))
-    if(arr[index - 1] !== undefined) {
-      let prev = arr[index - 1]
-      arr[index - 1] = arr[index]
-      arr[index] = prev
-    }
-    arr.forEach(e => ol.appendChild(e))
-  })
-  down.addEventListener('click',(_) => {
-    let itens = document.getElementsByClassName('list-values')
-    const ol = document.getElementById('lista-tarefas')
-    let arr = []
-    for(let c = 0; c < itens.length; c += 1) {
-      arr.push(itens[c])
-    }
-    if(arr.findIndex(e => e.className.split(' ').includes('selected')) === -1) {
-      return ''
-    }
-    let index = arr.findIndex(e => e.className.split(' ').includes('selected'))
-    if(arr[index + 1] !== undefined) {
-      let prox = arr[index + 1]
-      arr[index + 1] = arr[index]
-      arr[index] = prox
-    }
-    arr.forEach(e => ol.appendChild(e))
-    
-    
-  })
-}
-moveTheSelected()
-
-//remover selecionado
-function removeSelect() {
-  const bot = document.getElementById('remover-selecionado')
-  const ol = document.getElementById('lista-tarefas')
+  const bot = document.getElementById('salvar-tarefas');
   bot.addEventListener('click', (_) => {
-    ol.removeChild(document.querySelector('.selected'))
-  })
+    localStorage.clear();
+    const itens = document.getElementsByClassName('list-values');
+    for (let c = 0; c < itens.length; c += 1) {
+      localStorage[c] = `${c + 1}--${itens[c].className}--${itens[c].innerHTML}`;
+    }
+  });
 }
-removeSelect()
+save();
+
+// mover o selecionado para cima
+function moveUP() {
+  const up = document.getElementById('mover-cima');
+  up.addEventListener('click', (_) => {
+    const itens = document.getElementsByClassName('list-values');
+    const arr = [];
+    for (let c = 0; c < itens.length; c += 1) {
+      arr.push(itens[c]);
+    }
+    if (arr.findIndex((e) => e.className.split(' ').includes('selected')) === -1) {
+      return '';
+    }
+    const index = arr.findIndex((e) => e.className.split(' ').includes('selected'));
+    if (arr[index - 1] !== undefined) {
+      const prev = arr[index - 1];
+      arr[index - 1] = arr[index];
+      arr[index] = prev;
+    }
+    arr.forEach((e) => ol.appendChild(e));
+  });
+}
+moveUP();
+
+//  mover o selecionado para baixo
+function moveDOWN() {
+  const down = document.getElementById('mover-baixo');
+  down.addEventListener('click', (_) => {
+    const itens = document.getElementsByClassName('list-values');
+    const arr = [];
+    for (let c = 0; c < itens.length; c += 1) {
+      arr.push(itens[c]);
+    }
+    if (arr.findIndex((e) => e.className.split(' ').includes('selected')) === -1) {
+      return '';
+    }
+    const index = arr.findIndex((e) => e.className.split(' ').includes('selected'));
+    if (arr[index + 1] !== undefined) {
+      const prox = arr[index + 1];
+      arr[index + 1] = arr[index];
+      arr[index] = prox;
+    }
+    arr.forEach((e) => ol.appendChild(e));
+  });
+}
+moveDOWN();
+
+//  remover selecionado
+function removeSelect() {
+  const bot = document.getElementById('remover-selecionado');
+  bot.addEventListener('click', (_) => {
+    ol.removeChild(document.querySelector('.selected'));
+  });
+}
+removeSelect();
