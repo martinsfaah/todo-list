@@ -8,7 +8,6 @@ buttonCreateTask.addEventListener('click', createTask);
 taskList.addEventListener('click', changeColor);
 taskList.addEventListener('dblclick', completeTask);
 buttonEraseList.addEventListener('click', eraseList);
-body.addEventListener("dblclick", checkItem2);
 
 function createTask (){
     let taskValue = inputTask.value;
