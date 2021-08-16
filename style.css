@@ -1,16 +1,23 @@
 body {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
 header {
-    background-color: azure;
-    width: 600px;
-    border-radius: 5px;
-    height: 300px;
-    margin: 30px;
-    padding-left: 20px;
+  background-color: azure;
+  width: 600px;
+  border-radius: 5px;
+  height: 300px;
+  margin: 30px;
+  padding-left: 20px;
 }
 
 li {
-    width: fit-content;
+  width: fit-content;
 
+}
+
+button {
+  font-weight: bold;
+}
+.completed {
+  text-decoration: line-through solid rgb(0,0,0);
 }
