@@ -7,6 +7,7 @@ const inputButton = document.querySelector("#texto-tarefa")
   const elementList = document.createElement("li");
   elementList.innerText = inputButton.value;
   inputButton.value = "";
+  elementList.addEventListener("click", changeColorBackground)
 listOfOrder.appendChild(elementList);
 }
 createOrder.addEventListener("click", createListOrder);
@@ -17,3 +18,12 @@ createOrder.addEventListener("click", createListOrder);
    apagar o que está dentro do input após o item ir para a lista. 
 
 */
+/* ao clicar em um item da lista, o item selecionado ficará cinza. 
+o item não deve está cinza quando a página é carregada. 
+*/
+function changeColorBackground(evento) {
+  if( document.querySelector(".selected")){
+    document.querySelector(".selected").classList.remove('selected')
+  }
+    evento.target.classList.add("selected")
+}
