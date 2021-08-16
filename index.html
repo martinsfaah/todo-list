@@ -44,18 +44,42 @@
         listaDeTarefas.appendChild(li)
         li.innerHTML = tarefa
         input.value = ''
+        
+
+        function removeSelected (){
+            let aux = document.querySelectorAll('li')
+            for (let i = 0; i < aux.length; i ++) {
+                if (aux[i].className = 'selected'){
+                    aux[i].classList.remove('selected')
+                }
+            }
+        }
+
+        function removeColor (){
+            let auxColor = document.querySelectorAll('li')
+            for (let i = 0; i < auxColor.length; i ++) {
+                if (auxColor[i].style.backgroundColor !== 'white'){
+                    auxColor[i].style.backgroundColor = 'white'
+                }
+            }
+        }
+
+        
 
         li.addEventListener('click', function (){
-            let white = 'rgb(255,255,255)'
-            if (li.style.backgroundColor = white){  
-            li.style.backgroundColor = 'rgb(128, 128, 128)'
-            }
-            else  if (li.style.backgroundColor = 'rgb(128, 128, 128)'){
-            li.style.backgroundColor = white
-            }
+            removeSelected()
+            removeColor()
+            li.className = 'selected'
+            let selected = document.querySelector('.selected')
+            console.log(selected)
+            selected.style.backgroundColor = 'rgb(128, 128, 128)'
+  
+            
         })
     })
-
+    
+    
+    
     
     
     
