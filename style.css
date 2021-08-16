@@ -9,3 +9,8 @@ header {
     margin: 30px;
     padding-left: 20px;
 }
+
+li {
+    width: fit-content;
+
+}
