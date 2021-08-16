@@ -29,7 +29,11 @@ CriarBotaoAddTarefa();
 
 function mudarACorDeFundo(event) {
   const evento = event.target;
-  evento.style.backgroundColor = 'rgb(128,128,128)';
+  if(evento.classList.contains('selected')) {
+    evento.classList.remove('selected');
+  } else {
+    evento.classList.add('selected');
+  }
 }
 
 function pegarValorDoInput() {
@@ -45,4 +49,3 @@ function pegarValorDoInput() {
 
 const restateBotãoAdd = document.querySelector('#criar-tarefa');
 restateBotãoAdd.addEventListener('click', pegarValorDoInput);
-

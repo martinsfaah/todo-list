@@ -1,7 +1,11 @@
 body {
-  background-color: blueviolet;
+  background-color: white;
 }
 
 #funcionamento {
   margin: 3px 0;
+}
+
+.selected {
+  background-color: rgb(128, 128, 128);
 }
