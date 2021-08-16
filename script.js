@@ -1,5 +1,7 @@
-const button = document.querySelector('#criar-tarefa');
+const addButton = document.querySelector('#criar-tarefa');
 const taskList = document.querySelector('#lista-tarefas');
+const removeButton = document.querySelector('#apaga-tudo');
+const removeCompletedButton = document.querySelector('#remover-finalizados');
 
 function addTask() {
   const stringText = document.querySelector('#texto-tarefa').value;
@@ -12,7 +14,23 @@ function addTask() {
   createList.addEventListener('dblclick', lineThrough);
 }
 
-button.addEventListener('click', addTask);
+function removeTask() {
+    for(i=document.querySelectorAll('#listItem').length - 1; i>=0; i--){
+        taskList.removeChild(document.querySelectorAll('#listItem')[i]);
+        console.log(i)
+    } 
+    
+}
+
+function removeCompleted() {
+  for(i=document.querySelectorAll('.completed').length - 1; i>=0; i--){
+      taskList.removeChild(document.querySelectorAll('.completed')[i])
+  }
+}
+
+addButton.addEventListener('click', addTask);
+removeButton.addEventListener('click', removeTask);
+removeCompletedButton.addEventListener('click', removeCompleted);
 
 function clickGray(event) {
   let li = event.target
