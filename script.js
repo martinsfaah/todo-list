@@ -1,12 +1,11 @@
 function createListItem () {
-  let button = document.getElementById('criar-tarefa');
+  const button = document.getElementById('criar-tarefa');
 
   button.addEventListener('click', () => {
-    let newItem = document.createElement('li');
-    let aux = document.getElementById('texto-tarefa').value;
-    let text = document.createTextNode(aux);
-    let olPath = document.getElementById('lista-tarefas');
-    let newText = ''
+    const newItem = document.createElement('li');
+    const aux = document.getElementById('texto-tarefa').value;
+    const text = document.createTextNode(aux);
+    const olPath = document.getElementById('lista-tarefas');
 
     if(aux === '') {
       alert('nenhum texto digitado');
@@ -17,8 +16,25 @@ function createListItem () {
       olPath.appendChild(newItem)
     }
 
-    let inputClear = document.getElementById('texto-tarefa');
+    const inputClear = document.getElementById('texto-tarefa');
     inputClear.value = '';
   })
 }
+
+function itemClickColor() {
+  let list = document.querySelector('#lista-tarefas');
+
+  list.addEventListener('click', function(event) {
+   event.target.style.backgroundColor = 'rgb(128, 128, 128)'
+  })
+}
+
+
+
+
+
+
+
+
+itemClickColor()
 createListItem()
