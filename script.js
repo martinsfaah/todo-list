@@ -31,3 +31,13 @@ function CreateInput (){
 }
 CreateInput();
 
+
+// Requisito 4 Criando Lista
+
+function CreateLista() {
+  const setBody4 = document.getElementsByTagName('body')[0];
+  const createLista = document.createElement('ol');
+  createLista.id = "lista-tarefas"
+  setBody4.appendChild(createLista);
+}
+CreateLista();
