@@ -43,3 +43,12 @@ input {
   border-radius: 20px;
   width: 300px;
 }
+
+.selecionada {
+  background-color: rgb(128, 128, 128);
+  /* color: white; */
+}
+
+ol {
+  list-style: circle;
+}
