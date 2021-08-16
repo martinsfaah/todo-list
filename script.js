@@ -80,9 +80,8 @@ function moveAcima() {
 // Função para mover tarefas abaixo
 function moveAbaixo() {
   const tarefaSelecionada = document.querySelector('.selected');
-  const proximaTarefa = tarefaSelecionada.nextSibling;
-  if (tarefaSelecionada && proximaTarefa) {
-    tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, proximaTarefa.nextSibling);
+  if (tarefaSelecionada && tarefaSelecionada.nextSibling) {
+    tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, tarefaSelecionada.nextSibling.nextSibling);
   }
 }
 
