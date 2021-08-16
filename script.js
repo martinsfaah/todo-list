@@ -16,7 +16,7 @@ function adicionaItem(event) {
   const novoItem = document.createElement('li');
   novoItem.innerText = textoInput.innerText;
   novoItem.addEventListener('click', corCinza);
-  novoItem.addEventListener('dblclick', sublinha);
+  novoItem.addEventListener('dblclick', risca);
 
   listaTarefas.appendChild(novoItem);
   input.value = '';
@@ -32,7 +32,7 @@ function corCinza(event) {
   event.target.classList.add('selecionado');
 }
 
-function sublinha(event) {
+function risca(event) {
   // let completo = document.querySelector('.completed');
   let classeClicado = event.target;
   if (classeClicado.classList.contains('completed')) {
@@ -45,4 +45,13 @@ function sublinha(event) {
 const apagaTudo = document.querySelector('#apaga-tudo');
 apagaTudo.addEventListener('click', function () {
   location.reload();
+});
+
+const apagaFinalizados = document.querySelector('#remover-finalizados');
+apagaFinalizados.addEventListener('click', function () {
+  const finalizados = document.querySelectorAll('.completed');
+  for (let k of finalizados) {
+    let itemRemovido = k;
+    listaTarefas.removeChild(itemRemovido);
+  }
 });
