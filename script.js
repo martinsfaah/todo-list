@@ -27,12 +27,17 @@ function CriarBotaoAddTarefa() {
 }
 CriarBotaoAddTarefa();
 
+function mudarACorDeFundo(event) {
+  const evento = event.target;
+  evento.style.backgroundColor = 'rgb(128,128,128)';
+}
+
 function pegarValorDoInput() {
   const listaOrdenada = document.querySelector('#lista-tarefas');
   const resgateInput = document.querySelector('#texto-tarefa');
   const criarLista = document.createElement('li');
   criarLista.addEventListener('click', mudarACorDeFundo);
-  // evento que vou criado na função da linha  44.
+  // evento que vou criado na função da linha  30.
   criarLista.innerText = resgateInput.value;
   listaOrdenada.appendChild(criarLista);
   resgateInput.value = '';
@@ -41,7 +46,3 @@ function pegarValorDoInput() {
 const restateBotãoAdd = document.querySelector('#criar-tarefa');
 restateBotãoAdd.addEventListener('click', pegarValorDoInput);
 
-function mudarACorDeFundo(event) {
-  const evento = event.target;
-  evento.style.backgroundColor = 'rgb(128,128,128)';
-}
