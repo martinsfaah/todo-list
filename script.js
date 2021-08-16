@@ -25,3 +25,11 @@ function selecionaTarefa (event) {
     }
 
 }
+listaTarefas.addEventListener('dblclick', completaTarefa);
+function completaTarefa (event) {
+    if (event.target.classList.contains('completed')) {
+    event.target.classList.remove('completed');
+    } else {
+        event.target.classList.add('completed');
+    }
+}
