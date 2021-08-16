@@ -54,3 +54,17 @@ function clear() {
     lista.removeChild(lista.children[index]);
   }
 }
+
+let clearDone = document.getElementById("remover-finalizados");
+
+clearDone.addEventListener("click",done);
+
+function done() {
+  const lista = document.getElementById("lista-tarefas");
+  const complete = document.getElementsByClassName("completed")
+  const size = complete.length;
+  for(let index = size-1; index >= 0 ; index -= 1){
+  
+    lista.removeChild(complete[index]);
+  }
+}
