@@ -31,12 +31,20 @@ let buttonCreate =  document.querySelector('#criar-tarefa');
 function inputAdd (){
     li = document.createElement('li');
     ol.appendChild(li)
-
-    li.innerText = inputItem.value
-        inputItem.value = '';
+    li.innerText = inputItem.value 
+    li.addEventListener('click', liColor);
+    
+    inputItem.value = '';
     
 }
-
     buttonCreate.addEventListener ('click', inputAdd);
+
+function liColor(event) {
+    click = event.target
+    click.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
+
+
 
 
