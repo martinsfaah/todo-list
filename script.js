@@ -33,5 +33,9 @@ function colorChanger(event) {
 
 function completedItem(event) {
     let actualListElement = event.target
-    actualListElement.className = "completed"
+    if (actualListElement.className.includes("completed")) {
+        actualListElement.className = ""
+    } else {
+        actualListElement.className = "completed"
+    }
 }
