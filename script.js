@@ -5,6 +5,8 @@ const deleteButton = document.getElementById('apaga-tudo');
 const completedRemoveButton = document.getElementById('remover-finalizados');
 const saveButton = document.getElementById('salvar-tarefas');
 const removeSelectedButton = document.getElementById('remover-selecionado');
+const moveUpButton = document.getElementById('mover-cima');
+const moveDownButton = document.getElementById('mover-baixo');
 
 // Loads saved tasks
 function loadList() {
@@ -92,3 +94,25 @@ function removeSelected() {
 }
 
 removeSelectedButton.addEventListener('click', removeSelected);
+
+// Move selected up
+function moveUp() {
+  const upTask = document.querySelector('li[style]');
+  const previousTask = upTask.previousSibling;
+  if (previousTask !== null) {
+    list.insertBefore(upTask, previousTask);
+  }
+}
+
+moveUpButton.addEventListener('click', moveUp);
+
+// Move selected down
+function moveDown() {
+  const downTask = document.querySelector('li[style]');
+  const nextTask = downTask.nextSibling;
+  if (nextTask !== null) {
+    list.insertBefore(nextTask, downTask);
+  }
+}
+
+moveDownButton.addEventListener('click', moveDown);
