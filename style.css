@@ -6,3 +6,12 @@
 .completed{
   text-decoration: line-through;
 }
+#apaga-tudo {
+  background-color: red;
+  border: 0px;
+  border-radius: 10px;
+  color: white;
+  font-family: monospace;
+
+
+}

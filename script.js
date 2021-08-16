@@ -34,11 +34,23 @@ event.target.style.backgroundColor = " rgb(128, 128, 128)"
 }
 
 function sub(event){
-
    if (event.target.classList[0]==="completed"){
     event.target.classList.remove("completed");
   }else{
   event.target.classList.add("completed");
   }
+
+}
+
+let clearAll = document.getElementById("apaga-tudo");
+
+clearAll.addEventListener("click",clear);
+
+function clear() {
+  const lista = document.getElementById("lista-tarefas");
+  const size = lista.children.length;
+  for(let index = size-1; index >= 0 ; index -= 1){
   
+    lista.removeChild(lista.children[index]);
+  }
 }
