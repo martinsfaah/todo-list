@@ -44,3 +44,13 @@ apagaTudo.addEventListener('click', () => {
     listaOl.removeChild(elementos[i]);
   }
 });
+
+// Remove as tarefas finalizadas
+const removeFinalizas = document.querySelector('#remover-finalizados');
+removeFinalizas.addEventListener('click', () => {
+  const listaFinalizadas = document.querySelectorAll('.completed');
+  const listaOl = document.querySelector('#lista-tarefas');
+  for (let i = 0; i < listaFinalizadas.length; i += 1) {
+    listaOl.removeChild(listaFinalizadas[i]);
+  }
+});
