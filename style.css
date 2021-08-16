@@ -26,10 +26,10 @@ header p {
 main section {
   background-color: blueviolet;
   border: 2px solid #ff5555;
-  border-radius: 5%;
+  border-radius: 8%;
   text-align: center;
   width: 70%;
-  margin: 2% 15% 2% 15%;
+  margin: 2% 15%;
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -39,7 +39,7 @@ main section {
   color: #44475a;
   font-size: 0.9em;
   width: 50%;
-  padding: 1%  1%;
+  padding: 1%;
   outline: none;
 }
 
@@ -48,10 +48,27 @@ main section {
   color: #ff5555;
 }
 
+#criar-tarefa {
+  width: 18%;
+  background-color: #50fa7b;
+  color: #e94c4c;
+  font-size: 0.8em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+#lista-tarefas  {
+  list-style-position: inside;
+  color: wheat;
+  line-height: 1.5em;
+}
+
 footer {
   background-color: #6272a4;
-  padding-bottom: 5%;
+  margin-bottom: 0%;
   padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 footer span {
