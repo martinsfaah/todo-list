@@ -4,6 +4,7 @@ const listTask = document.querySelector('#lista-tarefas');
 const clearAll = document.querySelector('#apaga-tudo');
 const clearFinish = document.querySelector('#remover-finalizados');
 const salveList = document.querySelector('#salvar-tarefas');
+const removeSelected = document.querySelector('#remover-selecionado');
 
 function createTask() {
   const newTask = document.createElement('li');
@@ -103,3 +104,11 @@ function addTaskToLocalStorage() {
 }
 
 salveList.addEventListener('click', addTaskToLocalStorage);
+
+function removeTaskSelected() {
+  const taskSelected = document.querySelector('.selected');
+
+  taskSelected.parentElement.removeChild(taskSelected);
+}
+
+removeSelected.addEventListener('click', removeTaskSelected);
