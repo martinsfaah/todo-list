@@ -39,16 +39,29 @@ function completedItens() {
   });
 }
 
-function eraseContent() {
-  // let currentList = document.querySelector('#lista-tarefas').children
-  let eraseButton = document.querySelector('#apaga-tudo');
-  eraseButton.addEventListener('click', function () {});
+let eraseButton = document.querySelector('#apaga-tudo');
+eraseButton.addEventListener('click', function eraseList() {
 
-  
-}
+    let eachItem = document.querySelectorAll('.item-List');
+
+    for (let idx2 = 0; idx2 < eachItem.length; idx2 +=1){
+      eachItem[idx2].remove();
+    }
+
+});
+
+
+// Remover item por item
+// let eraseButton = document.querySelector('#apaga-tudo');
+// eraseButton.addEventListener('click', function eraseList() {
+//   let eachItem = document.querySelector('.item-List');
+//   eachItem.remove();
+// });
+
+
 
 createOl();
 createList();
 selectItens();
 completedItens();
-eraseContent();
+// eraseList();
