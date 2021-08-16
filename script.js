@@ -12,7 +12,7 @@ botao.addEventListener("click", event => {
 
   limparInput();
   criarLi(textoInput);
-  
+
 
 });
 
@@ -31,30 +31,32 @@ function criarLi(textoInput) {
 
   ol.appendChild(li);
 
-  liSelecionada();
+
+  li.addEventListener("click", liSelecionada);
+  li.addEventListener("dblclick", riscarLi);
 }
 
 //Alterar a cor ao clicar em um item da lista 
-function liSelecionada() {
+function liSelecionada(event) {
 
-  let li = document.querySelectorAll("li");
+  let tagTask = document.querySelector(".liSelecionada");
 
-  
-  li.forEach(li => {
-  
-    li.addEventListener("click", event => {
+  if (tagTask) {
+    tagTask.classList.remove("liSelecionada");
+  }
 
-      let tagTask = document.querySelector(".liSelecionada");
-      
-      if (tagTask){
-        tagTask.classList.remove("liSelecionada");
-      }
-
-      event.target.classList.add("liSelecionada");
-
-    });
-  });
+  event.target.classList.add("liSelecionada");
 
 }
 
+function riscarLi(event) {
 
+  if (event.target.classList.contains("completed")) {
+
+    event.target.classList.remove("completed");
+  } else {
+
+    event.target.classList.add("completed");
+  }
+
+}
