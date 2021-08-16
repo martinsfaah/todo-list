@@ -2,6 +2,7 @@ const inputText = document.getElementById('texto-tarefa');
 const taskList = document.getElementById('lista-tarefas');
 const createButton = document.getElementById('criar-tarefa');
 const clearButton = document.getElementById('apaga-tudo');
+const clearFinishedButton = document.getElementById('remover-finalizados');
 let taskItens = document.getElementsByTagName('li');
 
 //Function to create new task according to inputed text, clearing what the user typed and adding event listener to change background color when clicked
@@ -45,3 +46,13 @@ function clearAll() {
 
 clearButton.addEventListener('click', clearAll);
 
+//Function to clear all the 'li' elements with the class 'completed'
+function clearFinished() {
+    for(let index = (taskItens.length) - 1; index >= 0; index = index - 1) {
+        if(taskItens[index].className === 'completed') {
+            taskList.removeChild(taskItens[index]);
+        }
+    }
+}
+
+clearFinishedButton.addEventListener('click', clearFinished);
