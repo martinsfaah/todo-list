@@ -9,7 +9,7 @@ let caixaDeTexto = document.getElementById('texto-tarefa')
 /* Função para criar criar a tarefa */
 function criaTarefa(){
     let textoInserido = caixaDeTexto.value;
-    let itemLista = document.getElementById('lista-tarefa');
+    let itemLista = document.getElementById('lista-tarefas');
     let item = document.createElement('li');
 
     item.innerText = textoInserido; 
