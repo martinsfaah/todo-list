@@ -27,3 +27,13 @@ function itemColorChange(e) {
 		selected = document.getElementsByClassName('listItem-Selected')[0];
 	}
 }
+
+// Exercício 9 - double click para riscar a tarefa
+function taskDone(e) {
+	if (e.target.className === 'listItem-Selected') {
+		e.target.className ='listItem completed';
+	} else if (e.target.className === 'listItem completed') {
+		e.target.className = 'listItem'
+	}
+}
+todoList.addEventListener('dblclick', taskDone)
