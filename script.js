@@ -1,6 +1,7 @@
 const createTodoList = document.getElementById('criar-tarefa');
 const clearTasks = document.getElementById('apaga-tudo');
 const todoList = document.getElementById('lista-tarefas');
+const clearCompletedTasks = document.getElementById('remover-finalizados')
 
 let todoItems = document.getElementsByClassName('todo-item')
 let todo = document.getElementById('texto-tarefa');
@@ -39,5 +40,13 @@ function completeTasks() {
 clearTasks.addEventListener('click', function() {
   for (i = todoItems.length - 1; i >= 0; i -= 1) {
     todoList.removeChild(todoItems[i]);
+  }
+})
+
+clearCompletedTasks.addEventListener('click', function() {
+  for (i = todoItems.length - 1; i >= 0; i -= 1) {
+    if (todoItems[i].classList.contains('completed')) {
+      todoList.removeChild(todoItems[i]);
+    }
   }
 })
