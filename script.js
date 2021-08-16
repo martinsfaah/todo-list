@@ -21,10 +21,34 @@ function createInput() {
 }
 createInput();
 
-// Adicione uma lista ordenada de tarefas com o id="lista-tarefas"
+// Requisito 4 - Adicione uma lista ordenada de tarefas com o id="lista-tarefas"
 function addOl() {
   const newOl = document.createElement('ol');
   newOl.id = 'lista-tarefas';
   callParent.insertBefore(newOl, callScript);
 }
 addOl();
+
+const callOl = document.getElementById('lista-tarefas');
+const callParentOl = callOl.parentNode;
+
+// Requisito 5 - Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo
+function addButton() {
+  const newButton = document.createElement('button');
+  newButton.id = 'criar-tarefa';
+  newButton.innerHTML = 'Adicionar Tarefa';
+  callParentOl.insertBefore(newButton, callOl);
+}
+addButton();
+
+function addTask() {
+  const callInput = document.getElementById('texto-tarefa');
+  const newLi = document.createElement('li');
+  newLi.id = 'task';
+  newLi.innerHTML = callInput.value;
+  callOl.appendChild(newLi);
+  callInput.value = '';
+}
+
+const callButton = document.querySelector('#criar-tarefa');
+callButton.addEventListener('click', addTask)
