@@ -66,6 +66,11 @@ function saveTasks() {
   localStorage.setItem('listContent', listContent);
 }
 
+function removeSelectedItem() {
+  const listItem = document.querySelector('.selected');
+  list.removeChild(listItem);
+}
+
 function pageInit() {
   list.innerHTML = localStorage.getItem('listContent');
   const addButton = document.getElementById('criar-tarefa');
@@ -79,6 +84,9 @@ function pageInit() {
 
   const saveListButton = document.getElementById('salvar-tarefas');
   saveListButton.addEventListener('click', saveTasks);
+
+  const removeItemButton = document.getElementById('remover-selecionado');
+  removeItemButton.addEventListener('click', removeSelectedItem);
 
   addListItemListener();
 }
