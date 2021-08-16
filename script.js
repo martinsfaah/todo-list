@@ -1,3 +1,5 @@
+/* Inserir Tarefa */
+
 const buttonCriarTarefa = document.getElementById('criar-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
 
@@ -34,3 +36,16 @@ function inserirTarefa() {
 }
 
 buttonCriarTarefa.addEventListener('click', inserirTarefa);
+
+/* Apagar todas as tarefas */
+
+const buttonApagarTudo = document.getElementById('apaga-tudo');
+
+function apagarTarefas() {
+  const tamanhoListaInicial = listaTarefas.children.length;
+  for (let idx = 0; idx < tamanhoListaInicial; idx += 1) {
+    listaTarefas.removeChild(listaTarefas.firstChild);
+  }
+}
+
+buttonApagarTudo.addEventListener('click', apagarTarefas);
