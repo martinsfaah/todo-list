@@ -7,3 +7,9 @@
 .completed {
     text-decoration: line-through;
 }
+
+#apaga-tudo {
+    position:absolute;
+    top: 114px;
+    left: 280px;
+}

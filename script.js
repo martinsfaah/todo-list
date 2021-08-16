@@ -2,6 +2,7 @@ const input = document.querySelector("input");
 const button = document.querySelector("button");
 const list = document.querySelector("ol")
 const listElements = list.children;
+const buttonRemove = document.querySelector("#apaga-tudo")
 
 button.addEventListener("click", addFromInputToList);
 
@@ -34,8 +35,16 @@ function colorChanger(event) {
 function completedItem(event) {
     let actualListElement = event.target
     if (actualListElement.className.includes("completed")) {
-        actualListElement.className = ""
+        actualListElement.classList.remove("completed")
     } else {
         actualListElement.className = "completed"
+    }
+}
+
+buttonRemove.addEventListener("click", removeChild);
+
+function removeChild(event) {
+    for (let index = listElements.length; index > 0; index -= 1) {
+        list.removeChild(listElements[0])
     }
 }
