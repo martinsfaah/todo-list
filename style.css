@@ -1,0 +1,33 @@
+header {
+  padding: 35px;
+  background-color: rgb(111, 133, 255);
+  color: white;
+
+}
+
+button {
+  padding: 15px;
+  border-radius: 15%;
+  background-color: teal;
+  color: white;
+
+}
+
+header, input, button {
+  text-align: center;
+}
+
+li {
+  font-size: 20px;
+  font-family: Georgia;
+  margin-left: 40px;
+  padding: 20px;
+}
+
+.completed {
+  text-decoration: line-through solid white;
+}
+
+#apaga-tudo {
+  background-color: red;
+}
