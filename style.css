@@ -64,6 +64,10 @@ main section {
   line-height: 1.5em;
 }
 
+.completed {
+  text-decoration: line-through solid rgb(0, 0, 0);
+}
+
 footer {
   background-color: #6272a4;
   margin-bottom: 0%;
