@@ -17,6 +17,8 @@ addHeaderAndParagraph();
 function createInput() {
   const newInput = document.createElement('input');
   newInput.id = 'texto-tarefa';
+  newInput.type = 'text';
+  newInput.min = '1';
   callParent.insertBefore(newInput, callScript);
 }
 createInput();
@@ -32,7 +34,7 @@ addOl();
 const callOl = document.getElementById('lista-tarefas');
 const callParentOl = callOl.parentNode;
 
-// Requisito 5 e 6 - Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo(5) e Ordene os itens da lista de tarefas por ordem de criação(6).
+// Requisito 5 - Adicione um botão com id="criar-tarefa" ...(continua na linha 53)
 function addButton() {
   const newButton = document.createElement('button');
   newButton.id = 'criar-tarefa';
@@ -41,28 +43,38 @@ function addButton() {
 }
 addButton();
 
+// Requisito 7 e 8 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)(7) e Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo(8).
+function selectTask(event) {
+  const callTask = document.querySelectorAll('.task');
+  for (let i = 0; i < callTask.length; i += 1) {
+    callTask[i].classList.remove('backgroundRgb');
+    event.target.classList.add('backgroundRgb');
+  }
+}
+
+// Continuação Requisito 5, 6 e 9 - ...ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo(5) e Ordene os itens da lista de tarefas por ordem de criação(6). E Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item(9).
+function completeTask(event) {
+  if (event.target.classList.contains('completed')) {
+    event.target.classList.remove('completed');
+  } else {
+    event.target.classList.add('completed');
+  }
+}
+
 function addTask() {
   const callInput = document.getElementById('texto-tarefa');
-  const newLi = document.createElement('li');
-  newLi.className = 'task';
-  newLi.innerHTML = callInput.value;
-  callOl.appendChild(newLi);
-  callInput.value = '';
-  const callTask = document.querySelectorAll('.task')
-  for (let i = 0; i < callTask.length; i += 1) {
-    console.log(callTask[i]);
-    callTask[i].addEventListener('click', selectTask);
+  if (callInput.value.length === 0) {
+    alert('Erro: Texto vazio')
+  } else {
+    const newLi = document.createElement('li');
+    newLi.className = 'task';
+    newLi.innerHTML = callInput.value;
+    callOl.appendChild(newLi);
+    callInput.value = '';
+    newLi.addEventListener('click', selectTask);
+    newLi.addEventListener('dblclick', completeTask);
   }
 }
 
 const callButton = document.querySelector('#criar-tarefa');
-callButton.addEventListener('click', addTask)
-
-// Requisito 7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128).
-function selectTask(event) {
-  const callTask = document.querySelectorAll('.task')
-  for (let i = 0; i < callTask.length; i += 1) {
-    callTask[i].style.backgroundColor = 'white';
-    event.target.style.backgroundColor = 'rgb(128,128,128)';
-  }
-}
+callButton.addEventListener('click', addTask);
