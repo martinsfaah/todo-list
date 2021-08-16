@@ -45,13 +45,31 @@ function deleteAll() {
 deleteAll();
 
 function deleteFinished() {
-  const itens = document.getElementsByClassName('completed');
-  for (let i = (itens.length - 1); i >= 0; i -= 1) {
-    const child = itens[i];
-    if (child.classList.contains('completed')) {
-      list.removeChild(child);
+  function onClick() {
+    const itens = document.getElementsByClassName('completed');
+    for (let i = (itens.length - 1); i >= 0; i -= 1) {
+      const child = itens[i];
+      if (child.classList.contains('completed')) {
+        list.removeChild(child);
+      }
     }
   }
+  const rmvFinished = document.querySelector('#remover-finalizados');
+  rmvFinished.addEventListener('click', onClick);
 }
-const rmvFinished = document.querySelector('#remover-finalizados');
-rmvFinished.addEventListener('click', deleteFinished);
+deleteFinished();
+
+function saveList() {
+  function onClick() {
+    window.localStorage.setItem('list', JSON.stringify(list.innerHTML));
+  }
+  const saveButton = document.querySelector('#salvar-tarefas');
+  saveButton.addEventListener('click', onClick);
+}
+saveList();
+
+function returnList() {
+  const liReturn = JSON.parse(window.localStorage.getItem('list'));
+  list.innerHTML = liReturn;
+}
+window.onload = returnList;
