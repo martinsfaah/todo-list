@@ -11,4 +11,9 @@ paragraph.id = 'funcionamento';
 
 header.appendChild(paragraph);
 
-
+// Desafio 3
+const input = document.createElement('input');
+input.id = 'texto-tarefa';
+const main = document.createElement('main');
+body.appendChild(main);
+main.appendChild(input);
