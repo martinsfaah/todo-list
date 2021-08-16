@@ -49,3 +49,20 @@ function apagarTarefas() {
 }
 
 buttonApagarTudo.addEventListener('click', apagarTarefas);
+
+/* Remover tarefas completas */
+
+const buttonRemoverCompletos = document.getElementById('remover-finalizados');
+
+function removerTarefasCompletas() {
+  for (let idx = 0; idx < listaTarefas.children.length; idx += 1) {
+    const itemAtual = listaTarefas.childNodes[idx];
+
+    if (itemAtual.classList.contains('completed')) {
+      listaTarefas.removeChild(itemAtual);
+      idx -= 1;
+    }
+  }
+}
+
+buttonRemoverCompletos.addEventListener('click', removerTarefasCompletas);
