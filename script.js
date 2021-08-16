@@ -47,3 +47,14 @@ function limpaLista() {
   }
 }
 btnLimparLista.addEventListener('click', limpaLista);
+
+// requisito 11
+const btnLimparCompletos = document.getElementById('remover-finalizados');
+
+function limpaCompletos() {
+  const tarefasCompletas = document.getElementsByClassName('completed');
+  while (tarefasCompletas.length !== 0) {
+    document.querySelector('.completed').remove();
+  }
+}
+btnLimparCompletos.addEventListener('click', limpaCompletos);
