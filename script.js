@@ -9,3 +9,11 @@ function criarInput() {
   section.appendChild(input);
 }
 criarInput();
+
+function criarTag() {
+  const sectionLista = document.querySelector('#lista');
+  const criarListaOrdenada = document.createElement('ol');
+  criarListaOrdenada.id = 'lista-tarefas';
+  sectionLista.appendChild(criarListaOrdenada);
+}
+criarTag();
