@@ -34,5 +34,10 @@ function addListItem() {
   const lineTaskList = document.createElement('li');
   lineTaskList.innerText = input.value;
   taskList.appendChild(lineTaskList);
+  input.value = '';
 }
 button.addEventListener('click', addListItem);
+
+// Desafio 6 check
+
+
