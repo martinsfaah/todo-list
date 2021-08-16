@@ -3,6 +3,7 @@ const botaoTarefa = document.getElementById('criar-tarefa');
 const todoList = document.getElementById('lista-tarefas');
 const apagaTudo = document.getElementById('apaga-tudo');
 const todo = document.getElementsByClassName('todo');
+const apagaFeito = document.getElementById('remover-finalizados');
 
 function addLista() {
   const ol = document.getElementById('lista-tarefas');
@@ -53,9 +54,18 @@ function completo(clicado) {
 todoList.addEventListener('dblclick', completo);
 
 function deletaLista() {
-  const itens = todoList.children;
-  for (let i = 0; i < itens.length; i += 0) {
-    todoList.removeChild(itens[0]);
+  const elemento = todoList.children;
+  for (let i = 0; i < elemento.length; i += 0) {
+    todoList.removeChild(elemento[0]);
   }
 }
+
 apagaTudo.addEventListener('click', deletaLista);
+
+function apagaFinalizado() {
+  const remover = document.getElementsByClassName('completed');
+  for (let i = 0; i < remover.length; i += 0) {
+    todoList.removeChild(remover[0]);
+  }
+}
+apagaFeito.addEventListener('click', apagaFinalizado);
