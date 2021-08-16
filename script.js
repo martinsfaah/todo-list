@@ -6,6 +6,7 @@ const botaoFinalizados = document.getElementById('remover-finalizados');
 const botaoSalvar = document.getElementById('salvar-tarefas');
 const botaoCima = document.getElementById('mover-cima');
 const botaoBaixo = document.getElementById('mover-baixo');
+const botaoApagarSelecionado = document.getElementById('remover-selecionado');
 
 function adicionarEventos(elemento, evento, funcao) {
   if (elemento.length > 0) {
@@ -104,6 +105,10 @@ function moverPraBaixo() {
   }
 }
 
+function removerSelecionado() {
+  lista.removeChild(document.querySelector('.selected'));
+}
+
 function carregarPagina() {
   adicionarEventos(botaoCriar, 'click', criarElementosLista);
   adicionarEventos(botaoApagar, 'click', apagarElementosLista);
@@ -111,6 +116,7 @@ function carregarPagina() {
   adicionarEventos(botaoSalvar, 'click', salvarItens);
   adicionarEventos(botaoCima, 'click', moverPraCima);
   adicionarEventos(botaoBaixo, 'click', moverPraBaixo);
+  adicionarEventos(botaoApagarSelecionado, 'click', removerSelecionado);
 
   recarregarElementosSalvos();
 }
