@@ -77,3 +77,11 @@ button:hover {
 #remover-selecionado img {
   margin: -5px -10px;
 }
+
+#move-btn-container {
+  margin-top: 10px;
+}
+
+#mover-cima img , #mover-baixo img {
+  margin: -5px -10px -6px;
+}
