@@ -24,3 +24,15 @@ p {
   color: rgb(148 , 161 , 178);
   font-weight: 500;
 }
+
+#main-container {
+  text-align: center;
+  width: 470px;
+  padding: 20px 30px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+input {
+  padding: 4px;
+}
