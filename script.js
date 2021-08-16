@@ -1,14 +1,20 @@
 const buttonCriarTarefa = document.getElementById('criar-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
 
+function mudarCorTarefa(evt) {
+  const itemTarefa = evt.target;
+  evt.target.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
 function inserirTarefa() {
   const inputTarefa = document.getElementById('texto-tarefa');
-  const itemLista = document.createElement('li');
+  const itemTarefa = document.createElement('li');
 
-  itemLista.innerText = inputTarefa.value;
+  itemTarefa.innerText = inputTarefa.value;
+  itemTarefa.addEventListener('click', mudarCorTarefa);
   inputTarefa.value = '';
 
-  listaTarefas.appendChild(itemLista);
+  listaTarefas.appendChild(itemTarefa);
 }
 
 buttonCriarTarefa.addEventListener('click', inserirTarefa);
