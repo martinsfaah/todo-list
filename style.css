@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+#lista-tarefas {
+  background-color: lightgray;
+  width: 60px;
+  border: 2px;
+}
