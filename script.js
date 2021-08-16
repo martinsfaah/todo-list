@@ -28,7 +28,6 @@ const createNewElement = (element, elementContent, location, qttofElements, sele
 
 const newEvent = (location, event, func) => {
   location.addEventListener(event, func);
-  return console.log(func.target);
 };
 
 const addNewTask = () => {
@@ -42,9 +41,10 @@ const addNewTask = () => {
 const highLightItem = (location) => {
   location.addEventListener('click', (object) => {
     const event = object;
-    console.log(event.target.style.backgroudColor);
-    // window.getComputedStyle(event.target).backgroundColor = 'rgb(128, 128, 128)';
-    event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+    if (document.querySelector('.selected') !== null) {
+      document.querySelector('.selected').classList.remove('selected');
+    }
+    event.target.classList.add('selected');
   });
 };
 // #REQ 1
@@ -67,3 +67,5 @@ newEvent(buttonAddNewTask, 'click', addNewTask);
 // #REQ 7
 const taskList = document.getElementById('lista-tarefas');
 highLightItem(taskList);
+
+// #REQ 8
