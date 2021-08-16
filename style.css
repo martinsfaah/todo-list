@@ -31,5 +31,9 @@ div {
 }
 
 #lista-tarefas {
- 
+
+}
+
+.completed {
+  text-decoration: line-through;
 }

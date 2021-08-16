@@ -1,4 +1,4 @@
-function createListItem () {
+function createListItem() {
   const button = document.getElementById('criar-tarefa');
 
   button.addEventListener('click', () => {
@@ -7,11 +7,9 @@ function createListItem () {
     const text = document.createTextNode(aux);
     const olPath = document.getElementById('lista-tarefas');
 
-    if(aux === '') {
+    if (aux === '') {
       alert('nenhum texto digitado');
-    }
-
-    else {
+    } else {
       newItem.appendChild(text);
       olPath.appendChild(newItem)
     }
@@ -21,10 +19,12 @@ function createListItem () {
   })
 }
 
+
+
 function itemClickColor() {
   let list = document.querySelector('#lista-tarefas');
 
-  list.addEventListener('click', function(event) {
+  list.addEventListener('click', function (event) {
     let li = document.getElementsByTagName('li');
 
     for (let i = 0; i < li.length; i += 1) {
@@ -32,7 +32,25 @@ function itemClickColor() {
       currentLi.style.backgroundColor = '';
     }
 
-   event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+    event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  })
+}
+
+
+
+function itemListCompleted() {
+  let list = document.querySelector('#lista-tarefas');
+
+  list.addEventListener('dblclick', function (event) {
+    let completeTask = 'completed';
+    let target = event.target
+    let liList = document.querySelectorAll('li')
+
+    if (target.classList[0] === 'completed') {
+      target.classList.remove('completed')
+    } else {
+      target.classList.add(completeTask);
+    }
   })
 }
 
@@ -42,6 +60,6 @@ function itemClickColor() {
 
 
 
-
+itemListCompleted()
 itemClickColor()
 createListItem()
