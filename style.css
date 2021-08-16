@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(189, 189, 189);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #4CAF50;
+  font-family: sans-serif;
 }
 
 #content {
   margin: 20px;
-  padding: 10px 20px 20px 20px;
+  padding: 10px 20px 20px;
   border-radius: 30px;
   text-align: left;
   background-color: white;
@@ -27,15 +27,15 @@ button {
 
 #mover-cima, #mover-baixo {
   background-color: #e7e7e7;
-  color: black
+  color: black;
 }
 
-#remover-finalizados {
-  background-color: #008CBA;
+#criar-tarefa, #remover-finalizados {
+  background-color: #008cba;
   color: white;
 }
 
-#criar-tarefa, #salvar-tarefas {
-  background-color: #4CAF50;
+#salvar-tarefas {
+  background-color: #4caf50;
   color: white;
 }
