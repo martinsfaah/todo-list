@@ -1,13 +1,17 @@
+// Declaração constantes
 const addTask = document.querySelector('#criar-tarefa');
 const lista = document.getElementById('lista-tarefas');
 const textTask = document.querySelector('#texto-tarefa');
 const limparLista = document.getElementById('apaga-tudo');
 const removeFinal = document.getElementById('remover-finalizados');
 const salvar = document.getElementById('salvar-tarefas');
+const moveCima = document.getElementById('mover-cima');
+const moveBaixo = document.getElementById('mover-baixo');
 const rmvSel = document.getElementById('remover-selecionado');
 
+// Carrega lista
 function carregaLista() {
-  lista.innerHTML = localStorage.getItem('lista-tarefas');
+  lista.innerHTML = localStorage.getItem('l-tarefas');
 }
 
 window.onload = carregaLista;
@@ -77,11 +81,37 @@ removeFinal.addEventListener('click', rmvFinal);
 
 // Salvar Lista localmente
 function salvarLista() {
-  localStorage.setItem('lista-tarefas', lista.innerHTML);
+  localStorage.setItem('l-tarefas', lista.innerHTML);
   alert('Lista de Tarefas salva.');
 }
 
 salvar.addEventListener('click', salvarLista);
+
+// Mover itens acima e abaixo
+// Consulta: https://www.w3schools.com/jsref/met_node_insertbefore.asp
+function moveAcima() {
+  const taskCima = document.querySelector('li[style]');
+  if (taskCima !== null) {
+    const taskAnterior = taskCima.previousSibling;
+    if (taskAnterior !== null) {
+      lista.insertBefore(taskCima, taskAnterior);
+    }
+  }
+}
+
+moveCima.addEventListener('click', moveAcima);
+
+function moveAbaixo() {
+  const taskBaixo = document.querySelector('li[style]');
+  if (taskBaixo !== null) {
+    const taskPost = taskBaixo.nextSibling;
+    if (taskPost !== null) {
+      lista.insertBefore(taskPost, taskBaixo);
+    }
+  }
+}
+
+moveBaixo.addEventListener('click', moveAbaixo);
 
 // Remover item selecionado
 function removeSel() {
