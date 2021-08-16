@@ -1,6 +1,5 @@
 const list = document.querySelector('#lista-tarefas');
 const ListIntens = list.children;
-
 function selectItem(event) {
   for (let i = 0; i < ListIntens.length; i += 1) {
     ListIntens[i].classList.remove('selected');
@@ -46,16 +45,12 @@ function deleteAll() {
 deleteAll();
 
 function deleteFinished() {
-  function onClick() {
-    for (let i = 0; i < ListIntens.length; i += 1) {
-      while (ListIntens[i].classList.contains('completed')) {
-        list.removeChild(ListIntens[i]);
-      }
+  for (let i = 0; i < ListIntens.length; i += 1) {
+    const child = ListIntens[i];
+    if (child.classList.contains('completed')) {
+      list.removeChild(child);
     }
   }
-  const rmvFinished = document.querySelector('#remover-finalizados');
-  rmvFinished.addEventListener('click', onClick);
 }
-deleteFinished();
-
-// functio
+const rmvFinished = document.querySelector('#remover-finalizados');
+rmvFinished.addEventListener('click', deleteFinished);
