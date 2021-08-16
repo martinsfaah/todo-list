@@ -69,3 +69,7 @@ button:hover {
 .completed {
   text-decoration: line-through solid black;
 }
+
+#salvar-tarefas img {
+  margin: -5px -10px -8px;
+}
