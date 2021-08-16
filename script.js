@@ -59,7 +59,22 @@ function criaTagButton(nomeTag, nomeTagPai){
   criaTag.id = 'criar-tarefa';
   const tagPai = document.querySelector(nomeTagPai);
   tagPai.appendChild(criaTag);
-  console.log('quarto requisito ok');
+  console.log('quinto requisito ok');
 }
 // chamamos a função com o nome da tag que vamos criar, e de quem essa tag será filha. Respectivamente.
 criaTagButton('button', 'body');
+//vamos adicionar um comportamento ao botão??
+function escutaBotao(){
+  const botao = document.querySelector('button');
+  botao.addEventListener('click', function(){
+    const criaTag = document.createElement('li');
+    const input = document.querySelector('input');
+    criaTag.innerText = input.value;
+    const tagPai = document.querySelector('ol');
+    tagPai.appendChild(criaTag);
+    input.value = '';
+  })
+  
+}
+escutaBotao();
+
