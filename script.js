@@ -1,7 +1,7 @@
 const body = document.querySelector('#body');
 
 const buttonSection = document.createElement('section');
-body.appendChild(buttonSection)
+body.appendChild(buttonSection);
 const button = document.createElement('button');
 button.id = 'criar-tarefa';
 button.innerText = 'adicionar tarefa';
@@ -16,11 +16,19 @@ orderList.id = 'lista-tarefas';
 body.appendChild(orderList);
  
 function addTask() {
-  button.onclick = function() {
+  button.onclick = function () {
     const inputValue = input.value;
     const createList = document.createElement('li');
-    createList.innerText = inputValue;
     orderList.appendChild(createList);
+    createList.innerText = inputValue;
+    input.value = '';
   }
 }
 addTask();
+
+function selectListItem () {
+  orderList.addEventListener('click', function (event) {
+    event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  })
+}
+selectListItem();
