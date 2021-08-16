@@ -17,3 +17,8 @@ input.id = 'texto-tarefa';
 const main = document.createElement('main');
 body.appendChild(main);
 main.appendChild(input);
+
+// Desafio 4
+const taskList = document.createElement('ol');
+taskList.id = 'lista-tarefas';
+main.appendChild(taskList);
