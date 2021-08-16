@@ -9,6 +9,7 @@ createTodoList.addEventListener('click', function() {
   li.className = 'todo-item';
   li.textContent = todo.value;
   li.addEventListener('click', selectionHandler);
+  li.addEventListener('dblclick', completeTasks);
   document.getElementById('lista-tarefas').appendChild(li);
   todo.value = '';
 })
@@ -23,24 +24,13 @@ function selectionHandler() {
   this.classList.add('selected');
   this.style.backgroundColor = 'rgb(128, 128, 128)';
 }
-// function selectItem() {
-//   for (let i = 0; i < event.length; i += 1) {
-//     event[i].classList.remove('selected');
-//   }
-//   for (let i = 0; i < event.length; i += 1) {
-//     event[i].classList.add('selected');
-//     selectedColor = event[i].style.backgroundColor;
-//     console.log(`${selectedColor} selecionado`)
-//   }
-// }
 
-// function highlight() {
-//   let selected = document.querySelector('selected');
-//   for (let i = 0; i < todoItems.length; i += 1) {
-//     if (todoItems[i] === selected) {
-//       todoItems[i].style.backgroundColor = 'rgb(128, 128, 128)';
-//     } else {
-//       todoItems[i].style.backgroundColor = undefined;
-//     }
-//   }
-// }
+function completeTasks() {
+  if (this.classList.contains('completed')) {
+    this.classList.remove('completed');
+    this.style.textDecoration = null;
+  } else {
+    this.classList.add('completed');
+    this.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
+  }
+}
