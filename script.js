@@ -71,8 +71,41 @@ function removeSelectedItem() {
   list.removeChild(listItem);
 }
 
+function upItem() {
+  const selectedItem = document.querySelector('.selected');
+  if (selectedItem !== null && selectedItem.previousElementSibling) {
+    const newElement = document.createElement('li');
+    newElement.innerText = selectedItem.innerHTML;
+    newElement.className = selectedItem.classList;
+    list.insertBefore(newElement, selectedItem.previousElementSibling);
+    const oldItem = document.querySelectorAll('.selected')[1];
+    oldItem.parentNode.removeChild(oldItem);
+    addListItemListener();
+  }
+}
+
+function downItem() {
+  const selectedItem = document.querySelector('.selected');
+  if (selectedItem !== null && selectedItem.nextElementSibling) {
+    const newElement = document.createElement('li');
+    newElement.innerText = selectedItem.innerHTML;
+    newElement.className = selectedItem.classList;
+    list.insertBefore(
+      newElement,
+      selectedItem.nextElementSibling.nextElementSibling,
+    );
+    const oldItem = document.querySelectorAll('.selected')[0];
+    oldItem.parentNode.removeChild(oldItem);
+    addListItemListener();
+  }
+}
+
 function pageInit() {
   list.innerHTML = localStorage.getItem('listContent');
+  addListItemListener();
+}
+
+function buttonsListener() {
   const addButton = document.getElementById('criar-tarefa');
   addButton.addEventListener('click', addTask);
 
@@ -87,8 +120,13 @@ function pageInit() {
 
   const removeItemButton = document.getElementById('remover-selecionado');
   removeItemButton.addEventListener('click', removeSelectedItem);
-
-  addListItemListener();
 }
 
+const upButton = document.getElementById('mover-cima');
+upButton.addEventListener('click', upItem);
+
+const downButton = document.getElementById('mover-baixo');
+downButton.addEventListener('click', downItem);
+
 pageInit();
+buttonsListener();
