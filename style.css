@@ -8,3 +8,14 @@ body {
   background: url('layered-waves-haikei.svg') no-repeat center fixed;
   background-size: cover;
 }
+
+#header-container {
+  margin: 60px auto 40px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+h1 {
+  color: rgb(255 , 255 , 254);
+  font-weight: 550;
+}
