@@ -5,6 +5,7 @@ const apagaTudo = document.getElementById('apaga-tudo');
 const todo = document.getElementsByClassName('todo');
 const apagaFeito = document.getElementById('remover-finalizados');
 const removeSelecionado = document.getElementById('remover-selecionado');
+const salve = document.getElementById('salvar-tarefas');
 
 function addLista() {
   const ol = document.getElementById('lista-tarefas');
@@ -81,6 +82,29 @@ function remSelecionado() {
 
 removeSelecionado.addEventListener('click', remSelecionado);
 
+// 12 feita com ideia do colega Marcelo Adriano
 function salvar() {
-
+  if (localStorage.length !== 0) {
+    localStorage.clear();
+  }
+  for (let i = 0; i < todo.length; i += 1) {
+    const separador = '- ';
+    localStorage.setItem(i, (todo[i].innerText + separador + todo[i].className));
+  }
 }
+
+function recarregar() {
+  const texto = 0;
+  const classe = 1;
+  for (let index = 0; index < localStorage.length; index += 1) {
+    const array = localStorage.getItem(index);
+    const salves = array.split('- ');
+    const li = document.createElement('li');
+    todoList.appendChild(li);
+    li.className = salves[classe];
+    li.innerText = salves[texto];
+  }
+}
+
+salve.addEventListener('click', salvar);
+window.onload = recarregar;
