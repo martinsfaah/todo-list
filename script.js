@@ -38,11 +38,15 @@ window.onload = function() {
       getLi[index].remove();
     }
   })
-//   ### 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista
 
-// **O que será verificado:**
+  const getRemoveButton = document.querySelector('#remover-finalizados');
 
-// - Será verificado que existe um elemento `button` com o id `apaga-tudo`
+  getRemoveButton.addEventListener('click', function() {
+    const getLi = document.querySelectorAll('li');
+    const getCompleted = document.querySelectorAll('.completed');
+    for (let index = 0; index < getCompleted.length; index += 1) {
+      getCompleted[index].remove();
+    }
+  })
 
-// - Será verificado que, dado que uma lista possui tarefas, um clique no botão a deixa vazia
 }
