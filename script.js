@@ -13,3 +13,6 @@ headerP.id = "funcionamento";
 document.querySelector("header").appendChild(headerP);
 
 // Requisito - 03
+let inputRQ03 = document.createElement("input");
+inputRQ03.id ="texto-tarefa";
+document.body.appendChild(inputRQ03);
