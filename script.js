@@ -37,3 +37,13 @@ function criaTarefa() {
   inputTextoTarefa.value = '';
 }
 btnCriarTarefa.addEventListener('click', criaTarefa);
+
+// requisito 10
+const btnLimparLista = document.getElementById('apaga-tudo');
+
+function limpaLista() {
+  while (listaTarefas.childElementCount !== 0) {
+    document.querySelector('.tarefa').remove();
+  }
+}
+btnLimparLista.addEventListener('click', limpaLista);
