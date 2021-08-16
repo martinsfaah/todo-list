@@ -1,3 +1,12 @@
+function selecionaTarefa(evento) {
+  const itensLista = document.getElementsByClassName('item');
+  const itemSelecionado = evento.target;
+  for (let i = 0; i < itensLista.length; i += 1) {
+    itensLista[i].style.backgroundColor = 'white';
+    itemSelecionado.style.backgroundColor = 'rgb(128, 128, 128)';
+  }
+}
+
 function criarTarefa() {
   const tarefa = document.getElementById('texto-tarefa').value;
   const lista = document.getElementById('lista-tarefas');
@@ -6,13 +15,8 @@ function criarTarefa() {
   novaTarefa.innerHTML = tarefa;
   lista.appendChild(novaTarefa);
   document.getElementById('texto-tarefa').value = '';
-  novaTarefa.addEventListener('click', corDoFundo);
+  novaTarefa.addEventListener('click', selecionaTarefa);
 }
 
 const botao = document.querySelector('#criar-tarefa');
 botao.addEventListener('click', criarTarefa);
-
-function corDoFundo(event) {
-  const itemList = event.target;
-  itemList.style.backgroundColor = 'rgb(128, 128, 128)';
-}
