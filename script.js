@@ -5,6 +5,7 @@ const removerFinalizados = document.getElementById('remover-finalizados');
 const salvarTarefas = document.querySelector('#salvar-tarefas');
 const moverCima = document.getElementById('mover-cima');
 const moverBaixo = document.getElementById('mover-baixo');
+const removerSelecionado = document.getElementById('remover-selecionado');
 
 function checkElement(element, stringToCompare) {
   const typeOfTheElement = element.tagName;
@@ -122,6 +123,15 @@ function moveBaixo() {
   }
 }
 
+function removeSelecionado() {
+  const selected = document.querySelector('.selected');
+  if (selected) {
+    selected.remove();
+  }
+}
+
 moverCima.addEventListener('click', moveCima);
 
 moverBaixo.addEventListener('click', moveBaixo);
+
+removerSelecionado.addEventListener('click', removeSelecionado);
