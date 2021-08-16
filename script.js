@@ -11,10 +11,20 @@ function colorTask(e) {
   actualTask.classList.add('selected');
 }
 
+function completeTask(e) {
+  const actualTask = e.target;
+  if (actualTask.classList == 'completed selected') {
+    actualTask.classList.remove('completed');
+  } else {
+    actualTask.classList.add('completed');
+  }
+}
+
 function addTask() {
   const taskLi = document.createElement('li');
   list.appendChild(taskLi);
   taskLi.addEventListener('click', colorTask);
+  taskLi.addEventListener('dblclick', completeTask);
   taskLi.innerHTML = input.value;
   input.value = '';
 }
