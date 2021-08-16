@@ -2,6 +2,7 @@ const list = document.getElementById('lista-tarefas');
 const inputTask = document.getElementById('texto-tarefa');
 const createTaskButton = document.getElementById('criar-tarefa');
 const deleteButton = document.getElementById('apaga-tudo');
+const completedRemoveButton = document.getElementById('remover-finalizados');
 
 // Creates task
 function createTask() {
@@ -53,3 +54,16 @@ function deleteItems() {
 }
 
 deleteButton.addEventListener('click', deleteItems);
+
+// Deletes completed tasks
+function deleteCompleted() {
+  const completedElements = document.getElementsByClassName('completed');
+  if (completedElements.length !== 0) {
+    for (let i = completedElements.length - 1; i >= 0; i -= 1) {
+      const completedItem = completedElements[i];
+      completedItem.remove();
+    }
+  }
+}
+
+completedRemoveButton.addEventListener('click', deleteCompleted);
