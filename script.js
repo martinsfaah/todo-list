@@ -3,11 +3,11 @@ const addText = document.createElement('input')
 addText.id = 'texto-tarefa'
 sec.appendChild(addText)
 
-let chamarEl = document.querySelector('.add-button')
+// let chamarEl = document.querySelector('.add-button')
 let botao = document.createElement('button')
 botao.innerText = 'Adicionar'
 botao.id = 'criar-tarefa'
-chamarEl.appendChild(botao);
+sec.appendChild(botao);
 
 let listaO = document.querySelector('.lista')
 let list = document.createElement('ol')
@@ -16,9 +16,9 @@ listaO.appendChild(list);
 
 
 function add () {
-    const input = document.querySelector('#texto-tarefa')
-    const button = document.querySelector('#criar-tarefas')
-    const ol = document.querySelector('#lista-tarefa')
+    const input = document.getElementById('texto-tarefa')
+    const button = document.getElementById('criar-tarefa')
+    const ol = document.getElementById('lista-tarefas')
     
     button.addEventListener("click", function () {
         let listas = document.createElement("li")
@@ -26,5 +26,7 @@ function add () {
         listas.innerHTML = input.value;
         input.value = "";
 })
+} 
+window.onload = function() {
+    add()
 }
-add()
