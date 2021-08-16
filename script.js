@@ -1,14 +1,12 @@
 const taskList = document.getElementById('lista-tarefas');
-// Adicona escutador para mudança de backgorund ao clicar
+
 function selectTask(event) {
   const taskElement = event.target;
-  const selectedTask = document.getElementsByClassName('tarefa selecionada')[0];
+  const selectedTask = document.getElementsByClassName('tarefa selected')[0];
   if (taskElement !== selectedTask && selectedTask !== undefined) {
-    selectedTask.style.backgroundColor = 'rgb(255, 255, 255)';
-    selectedTask.classList.remove('selecionada');
+    selectedTask.classList.remove('selected');
   }
-  taskElement.style.backgroundColor = 'rgb(128, 128, 128)';
-  taskElement.classList.add('selecionada');
+  taskElement.classList.add('selected');
 }
 
 function completTask(event) {
@@ -21,6 +19,25 @@ function completTask(event) {
   }
 }
 
+function listElementConfig(task) {
+  task.addEventListener('click', selectTask);
+  task.addEventListener('dblclick', completTask);
+}
+
+function loadTaskList() {
+  if (localStorage.getItem('taskList') !== undefined) {
+    const text = localStorage.getItem('taskList');
+    taskList.innerHTML = text;
+    const listChildren = taskList.children;
+    for (let index = 0; index < listChildren.length; index += 1) {
+      listChildren[index].classList.remove('selected');
+      listElementConfig(listChildren[index]);
+    }
+  }
+}
+
+loadTaskList();
+
 // Função para incluir tarefas na lista
 function createTask() {
   const button = document.getElementById('criar-tarefa');
@@ -28,10 +45,9 @@ function createTask() {
   button.addEventListener('click', () => {
     if (textInput.value !== '') {
       const task = document.createElement('li');
-      task.className = 'tarefa';
       task.innerHTML = textInput.value;
-      task.addEventListener('click', selectTask);
-      task.addEventListener('dblclick', completTask);
+      task.className = 'tarefa';
+      listElementConfig(task);
       taskList.append(task);
       textInput.value = '';
     } else {
@@ -64,3 +80,12 @@ function deleteCompleted() {
 }
 
 deleteCompleted();
+
+function saveList() {
+  const button = document.getElementById('salvar-tarefas');
+  button.addEventListener('click', () => {
+    localStorage.setItem('taskList', taskList.innerHTML);
+  });
+}
+
+saveList();

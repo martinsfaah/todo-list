@@ -1,6 +1,10 @@
-#lista-tarefas li {
+li {
   list-style: none;
   background-color: white;
+}
+
+.selected {
+  background-color: gray;
 }
 
 .completed {
