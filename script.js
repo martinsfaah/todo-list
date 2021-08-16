@@ -1,7 +1,3 @@
-// - No campo de input será digitado o texto de uma tarefa qualquer e, em seguida, clicar-se-á no botão de criar tarefa. Será verificado que, após o clique, o texto digitado aparece na lista e desaparece do input.
-
-// - A adição de elementos na lista será feita algumas vezes, e será checado se todos os itens criados permanecem na lista na medida em que novos são adicionados. 
-
 window.onload = function() {
   const getTask = document.querySelector('#texto-tarefa');
   const getButton = document.querySelector('#criar-tarefa');
@@ -13,4 +9,18 @@ window.onload = function() {
     getOL.appendChild(createTask);
     getTask.value = '';    
   })
+
+  getOL.addEventListener('click', function(event) {
+    event.target.style.backgroundColor = 'rgb(128,128,128)';
+  })
+
+
+//   ### 7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)
+
+// **O que será verificado:**
+
+// - Será verificado que, ao se carregar a página, os itens da lista **não tem** o estilo CSS `background-color: rgb(128, 128, 128)`
+
+// - Será verificado que, ao se clicar em um item da lista, ele passa a ter o estilo CSS `background-color: rgb(128, 128, 128)`
+
 }
