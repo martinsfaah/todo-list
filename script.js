@@ -20,14 +20,16 @@ taskCreator();
 function selectTask() {
   let tasksList = document.getElementById('lista-tarefas');
   tasksList.addEventListener('click', function(event) {
-    // let tasksCreated = document.getElementsByClassName('tarefa');
-    // for (task of tasksCreated) {
-      if (event.target.className === 'tarefa') {
-        event.target.className = 'tarefa selecionada';
-      } else if (event.target.className === 'tarefa selecionada') {
-        event.target.className = 'tarefa';
+    // let tasks = document.getElementsByClassName('tarefas')
+    if (event.target.className === 'tarefa') {
+      let currentSelected = document.getElementsByClassName('tarefa selecionada')[0];
+      if (currentSelected !== undefined) {
+        currentSelected.className = 'tarefa';
       }
-    // }
+      event.target.className = 'tarefa selecionada';
+    } else if (event.target.className === 'tarefa selecionada') {
+      event.target.className = 'tarefa';
+    }
   })
 }
 
