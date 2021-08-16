@@ -57,20 +57,61 @@ botaoRemoveDone.addEventListener('click', removeDone);
 //ex 11
 
 function removeDone() {
-  let listas2 = document.querySelectorAll('.completed')
+  let listas2 = document.querySelectorAll('.completed');
   for (let elemento of listas2) {
-    elemento.remove()
+    elemento.remove();
   }
 }
 
 // ex 12 
 
+function saveLis() {
+  let li = document.querySelectorAll('li')
+  let saveLi = [];
+  for (let elementos of li) {
+    saveLi.push(elementos.innerText)
+  }
+  localStorage.setItem('tarefas', JSON.stringify(saveLi));
+}
+
+let saveTask = document.getElementById('salvar-tarefas');
+saveTask.addEventListener('click', saveLis)
+
+// function saveClasse() {
+//   let ol = document.querySelectorAll('.classLi')
+//   let saveC = [];
+//   for (let elementos of classes) {
+//     saveC.push(elementos.innerText)
+//   }
+//   localStorage.setItem('classe', JSON.stringify(saveC));
+// }
+
+
+
+// saveClass.addEventListener('click', saveClass)
+
+window.onload = function loadPage() {
+  let saved
+  if (localStorage.getItem('tarefas') !== null) {
+    saved = JSON.parse(localStorage.getItem('tarefas'))
+    for (let elementos of saved) {
+      let li = document.createElement('li')
+      li.innerText = elementos
+      li.className = "classLi"
+      ol.appendChild(li);
+
+    }
+  }
+}
+
+
+
 // ex 13
 
-function up(){
+function up() {
   let classLi = document.querySelectorAll(".classLi");
 
-  for (let i = 1; i < classLi.length; i += 1 ){
+  for (let i = 1; i < classLi.length; i += 1) {
     if (classLi[i].style.backgroundColor === colorSelected) {
       ol.insertBefore(classLi[i], classLi[i - 1])
     }
@@ -82,15 +123,28 @@ botaoUp.addEventListener('click', up);
 
 function down() {
   let classLi = document.querySelectorAll(".classLi");
-  for (let i = 0; i < classLi.length - 1; i += 1 ) {
+  for (let i = 0; i < classLi.length - 1; i += 1) {
     if (classLi[i].style.backgroundColor === colorSelected) {
       ol.insertBefore(classLi[i + 1], classLi[i])
+
     }
   }
 }
 
 let botaoDown = document.getElementById('mover-baixo');
 botaoDown.addEventListener('click', down);
+
+// ex 14
+
+function removeSelected() {
+  let classLiSelected = document.querySelectorAll('.classLi[style]');
+  for (let elemento of classLiSelected) {
+    elemento.remove();
+  }
+}
+
+let botaoRemoveSelected = document.getElementById('remover-selecionado');
+botaoRemoveSelected.addEventListener('click', removeSelected)
 
 
 
