@@ -29,3 +29,9 @@ function lineThrough(event) {
     event.target.classList.add('completed');
 }
 }
+
+const eraseButton = document.getElementById('apaga-tudo');
+eraseButton.addEventListener('click', eraseTaskList);
+function eraseTaskList() {
+    ol.innerText = '';
+}
