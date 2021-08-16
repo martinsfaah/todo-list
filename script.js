@@ -43,6 +43,7 @@ function criaTagOl(nomeTag, nomeTagPai){
   // declara tag criada 
   const criaTag = document.createElement(nomeTag);
   criaTag.id = 'lista-tarefas';
+  criaTag.innerText = 'Lista de Tarefas:'
   const tagPai = document.querySelector(nomeTagPai);
   tagPai.appendChild(criaTag);
   console.log('quarto requisito ok');
@@ -51,7 +52,7 @@ function criaTagOl(nomeTag, nomeTagPai){
 criaTagOl('ol', 'body');
 
 
-// Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo.
+// 5. Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo.
 function criaTagButton(nomeTag, nomeTagPai){
   // declara tag criada 
   const criaTag = document.createElement(nomeTag);
@@ -64,17 +65,31 @@ function criaTagButton(nomeTag, nomeTagPai){
 // chamamos a função com o nome da tag que vamos criar, e de quem essa tag será filha. Respectivamente.
 criaTagButton('button', 'body');
 //vamos adicionar um comportamento ao botão??
-function escutaBotao(){
+function criarTarefa(){
   const botao = document.querySelector('button');
   botao.addEventListener('click', function(){
+    // nesse bloco de codigo definimos que toda a vez que o botão foi clicado, ele cria uma tag 'li' filha da 'ol' e seu conteúdo será o mesmo da caixa de texto
     const criaTag = document.createElement('li');
     const input = document.querySelector('input');
     criaTag.innerText = input.value;
     const tagPai = document.querySelector('ol');
     tagPai.appendChild(criaTag);
     input.value = '';
-  })
-  
+//ajuda de Vitor Diorio (https://github.com/vdiorio) no trecho abaixo. Eu não sabia que podiamos criar um elemento com um esccutador de eventos diretamente na função!!!!
+    criaTag.addEventListener('click', function(event){
+      event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+    })
+  }
+  )
+
 }
-escutaBotao();
+criarTarefa();
+
+
+// 7.Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)
+// function mudaCorLi(){
+//   let lista = document.querySelector('ol').children;
+//     console.log(lista)
+//   }
+// mudaCorLi()
 
