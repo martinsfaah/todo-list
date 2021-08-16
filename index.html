@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,10 +11,14 @@
     <small id="funcionamento"
       >Clique duas vezes em um item para marcá-lo como completo</small
     >
-    <div>
-      <label for="texto-tarefa">Nome do item:</label>
+    <section id="secao-input-item">
+      <label for="texto-tarefa">Item a adicionar:</label>
       <input type="text" id="texto-tarefa" placeholder="Lavar Louça..." />
-    </div>
+    </section>
     <ol id="lista-tarefas"></ol>
+    <section id="secao-button-item">
+        <button id="criar-tarefa">Criar Tarefa</button>
+    </section>
+    <script src="script.js"></script>
   </body>
 </html>
