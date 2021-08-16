@@ -14,13 +14,22 @@ function adicionaTarefa ()
     listaOrdenada.appendChild(valor); 
     input.value=''; 
 }
-button.addEventListener('click',adicionaTarefa)
+button.addEventListener('click',adicionaTarefa);
 
 function changeColor (event)
 {
     const selected =document.querySelector('.selected');
     selected.classList.remove('selected');
     event.target.classList.add('selected');   
-    //document.getElementsByClassName('selected').style.backgrounColor=rgb(128, 128, 128);  
+     
 }
 listaOrdenada.addEventListener('click',changeColor);
+
+function itemCompleto (event)
+{
+    const completed =document.querySelector('.completed');
+    if (completed!==null){ event.target.classList.remove('completed');}    
+        else {event.target.classList.add('completed')};   
+     
+}
+listaOrdenada.addEventListener('dblclick',itemCompleto);
