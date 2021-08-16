@@ -1,6 +1,7 @@
 const inputText = document.getElementById('texto-tarefa');
 const taskList = document.getElementById('lista-tarefas');
-const button = document.getElementById('criar-tarefa');
+const createButton = document.getElementById('criar-tarefa');
+const clearButton = document.getElementById('apaga-tudo');
 let taskItens = document.getElementsByTagName('li');
 
 //Function to create new task according to inputed text, clearing what the user typed and adding event listener to change background color when clicked
@@ -16,7 +17,7 @@ function createTask() {
 }
 
 //Adding event listener to the button
-button.addEventListener('click', createTask);
+createButton.addEventListener('click', createTask);
 
 //Setting rgb(128, 128, 128) to the background color of the current clicked item and reset the others to white 
 function colorClick(listItem) {
@@ -26,6 +27,7 @@ function colorClick(listItem) {
     listItem.target.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 
+//Function to set text decoration to 'line-through' using class name when double clicked
 function lineThrough (dblClicked) {
     if(dblClicked.target.className === 'to-do') {
         dblClicked.target.className = 'completed';
@@ -33,4 +35,13 @@ function lineThrough (dblClicked) {
         dblClicked.target.className = 'to-do';
     }
 }
+
+//Function to clear all the 'li' elements when the user clicks on the button 'apaga tudo'
+function clearAll() {
+    for(let index = (taskItens.length) - 1; index >= 0; index = index - 1) {
+        taskList.removeChild(taskItens[index]);
+    }
+}
+
+clearButton.addEventListener('click', clearAll);
 
