@@ -2,6 +2,7 @@ const textInput = document.querySelector('#texto-tarefa');
 const buttonCreateTask = document.querySelector('#criar-tarefa');
 const listTask = document.querySelector('#lista-tarefas');
 const clearAll = document.querySelector('#apaga-tudo');
+const clearFinish = document.querySelector('#remover-finalizados');
 
 function createTask() {
   const newTask = document.createElement('li');
@@ -47,3 +48,15 @@ function clearAllTask() {
 }
 
 clearAll.addEventListener('click', clearAllTask);
+
+function clearFinishTask() {
+  const taskFinish = document.querySelectorAll('.completed');
+  console.log(taskFinish);
+  console.log('aaaaaaaaaaa');
+
+  for (let i = 0; i < taskFinish.length; i += 1) {
+    taskFinish[i].parentElement.removeChild(taskFinish[i]);
+  }
+}
+
+clearFinish.addEventListener('click', clearFinishTask);
