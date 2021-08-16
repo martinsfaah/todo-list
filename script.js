@@ -24,4 +24,14 @@ function whiteLine() {
    resetLine[index].style.backgroundColor = 'white'
   }
 }
+
+function lineDecor(event) {
+  if(event.target.className !== 'completed') {
+    event.target.className = 'completed'
+  } else {
+      event.target.className = '';
+  }
+}
+list.addEventListener('dblclick', lineDecor);
+
   
