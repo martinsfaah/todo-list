@@ -120,14 +120,20 @@ const buttonMoverBaixo = document.getElementById('mover-baixo');
 function moverTarefaCima() {
   const selectedTarefa = document.getElementsByClassName('selected')[0];
 
-  if (selectedTarefa !== listaTarefas.firstElementChild && selectedTarefa !== undefined) {
+  if (
+    selectedTarefa !== listaTarefas.firstElementChild &&
+    selectedTarefa !== undefined
+  ) {
     listaTarefas.insertBefore(selectedTarefa, selectedTarefa.previousSibling);
   }
 }
 
 function moverTarefaBaixo() {
   const selectedTarefa = document.getElementsByClassName('selected')[0];
-  if (selectedTarefa !== listaTarefas.lastElementChild && selectedTarefa !== undefined) {
+  if (
+    selectedTarefa !== listaTarefas.lastElementChild &&
+    selectedTarefa !== undefined
+  ) {
     listaTarefas.insertBefore(
       selectedTarefa,
       selectedTarefa.nextSibling.nextSibling
@@ -137,3 +143,17 @@ function moverTarefaBaixo() {
 
 buttonMoverCima.addEventListener('click', moverTarefaCima);
 buttonMoverBaixo.addEventListener('click', moverTarefaBaixo);
+
+/* Remover Tarefa Selecionada */
+
+const buttonRemoverSelecionado = document.getElementById('remover-selecionado');
+
+function removerTarefa() {
+  const selectedTarefa = document.getElementsByClassName('selected')[0];
+
+  if (selectedTarefa !== undefined) {
+    listaTarefas.removeChild(selectedTarefa);
+  }
+}
+
+buttonRemoverSelecionado.addEventListener('click', removerTarefa);
