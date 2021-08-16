@@ -29,7 +29,7 @@ p {
   text-align: center;
   width: 470px;
   padding: 20px 30px;
-  margin: auto;
+  margin: 0 auto 50px;
   border-radius: 10px;
 
   /* Source da box-shadow
@@ -38,7 +38,11 @@ p {
 }
 
 input {
-  padding: 4px;
+  width: 220px;
+  margin-right: 2px;
+  padding: 6px;
+  border: none;
+  font-weight: 400;
 }
 
 ol {
