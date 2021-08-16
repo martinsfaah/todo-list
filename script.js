@@ -4,6 +4,7 @@ const createTaskButton = document.getElementById('criar-tarefa');
 const deleteButton = document.getElementById('apaga-tudo');
 const completedRemoveButton = document.getElementById('remover-finalizados');
 const saveButton = document.getElementById('salvar-tarefas');
+const removeSelectedButton = document.getElementById('remover-selecionado');
 
 // Loads saved tasks
 function loadList() {
@@ -83,3 +84,11 @@ function saveList() {
 }
 
 saveButton.addEventListener('click', saveList);
+
+// Removes selected item
+function removeSelected() {
+  const selected = document.querySelector('li[style]');
+  selected.remove();
+}
+
+removeSelectedButton.addEventListener('click', removeSelected);
