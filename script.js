@@ -3,7 +3,12 @@ const listaTarefas = document.getElementById('lista-tarefas');
 
 function mudarCorTarefa(evt) {
   const itemTarefa = evt.target;
-  evt.target.style.backgroundColor = 'rgb(128, 128, 128)';
+
+  listaTarefas.childNodes.forEach((tarefa) => {
+    const tf = tarefa;
+    tf.style.backgroundColor = '';
+  });
+  itemTarefa.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 
 function inserirTarefa() {
