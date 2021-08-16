@@ -13,7 +13,14 @@ function novaTarefa() {
 addTask.addEventListener('click', novaTarefa);
 
 //Troca cor do fundo de um item
+function tiraCor (){
+  if (document.querySelector('li[style]') !== null) {
+    document.querySelector('li[style]').removeAttribute('style');
+  }
+}
+
 function trocaCor(evento) {
+  tiraCor();
   const fundoTarefa = evento.target;
   fundoTarefa.style.backgroundColor = 'rgb(128,128,128)';
 }
