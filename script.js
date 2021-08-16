@@ -2,9 +2,7 @@ const btAdd = document.querySelector('#criar-tarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
 const corDestaque = 'rgb(128, 128, 128)';
 const btClear = document.querySelector('#apaga-tudo');
-
-
-console.log(corDestaque);
+const btRemoverFinalizados = document.querySelector('#remover-finalizados');
 
 function addTarefa() {
   const input = document.querySelector('#texto-tarefa');
@@ -48,3 +46,13 @@ function clear() {
 }
 
 btClear.addEventListener('click', clear);
+
+function clearCompleted() {
+  const tarefasFeitas = document.querySelectorAll('.completed');
+  for (let i = 0; i < tarefasFeitas.length; i += 1) {
+    const aux = tarefasFeitas[i];
+    aux.remove();
+  }
+}
+
+btRemoverFinalizados.addEventListener('click', clearCompleted);
