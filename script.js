@@ -45,7 +45,7 @@ function CreateLista() {
 }
 CreateLista();
 
-//Requisito 5 Criando Botão
+//Requisito 5 - 6 Criando Botão
 
 function createButton(){
   const setSection = document.querySelector('#input-section')
@@ -67,4 +67,14 @@ function addTask (){
 }
 const setButton = document.querySelector('#criar-tarefa')
 setButton.addEventListener('click', addTask);
+// setButton.addEventListener('keypress', addTask);
 
+// Requisito 7 click muda o background
+
+function paintLiGray (event) {
+  event.target.style.backgroundColor = 'rgb(128, 128, 128)'
+}
+const setList2 = document.querySelector('ol');
+setList2.addEventListener('click', paintLiGray);
+
+//Requisito 8 
