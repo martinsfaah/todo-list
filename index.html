@@ -44,7 +44,21 @@
         listaDeTarefas.appendChild(li)
         li.innerHTML = tarefa
         input.value = ''
+
+        li.addEventListener('click', function (){
+            let white = 'rgb(255,255,255)'
+            if (li.style.backgroundColor = white){  
+            li.style.backgroundColor = 'rgb(128, 128, 128)'
+            }
+            else  if (li.style.backgroundColor = 'rgb(128, 128, 128)'){
+            li.style.backgroundColor = white
+            }
+        })
     })
+
+    
+    
+    
 
 
 </script>
