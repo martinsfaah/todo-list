@@ -31,6 +31,10 @@ p {
   padding: 20px 30px;
   margin: auto;
   border-radius: 10px;
+
+  /* Source da box-shadow
+  https://www.codegrepper.com/code-examples/css/black+box+shadow+css */
+  box-shadow: 0 4px 8px 0 rgba(0 , 0 , 0 , 0.2), 0 6px 20px 0 rgba(0 , 0 , 0 , 0.19);
 }
 
 input {
