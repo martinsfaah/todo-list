@@ -2,7 +2,7 @@ const header = document.getElementsByTagName('header');
 // const main = document.getElementsByTagName('main');
 const sectionListControl = document.getElementById('task-list-control');
 const sectionListContent = document.getElementById('task-list-content');
-
+const sectionItemControl = document.getElementById('task-item-control');
 const newSelector = (qttOfSelector, element, selector, selectorName) => {
   for (let index = 0; index < qttOfSelector; index += 1) {
     if (typeof (element.length) === 'undefined') {
@@ -58,6 +58,11 @@ const underScoreItem = (location) => {
     }
   });
 };
+const clearList = () => {
+  const itemList = document.getElementById('lista-tarefas');
+  itemList.remove();
+  createNewElement('ol', '', sectionListContent, 1, 'id', 'lista-tarefas');
+};
 // #REQ 1
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
 
@@ -81,3 +86,8 @@ highLightItem(taskList);
 
 // #REQ 9
 underScoreItem(taskList);
+
+// #REQ 10
+createNewElement('button', 'Limpar Lista', sectionItemControl, 1, 'id', 'apaga-tudo');
+const buttonClearList = document.getElementById('apaga-tudo');
+newEvent(buttonClearList, 'click', clearList);
