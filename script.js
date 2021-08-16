@@ -50,7 +50,7 @@ createNewElement('input', '', sectionListControl, 1, 'id', 'texto-tarefa');
 // #REQ 4
 createNewElement('ol', '', sectionListContent, 1, 'id', 'lista-tarefas');
 
-// #REQ 5
+// #REQ 5, 6 E  7
 createNewElement('button', 'Adicionar', sectionListControl, 1, 'id', 'criar-tarefa');
 const buttonAddNewTask = document.getElementById('criar-tarefa');
 newEvent(buttonAddNewTask, 'click', addNewTask);
