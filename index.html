@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Minha Lista de Tarefas</h1>
-    <h2 id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</h2>
-  </header>
-  <section id="addSection">
-    <input type="text" id="texto-tarefa">
-    <button id="criar-tarefa">Adicionar</button>
-  </section>
-  <section id="listSection">
-    <ol id="lista-tarefas"></ol>
-  </section>
-  <section id="buttonsSection">
-    <button id="apaga-tudo">Apagar Tudo</button>
-    <button id="remover-finalizados">Remover Finalizados</button>
-    <button id="mover-cima">▲</button>
-    <button id="mover-baixo">▼</button>
-    <button id="remover-selecionado">Remover Selecionado</button>
-    <button id="salvar-tarefas">Salvar</button>
-  </section>
+  <div class="centralize">
+    <header>
+      <h1>Minha Lista de Tarefas</h1>
+      <h2 id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</h2>
+    </header>
+    <section id="addSection">
+      <input type="text" id="texto-tarefa">
+      <button id="criar-tarefa" class="buttons">Adicionar</button>
+    </section>
+    <section id="listSection">
+      <ol id="lista-tarefas"></ol>
+    </section>
+    <section id="buttonsSection">
+      <button class="buttomRadius" id="mover-cima">▲</button>
+      <button class="buttomRadius" id="mover-baixo">▼</button>
+      <button id="apaga-tudo" class="buttons">Apagar Tudo</button>
+      <button id="remover-finalizados" class="buttons">Remover Finalizados</button>
+      <button id="remover-selecionado" class="buttons">Remover Selecionado</button>
+      <button id="salvar-tarefas" class="buttons">Salvar</button>
+    </section>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
