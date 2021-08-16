@@ -7,6 +7,12 @@ function selecionaTarefa(evento) {
   }
 }
 
+function tarefaCompleta(evento) {
+  const itemCompleto = evento.target;
+  // ref: https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
+  itemCompleto.classList.toggle('completed');
+}
+
 function criarTarefa() {
   const tarefa = document.getElementById('texto-tarefa').value;
   const lista = document.getElementById('lista-tarefas');
@@ -16,6 +22,7 @@ function criarTarefa() {
   lista.appendChild(novaTarefa);
   document.getElementById('texto-tarefa').value = '';
   novaTarefa.addEventListener('click', selecionaTarefa);
+  novaTarefa.addEventListener('dblclick', tarefaCompleta);
 }
 
 const botao = document.querySelector('#criar-tarefa');
