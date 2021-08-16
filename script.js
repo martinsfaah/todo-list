@@ -1,9 +1,11 @@
 let taskList = document.querySelector('#lista-tarefas');
 const addTaskBtn = document.querySelector('#criar-tarefa');
+const clearListBtn = document.querySelector('#apaga-tudo');
 let fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
 
 addTaskBtn.addEventListener('click', () => {
   const taskToAddText = document.querySelector('#texto-tarefa');
+  if (taskToAddText.value != '') {
   const taskLi = document.createElement('li');
   taskLi.innerHTML = taskToAddText.value;
   taskLi.className = 'task';
@@ -12,6 +14,9 @@ addTaskBtn.addEventListener('click', () => {
   makeTasksClicable(taskLi);
   toggleTaskCompletion(taskLi);
   fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
+  } else {
+    alert("Tarefa invállida");
+  }
 });
 
 // Create a function to reset the task selection
@@ -36,3 +41,7 @@ function toggleTaskCompletion(whichTask) {
     task.target.classList.toggle("completed");
   })
 }
+
+clearListBtn.addEventListener('click', () => {
+  taskList.innerHTML = '';
+});
