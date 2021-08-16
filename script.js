@@ -1,9 +1,11 @@
+// Definição de constante utilizada várias vezes, ao longo do código.
+const taskList = document.getElementById('lista-tarefas');
+
 // Criando função que será alocada no botão "Adicionar Tarefa":
 function addTask() {
   const addTaskBtn = document.getElementById('criar-tarefa');
 
   addTaskBtn.addEventListener('click', function () {
-    const taskList = document.getElementById('lista-tarefas');
     const inputValue = document.getElementById('texto-tarefa').value;
     const newLi = document.createElement('li');
     taskList.appendChild(newLi);
@@ -16,8 +18,6 @@ function addTask() {
 // Criando função que adicionará a classe "selected" quando determinado <li> for  clicado:
 // Além disso, o fundo do elemento clicado mudará  de cor.
 function selectLi() {
-  const taskList = document.getElementById('lista-tarefas');
-
   taskList.addEventListener('click', function (event) {
     const taskListArray = document.querySelector('#lista-tarefas').children;
     for (const li of taskListArray) {
@@ -32,9 +32,7 @@ function selectLi() {
 // Clicar duas vezes em determinado <li> faz com que ele seja riscado.
 // Deve ser possível desfazer essa ação clicando novamente duas vezes no item.
 function tickUntickLi() {
-  const taskList = document.getElementById('lista-tarefas');
-
-  taskList.addEventListener('dblclick',  function(event) {
+  taskList.addEventListener('dblclick', function (event) {
     if (event.target.classList.contains('completed') === false) {
       event.target.classList.add('completed');
     } else {
@@ -45,12 +43,24 @@ function tickUntickLi() {
 
 // Adicione um botão "apaga-tudo" que, quando clicado, deve apagar todos os itens da lista:
 function deleteAllTasks() {
-  const deleteAllTasksBtn  = document.getElementById('apaga-tudo');
+  const deleteAllTasksBtn = document.getElementById('apaga-tudo');
 
-  deleteAllTasksBtn.addEventListener('click', function() {
-    const taskList = document.getElementById('lista-tarefas');
+  deleteAllTasksBtn.addEventListener('click', function () {
     taskList.innerHTML = '';
   });
+}
+
+// Adicione um botão "remover-finalizados" que, quando clicado, deve apagar todos os itens já finalizados:
+function deleteAllConcludedTasks() {
+  const deleteConcludedTasksBtn = document.getElementById('remover-finalizados');
+
+  deleteConcludedTasksBtn.addEventListener('click', function () {
+    const completedTasksArray = document.getElementsByClassName('completed')
+
+    while (completedTasksArray.length > 0) {
+      completedTasksArray[0].parentNode.removeChild(completedTasksArray[0]);
+    }
+  })
 }
 
 window.onload = function () {
@@ -58,4 +68,5 @@ window.onload = function () {
   selectLi();
   tickUntickLi();
   deleteAllTasks();
+  deleteAllConcludedTasks()
 };

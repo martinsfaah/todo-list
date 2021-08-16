@@ -7,7 +7,6 @@ body {
 header {
   background-color: #6272a4;
   text-align: center;
-  box-shadow: 10px 5px 5px ghostwhite;
   padding-top: 1%;
   padding-bottom: 1%;
 }
@@ -26,10 +25,10 @@ header p {
 main section {
   background-color: blueviolet;
   border: 2px solid #ff5555;
-  border-radius: 8%;
+  border-radius: 20%;
   text-align: center;
   width: 70%;
-  margin: 2% 15%;
+  margin: 11% 15%;
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -51,10 +50,11 @@ main section {
 #criar-tarefa {
   width: 25%;
   background-color: #50fa7b;
-  color: #e94c4c;
+  border: none;
+  color:  #282a36;
   font-size: 1em;
   font-weight: 600;
-  border: none;
+  margin-left: 1%;
   cursor: pointer;
 }
 
@@ -68,14 +68,28 @@ main section {
   text-decoration: line-through solid black;
 }
 
+#remover-finalizados{
+  width: 28%;
+  background-color:rgb(9, 9, 169);
+  border-radius: 15%;
+  color: ghostwhite;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-right: 2%;
+}
+
 #apaga-tudo {
   width: 28%;
   background-color: #ffb86c;
+  border-radius: 15%;
   color: #282a36;
   font-size: 1em;
   font-weight: 600;
   border: none;
   cursor: pointer;
+  margin-left: 2%;
 }
 
 footer {
