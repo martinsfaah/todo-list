@@ -69,8 +69,24 @@ if (localStorage.getItem('classes')) {
   }
 }
 
+function moveAcima() {
+  const tarefaSelecionada = document.querySelector('.selected');
+  if (tarefaSelecionada && tarefaSelecionada.previousSibling) {
+    tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, tarefaSelecionada.previousSibling);
+  }
+}
+function moveAbaixo() {
+  const tarefaSelecionada = document.querySelector('.selected');
+  if (tarefaSelecionada && tarefaSelecionada.nextSibling) {
+    const posicaoAbaixo = tarefaSelecionada.nextSibling.nextSibling;
+    tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, posicaoAbaixo);
+  }
+}
+
 // Criando os eventos para os elementos criados no html
-document.querySelector('#criar-tarefa').addEventListener('click', botaoCriar);
+document.querySelector('#criar-tarefa').onclick = botaoCriar;
 document.querySelector('#apaga-tudo').onclick = apagaTudo;
 document.querySelector('#remover-finalizados').onclick = removeFinalizados;
 document.querySelector('#salvar-tarefas').onclick = salvaTarefas;
+document.querySelector('#mover-cima').onclick = moveAcima;
+document.querySelector('#mover-baixo').onclick = moveAbaixo;
