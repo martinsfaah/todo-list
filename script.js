@@ -3,6 +3,7 @@ const listaTarefas = document.querySelector('#lista-tarefas');
 const corDestaque = 'rgb(128, 128, 128)';
 const btClear = document.querySelector('#apaga-tudo');
 const btRemoverFinalizados = document.querySelector('#remover-finalizados');
+const btRemoverSelecionado = document.querySelector('#remover-selecionado');
 
 function addTarefa() {
   const input = document.querySelector('#texto-tarefa');
@@ -56,3 +57,15 @@ function clearCompleted() {
 }
 
 btRemoverFinalizados.addEventListener('click', clearCompleted);
+
+function apagarSelecionado() {
+  const tarefas = document.querySelectorAll('li');
+  for (let i = 0; i < tarefas.length; i += 1) {
+    const aux = tarefas[i];
+    if (aux.style.backgroundColor === corDestaque){
+      aux.remove();
+    }
+  }
+}
+
+btRemoverSelecionado.addEventListener('click', apagarSelecionado);
