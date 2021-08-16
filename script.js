@@ -1,3 +1,4 @@
+const taskList = document.getElementById('lista-tarefas');
 // Adicona escutador para mudança de backgorund ao clicar
 function selectTask(event) {
   const taskElement = event.target;
@@ -24,7 +25,6 @@ function completTask(event) {
 function createTask() {
   const button = document.getElementById('criar-tarefa');
   const textInput = document.getElementById('texto-tarefa');
-  const taskList = document.getElementById('lista-tarefas');
   button.addEventListener('click', () => {
     if (textInput.value !== '') {
       const task = document.createElement('li');
@@ -44,10 +44,23 @@ createTask();
 function deleteButton() {
   const button = document.getElementById('apaga-tudo');
   button.addEventListener('click', () => {
-    const taskList = document.getElementById('lista-tarefas');
     console.log('ok');
     taskList.innerHTML = '';
   });
 }
 
 deleteButton();
+
+function deleteCompleted() {
+  const button = document.getElementById('remover-finalizados');
+  button.addEventListener('click', () => {
+    const tasks = taskList.children;
+    for (let index = tasks.length - 1; index >= 0; index -= 1) {
+      if (tasks[index].classList.contains('completed')) {
+        taskList.removeChild(tasks[index]);
+      }
+    }
+  });
+}
+
+deleteCompleted();
