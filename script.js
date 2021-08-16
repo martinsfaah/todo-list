@@ -1,8 +1,19 @@
-function addTask() {
-  const task = document.getElementsByClassName('lista-tarefas')[0];
-  const listLine = document.createElement('li');
-  for (let i = 0; i < listLine.length; i += 1) {
-    task.appendChild(listLine);
-  }
+function clearInput() {
+  const clear = document.getElementById('texto-tarefa');
+  clear.value = '';
 }
-addTask();
+
+function receiveTask() {
+  const task = document.getElementById('lista-tarefas');
+  const val = document.getElementById('texto-tarefa').value;
+  const listLine = document.createElement('li');
+  listLine.innerText = val;
+  task.appendChild(listLine);
+  clearInput();
+}
+
+function listTasks() {
+  const buttonNewTask = document.getElementById('criar-tarefa');
+  buttonNewTask.addEventListener('click', receiveTask);
+}
+listTasks();
