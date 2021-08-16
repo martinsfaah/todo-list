@@ -73,3 +73,7 @@ button:hover {
 #salvar-tarefas img {
   margin: -5px -10px -8px;
 }
+
+#remover-selecionado img {
+  margin: -5px -10px;
+}

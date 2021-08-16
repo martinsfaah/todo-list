@@ -83,4 +83,3 @@ function saveList() {
 }
 
 saveButton.addEventListener('click', saveList);
-
