@@ -19,12 +19,16 @@ window.onload = function() {
     changeStyle.backgroundColor = 'rgb(128,128,128)';
   })
 
+  getOL.addEventListener('dblclick', function(event) {
+    const changeStyle = event.target.style;
+    const changeClass = event.target.className;
+    const getLi = document.querySelectorAll('li');
+    if (changeClass !== 'completed') {
+      event.target.className = 'completed';
+    } else {
+      event.target.className = '';
+    }
+  })
 
-
-  // ### 8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
-
-  // **O que será verificado:**
   
-  // - Será verificado que, quando um elemento da lista é selecionado, o elemento selecionado previamente deixa de sê-lo. Isso é verificado através da presença ou não do estilo `background-color: rgb(128, 128, 128)` no elemento.
-
 }
