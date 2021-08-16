@@ -1,24 +1,8 @@
-let taskList = document.querySelector('#lista-tarefas');
+const taskList = document.querySelector('#lista-tarefas');
 const addTaskBtn = document.querySelector('#criar-tarefa');
 const clearListBtn = document.querySelector('#apaga-tudo');
 const clearCompletedBtn = document.querySelector('#remover-finalizados');
 let fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
-
-addTaskBtn.addEventListener('click', () => {
-  const taskToAddText = document.querySelector('#texto-tarefa');
-  if (taskToAddText.value != '') {
-    const taskLi = document.createElement('li');
-    taskLi.innerHTML = taskToAddText.value;
-    taskLi.className = 'task';
-    taskList.appendChild(taskLi);
-    taskToAddText.value = '';
-    makeTasksClicable(taskLi);
-    toggleTaskCompletion(taskLi);
-    fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
-  } else {
-    alert('Tarefa invállida');
-  }
-});
 
 // Create a function to reset the task selection
 function clearTasksSelection() {
@@ -42,6 +26,22 @@ function toggleTaskCompletion(whichTask) {
     task.target.classList.toggle('completed');
   });
 }
+
+addTaskBtn.addEventListener('click', () => {
+  const taskToAddText = document.querySelector('#texto-tarefa');
+  if (taskToAddText.value !== '') {
+    const taskLi = document.createElement('li');
+    taskLi.innerHTML = taskToAddText.value;
+    taskLi.className = 'task';
+    taskList.appendChild(taskLi);
+    taskToAddText.value = '';
+    makeTasksClicable(taskLi);
+    toggleTaskCompletion(taskLi);
+    fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
+  } else {
+    alert('Tarefa invállida');
+  }
+});
 
 clearListBtn.addEventListener('click', () => {
   taskList.innerHTML = '';
