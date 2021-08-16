@@ -22,3 +22,36 @@ function createOrdList() {
   ordList.id = "lista-tarefas";
 }
 createOrdList();
+
+function createButton() {
+  const button = document.createElement('button');
+  const mySection = document.querySelector('section');
+  mySection.appendChild(button);
+  button.id = "criar-tarefa";
+  button.innerHTML = 'Adicionar';
+}
+createButton();
+
+function criaTarefa() {
+
+  const button = document.getElementById("criar-tarefa"); 
+  const input = document.getElementById("texto-tarefa");
+  const ordList = document.getElementById("lista-tarefas");
+
+  button.addEventListener('click', function(){
+    let listItem = document.createElement('li'); 
+    ordList.appendChild(listItem); 
+    listItem.innerHTML = input.value;
+    input.value = '';  
+  });
+}
+criaTarefa(); 
+ 
+
+  
+
+
+
+
+
+  
