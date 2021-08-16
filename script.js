@@ -47,6 +47,17 @@ const highLightItem = (location) => {
     event.target.classList.add('selected');
   });
 };
+
+const underScoreItem = (location) => {
+  location.addEventListener('dblclick', (object) => {
+    const event = object;
+    if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
+    } else {
+      event.target.classList.add('completed');
+    }
+  });
+};
 // #REQ 1
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
 
@@ -64,8 +75,9 @@ createNewElement('button', 'Adicionar', sectionListControl, 1, 'id', 'criar-tare
 const buttonAddNewTask = document.getElementById('criar-tarefa');
 newEvent(buttonAddNewTask, 'click', addNewTask);
 
-// #REQ 7
+// #REQ 7 e 8
 const taskList = document.getElementById('lista-tarefas');
 highLightItem(taskList);
 
-// #REQ 8
+// #REQ 9
+underScoreItem(taskList);
