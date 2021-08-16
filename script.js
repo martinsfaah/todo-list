@@ -1,3 +1,5 @@
+const list = document.getElementById('lista-tarefas');
+
 function selectItem(event) {
   const listItens = document.getElementsByClassName('list-item');
 
@@ -28,7 +30,6 @@ function addListItemListener() {
 
 function createListItem(value) {
   const listItem = document.createElement('li');
-  const list = document.getElementById('lista-tarefas');
   listItem.classList.add('list-item');
   listItem.innerHTML = value;
   list.appendChild(listItem);
@@ -43,11 +44,20 @@ function addTask() {
 }
 
 function cleanList() {
-  const list = document.getElementById('lista-tarefas');
   const listItens = document.getElementsByClassName('list-item');
   for (let i = listItens.length - 1; i >= 0; i -= 1) {
     const item = listItens[i];
     list.removeChild(item);
+  }
+}
+
+function cleanCompletedItens() {
+  const listItens = document.getElementsByClassName('list-item');
+  for (let i = listItens.length - 1; i >= 0; i -= 1) {
+    const item = listItens[i];
+    if (item.classList.contains('completed')) {
+      list.removeChild(item);
+    }
   }
 }
 
@@ -56,3 +66,6 @@ addButton.addEventListener('click', addTask);
 
 const cleanButton = document.getElementById('apaga-tudo');
 cleanButton.addEventListener('click', cleanList);
+
+const completedCleanButton = document.getElementById('remover-finalizados');
+completedCleanButton.addEventListener('click', cleanCompletedItens);
