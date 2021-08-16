@@ -11,4 +11,8 @@ caixaTexto.setAttribute('type', 'text');
 caixaTexto.id = 'texto-tarefa';
 main.appendChild(caixaTexto);
 
-// Requisito 4
+// Requisito 4 :adiciona uma lista ordenada
+
+const lista = document.createElement('ol');
+lista.id = 'lista-tarefas';
+main.appendChild(lista);
