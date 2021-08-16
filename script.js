@@ -1,20 +1,27 @@
-let botao = document.getElementById('criar-tarefa');
+const botao = document.getElementById('criar-tarefa');
 botao.addEventListener('click', adicionaItem);
 
-let input = document.getElementById('texto-tarefa');
+const input = document.getElementById('texto-tarefa');
 input.addEventListener('input', recebeTexto);
 
-let itemLista = document.createElement('li');
+const textoInput = document.createElement('li');
 
 function recebeTexto(event) {
-  itemLista.innerText = event.target.value;
+  textoInput.innerText = event.target.value;
 }
 
-let listaTarefas = document.querySelector('#lista-tarefas');
+const listaTarefas = document.querySelector('#lista-tarefas');
 
 function adicionaItem(event) {
-  let novoItem = document.createElement('li');
-  novoItem.innerText = itemLista.innerText;
+  const novoItem = document.createElement('li');
+  novoItem.innerText = textoInput.innerText;
+  novoItem.addEventListener('click', corCinza);
   listaTarefas.appendChild(novoItem);
   input.value = '';
+}
+
+const itensLista = document.querySelectorAll('li');
+
+function corCinza(event) {
+  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
 }
