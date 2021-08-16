@@ -19,6 +19,7 @@ function createTask(task) {
   newTask.className = 'listItem';
   newTask.innerText = taskInput.value;
   newTask.addEventListener('click', colorTask);
+  newTask.addEventListener('dblclick', completeTask);
   taskList.appendChild(newTask);
   taskInput.value = '';
 }
@@ -30,4 +31,9 @@ function colorTask(task) {
     tasks[i].classList.remove('selected');
   }
   task.target.classList.add('selected');
+}
+
+// Complete Task
+function completeTask(task) {
+  task.target.classList.toggle('completed');
 }
