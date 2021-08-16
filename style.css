@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(240 , 240 , 240);
 }
 
 header {
@@ -8,16 +8,16 @@ header {
 }
 
 h1 {
-  color: rgb(40, 40, 40);
+  color: rgb(40 , 40 , 40);
 }
 
 #funcionamento {
   font-style: italic;
-  color: rgb(138, 138, 138);
+  color: rgb(138 , 138 , 138);
 }
 
 .selected {
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(128 , 128 , 128);
 }
 
 .completed {

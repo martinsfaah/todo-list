@@ -42,5 +42,17 @@ function addTask() {
   input.value = '';
 }
 
+function cleanList() {
+  const list = document.getElementById('lista-tarefas');
+  const listItens = document.getElementsByClassName('list-item');
+  for (let i = listItens.length - 1; i >= 0; i -= 1) {
+    const item = listItens[i];
+    list.removeChild(item);
+  }
+}
+
 const addButton = document.getElementById('criar-tarefa');
 addButton.addEventListener('click', addTask);
+
+const cleanButton = document.getElementById('apaga-tudo');
+cleanButton.addEventListener('click', cleanList);
