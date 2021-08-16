@@ -58,3 +58,16 @@ function limpaCompletos() {
   }
 }
 btnLimparCompletos.addEventListener('click', limpaCompletos);
+
+// requisito 12
+const btnSalvarLista = document.getElementById('salvar-tarefas');
+
+function salvaLista() {
+  localStorage.clear();
+  localStorage.setItem('lista', listaTarefas.innerHTML);
+}
+btnSalvarLista.addEventListener('click', salvaLista);
+
+window.onload = function initPage() {
+  listaTarefas.innerHTML = localStorage.getItem('lista');
+};
