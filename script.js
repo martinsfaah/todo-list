@@ -1,6 +1,10 @@
 let taskInput = document.getElementById('texto-tarefa');
+let taskList = document.getElementById('lista-tarefas');
+let tasks = document.getElementsByClassName('listItem');
 
 addListeners('#criar-tarefa', 'click', createTask);
+addListeners('#apaga-tudo', 'click', cleanList);
+addListeners('#remover-finalizados', 'click', cleanSelected);
 
 // Add Event Listeners
 function addListeners(targetElement, targetEvent, targetFunction) {
@@ -15,7 +19,6 @@ function addListeners(targetElement, targetEvent, targetFunction) {
 // Create Task
 function createTask(task) {
   let newTask = document.createElement('li');
-  let taskList = document.getElementById('lista-tarefas');
   newTask.className = 'listItem';
   newTask.innerText = taskInput.value;
   newTask.addEventListener('click', colorTask);
@@ -26,7 +29,6 @@ function createTask(task) {
 
 // Color Task
 function colorTask(task) {
-  let tasks = document.querySelectorAll('.listItem');
   for (let i = 0; i < tasks.length; i += 1) {
     tasks[i].classList.remove('selected');
   }
@@ -36,4 +38,20 @@ function colorTask(task) {
 // Complete Task
 function completeTask(task) {
   task.target.classList.toggle('completed');
+}
+
+// Clean List
+function cleanList(button) {
+  let tasks = document.querySelectorAll('.listItem');
+  tasks.forEach((element) => {
+    element.remove('li');
+  });
+}
+
+// Clean Selected
+function cleanSelected(button) {
+  let tasks = document.querySelectorAll('.completed');
+  tasks.forEach((element) => {
+    element.remove('li');
+  });
 }
