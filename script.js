@@ -12,10 +12,25 @@ function addNewTask() {
 const addTaskButton = document.getElementById('criar-tarefa');
 addTaskButton.addEventListener('click', addNewTask);
 
+// Apaga todos os itens da lista de tarefas
+// Consulta: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+const deleteTasksButton = document.getElementById('apaga-tudo');
+
+function deleteTasks() {
+  deleteTasksButton.addEventListener('click', () => {
+    const getTasks = document.querySelectorAll('li');
+    for (let i = 0; i < getTasks.length; i += 1) {
+      getTasks[i].remove();
+    }
+  })
+}
+
+deleteTasks();
+
 // Altera background-color do item selecionado
-function changeBgColor(task) {
+function selectedTask(task) {
   const clickedTask = task.target;
   clickedTask.style.backgroundColor = 'rgb(128,128,128)';
 }
 
-taskList.addEventListener('click', changeBgColor);
+taskList.addEventListener('click', selectedTask);
