@@ -38,7 +38,7 @@ main section {
   color: #44475a;
   font-size: 0.9em;
   width: 50%;
-  margin-bottom: 2%;
+  margin-bottom: 0.5%;
   padding: 1%;
   outline: none;
 }
@@ -79,7 +79,7 @@ main section {
   border: none;
   cursor: pointer;
   margin-right: 2%;
-  padding: 1% 1%;
+  padding: 1%;
 }
 
 #remover-finalizados {
@@ -93,7 +93,7 @@ main section {
   cursor: pointer;
   margin-left: 2%;
   margin-right: 2%;
-  padding: 1% 1%;
+  padding: 1%;
 }
 
 #remover-selecionado {
@@ -106,7 +106,7 @@ main section {
   border: none;
   cursor: pointer;
   margin-left: 2%;
-  padding: 1% 1%;
+  padding: 1%;
 }
 
 #apaga-tudo {
@@ -119,7 +119,7 @@ main section {
   border: none;
   cursor: pointer;
   margin-top: 2%;
-  padding: 1% 1%;
+  padding: 1%;
 }
 
 footer {
