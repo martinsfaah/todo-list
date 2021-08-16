@@ -53,6 +53,24 @@ function removeFinished() {
   });
 }
 
+function saveList() {
+  const saveBttn = document.getElementById('salvar-tarefas');
+  saveBttn.addEventListener('click', () => {
+    const listaAtual = document.getElementById('lista-tarefas');
+    console.log(listaAtual.innerHTML);
+    localStorage.setItem('lista', listaAtual.innerHTML);
+  });
+}
+
+function getSavedList() {
+  if (localStorage.getItem('lista') !== null) {
+    const listaSalva = document.getElementById('lista-tarefas');
+    listaSalva.innerHTML = localStorage.getItem('lista');
+  }
+}
+
 addTasks();
 removeAll();
 removeFinished();
+getSavedList();
+saveList();
