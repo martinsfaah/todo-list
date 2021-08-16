@@ -1,4 +1,6 @@
 const header = document.getElementsByTagName('header');
+const main = document.getElementsByTagName('main');
+
 const newSelector = (qttOfSelector, element, selector, selectorName) => {
   for (let index = 0; index < qttOfSelector; index += 1) {
     if (typeof (element.length) === 'undefined') {
@@ -30,3 +32,7 @@ createNewElement('p', 'Clique duas vezes em um item para marcá-lo como completo
 const pHeader = document.querySelector('header p');
 newSelector(1, pHeader, 'id', 'funcionamento');
 
+// #REQ 3
+createNewElement('input', '', main, 1);
+const inputAddListItem = document.querySelector('main input');
+newSelector(1, inputAddListItem, 'id', 'texto-tarefa');
