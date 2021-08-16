@@ -1,13 +1,22 @@
 function selectTask(event) {
   const eventObj = event;
-  const todoList = document.getElementsByClassName('tarefa');
+  const todoList = document.getElementsByTagName('li');
   for (let index = 0; index < todoList.length; index += 1) {
-    console.log(todoList[index].style.backgroundColor);
     if (todoList[index].style.backgroundColor === 'rgb(128, 128, 128)') {
       todoList[index].style.backgroundColor = '';
     }
   }
   eventObj.target.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
+function riskTask(event) {
+  const eventObj = event;
+  console.log(eventObj.target);
+  if (eventObj.target.className !== 'completed') {
+    eventObj.target.className = 'completed';
+  } else {
+    eventObj.target.className = '';
+  }
 }
 
 function addTasks() {
@@ -16,12 +25,13 @@ function addTasks() {
   const todoList = document.getElementById('lista-tarefas');
   button.addEventListener('click', () => {
     const newItem = document.createElement('li');
-    newItem.className = 'tarefa';
     newItem.addEventListener('click', selectTask);
+    newItem.addEventListener('dblclick', riskTask);
     newItem.innerHTML = inputText.value;
     inputText.value = '';
     todoList.appendChild(newItem);
   });
 }
+
 
 addTasks();
