@@ -56,3 +56,30 @@ function addTask() {
 
 const buttonAdd = document.querySelector('#criar-tarefa');
 buttonAdd.addEventListener('click', addTask);
+
+function newSectionFooter() {
+  const sectionFooter = document.createElement('section');
+  mainSection.appendChild(sectionFooter);
+  sectionFooter.id = 'section-footer';
+}
+newSectionFooter();
+
+const sectionFooter = document.getElementById('section-footer');
+
+function createButtonClear() {
+  const buttonClear = document.createElement('button');
+  sectionFooter.appendChild(buttonClear);
+  buttonClear.id = 'apaga-tudo';
+  buttonClear.innerText = 'Apagar';
+}
+createButtonClear();
+
+function clearAll() {
+  const olListParent = document.querySelector('#lista-tarefas');
+  while (olListParent.firstChild) {
+    olListParent.removeChild(olListParent.firstChild);
+  }
+}
+
+const buttonClear = document.getElementById('apaga-tudo');
+buttonClear.addEventListener('click', clearAll);
