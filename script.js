@@ -33,27 +33,22 @@ deleteAllTasks.addEventListener('click', () => {
   }
 });
 
-function completedRemover() {
-  let arrayOfSelectedIndexs = [];
-  for(let index = 0;index < taskList.children.length; index += 1) {
-    if(taskList.children[index].className === 'completed') {
-      arrayOfSelectedIndexs.push(index);
-    }
-  }
-  return arrayOfSelectedIndexs;
-}
-
-const completedTasks = document.querySelectorAll('.completed');
 const removeSelectedButton = document.querySelector('#remover-finalizados');
 removeSelectedButton.addEventListener('click', () => {
   for (let index = 0; index < taskList.children.length; index += 1) {
-    if(taskList.children[index].className === 'completed') {
+    if (taskList.children[index].className === 'completed') {
       taskList.removeChild(taskList.children[index]);
       index = 0;
     }
   }
 });
 
-
-
-
+const removeCurrentTask = document.querySelector("#remover-selecionado");
+removeCurrentTask.addEventListener('click', () => {
+for (let index = 0; index < taskList.children.length; index += 1) {
+  if(taskList.children[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+    taskList.removeChild(taskList.children[index]);
+  }
+}
+});
+ 

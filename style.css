@@ -31,7 +31,7 @@ li {
 
 }
 
-#apaga-tudo , #remover-finalizados {
+#apaga-tudo , #remover-finalizados , #remover-selecionado {
   background-color: red;
 
 }
