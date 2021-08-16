@@ -34,3 +34,13 @@ function atualizaLista() {
   }
 }
 btnCriarTarefa.addEventListener('click', atualizaLista);
+
+// Apaga a lista de tarefas
+const apagaTudo = document.querySelector('#apaga-tudo');
+apagaTudo.addEventListener('click', () => {
+  const listaOl = document.querySelector('#lista-tarefas');
+  const elementos = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < elementos.length; i += 1) {
+    listaOl.removeChild(elementos[i]);
+  }
+});
