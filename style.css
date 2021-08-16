@@ -5,9 +5,16 @@
 #criar-tarefa{
     display: inline-block;
     margin-left: 190px;
-    margin-top: px;
-   
+    
 }
 #lista-tarefas{
     
 }
+.completed {
+    text-decoration: line-through solid rgb(0, 0, 0);
+    
+  }
+  
+  .selected {
+    background-color: rgb(128, 128, 128);
+  }
