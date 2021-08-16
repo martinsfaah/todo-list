@@ -72,9 +72,23 @@ setButton.addEventListener('click', addTask);
 // Requisito 7 click muda o background
 
 function paintLiGray (event) {
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)'
+  removeColor();
+  const backGrayColor = event.target
+  backGrayColor.className = 'colorGray'
 }
+
 const setList2 = document.querySelector('ol');
 setList2.addEventListener('click', paintLiGray);
 
-//Requisito 8 
+//Requisito 8 RESETANDO O selecionado
+
+// for(let index = 0; index < clickListItem.length; index+= 1) {
+  //   clickListItem[index].addEventListener('click' );
+  // }
+  const clickListItem = document.getElementsByTagName('li');
+  
+  function removeColor() {
+    for (let index = 0; index < clickListItem.length; index+= 1) {
+    clickListItem[index].classList.remove('colorGray')
+  }
+}
