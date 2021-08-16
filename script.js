@@ -35,3 +35,19 @@ function changeColor() {
 function taskCompleted() {
   event.target.classList.toggle('completed');
 }
+
+function clearButton() {
+  let button = document.getElementById('apaga-tudo');  
+
+  button.addEventListener('click', clearList);
+
+  function clearList() {
+    const li = document.querySelectorAll('.task');
+    const ol = document.querySelector('#lista-tarefas'); 
+    for (let index = 0; index < li.length; index += 1) {
+      ol.removeChild(li[index]);
+    }
+  }
+}
+
+clearButton();
