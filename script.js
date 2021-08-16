@@ -51,3 +51,23 @@ function clearButton() {
 }
 
 clearButton();
+
+function removeTaskCompletedButton() {
+  const button = document.getElementById('remover-finalizados');
+
+  button.addEventListener('click', removeTaskCompleted);
+
+  function removeTaskCompleted() {
+    const li = document.querySelectorAll('.task');
+    const ol = document.querySelector('#lista-tarefas');
+    for (let index = 0; index < li.length; index += 1) {
+      if (li[index].className == 'task completed') {
+        ol.removeChild(li[index]);
+      } else {
+        console.log('não achou');
+      }
+    }    
+  }
+}
+
+removeTaskCompletedButton();
