@@ -45,7 +45,7 @@ const taskListTarget = document.getElementById('lista-tarefas');
 
 function paintLine(event) {
   reset();
-  event.target.style.background = 'grey';
+  event.target.style.background = 'rgb(128, 128, 128';
 }
 
 taskListTarget.addEventListener('click', paintLine);
@@ -53,6 +53,6 @@ taskListTarget.addEventListener('click', paintLine);
 function reset() {
   const liTarget = document.querySelectorAll('li');
   for (let index = 0; index < liTarget.length; index += 1) {
-    document.querySelectorAll('li')[index].style.backgroundColor = 'white';
+    document.querySelectorAll('li')[index].style.backgroundColor = '';
   }
 }
