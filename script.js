@@ -45,8 +45,9 @@ function deleteAll() {
 deleteAll();
 
 function deleteFinished() {
-  for (let i = 0; i < ListIntens.length; i += 1) {
-    const child = ListIntens[i];
+  const itens = document.getElementsByClassName('completed');
+  for (let i = (itens.length - 1); i >= 0; i -= 1) {
+    const child = itens[i];
     if (child.classList.contains('completed')) {
       list.removeChild(child);
     }
