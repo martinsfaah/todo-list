@@ -1,14 +1,15 @@
 const listaTarefas = 'lista-tarefas';
+const selectedColor = 'rgb(128, 128, 128)';
 
 function selectTask(event) {
   const eventObj = event;
   const todoList = document.getElementsByTagName('li');
   for (let index = 0; index < todoList.length; index += 1) {
-    if (todoList[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+    if (todoList[index].style.backgroundColor === selectedColor) {
       todoList[index].style.backgroundColor = '';
     }
   }
-  eventObj.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  eventObj.target.style.backgroundColor = selectedColor;
 }
 
 function riskTask(event) {
@@ -83,7 +84,7 @@ function getSelectedPosition() {
   const listItems = document.getElementsByTagName('li');
   let atualPosition = -1;
   for (let index = 0; index < listItems.length; index += 1) {
-    if (listItems[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+    if (listItems[index].style.backgroundColor === selectedColor) {
       atualPosition = index;
       break;
     }
@@ -127,13 +128,21 @@ function moveDwn() {
   }
 }
 
-
-
 function moveItem() {
   const bttnUp = document.getElementById('mover-cima');
   const bttnDown = document.getElementById('mover-baixo');
   bttnUp.addEventListener('click', moveUp);
   bttnDown.addEventListener('click', moveDwn);
+}
+
+function removeSelected() {
+  document.getElementById('remover-selecionado').addEventListener('click', () => {
+    const selectedIndex = getSelectedPosition();
+    const listOfItens = document.getElementsByTagName('li');
+    if (selectedIndex > 0) {
+      listOfItens[selectedIndex].remove();
+    }
+  });
 }
 
 addTasks();
@@ -142,3 +151,4 @@ removeFinished();
 getSavedList();
 saveList();
 moveItem();
+removeSelected();
