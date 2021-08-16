@@ -1,15 +1,15 @@
-const tarefas = [];
+let tarefas = null;
 const botaoTarefa = document.getElementById('criar-tarefa');
 const todoList = document.getElementById('lista-tarefas');
+const apagaTudo = document.getElementById('apaga-tudo');
+const todo = document.getElementsByClassName('todo');
 
 function addLista() {
-  const tarefa = tarefas[tarefas.length - 1];
   const ol = document.getElementById('lista-tarefas');
   const li = document.createElement('li');
-  const todo = document.getElementsByClassName('todo');
   ol.appendChild(li);
   li.className = 'todo';
-  todo[todo.length - 1].innerText = tarefa;
+  todo[todo.length - 1].innerText = tarefas;
 }
 
 function armazenarTarefa() {
@@ -17,9 +17,8 @@ function armazenarTarefa() {
   if (!tarefa.value) {
     console.log('valor invalido');
   } else {
-    tarefas.push(tarefa.value);
+    tarefas = tarefa.value;
     tarefa.value = '';
-    console.log(tarefas);
     addLista();
   }
 }
@@ -52,3 +51,11 @@ function completo(clicado) {
 }
 
 todoList.addEventListener('dblclick', completo);
+
+function deletaLista() {
+  const itens = todoList.children;
+  for (let i = 0; i < itens.length; i += 0) {
+    todoList.removeChild(itens[0]);
+  }
+}
+apagaTudo.addEventListener('click', deletaLista);
