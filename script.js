@@ -33,7 +33,7 @@ addItem()
 
 
 //  selecionar
-function selecionar() {
+function select() {
   const ol = document.getElementById('lista-tarefas')
   ol.addEventListener('click', (e) => {
     const li = document.getElementsByClassName('list-values')
@@ -47,10 +47,10 @@ function selecionar() {
     }
   })
 }
-selecionar()
+select()
 
 //  marcar item
-function marcar() {
+function mark() {
   const ol = document.getElementById('lista-tarefas')
   ol.addEventListener('dblclick', (e) => {
     if(e.target.className.split(' ').includes('completed')){
@@ -60,7 +60,7 @@ function marcar() {
     }
   })
 }
-marcar()
+mark()
 
 //  botão apagar tudo
 function clear() {
