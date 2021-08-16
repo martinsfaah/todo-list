@@ -89,3 +89,32 @@ function saveList() {
 }
 
 saveList();
+
+function moveUp() {
+  const button = document.getElementById('mover-cima');
+  button.addEventListener('click', () => {
+    const task = document.querySelector('.selected');
+    if (task !== null) {
+      const previuosTask = task.previousElementSibling;
+      if (previuosTask !== null) {
+        previuosTask.insertAdjacentElement('beforebegin', task);
+      }
+    }
+  });
+}
+
+function moveDown() {
+  const button = document.getElementById('mover-baixo');
+  button.addEventListener('click', () => {
+    const task = document.querySelector('.selected');
+    if (task !== null) {
+      const nextTask = task.nextElementSibling;
+      if (task !== null && nextTask !== null) {
+        nextTask.insertAdjacentElement('afterend', task);
+      }
+    }
+  });
+}
+
+moveUp();
+moveDown();
