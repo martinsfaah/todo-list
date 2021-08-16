@@ -34,10 +34,15 @@ function corCinza(event) {
 
 function sublinha(event) {
   // let completo = document.querySelector('.completed');
-  // let classeClicado = event.target.classList.value;
-  if (event.target.classList.contains('completed')) {
+  let classeClicado = event.target;
+  if (classeClicado.classList.contains('completed')) {
     event.target.classList.remove('completed');
   } else {
     event.target.classList.add('completed');
   }
 }
+
+const apagaTudo = document.querySelector('#apaga-tudo');
+apagaTudo.addEventListener('click', function () {
+  location.reload();
+});
