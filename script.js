@@ -36,6 +36,13 @@ function apagaTudo() {
   }
 }
 
+// Função para apagar lista de tarefas
+function removeFinalizados() {
+    const completos = document.getElementsByClassName('completed');
+    while (completos[0]) completos[0].parentNode.removeChild(completos[0]);
+}
+
 // Criando os eventos para os elementos criados no html
 document.querySelector('#criar-tarefa').onclick = criaTarefa;
 document.querySelector('#apaga-tudo').onclick = apagaTudo;
+document.querySelector('#remover-finalizados').onclick = removeFinalizados;
