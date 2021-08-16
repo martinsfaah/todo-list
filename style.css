@@ -45,3 +45,6 @@ header {
  color: aqua;
  opacity: 30%;
 }
+.completed {
+    text-decoration: line-through solid rgb(0, 0, 0);
+}
