@@ -76,8 +76,8 @@ function recarregarElementosSalvos() {
   for (let index = 0; index < tamanhoStorage; index += 1) {
     const valor = localStorage.getItem(index).split(';; ');
     const elemento = document.createElement('li');
-    elemento.innerText = valor[um];
-    elemento.className = valor[zero];
+    elemento.innerText = valor[zero];
+    elemento.className = valor[um];
     adicionarEventos(elemento, 'click', fundoCinza);
     adicionarEventos(elemento, 'dblclick', linhaRiscada);
     lista.appendChild(elemento);
