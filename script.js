@@ -4,12 +4,12 @@ const taskList = document.querySelector('#lista-tarefas');
 function addTask() {
   const stringText = document.querySelector('#texto-tarefa').value;
   const createList = document.createElement('li');
-  createList.className = 'listItem';
+  createList.id = 'listItem';
   createList.innerHTML = stringText;
   taskList.appendChild(createList);
   document.querySelector('#texto-tarefa').value = '';
   createList.addEventListener('click', clickGray);
-//   createList.addEventListener('dblclick', lineThrough);
+  createList.addEventListener('dblclick', lineThrough);
 }
 
 button.addEventListener('click', addTask);
@@ -17,9 +17,9 @@ button.addEventListener('click', addTask);
 function clickGray(event) {
   let li = event.target
 //pinte todas as li`s diferentes da target de branco
-  for (i=0; i<document.querySelectorAll('.listItem').length; i++){
-    if (document.querySelectorAll('.listItem')[i] !== li){
-      document.querySelectorAll('.listItem')[i].style.backgroundColor = 'rgb(255, 255, 255)'
+  for (i=0; i<document.querySelectorAll('#listItem').length; i++){
+    if (document.querySelectorAll('#listItem')[i] !== li){
+      document.querySelectorAll('#listItem')[i].style.backgroundColor = 'rgb(255, 255, 255)'
     }   
   }
 //troque a cor da li target
@@ -30,7 +30,11 @@ function clickGray(event) {
   }
 }
 
-// function lineThrough(event) {
-//   let li = event.target
-//   if 
-// }
+function lineThrough(event) {
+  let li = event.target
+  if (li.className === ""){
+      li.className = 'completed'
+  } else {
+      li.className = ""
+  }
+}
