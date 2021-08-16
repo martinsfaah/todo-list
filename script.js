@@ -11,9 +11,9 @@ function addTask() {
     taskList.appendChild(newLi);
     const taskListLastElementChild = taskList.lastElementChild;
     taskListLastElementChild.innerHTML = inputValue;
-    taskListLastElementChild.style.width = '80%'
-    taskListLastElementChild.style.marginLeft = '10%'
-    taskListLastElementChild.style.marginRight = '10%'
+    taskListLastElementChild.style.width = '80%';
+    taskListLastElementChild.style.marginLeft = '10%';
+    taskListLastElementChild.style.marginRight = '10%';
     document.getElementById('texto-tarefa').value = '';
   });
 }
@@ -24,7 +24,7 @@ function addTask() {
 function selectUnselectLi() {
   taskList.addEventListener('click', function (event) {
     const taskListArray = document.querySelector('#lista-tarefas').children;
-    if (event.target.classList.contains('selected') ===  true) {
+    if (event.target.classList.contains('selected') === true) {
       event.target.classList.remove('selected');
       event.target.style.backgroundColor = 'blueviolet';
     } else {
