@@ -1,0 +1,17 @@
+const criarTarefa = document.getElementById('criar-tarefa');
+const textInput = document.getElementById('texto-tarefa');
+const textItem = document.getElementById('lista-tarefas');
+criarTarefa.addEventListener('click', makeTask);
+function makeTask() {
+  const itemTarefa = document.createElement('li');
+  itemTarefa.innerText = textInput.value;
+  textItem.appendChild(itemTarefa);
+  document.getElementById('texto-tarefa').value = '';
+  itemTarefa.addEventListener('click', () => {
+    if (itemTarefa.style.backgroundColor == false) {
+        itemTarefa.style.backgroundColor = 'rgb(128,128,128)';
+  }else{
+    itemTarefa.style.backgroundColor = 'white';
+  }
+  })
+}
