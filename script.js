@@ -20,4 +20,14 @@ function CreateP (){
 }
 CreateP();
 
+// Requisito 3 Criando o input
+
+function CreateInput (){
+  const setBody3 = document.getElementsByTagName('body')[0];
+  const createInput = document.createElement('input');
+  createInput.setAttribute('type', 'text');
+  createInput.id = "texto-tarefa"
+  setBody3.appendChild(createInput);
+}
+CreateInput();
 
