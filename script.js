@@ -9,6 +9,7 @@ addTaskBtn.addEventListener('click', () => {
   taskLi.className = 'task';
   taskList.appendChild(taskLi);
   taskToAddText.value = '';
+  makeTasksClicable(taskLi);
   fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
 });
 
@@ -19,16 +20,12 @@ function clearTasksSelection() {
   }
 }
 
-if (fullTaskLi !== null) {
-fullTaskLi.forEach((taskOnLi) => {
-  taskOnLi.addEventListener('click', (task) => {
-    const thisTaskClasses = task.target.classList;
-    if (!thisTaskClasses.contains('selected')) {
-      clearTasksSelection();
-      thisTaskClasses.add('selected');
-    } else {
-      alert(task.target.id);
-    }
-  });
-});
-};
+function makeTasksClicable(whichTask) {
+  whichTask.addEventListener('click', (task) => {
+      const thisTaskClasses = task.target.classList;
+      if (!thisTaskClasses.contains('selected')) {
+        clearTasksSelection();
+        thisTaskClasses.add('selected');
+      }
+    })
+}
