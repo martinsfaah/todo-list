@@ -1,9 +1,13 @@
 // Adicona escutador para mudança de backgorund ao clicar
-function selectTask(task) {
-  task.addEventListener('click', (event) => {
-    const taskElement = event.target;
-    taskElement.style.background = 'rgb(128, 128, 128)';
-  });
+function selectTask(event) {
+  const taskElement = event.target;
+  const selectedTask = document.getElementsByClassName('tarefa selecionada')[0];
+  if (taskElement !== selectedTask && selectedTask !== undefined) {
+    selectedTask.style.backgroundColor = 'rgb(255, 255, 255)';
+    selectedTask.classList.remove('selecionada');
+  }
+  taskElement.style.backgroundColor = 'rgb(128, 128, 128)';
+  taskElement.classList.add('selecionada');
 }
 
 // Função para incluir tarefas na lista
@@ -16,7 +20,7 @@ function createTask() {
       const task = document.createElement('li');
       task.className = 'tarefa';
       task.innerHTML = textInput.value;
-      selectTask(task);
+      task.addEventListener('click', selectTask);
       taskList.append(task);
       textInput.value = '';
     } else {
