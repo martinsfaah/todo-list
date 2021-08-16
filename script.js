@@ -13,8 +13,12 @@ function createTask() {
 buttonCreateTask.addEventListener('click', createTask);
 
 function changeColorTask(event) {
+  const selected = document.querySelector('.selected');
+  if (selected != null) {
+    selected.classList.remove('selected');
+  }
   const task = event.target;
-  task.style.backgroundColor = 'rgb(128, 128, 128)';
+  task.className = 'selected';
 }
 
 listTask.addEventListener('click', changeColorTask);
