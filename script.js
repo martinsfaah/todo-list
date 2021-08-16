@@ -45,11 +45,12 @@ todoList.addEventListener('click', changeBg);
 
 function completo(clicado) {
   const compl = clicado;
-  if (compl.target.classList.contains('completed')) {
-    compl.target.classList.remove('completed');
-  } else {
-    compl.target.classList.add('completed');
-  }
+  // if (compl.target.classList.contains('completed')) {
+  //   compl.target.classList.remove('completed');
+  // } else {
+  //   compl.target.classList.add('completed');
+  // }
+  compl.target.classList.toggle('completed');
 }
 
 todoList.addEventListener('dblclick', completo);
@@ -79,3 +80,7 @@ function remSelecionado() {
 }
 
 removeSelecionado.addEventListener('click', remSelecionado);
+
+function salvar() {
+
+}
