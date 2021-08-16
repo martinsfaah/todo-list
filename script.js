@@ -1,7 +1,7 @@
-// Requisito 1
+// Requisito 1 Criando o HEADER
 
 function CreateHeader () {
-  const setBody = document.getElementByTagName('body')[0];
+  const setBody = document.getElementsByTagName('body')[0];
   const creatHeader = document.createElement('header')
   creatHeader.innerHTML = "Minha Lista de Tarefas";
   setBody.appendChild(creatHeader);
@@ -9,5 +9,15 @@ function CreateHeader () {
 CreateHeader();
 
 
-// Requisito 2
+// Requisito 2  Adicionando paragrafo
+
+function CreateP (){
+  const setBody2 = document.getElementsByTagName('body')[0];
+  const creatTagP = document.createElement('p');
+  creatTagP.id = "funcionamento"
+  creatTagP.innerHTML = "Clique duas vezes em um item para marcá-lo como completo";
+  setBody2.appendChild(creatTagP);
+}
+CreateP();
+
 
