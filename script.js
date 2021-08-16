@@ -29,13 +29,14 @@ CriarBotaoAddTarefa();
 
 function mudarACorDeFundo(event) {
   const evento = event.target;
-  if (evento.classList.contains('selected')) {
-    evento.classList.remove('selected');
+  let selection = document.querySelector('.selected');
+  if(selection) selection.classList.remove('selected');
+  if(evento.classList.contains('selected')) {
+    evento.classList.remove('selected')
   } else {
     evento.classList.add('selected');
   }
 }
-// a função acima remove a classe, mas no caso a intenção é remover a propriedade background-color
 
 function pegarValorDoInput() {
   const listaOrdenada = document.querySelector('#lista-tarefas');
