@@ -36,3 +36,8 @@ newSelector(1, pHeader, 'id', 'funcionamento');
 createNewElement('input', '', main, 1);
 const inputAddListItem = document.querySelector('main input');
 newSelector(1, inputAddListItem, 'id', 'texto-tarefa');
+
+// #REQ 4
+createNewElement('ol', '', main, 1);
+const taskList = document.querySelector('main ol');
+newSelector(1, taskList, 'id', 'lista-tarefas');
