@@ -55,9 +55,14 @@ createOL();
 function createTaskList () {
   let inputText = document.getElementById('texto-tarefa');
   const li = document.createElement('li');
+  li.addEventListener('click', targetLi);
   li.innerHTML = inputText.value;
   document.getElementById('lista-tarefas').appendChild(li);
   inputText.value = '';
+}
+
+function targetLi (event) {
+  event.target.style.backgroundColor = 'rgb(128, 128, 128)'
 }
 
 
