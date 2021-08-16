@@ -66,3 +66,46 @@ function removerTarefasCompletas() {
 }
 
 buttonRemoverCompletos.addEventListener('click', removerTarefasCompletas);
+
+/* Salvar Tarefas */
+
+const buttonSalvarTarefas = document.getElementById('salvar-tarefas');
+
+function salvarTarefas() {
+  const arrayListaTarefas = Array.from(listaTarefas.childNodes);
+  console.log(arrayListaTarefas);
+
+  const arrTarefa = [];
+
+  arrayListaTarefas.forEach((tarefa) => {
+    const objTarefa = {
+      innerText: tarefa.innerText,
+      className: tarefa.className,
+      backgroundColor: tarefa.style.backgroundColor,
+    };
+
+    arrTarefa.push(objTarefa);
+  });
+  localStorage.setItem('listaDeTarefas', JSON.stringify(arrTarefa));
+}
+
+buttonSalvarTarefas.addEventListener('click', salvarTarefas);
+
+/* Inicializar Tarefas Salvas */
+
+if (localStorage.getItem('listaDeTarefas')) {
+  const listaDeTarefasSalvas = JSON.parse(
+    localStorage.getItem('listaDeTarefas')
+  );
+
+  listaDeTarefasSalvas.forEach((tarefa) => {
+    const itemTarefa = document.createElement('li');
+
+    itemTarefa.innerText = tarefa.innerText;
+    itemTarefa.className = tarefa.className;
+    itemTarefa.style.backgroundColor = tarefa.backgroundColor;
+    itemTarefa.addEventListener('click', selecionarTarefa);
+    itemTarefa.addEventListener('dblclick', completarTarefa);
+    listaTarefas.appendChild(itemTarefa);
+  });
+}
