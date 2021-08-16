@@ -33,5 +33,26 @@ function addTasks() {
   });
 }
 
+function removeAll() {
+  const button = document.getElementById('apaga-tudo');
+  button.addEventListener('click', () => {
+    document.getElementById('lista-tarefas').innerHTML = '';
+  });
+}
+
+function removeFinished() {
+  const button = document.getElementById('remover-finalizados');
+  button.addEventListener('click', () => {
+    const listaCompleta = document.getElementsByClassName('completed');
+    if (listaCompleta.length > 0) {
+      const listSize = listaCompleta.length;
+      for (let index = 0; index < listSize; index += 1) {
+        listaCompleta[0].remove();
+      }
+    }
+  });
+}
 
 addTasks();
+removeAll();
+removeFinished();
