@@ -65,3 +65,7 @@ button:hover {
   cursor: pointer;
   background-color: rgb(44 , 182 , 125);
 }
+
+.completed {
+  text-decoration: line-through solid black;
+}

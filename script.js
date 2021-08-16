@@ -27,3 +27,15 @@ function taskBackgroundColor(event) {
 }
 
 list.addEventListener('click', taskBackgroundColor);
+
+// Line-through elements (completed)
+function lineThrough(event) {
+  const lineElement = event.target;
+  if (lineElement.className === 'completed') {
+    lineElement.removeAttribute('class');
+  } else {
+    lineElement.className = 'completed';
+  }
+}
+
+list.addEventListener('dblclick', lineThrough);
