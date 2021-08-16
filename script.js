@@ -37,3 +37,14 @@ function completItem() {
   list.addEventListener('dblclick', onClick);
 }
 completItem();
+
+function deleteAll() {
+  function onClick() {
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+  }
+  const apagaTudo = document.querySelector('#apaga-tudo');
+  apagaTudo.addEventListener('click', onClick);
+}
+deleteAll();
