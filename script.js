@@ -81,7 +81,8 @@ function moveAcima() {
 function moveAbaixo() {
   const tarefaSelecionada = document.querySelector('.selected');
   if (tarefaSelecionada && tarefaSelecionada.nextSibling) {
-    tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, tarefaSelecionada.nextSibling.nextSibling);
+    const proxPosicao = tarefaSelecionada.nextSibling.nextSibling;
+    tarefaSelecionada.parentNode.insertBefore(tarefaSelecionada, proxPosicao);
   }
 }
 
