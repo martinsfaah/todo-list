@@ -54,6 +54,8 @@ function itemListCompleted() {
   })
 }
 
+
+
 function clearList() {
   let button = document.getElementById('apaga-tudo');
 
@@ -61,7 +63,7 @@ function clearList() {
     const list = document.querySelectorAll('li');
 
     for (let i = 0; i < list.length; i += 1 ) {
-      currentLi = list[i];
+      let currentLi = list[i];
       currentLi.remove();
     }
   })
@@ -69,7 +71,24 @@ function clearList() {
 
 
 
+function clearDoneItems() {
+  let button = document.getElementById('remover-finalizados');
 
+  button.addEventListener('click', () => {
+    let listItems = document.querySelectorAll('li');
+
+    for (let i = 0; i < listItems.length; i += 1) {
+      let currentLi = listItems[i];
+
+        if (currentLi.classList[0] === 'completed') {
+          currentLi.remove();
+        }
+    }
+  })
+}
+
+
+clearDoneItems()
 clearList()
 itemListCompleted()
 itemClickColor()
