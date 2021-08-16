@@ -96,9 +96,7 @@ buttonSalvarTarefas.addEventListener('click', salvarTarefas);
 /* Inicializar Tarefas Salvas */
 
 if (localStorage.getItem('listaDeTarefas')) {
-  const listaDeTarefasSalvas = JSON.parse(
-    localStorage.getItem('listaDeTarefas')
-  );
+  const listaDeTarefasSalvas = JSON.parse(localStorage.getItem('listaDeTarefas'));
 
   listaDeTarefasSalvas.forEach((tarefa) => {
     const itemTarefa = document.createElement('li');
@@ -120,23 +118,18 @@ const buttonMoverBaixo = document.getElementById('mover-baixo');
 function moverTarefaCima() {
   const selectedTarefa = document.getElementsByClassName('selected')[0];
 
-  if (
-    selectedTarefa !== listaTarefas.firstElementChild &&
-    selectedTarefa !== undefined
-  ) {
+  if (selectedTarefa !== listaTarefas.firstElementChild && selectedTarefa !== undefined) {
     listaTarefas.insertBefore(selectedTarefa, selectedTarefa.previousSibling);
   }
 }
 
 function moverTarefaBaixo() {
   const selectedTarefa = document.getElementsByClassName('selected')[0];
-  if (
-    selectedTarefa !== listaTarefas.lastElementChild &&
-    selectedTarefa !== undefined
+  if (selectedTarefa !== listaTarefas.lastElementChild && selectedTarefa !== undefined
   ) {
     listaTarefas.insertBefore(
       selectedTarefa,
-      selectedTarefa.nextSibling.nextSibling
+      selectedTarefa.nextSibling.nextSibling,
     );
   }
 }
