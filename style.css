@@ -58,7 +58,7 @@ main section {
   cursor: pointer;
 }
 
-#lista-tarefas  {
+#lista-tarefas {
   list-style-position: inside;
   color: wheat;
   line-height: 1.5em;
