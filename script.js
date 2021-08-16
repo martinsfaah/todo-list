@@ -11,16 +11,20 @@ window.onload = function() {
   })
 
   getOL.addEventListener('click', function(event) {
-    event.target.style.backgroundColor = 'rgb(128,128,128)';
+    const changeStyle = event.target.style;
+    const getLi = document.querySelectorAll('li');
+    for (let index = 0; index < getLi.length; index += 1) {
+      getLi[index].style.backgroundColor = 'white'
+    }
+    changeStyle.backgroundColor = 'rgb(128,128,128)';
   })
 
 
-//   ### 7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)
 
-// **O que será verificado:**
+  // ### 8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
 
-// - Será verificado que, ao se carregar a página, os itens da lista **não tem** o estilo CSS `background-color: rgb(128, 128, 128)`
-
-// - Será verificado que, ao se clicar em um item da lista, ele passa a ter o estilo CSS `background-color: rgb(128, 128, 128)`
+  // **O que será verificado:**
+  
+  // - Será verificado que, quando um elemento da lista é selecionado, o elemento selecionado previamente deixa de sê-lo. Isso é verificado através da presença ou não do estilo `background-color: rgb(128, 128, 128)` no elemento.
 
 }
