@@ -26,6 +26,18 @@ const createNewElement = (element, elementContent, location, qttofElements, sele
   }
 };
 
+const newEvent = (location, event, func) => {
+  location.addEventListener(event, func);
+};
+
+const addNewTask = () => {
+  const inputAddNewTask = document.getElementById('texto-tarefa');
+  const newTaskValue = inputAddNewTask.value;
+  const taskList = document.getElementById('lista-tarefas');
+  createNewElement('li', newTaskValue, taskList, 1, 'class', 'task-item');
+  inputAddNewTask.value = null;
+};
+
 // #REQ 1
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
 
@@ -35,9 +47,10 @@ createNewElement('p', 'Clique duas vezes em um item para marcá-lo como completo
 // #REQ 3
 createNewElement('input', '', sectionListControl, 1, 'id', 'texto-tarefa');
 
-
 // #REQ 4
 createNewElement('ol', '', sectionListContent, 1, 'id', 'lista-tarefas');
 
 // #REQ 5
 createNewElement('button', 'Adicionar', sectionListControl, 1, 'id', 'criar-tarefa');
+const buttonAddNewTask = document.getElementById('criar-tarefa');
+newEvent(buttonAddNewTask, 'click', addNewTask);
