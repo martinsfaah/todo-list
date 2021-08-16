@@ -66,3 +66,9 @@ function rmvFinal() {
 }
 
 removeFinal.addEventListener('click', rmvFinal);
+
+// Salvar Lista localmente
+function salvarLista() {
+  localStorage.setItem('lista-tarefas', lista.innerHTML);
+  alert('Lista de Tarefas salva.');
+}
