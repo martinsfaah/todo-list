@@ -9,7 +9,7 @@ function addItem() {
   taskList.appendChild(itemTask);
   input.value = '';
   itemTask.addEventListener('click', () => {
-     const arrayOfItems = document.querySelectorAll('li');
+    const arrayOfItems = document.querySelectorAll('li');
     for (let index = 0; index < arrayOfItems.length; index += 1) {
       if (arrayOfItems[index].style.backgroundColor === 'rgb(128, 128, 128)') {
         arrayOfItems[index].style.backgroundColor = 'white';
@@ -27,9 +27,33 @@ function addItem() {
 }
 createButton.addEventListener('click', addItem);
 const deleteAllTasks = document.querySelector('#apaga-tudo');
-deleteAllTasks.addEventListener('click',() => {
-  let childrenOfTheList = taskList.children;
+deleteAllTasks.addEventListener('click', () => {
   while (taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
-  } 
-})
+  }
+});
+
+function completedRemover() {
+  let arrayOfSelectedIndexs = [];
+  for(let index = 0;index < taskList.children.length; index += 1) {
+    if(taskList.children[index].className === 'completed') {
+      arrayOfSelectedIndexs.push(index);
+    }
+  }
+  return arrayOfSelectedIndexs;
+}
+
+const completedTasks = document.querySelectorAll('.completed');
+const removeSelectedButton = document.querySelector('#remover-finalizados');
+removeSelectedButton.addEventListener('click', () => {
+  for (let index = 0; index < taskList.children.length; index += 1) {
+    if(taskList.children[index].className === 'completed') {
+      taskList.removeChild(taskList.children[index]);
+      index = 0;
+    }
+  }
+});
+
+
+
+
