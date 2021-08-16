@@ -32,7 +32,7 @@ addOl();
 const callOl = document.getElementById('lista-tarefas');
 const callParentOl = callOl.parentNode;
 
-// Requisito 5 - Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo
+// Requisito 5 e 6 - Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo(5) e Ordene os itens da lista de tarefas por ordem de criação(6).
 function addButton() {
   const newButton = document.createElement('button');
   newButton.id = 'criar-tarefa';
@@ -44,11 +44,25 @@ addButton();
 function addTask() {
   const callInput = document.getElementById('texto-tarefa');
   const newLi = document.createElement('li');
-  newLi.id = 'task';
+  newLi.className = 'task';
   newLi.innerHTML = callInput.value;
   callOl.appendChild(newLi);
   callInput.value = '';
+  const callTask = document.querySelectorAll('.task')
+  for (let i = 0; i < callTask.length; i += 1) {
+    console.log(callTask[i]);
+    callTask[i].addEventListener('click', selectTask);
+  }
 }
 
 const callButton = document.querySelector('#criar-tarefa');
 callButton.addEventListener('click', addTask)
+
+// Requisito 7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128).
+function selectTask(event) {
+  const callTask = document.querySelectorAll('.task')
+  for (let i = 0; i < callTask.length; i += 1) {
+    callTask[i].style.backgroundColor = 'white';
+    event.target.style.backgroundColor = 'rgb(128,128,128)';
+  }
+}
