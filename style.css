@@ -36,3 +36,7 @@ p {
 input {
   padding: 4px;
 }
+
+ol {
+  margin: 30px auto;
+}
