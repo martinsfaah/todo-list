@@ -49,10 +49,10 @@ main section {
 }
 
 #criar-tarefa {
-  width: 18%;
+  width: 25%;
   background-color: #50fa7b;
   color: #e94c4c;
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -65,7 +65,17 @@ main section {
 }
 
 .completed {
-  text-decoration: line-through solid rgb(0, 0, 0);
+  text-decoration: line-through solid black;
+}
+
+#apaga-tudo {
+  width: 28%;
+  background-color: #ffb86c;
+  color: #282a36;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
 }
 
 footer {

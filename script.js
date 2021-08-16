@@ -34,17 +34,28 @@ function selectLi() {
 function tickUntickLi() {
   const taskList = document.getElementById('lista-tarefas');
 
-  taskList.addEventListener('dblclick',  function (event) {
+  taskList.addEventListener('dblclick',  function(event) {
     if (event.target.classList.contains('completed') === false) {
       event.target.classList.add('completed');
     } else {
       event.target.classList.remove('completed');
     }
-  })
+  });
+}
+
+// Adicione um botão "apaga-tudo" que, quando clicado, deve apagar todos os itens da lista:
+function deleteAllTasks() {
+  const deleteAllTasksBtn  = document.getElementById('apaga-tudo');
+
+  deleteAllTasksBtn.addEventListener('click', function() {
+    const taskList = document.getElementById('lista-tarefas');
+    taskList.innerHTML = '';
+  });
 }
 
 window.onload = function () {
   addTask();
   selectLi();
   tickUntickLi();
+  deleteAllTasks();
 };
