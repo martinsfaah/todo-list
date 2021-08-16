@@ -60,16 +60,80 @@ function deleteFinished() {
 deleteFinished();
 
 function saveList() {
-  function onClick() {
-    window.localStorage.setItem('list', JSON.stringify(list.innerHTML));
+  function saves(num, item) {
+    const listWord = 'list';
+    const listNum = listWord + num;
+    const objclasse = item.classList.contains('completed');
+    const objvalor = item.innerHTML;
+    const obj = { classe: objclasse, valor: objvalor };
+    window.localStorage.setItem(listNum, JSON.stringify(obj));
   }
-  const saveButton = document.querySelector('#salvar-tarefas');
-  saveButton.addEventListener('click', onClick);
+  for (let i = 0; i < list.children.length; i += 1) {
+    saves(i, list.children[i]);
+  }
 }
-saveList();
+const saveButton = document.querySelector('#salvar-tarefas');
+saveButton.addEventListener('click', saveList);
 
-function returnList() {
-  const liReturn = JSON.parse(window.localStorage.getItem('list'));
-  list.innerHTML = liReturn;
+function returnList(num) {
+  const saved = JSON.parse(window.localStorage.getItem(num));
+  return saved;
 }
-window.onload = returnList;
+const listWord = 'list';
+function loadReturn() {
+  for (let i = 0; i < window.localStorage.length; i += 1) {
+    const listNum = listWord + i;
+    if (returnList(listNum).classe) {
+      const listItem = document.createElement('li');
+      listItem.className = 'item completed';
+      listItem.innerHTML = returnList(listNum).valor;
+      listItem.addEventListener('click', selectItem);
+      listItem.addEventListener('dblclick', completItem);
+      list.appendChild(listItem);
+    } else {
+      const listItem = document.createElement('li');
+      listItem.className = 'item';
+      listItem.innerHTML = returnList(listNum).valor;
+      listItem.addEventListener('click', selectItem);
+      listItem.addEventListener('dblclick', completItem);
+      list.appendChild(listItem);
+    }
+  }
+}
+window.onload = loadReturn;
+
+function moveUP() {
+  function onClick() {
+    if (document.querySelectorAll('.selected').length !== 0) {
+      const selected = document.querySelector('.selected');
+      if (selected.previousElementSibling !== null) {
+        const temp = selected.previousElementSibling.innerHTML;
+        selected.previousElementSibling.innerHTML = selected.innerHTML;
+        selected.innerHTML = temp;
+        selected.classList.remove('selected');
+        selected.previousSibling.classList.add('selected');
+      }
+    }
+  }
+  const upBt = document.querySelector('#mover-cima');
+  upBt.addEventListener('click', onClick);
+}
+moveUP();
+
+function moveDown() {
+  function onClick() {
+    if (document.querySelectorAll('.selected').length !== 0) {
+      const selected = document.querySelector('.selected');
+      if (selected.nextElementSibling !== null) {
+        const temp = selected.nextElementSibling.innerHTML;
+        selected.nextElementSibling.innerHTML = selected.innerHTML;
+        selected.innerHTML = temp;
+        selected.classList.remove('selected');
+        selected.nextSibling.classList.add('selected');
+      }
+    }
+  }
+  const downBt = document.querySelector('#mover-baixo');
+  downBt.addEventListener('click', onClick);
+}
+moveDown();
