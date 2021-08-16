@@ -18,9 +18,15 @@ function createTask() {
 createTask();
 
 function changeColor() {
+  let item = document.querySelectorAll('.task');
   if (event.target.style.backgroundColor){
     event.target.removeAttribute('style');
   } else {
+    for (let index = 0; index < item.length; index += 1) {
+      if (item[index].style.backgroundColor){
+        item[index].removeAttribute('style');
+      }
+    }
     event.target.style.backgroundColor = 'rgb(128,128,128)';
   }
 }
