@@ -41,6 +41,38 @@ function tickUntickLi() {
   });
 }
 
+// Adicione um botão "remover-selecionado" que, quando clicado, remove o item selecionado:
+function excludeSelected() {
+  const deleteSelectedTaskBtn = document.getElementById('remover-selecionado');
+
+  deleteSelectedTaskBtn.addEventListener ('click', function () {
+    const taskListArray = document.querySelector('#lista-tarefas').children;
+
+    for (let li of taskListArray) {
+      if (li.classList.contains('selected') === true) {
+        taskList.removeChild(li);
+      }
+    }
+  });
+}
+
+/* Adicione um botão "salvar" que, quando clicado, salvará todos os itens da lista, mesmo se o website for fechado:
+function saveTaskList() {
+} */
+
+// Adicione um botão "remover-finalizados" que, quando clicado, deve apagar todos os itens já finalizados:
+function deleteAllConcludedTasks() {
+  const deleteConcludedTasksBtn = document.getElementById('remover-finalizados');
+
+  deleteConcludedTasksBtn.addEventListener('click', function () {
+    const completedTasksArray = document.getElementsByClassName('completed');
+
+    while (completedTasksArray.length > 0) {
+      completedTasksArray[0].parentNode.removeChild(completedTasksArray[0]);
+    }
+  });
+}
+
 // Adicione um botão "apaga-tudo" que, quando clicado, deve apagar todos os itens da lista:
 function deleteAllTasks() {
   const deleteAllTasksBtn = document.getElementById('apaga-tudo');
@@ -50,23 +82,11 @@ function deleteAllTasks() {
   });
 }
 
-// Adicione um botão "remover-finalizados" que, quando clicado, deve apagar todos os itens já finalizados:
-function deleteAllConcludedTasks() {
-  const deleteConcludedTasksBtn = document.getElementById('remover-finalizados');
-
-  deleteConcludedTasksBtn.addEventListener('click', function () {
-    const completedTasksArray = document.getElementsByClassName('completed')
-
-    while (completedTasksArray.length > 0) {
-      completedTasksArray[0].parentNode.removeChild(completedTasksArray[0]);
-    }
-  })
-}
-
 window.onload = function () {
   addTask();
   selectLi();
   tickUntickLi();
+  excludeSelected();
+  deleteAllConcludedTasks();
   deleteAllTasks();
-  deleteAllConcludedTasks()
 };

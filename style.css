@@ -51,7 +51,7 @@ main section {
   width: 25%;
   background-color: #50fa7b;
   border: none;
-  color:  #282a36;
+  color: #282a36;
   font-size: 1em;
   font-weight: 600;
   margin-left: 1%;
@@ -68,16 +68,41 @@ main section {
   text-decoration: line-through solid black;
 }
 
-#remover-finalizados{
+#salvar-tarefas {
   width: 28%;
-  background-color:rgb(9, 9, 169);
+  background-color: cadetblue;
+  border-radius: 15%;
+  color: black;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-right: 2%;
+}
+
+#remover-finalizados {
+  width: 28%;
+  background-color: rgb(9, 9, 169);
   border-radius: 15%;
   color: ghostwhite;
   font-size: 1em;
   font-weight: 600;
   border: none;
   cursor: pointer;
+  margin-left: 2%;
   margin-right: 2%;
+}
+
+#remover-selecionado {
+  width: 28%;
+  background-color: #f1fa8c;
+  border-radius: 15%;
+  color: #282a36;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-left: 2%;
 }
 
 #apaga-tudo {
@@ -89,7 +114,7 @@ main section {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  margin-left: 2%;
+  margin-top: 2%;
 }
 
 footer {
