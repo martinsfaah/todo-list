@@ -11,3 +11,7 @@
 .completed {
     text-decoration: line-through solid rgb(0, 0, 0);
     }
+
+#deleteDoneButton {
+     margin-left: 4px;
+}

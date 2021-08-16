@@ -36,4 +36,43 @@ function taskDone(e) {
 		e.target.className = 'listItem'
 	}
 }
-todoList.addEventListener('dblclick', taskDone)
+todoList.addEventListener('dblclick', taskDone);
+
+// Exercício 10 - Criar um botão que limpa a lista
+// Criação do botão.
+const deleteAllButton = document.createElement('button');
+deleteAllButton.innerText = 'Apagar lista';
+deleteAllButton.id = 'apaga-tudo';
+const buttonSection = document.querySelectorAll('section')[2];
+buttonSection.appendChild(deleteAllButton);
+
+
+// Adicionando funcionalidade ao botão.
+let apagaTudo = document.getElementById('apaga-tudo');
+function deleteAllList() {
+	let allLi = document.getElementsByTagName('li');
+	console.log(allLi);
+	for (let index = allLi.length - 1; index >= 0; index -= 1) {
+		todoList.removeChild(allLi[index]);	
+	}
+	
+}
+
+apagaTudo.addEventListener('click', deleteAllList);
+
+// Exercício 11 - Criar um botão que remove da listas itens já concluidos
+// Criação do botão.
+const deleteAllDone = document.createElement('button');
+deleteAllDone.innerText = 'Apagar itens concluídos';
+deleteAllDone.id = 'remover-finalizados';
+buttonSection.appendChild(deleteAllDone);
+
+// Adicionando funcionalidade ao botão.
+let allDoneTasks = document.getElementsByClassName('listItem completed');
+function deleteDone() {
+    for (let index = allDoneTasks.length - 1; index >= 0; index -= 1) {
+		let thisItem = allDoneTasks[index];
+		todoList.removeChild(thisItem);
+	}
+}
+document.getElementById('remover-finalizados').addEventListener('click', deleteDone);
