@@ -1,5 +1,7 @@
 const header = document.getElementsByTagName('header');
 const main = document.getElementsByTagName('main');
+const sectionListControl = document.getElementById('task-list-control');
+const taskListContent = document.getElementById('task-list-content');
 
 const newSelector = (qttOfSelector, element, selector, selectorName) => {
   for (let index = 0; index < qttOfSelector; index += 1) {
@@ -33,11 +35,13 @@ const pHeader = document.querySelector('header p');
 newSelector(1, pHeader, 'id', 'funcionamento');
 
 // #REQ 3
-createNewElement('input', '', main, 1);
+createNewElement('input', '', sectionListControl, 1);
 const inputAddListItem = document.querySelector('main input');
 newSelector(1, inputAddListItem, 'id', 'texto-tarefa');
 
 // #REQ 4
-createNewElement('ol', '', main, 1);
+createNewElement('ol', '', taskListContent, 1);
 const taskList = document.querySelector('main ol');
 newSelector(1, taskList, 'id', 'lista-tarefas');
+
+// #REQ 5
