@@ -83,6 +83,11 @@ function moveAbaixo() {
   }
 }
 
+function removeSelecionado() {
+  const tarefa = document.querySelector('.selected');
+  if (tarefa) tarefa.remove();
+}
+
 // Criando os eventos para os elementos criados no html
 document.querySelector('#criar-tarefa').onclick = botaoCriar;
 document.querySelector('#apaga-tudo').onclick = apagaTudo;
@@ -90,3 +95,4 @@ document.querySelector('#remover-finalizados').onclick = removeFinalizados;
 document.querySelector('#salvar-tarefas').onclick = salvaTarefas;
 document.querySelector('#mover-cima').onclick = moveAcima;
 document.querySelector('#mover-baixo').onclick = moveAbaixo;
+document.querySelector('#remover-selecionado').onclick = removeSelecionado;
