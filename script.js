@@ -31,7 +31,7 @@ deleteTasks();
 function taskRemoveBgColor() {
   const getTasks = document.querySelectorAll('li');
   for (let i = 0; i < getTasks.length; i += 1) {
-    getTasks[i].style.backgroundColor = ''
+    getTasks[i].style.backgroundColor = '';
   }
 }
 

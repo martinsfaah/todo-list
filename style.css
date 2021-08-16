@@ -1,12 +1,8 @@
 body {
-  background-color: rgb(15,48,49);
+  background-color: rgb(15 , 48 , 49);
   color: white;
 }
 
 li {
   cursor: pointer;
-}
-
-.selected {
-  background-color: rgb(128,128,128);
 }
