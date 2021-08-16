@@ -42,3 +42,12 @@ function apagaTudo () {
         listaTarefas.removeChild(tarefas[index]);
     }
 }
+const buttonRemoveFinalizados = document.getElementById('remover-finalizados');
+buttonRemoveFinalizados.addEventListener('click', apagaFinalizados);
+function apagaFinalizados () {
+    let finalizados = document.getElementsByClassName('completed');
+    let listaTarefas = document.getElementById('lista-tarefas');
+    for (let index = finalizados.length-1; index >= 0; index -=1) {
+        listaTarefas.removeChild(finalizados[index]);
+    }
+}
