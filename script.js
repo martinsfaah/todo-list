@@ -23,5 +23,9 @@ function adicionaItem(event) {
 const itensLista = document.querySelectorAll('li');
 
 function corCinza(event) {
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  let selecionado = document.querySelector('.selecionado');
+  if (selecionado !== null) {
+    selecionado.classList.remove('selecionado');
+  }
+  event.target.classList.add('selecionado');
 }
