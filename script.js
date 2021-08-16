@@ -13,6 +13,11 @@ function addTask() {
 
   buttonAdd.addEventListener('click', function eventeClick() {
     const itemList = document.createElement('li');
+    itemList.addEventListener('click', function liEvent() {
+      if (itemList.style.backgroundColor !== '#808081') {
+        itemList.style.backgroundColor = '#808080';
+      }
+    });
     itemList.innerText = document.getElementById('texto-tarefa').value;
     ol.appendChild(itemList);
     document.getElementById('texto-tarefa').value = null;
