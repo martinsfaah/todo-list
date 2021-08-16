@@ -5,7 +5,6 @@ function createOl() {
   oList.id = 'lista-tarefas';
 }
 
-
 function createList() {
   const inputPlace = document.querySelector('#texto-tarefa');
 
@@ -13,8 +12,7 @@ function createList() {
   buttonInput.addEventListener('click', function (event) {
     const lists = document.createElement('li');
     lists.innerHTML = inputPlace.value;
-    // lists.classList.add('item-List');
-    // event.target.style.backgroundColor = 'rgb(128,128,128)'
+    lists.classList.add('item-List');
 
     document.querySelector('#lista-tarefas').appendChild(lists);
 
@@ -29,24 +27,28 @@ function selectItens() {
     for (let idx = 0; idx < oListArray.length; idx += 1) {
       oListArray[idx].classList.remove('marked');
     }
-
     event.target.classList.add('marked');
   });
 }
 
 function completedItens() {
-  // oList.addEventListener('dblclick', function (event) {
-  //   event.target.classList.toggle('completed');
-  // });
+  oList.addEventListener('dblclick', function (clicado) {
+    const compl = clicado;
 
-  oList.addEventListener('dblclick', function(event){
-    event.target.classList.toggle('completed')
+    compl.target.classList.toggle('completed');
+  });
+}
 
-  })
+function eraseContent() {
+  // let currentList = document.querySelector('#lista-tarefas').children
+  let eraseButton = document.querySelector('#apaga-tudo');
+  eraseButton.addEventListener('click', function () {});
 
+  
 }
 
 createOl();
 createList();
 selectItens();
 completedItens();
+eraseContent();
