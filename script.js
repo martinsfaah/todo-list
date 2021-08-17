@@ -9,6 +9,7 @@ const list = document.querySelector('#lista-tarefas');
 const listItems = document.querySelectorAll('ol li');
 const btnRemoveAll = document.getElementById('apaga-tudo');
 const btnRemoveSelected = document.getElementById('remover-selecionado');
+const btnRemoveCompleted = document.getElementById('remover-finalizados');
 // const btnMoveUp = document.getElementById('mover-cima');
 // const btnMoveDown = document.getElementById('mover-baixo');
 
@@ -29,14 +30,19 @@ function removeSelected() {
   for (let index = 0; index < completedItens.length; index += 1) {
     completedItens[index] = this.parentElement;
     list.removeChild(completedItens[index]);
-    // completedItens[index].style.display = 'none';
-    // console.log(completedItens[index]);
+  }
+}
+
+function removeCompleted() {
+  const completedItens = document.querySelectorAll('.completed');
+
+  for (let index = 0; index < completedItens.length; index += 1) {
+    list.removeChild(completedItens[index]);
   }
 }
 
 function removeAll() {
-  list.remove(listItems);
-  // newList();
+  list.innerHTML = '';
 }
 
 function listItemsInteract(event) {
@@ -52,3 +58,4 @@ list.addEventListener('dblclick', listItemsCompleted, false);
 btnCreateItem.addEventListener('click', createListItems);
 btnRemoveAll.addEventListener('click', removeAll);
 btnRemoveSelected.addEventListener('click', removeSelected);
+btnRemoveCompleted.addEventListener('click', removeCompleted);
