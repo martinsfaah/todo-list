@@ -70,7 +70,7 @@ function createButtonClear() {
   const buttonClear = document.createElement('button');
   sectionFooter.appendChild(buttonClear);
   buttonClear.id = 'apaga-tudo';
-  buttonClear.innerText = 'Apagar';
+  buttonClear.innerText = 'Apagar Tudo';
 }
 createButtonClear();
 
@@ -83,3 +83,39 @@ function clearAll() {
 
 const buttonClear = document.getElementById('apaga-tudo');
 buttonClear.addEventListener('click', clearAll);
+
+function createButtonRemoveDone() {
+  const buttonRemoveDone = document.createElement('button');
+  sectionFooter.appendChild(buttonRemoveDone);
+  buttonRemoveDone.id = 'remover-finalizados';
+  buttonRemoveDone.innerText = 'Remover Finalizados';
+}
+createButtonRemoveDone();
+
+// Duas formas diferentes de fazer o removeDone.
+
+// function removeDone() {
+//   const olListParent = document.getElementById('lista-tarefas');
+//   for (let i = itensLista.length - 1; i >= 0; i -= 1) {
+//     if (itensLista[i].classList.contains('completed')) {
+//       olListParent.removeChild(itensLista[i]);
+//     }
+//   }
+// }
+
+// function removeDone() {
+//   const liCompleted = document.querySelectorAll('.completed');
+//   for (let i = liCompleted.length - 1; i >= 0; i -= 1) {
+//     liCompleted[i].remove();
+//   }
+// }
+
+function removeDone() {
+  const liCompleted = document.getElementsByClassName('completed');
+  while (liCompleted.length) {
+    liCompleted[0].remove();
+  }
+}
+
+const buttonRemoveDone = document.getElementById('remover-finalizados');
+buttonRemoveDone.addEventListener('click', removeDone);
