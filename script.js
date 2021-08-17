@@ -8,6 +8,10 @@ const moveDwnBtn = document.querySelector('#mover-baixo');
 const removeBtn = document.querySelector('#remover-selecionado');
 let fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
 
+function refreshTaskLi() {
+  fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
+}
+
 // Create a function to reset the task selection
 function clearTasksSelection() {
   for (let li = 0; li < fullTaskLi.length; li += 1) {
@@ -83,7 +87,7 @@ addTaskBtn.addEventListener('click', () => {
     taskToAddText.value = '';
     makeTasksClicable(taskLi);
     toggleTaskCompletion(taskLi);
-    fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
+    refreshTaskLi();
   } else {
     alert('Tarefa invállida');
   }
@@ -94,8 +98,8 @@ clearListBtn.addEventListener('click', () => {
 });
 
 clearCompletedBtn.addEventListener('click', () => {
-  const actualList = document.querySelectorAll('ol#lista-tarefas li');
-  for (const comp of actualList) {
+  refreshTaskLi();
+  for (const comp of fullTaskLi) {
     if (comp.classList.contains('completed')) {
       comp.parentNode.removeChild(comp);
     }
@@ -139,7 +143,7 @@ removeBtn.addEventListener('click', () => {
 window.onload = function restoreSavedList() {
   if (localStorage.length > 0) {
     taskList.innerHTML = JSON.parse(localStorage.getItem('savedTaskList'));
-    fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
+    refreshTaskLi();
     fullTaskLi.forEach((element) => {
       makeTasksClicable(element);
       toggleTaskCompletion(element);
