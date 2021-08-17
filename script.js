@@ -13,6 +13,19 @@ function makeSelected(event) {
   }
 }
 
+function completedTask(event) {
+  const cutItemList = event.target;
+
+  if (cutItemList.style.textDecoration.length > 1) {
+    cutItemList.style.textDecoration = '';
+    cutItemList.classList.remove('completed');
+    return;
+  }
+
+  cutItemList.style.textDecoration = 'line-through';
+  cutItemList.classList.add('completed');
+}
+
 function addToList() {
   const getInput = document.querySelector('#texto-tarefa');
   const newItemList = document.createElement('li');
@@ -20,6 +33,7 @@ function addToList() {
   newItemList.classList.add('list-item');
   document.querySelector('#lista-tarefas').appendChild(newItemList);
   newItemList.addEventListener('click', makeSelected);
+  newItemList.addEventListener('dblclick', completedTask);
   document.getElementById('texto-tarefa').value = '';
 }
 
