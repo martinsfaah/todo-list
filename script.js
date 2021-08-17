@@ -45,3 +45,36 @@ function eraseOnlyDones() {
         }
     }
 
+const saveTasks = document.querySelector('#salvar-tarefas');
+saveTasks.addEventListener('click', saveToLocal);
+function saveToLocal() {
+    let li = document.querySelectorAll('li');
+    let saveLi = [];
+    for(const element of li) {
+        saveLi.push(element.innerText);
+    }
+    localStorage.setItem('tasks', JSON.stringify(saveLi));
+    addClassToLocal();
+}
+function addClassToLocal() {
+    const saveClass = document.querySelectorAll('li');
+    let arrayClasses = [];
+    for(let index = 0; index < saveClass.length; index += 1) {
+        arrayClasses.push(saveClass[index].className);
+    }
+    localStorage.setItem('classes', JSON.stringify(arrayClasses));
+}
+
+window.onload = function initialState() {
+    let savedLi;
+    let savedLi2;
+    if(localStorage.getItem('tasks') !== null) {
+        savedLi = JSON.parse(localStorage.getItem('tasks'));
+        savedLi2 = JSON.parse(localStorage.getItem('classes'));
+    } for(let index = 0; index < savedLi.length; index += 1) {
+        let li = document.createElement('li');
+        li.innerText = savedLi[index];
+        li.className = savedLi2[index];
+        ol.appendChild(li);
+    }
+}
