@@ -141,30 +141,12 @@ function load() {
 window.onload = load;
 
 // Requisito 13 - Adicione dois botões, um com id="mover-cima" e outro com id="mover-baixo", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas.
-function createButtonsMove() {
-  const createButtonUp = document.createElement('button');
-  const createButtonDown = document.createElement('button');
-  createButtonUp.innerHTML = 'Mover Para Cima';
-  createButtonDown.innerHTML = 'Mover Para Baixo';
-  createButtonUp.id = 'mover-cima';
-  createButtonDown.id = 'mover-baixo';
-  callParent.insertBefore(createButtonUp, callScript);
-  callParent.insertBefore(createButtonDown, callScript);
-  createButtonUp.addEventListener('click', moveUp);
-  createButtonDown.addEventListener('click', moveDown);
-}
-createButtonsMove();
-
 function moveUp() {
   const selectedTask = document.querySelector('.backgroundRgb');
   if (selectedTask !== null) {
     const previousSelectedTask = selectedTask.previousSibling;
     if (previousSelectedTask !== null) {
       getOl.insertBefore(selectedTask, previousSelectedTask);
-    } else {
-      // console.log(getOl)
-      // selectTask(event);
-      // getOl.lastElementChild.classList.add('backgroundRgb');
     }
   }
 }
@@ -179,11 +161,25 @@ function moveDown() {
   }
 }
 
+function createButtonsMove() {
+  const createButtonUp = document.createElement('button');
+  const createButtonDown = document.createElement('button');
+  createButtonUp.innerHTML = 'Mover Para Cima';
+  createButtonDown.innerHTML = 'Mover Para Baixo';
+  createButtonUp.id = 'mover-cima';
+  createButtonDown.id = 'mover-baixo';
+  callParent.insertBefore(createButtonUp, callScript);
+  callParent.insertBefore(createButtonDown, callScript);
+  createButtonUp.addEventListener('click', moveUp);
+  createButtonDown.addEventListener('click', moveDown);
+}
+createButtonsMove();
+
 // Requisito 14 - Adicione um botão com id="remover-selecionado" que, quando clicado, remove o item selecionado
 function removeSelected() {
   for (let i = 0; i < getOl.childNodes.length; i += 1) {
     if (getOl.childNodes[i].classList.contains('backgroundRgb')) {
-      getOl.childNodes[i].remove();      
+      getOl.childNodes[i].remove();
     }
   }
 }
