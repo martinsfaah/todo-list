@@ -74,7 +74,7 @@ main section {
 }
 
 .completed {
-  text-decoration: line-through solid black;
+  text-decoration: line-through solid 3px #f33737;
 }
 
 #salvar-tarefas {
