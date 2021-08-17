@@ -13,6 +13,14 @@ function includingTasks(){
 buttonAdd.addEventListener("click", includingTasks);
 
 function colorCheck(event){
+    //limpar os outros itens da lista
+    const itens = tasksList.getElementsByTagName("li");
+    for(let index = 0; index < itens.length; index += 1){
+        itens[index].style.backgroundColor = "transparent";
+    }
+
+    
     const clickedTask = event.target
     clickedTask.style.backgroundColor = "rgb(128,128,128)";
+    
 }
