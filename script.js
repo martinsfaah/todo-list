@@ -2,6 +2,7 @@ const textoTarefa = document.querySelector("#texto-tarefa");
 const listaTarefas = document.querySelector("#lista-tarefas");
 const criarTarefa = document.querySelector("#criar-tarefa");
 const deleteBtn = document.querySelector("#apaga-tudo");
+const deleteBtnComplete = document.querySelector("#remover-finalizados");
 
 function addTask(){
 if (textoTarefa.value === ''){
@@ -36,5 +37,14 @@ listaTarefas.addEventListener ('dblclick', doubleClick)
 function clearButton(){
  listaTarefas.innerHTML = ''   
 }
+deleteBtn.addEventListener ('click', clearButton)   
 
- deleteBtn.addEventListener ('click', clearButton)   
+function clearSelectedButton(){
+let completedTask= document.querySelectorAll('.completed')
+for (i=0 ; i < completedTask.length; i += 1) { 
+completedTask[i].parentNode.removeChild(completedTask[i]); //Fonte: https://www.w3schools.com/jsref/met_node_removechild.asp
+}
+}
+deleteBtnComplete.addEventListener('click', clearSelectedButton);
+
+
