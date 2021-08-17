@@ -105,3 +105,13 @@ function switchIndex2() {
     }
   }
 }
+
+const removeDoneTask = document.querySelector('#remover-selecionado');
+removeDoneTask.onclick = function onlyDoneTask() {
+  let li = document.querySelectorAll('li');
+  for(let element of li) {
+    if(element.style.backgroundColor === 'rgb(128, 128, 128)') {
+      element.remove();
+    }
+  }
+}
