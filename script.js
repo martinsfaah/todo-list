@@ -3,6 +3,7 @@ const ol = document.querySelector('#lista-tarefas');
 const header = document.querySelector('header');
 const textBox = document.createElement('input');
 const buttonDeleted = document.querySelector('#apaga-tudo');
+const finishedButton = document.querySelector('#remover-finalizados');
 
 function inputTxt() {
   textBox.setAttribute('type', 'text');
@@ -47,3 +48,13 @@ function deletedTask() {
   });
 }
 deletedTask();
+
+function deletedTaskSelected() {
+  finishedButton.addEventListener('click', () => {
+    const allCompleted = document.querySelectorAll('.completed');
+    for (let index = 0; index < allCompleted.length; index += 1) {
+      allCompleted[index].remove();
+    }
+  });
+}
+deletedTaskSelected();
