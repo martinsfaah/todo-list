@@ -88,6 +88,11 @@ function criarTarefa(){
       event.target.classList.add('selected');
       //Essa linha vai adicionar novamente a classe ao elemento clicado.
     })
+    criaTag.addEventListener('dblclick', function(event){
+      event.target.classList.toggle('completed')
+       
+      
+    })
   }
   )
 }
