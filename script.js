@@ -75,21 +75,25 @@ function criarTarefa(){
     const tagPai = document.querySelector('ol');
     tagPai.appendChild(criaTag);
     input.value = '';
-//ajuda de Vitor Diorio (https://github.com/vdiorio) no trecho abaixo. Eu não sabia que podiamos criar um elemento com um esccutador de eventos diretamente na função!!!!
+//Ajuda de Vitor Diorio (https://github.com/vdiorio) no trecho abaixo. Eu não sabia que podiamos criar um elemento com um esccutador de eventos diretamente na função!!!!
     criaTag.addEventListener('click', function(event){
-      event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+      //Esse deu trabalho 
+      event.target.classList.add('selected');
+      //Esse clique adiciona uma classe que ainda não existe
+      const lista = document.querySelectorAll('li');
+      for (index = 0; index < lista.length; index +=1){
+        lista[index].classList.remove('selected');
+      }
+      //Esse mesmo clique vai rodar todas as 'li' e remover o atributo
+      event.target.classList.add('selected');
+      //Essa linha vai adicionar novamente a classe ao elemento clicado.
     })
   }
   )
-
 }
 criarTarefa();
 
 
 // 7.Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)
-// function mudaCorLi(){
-//   let lista = document.querySelector('ol').children;
-//     console.log(lista)
-//   }
-// mudaCorLi()
+// Foi feito na função anterior, criamos a tag li já com escutor de eventos juntamente com a função de mudar cor quando ela for clicada.
 
