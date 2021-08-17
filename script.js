@@ -69,14 +69,36 @@ function clearCompleted() {
   let clearCompletedButton = document.getElementById('remover-finalizados');
   clearCompletedButton.addEventListener('click', function() {
     let completedTasks = document.getElementsByClassName('completed');
-    console.log(completedTasks);
-    console.log(completedTasks.length);
     for (let index = completedTasks.length - 1; index >= 0; index -= 1 ) {
-      console.log(index)
-      console.log(completedTasks[index])
       completedTasks[index].parentNode.removeChild(completedTasks[index]);
     }
   })
 }
 
 clearCompleted();
+
+// SAVE LIST BUTTON
+
+// function saveList() {
+//   let saveButton = document.getElementById('salvar-tarefas');
+//   let tasksList = document.getElementById('lista-tarefas');
+//   saveButton.addEventListener('click', function() {
+//     localStorage.setItem(tasksList);
+//   })
+// }
+
+// saveList();
+
+// CLEAR SELECTEDS
+
+function clearSelected() {
+  let clearSelectedButton = document.getElementById('remover-selecionado');
+  clearSelectedButton.addEventListener('click', function() {
+    let selectedTasks = document.getElementsByClassName('selecionada');
+    for (let index = selectedTasks.length - 1; index >= 0; index -= 1 ) {
+      selectedTasks[index].parentNode.removeChild(selectedTasks[index]);
+    }
+  })
+}
+
+clearSelected();

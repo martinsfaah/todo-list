@@ -46,7 +46,7 @@ input {
 
 .selecionada {
   background-color: rgb(128, 128, 128);
-  /* color: white; */
+  color: white;
 }
 
 .completed {
