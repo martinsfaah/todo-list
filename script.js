@@ -1,12 +1,12 @@
 console.log('hello world!');
 
 function criarInput() {
-  const section = document.querySelector('#section-principal');
+  const secction = document.querySelector('#section-principal');
   const input = document.createElement('input');
   input.placeholder = 'digite aqui sua tarefa';
   input.type = 'text';
   input.id = 'texto-tarefa';
-  section.appendChild(input);
+  secction.appendChild(input);
 }
 criarInput();
 
@@ -29,10 +29,10 @@ CriarBotaoAddTarefa();
 
 function mudarACorDeFundo(event) {
   const evento = event.target;
-  let selection = document.querySelector('.selected');
+  const selection = document.querySelector('.selected');
   if (selection) selection.classList.remove('selected');
   if (evento.classList.contains('selected')) {
-    evento.classList.remove('selected')
+    evento.classList.remove('selected');
   } else {
     evento.classList.add('selected');
   }
@@ -53,8 +53,8 @@ const restateBotaoAdd = document.querySelector('#criar-tarefa');
 restateBotaoAdd.addEventListener('click', pegarValorDoInput);
 
 function criarOBotaoApagar() {
-  let resgateSecaoPrincipal = document.querySelector('#section-principal');
-  let botaoApagar = document.createElement('button');
+  const resgateSecaoPrincipal = document.querySelector('#section-principal');
+  const botaoApagar = document.createElement('button');
   botaoApagar.id = 'apaga-tudo';
   botaoApagar.innerText = 'apagar';
   resgateSecaoPrincipal.appendChild(botaoApagar);
@@ -62,10 +62,10 @@ function criarOBotaoApagar() {
 criarOBotaoApagar();
 
 function apagarTodosOsElementosDaLista() {
-  let resgateLista = document.querySelector('#lista-tarefas');
-  while(resgateLista.lastChild) {
+  const resgateLista = document.querySelector('#lista-tarefas');
+  while (resgateLista.lastChild) {
     resgateLista.removeChild(resgateLista.lastChild);
   }
 }
-let resgateBotaoApagar = document.querySelector('#apaga-tudo');
+const resgateBotaoApagar = document.querySelector('#apaga-tudo');
 resgateBotaoApagar.addEventListener('click', apagarTodosOsElementosDaLista);
