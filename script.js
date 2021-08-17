@@ -94,8 +94,33 @@ window.onload = function returnSavedTasks() {
 const removeSelectedTaskButton = document.getElementById('remover-selecionado');
 
 function removeSelected() {
-  const getTasks = document.querySelector('li[style');
+  const getTasks = document.querySelector('li[style]');
   getTasks.remove();
 }
 
 removeSelectedTaskButton.addEventListener('click', removeSelected);
+
+// Move o item selecionado para cima
+// Consulta: https://stackoverflow.com/a/31046750, https://stackoverflow.com/a/34914096 e https://www.codegrepper.com/code-examples/javascript/javascript+move+list+items+up+and+down
+const moveUpButton = document.getElementById('mover-cima');
+
+function moveTaskUp() {
+  const up = document.querySelector('li[style]');
+  if (up.previousSibling) {
+    up.parentNode.insertBefore(up, up.previousElementSibling);
+  }
+}
+
+moveUpButton.addEventListener('click', moveTaskUp);
+
+// Move o item selecionado para baixo
+const moveDownButton = document.getElementById('mover-baixo');
+
+function moveTaskDown() {
+  const down = document.querySelector('li[style]');
+  if (down.nextSibling) {
+    down.parentNode.insertBefore(down.nextElementSibling, down);
+  }
+}
+
+moveDownButton.addEventListener('click', moveTaskDown);
