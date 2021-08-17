@@ -2,9 +2,10 @@
 const addBtn = document.getElementById('criar-tarefa'); // Botão de Criar tarefa
 const ol = document.getElementById('lista-tarefas'); // Lista ordenada
 const clearBtn = document.getElementById('apaga-tudo'); // Botão de CLEAR
+const textInput = document.getElementById('texto-tarefa'); // Campo de input
+const completedBtn = document.getElementById('remover-finalizados'); // Botão de CLear Completed
 
 function createTaskList () {
-  const textInput = document.getElementById('texto-tarefa'); // Campo de input
   const li = document.createElement('li');
   li.innerText = textInput.value;
   ol.appendChild(li);
@@ -46,3 +47,11 @@ function clearList () {
   ol.textContent = '';
 }
 clearBtn.addEventListener('click', clearList);
+
+function clearCompletedItems (event) {
+  const completedItems = document.getElementsByClassName('completed');
+  while(completedItems.length) {
+    completedItems[0].remove();
+  }
+}
+completedBtn.addEventListener('click', clearCompletedItems);
