@@ -1,21 +1,29 @@
 const taskButton = document.getElementById('criar-tarefa');
+const cleanButton = document.querySelector('#apaga-tudo');
 
-function addEventToList(element, event, func) {
-  if (element.length > 0) {
-    for (let index = 0; index < element.length; index += 1) {
-      element[index].addEventListener(event, func);
-    }
-  } else {
-    element.addEventListener(event, func);
-  }
+function makeSelected(event) {
+  const addSelectedClass = event.target;
+  addSelectedClass.classList.add('selected');
+  addSelectedClass.style.backgroundColor = 'rgb(128,128,128)';
 }
 
 function addToList() {
   const getInput = document.querySelector('#texto-tarefa');
   const newItemList = document.createElement('li');
   newItemList.innerHTML = getInput.value;
+  newItemList.classList.add('list-item');
   document.querySelector('#lista-tarefas').appendChild(newItemList);
+  newItemList.addEventListener('click', makeSelected);
   document.getElementById('texto-tarefa').value = '';
 }
 
-addEventToList(taskButton, 'click', addToList);
+taskButton.addEventListener('click', addToList);
+// makeSelected('dblclick');
+
+// function deleteButton() {
+//   const getList = document.querySelector('#lista-tarefas').children;
+//   if (getList.length > 0) {
+//     getList.removeChild(getList.length);
+//   }
+// }
+// cleanButton.addEventListener('click', deleteButton);
