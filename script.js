@@ -3,6 +3,7 @@ const input = document.getElementById('texto-tarefa');
 const list = document.getElementById('lista-tarefas');
 const tasks = document.getElementsByTagName('li');
 const delAllBtn = document.getElementById('apaga-tudo');
+const doneBtn = document.getElementById('remover-finalizados');
 
 function colorTask(e) {
   for (let i = 0; i < tasks.length; i += 1) {
@@ -37,3 +38,13 @@ function eraseTasks() {
 }
 
 delAllBtn.addEventListener('click', eraseTasks);
+
+function eraseDone() {
+  for (let i = tasks.length - 1; i >= 0; i -= 1) {
+    if (tasks[i].classList == 'completed' || tasks[i].classList == 'selected completed' || tasks[i].classList == 'completed selected') {
+      list.removeChild(tasks[i]);
+    }
+  }
+}
+
+doneBtn.addEventListener('click', eraseDone);
