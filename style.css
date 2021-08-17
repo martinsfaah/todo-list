@@ -1,10 +1,10 @@
 body {
-  background-color: rgb(197 179 185);
+  background-color: rgb(197, 179, 185);
   font-family: sans-serif;
 }
 
 #centro {
-  background-color: rgb(250, 245, 245);
+  background-color : rgb(250, 245, 245);
   border-radius: 30px;
   height: 350px;
   width: 900px;
@@ -18,3 +18,11 @@ h1, p, #secao-add, #meio, #botoes {
   margin-left: 30px;
 }
 
+li{
+  padding: 5px;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through solid rgb(0, 0, 0);
+}
