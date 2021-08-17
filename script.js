@@ -19,10 +19,20 @@ function criaTarefa(){
     caixaDeTexto.value = '';
 
     item.addEventListener('click',lineColor);
-}
+    /* item.addEventListener('dbclick',cutLine); */
 
+
+}
+/* Inicializando variavel que contém a linha selecionada*/
+let itemSelecionado;
 /* Função para colorir a linha selecionada*/ 
 function lineColor(event){
-    let itemSelecionado = event.target
+    if(linhaSelecionada === true){
+        itemSelecionado.style.backgroundColor = ''; 
+        linhaSelecionada = false;
+    }
+    itemSelecionado = event.target
     itemSelecionado.style.backgroundColor = 'rgb(128,128,128)'; 
+    linhaSelecionada = true;
 }
+
