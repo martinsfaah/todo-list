@@ -8,6 +8,15 @@ let taferasCriadas = document.querySelectorAll('.lista');
 
 // Exercicio 5,6,7,8
 
+function changeClass(event) {
+    if (event.target.className.includes('color')) {
+        for (let index = 0; index < tarefasLista.length; index += 1) {
+         tarefasLista[index].classList.remove('color');
+         event.target.classList.add('color'); 
+}
+    }
+}
+
 function changeColor(event) {
     if (event.target.style.backgroundColor != 'rgb(128, 128, 128)') {
         event.target.style.backgroundColor = 'rgb(128, 128, 128)';
@@ -25,10 +34,13 @@ function criaTarefa() {
     tarefasInput.value = ''; 
     
     tarefas.addEventListener('click', changeColor)
+    tarefas.addEventListener('click', changeClass)
     
 }
 
 buttonCriaTarefa.addEventListener('click', criaTarefa);
+
+
 
 
 
@@ -37,5 +49,7 @@ buttonCriaTarefa.addEventListener('click', criaTarefa);
 botaoApaga.addEventListener('click', apagar);
 
 function apagar() {
-    listaTarefas.parentNode.removeChild(listaTarefas);
+    while (listaTarefas.hasChildNodes()) {
+        listaTarefas.removeChild(listaTarefas.firstChild);
+    }
 }
