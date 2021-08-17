@@ -8,10 +8,11 @@ let tarefasLista = document.getElementsByClassName('lista');
 // Exercicio 5,6,7,8
 
 function changeBack(event) {
-    if (event.target.style.backgroundColor != 'rgb(128, 128, 128)') { for (let index = 0; index < tarefasLista.length; index += 1) {
-        tarefasLista[index].style.backgroundColor = '';
+    if (event.target.className != 'colorBack') { 
+        for (let index = 0; index < tarefasLista.length; index += 1) {
+        tarefasLista[index].classList.remove('colorBack');
     }
-    event.target.style.backgroundColor = 'rgb(128, 128, 128'; 
+    event.target.classList.add('colorBack'); 
         } 
     }
     
