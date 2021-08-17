@@ -11,7 +11,9 @@ function listatarefas() {
 
     backTarefas();
 
-  });
+    duploClick();
+
+    });
 }
 
 listatarefas();
@@ -28,7 +30,14 @@ function backTarefas() {
   }) 
  }
 }
-  // listaDeTarefas[i].className = 'alterBack';
 
+function duploClick() {
+  let listaDeTarefas = document.querySelectorAll('li');
 
+  for (let i = 0; i < listaDeTarefas.length; i += 1) {
+  listaDeTarefas[i].addEventListener('dblclick', function(event){
+  event.target.classList.add('completed');
+    })
+  }
+}
 
