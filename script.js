@@ -79,3 +79,45 @@ for (let i = 0; i < localStorage.getItem('Contador'); i += 1) {
   adicionaElemento.style.backgroundColor = localStorage.getItem('backgroundColor ' + [i]);
   atualizaLista();
 }
+
+// Mover para cima
+const moverParaCima = document.querySelector('#mover-cima');
+moverParaCima.addEventListener('click', () => {
+  let posicao = 0;
+  const lista = document.querySelectorAll('li');
+  for (let i = 0; i < lista.length; i += 1) {
+    posicao = i;
+    if (lista[i].style.backgroundColor === 'rgb(128, 128, 128)') {
+      if (posicao >= 1) {
+        const p1 = lista[i].innerText;
+        const p2 = lista[i - 1].innerText;
+        lista[i].innerText = p2;
+        lista[i].style.backgroundColor = '';
+        lista[i - 1].innerText = p1;
+        lista[i - 1].style.backgroundColor = 'rgb(128, 128, 128)';
+      }
+    }
+  }
+});
+
+// Mover para baixo
+const moverParaBaixo = document.querySelector('#mover-baixo');
+moverParaBaixo.addEventListener('click', () => {
+  const lista = document.querySelectorAll('li');
+  let selecionado = 0;
+  for (let i = 0; i < lista.length; i += 1) {
+    if (lista[i].style.backgroundColor === 'rgb(128, 128, 128)') {
+      selecionado = i;
+    }
+  }
+  if (lista[selecionado].style.backgroundColor === 'rgb(128, 128, 128)') {
+    if (lista.length > selecionado + 1) {
+    const p1 = lista[selecionado].innerText;
+    const p2 = lista[selecionado + 1].innerText;
+    lista[selecionado].innerText = p2;
+    lista[selecionado + 1].innerText = p1;
+    lista[selecionado + 1].style.backgroundColor = 'rgb(128, 128, 128)';
+    lista[selecionado].style.backgroundColor = '';
+    }
+  }
+}); 
