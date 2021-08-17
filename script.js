@@ -27,8 +27,10 @@ const itensLista = document.getElementsByClassName('itens-lista-individuais');
 function colorListItem(event) {
   const alvo2 = event.target;
   for (let i = 0; i < itensLista.length; i += 1) {
+    itensLista[i].classList.remove('selecionado');
     itensLista[i].style.backgroundColor = 'transparent';
     alvo2.style.backgroundColor = 'rgb(128, 128, 128)';
+    alvo2.classList.add('selecionado');
   }
 }
 
@@ -119,3 +121,55 @@ function removeDone() {
 
 const buttonRemoveDone = document.getElementById('remover-finalizados');
 buttonRemoveDone.addEventListener('click', removeDone);
+
+function createButtonUp() {
+  const buttonUp = document.createElement('button');
+  sectionFooter.appendChild(buttonUp);
+  buttonUp.id = 'mover-cima';
+  buttonUp.innerHTML = '&#5169;';
+}
+createButtonUp();
+
+function createButtonDown() {
+  const buttonDown = document.createElement('button');
+  sectionFooter.appendChild(buttonDown);
+  buttonDown.id = 'mover-baixo';
+  buttonDown.innerHTML = '&#5167;';
+}
+createButtonDown();
+
+function removeSelected() {
+  const buttonRemoveSelected = document.createElement('button');
+  sectionFooter.appendChild(buttonRemoveSelected);
+  buttonRemoveSelected.id = 'remover-selecionado';
+  buttonRemoveSelected.innerHTML = 'Remover Selecionado';
+}
+removeSelected();
+
+// MoveUp e MoveDown feitos com ajuda do Eric Cruz.
+
+function moveUp() {
+  const liCompleted = document.getElementsByClassName('selecionado')[0];
+  const beforeSibling = liCompleted.previousSibling;
+  beforeSibling.before(liCompleted);
+}
+
+function moveDown() {
+  const liCompleted = document.getElementsByClassName('selecionado')[0];
+  const afterSibling = liCompleted.nextSibling;
+  afterSibling.after(liCompleted);
+}
+
+function removeSelectedItem() {
+  const RemoveSelected = document.getElementsByClassName('selecionado');
+  while (RemoveSelected.length) {
+    RemoveSelected[0].remove();
+  }
+}
+
+const buttonRemoveSelected = document.getElementById('remover-selecionado');
+const buttonUp = document.getElementById('mover-cima');
+const buttonDown = document.getElementById('mover-baixo');
+buttonUp.addEventListener('click', moveUp);
+buttonDown.addEventListener('click', moveDown);
+buttonRemoveSelected.addEventListener('click', removeSelectedItem);
