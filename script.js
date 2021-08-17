@@ -20,14 +20,23 @@ btCriarTarefas.addEventListener('click', (evento) => {
   inputTexto.value = '';
 });
 
-tagOl = document.querySelector('#lista-tarefas')
-tagOl.addEventListener('click', function(event) {
+const tagOl = document.querySelector('#lista-tarefas')
+tagOl.addEventListener('click', function (event) {
   if (event.target.classList.contains('item')) {
     const atual = document.querySelector('.atual');
     if (atual !== null) {
-     atual.classList.remove('atual');
+      atual.classList.remove('atual');
     } 
     event.target.classList.add('atual');
   }
-})
+});
+
+tagOl.addEventListener('dblclick', function (event) {
+  if (event.target.classList.contains('item')) {
+    if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
+    } 
+    event.target.classList.add('completed');
+  }
+});
 
