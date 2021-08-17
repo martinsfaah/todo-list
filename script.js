@@ -5,6 +5,7 @@ const clearCompletedBtn = document.querySelector('#remover-finalizados');
 const saveTasksBtn = document.querySelector('#salvar-tarefas');
 const moveUpBtn = document.querySelector('#mover-cima');
 const moveDwnBtn = document.querySelector('#mover-baixo');
+const removeBtn = document.querySelector('#remover-selecionado');
 let fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
 
 // Create a function to reset the task selection
@@ -128,6 +129,11 @@ moveDwnBtn.addEventListener('click', () => {
   } else {
     console.log('No task selected to move down');
   }
+});
+
+removeBtn.addEventListener('click', () => {
+  const currentTask = document.querySelector('.selected');
+  currentTask.parentElement.removeChild(currentTask);
 });
 
 window.onload = function restoreSavedList() {
