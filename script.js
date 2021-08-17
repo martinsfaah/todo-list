@@ -78,6 +78,3 @@ function apagarTodosOsElementosDaLista() {
 }
 const resgateBotaoApagar = document.querySelector('#apaga-tudo');
 resgateBotaoApagar.addEventListener('click', apagarTodosOsElementosDaLista);
-
-// Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível 
-// desfazer essa ação clicando novamente duas vezes no item
