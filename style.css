@@ -13,3 +13,7 @@
 .completed {
   text-decoration: line-through;
 }
+
+ol {
+  background-color: white !important;
+}
