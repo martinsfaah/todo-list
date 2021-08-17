@@ -54,7 +54,7 @@ function removeFinalizados() {
   }
 }
 
-// Função para remover tarefas finalizadas
+// Função para salvar as tarefas
 function salvaTarefas() {
   const tarefas = document.getElementsByTagName('li');
   const classesTarefa = [];
@@ -63,14 +63,14 @@ function salvaTarefas() {
     classesTarefa.push(tarefas[i].className);
     textosTarefa.push(tarefas[i].innerText);
   }
-  localStorage.setItem('classes', classesTarefa);
-  localStorage.setItem('textos', textosTarefa);
+  localStorage.setItem('classes', JSON.stringify(classesTarefa));
+  localStorage.setItem('textos', JSON.stringify(textosTarefa));
 }
 
 // Chama as tarefas salvas e coloca elas na lista quando a página é iniciada
-if (localStorage.getItem('classes')) {
-  const classeTarefas = localStorage.getItem('classes').split(',');
-  const textoTarefas = localStorage.getItem('textos').split(',');
+if (localStorage.getItem('textos')) {
+  const classeTarefas = JSON.parse(localStorage.getItem('classes'));
+  const textoTarefas = JSON.parse(localStorage.getItem('textos'));
   for (let i = 0; i < classeTarefas.length; i += 1) {
     criaTarefa(classeTarefas[i], textoTarefas[i]);
   }
