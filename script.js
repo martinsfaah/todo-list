@@ -3,6 +3,7 @@ const header = document.getElementsByTagName('header');
 const sectionListControl = document.getElementById('task-list-control');
 const sectionListContent = document.getElementById('task-list-content');
 const sectionItemControl = document.getElementById('task-item-control');
+const listTarefas = 'lista-tarefas';
 const newSelector = (qttOfSelector, element, selector, selectorName) => {
   for (let index = 0; index < qttOfSelector; index += 1) {
     if (typeof (element.length) === 'undefined') {
@@ -12,7 +13,8 @@ const newSelector = (qttOfSelector, element, selector, selectorName) => {
     }
   }
 };
-const createNewElement = (element, elementContent, location, qttofElements, selector, selectorName) => {
+const createNewElement = (element, elementContent, location, qttofElements,
+  selector, selectorName) => {
   for (let index = 0; index < qttofElements; index += 1) {
     const newElement = document.createElement(element);
     newElement.innerHTML = elementContent;
@@ -26,42 +28,34 @@ const createNewElement = (element, elementContent, location, qttofElements, sele
   }
 };
 
-const newEvent = (location, event, func) => {
-  location.addEventListener(event, func);
-};
+const newEvent = (location, event, func) => location.addEventListener(event, func);
 
 const addNewTask = () => {
   const inputAddNewTask = document.getElementById('texto-tarefa');
   const newTaskValue = inputAddNewTask.value;
-  const taskList = document.getElementById('lista-tarefas');
+  const taskList = document.getElementById(listTarefas);
   createNewElement('li', newTaskValue, taskList, 1, 'class', 'task-item');
   inputAddNewTask.value = null;
 };
 
-const highLightItem = (location) => {
-  location.addEventListener('click', (object) => {
-    const event = object;
-    if (document.querySelector('.selected') !== null) {
-      document.querySelector('.selected').classList.remove('selected');
-    }
-    event.target.classList.add('selected');
-  });
+const highLightItem = (event) => {
+  if (document.querySelector('.selected') !== null) {
+    document.querySelector('.selected').classList.remove('selected');
+  }
+  event.target.classList.add('selected');
 };
 
-const underScoreItem = (location) => {
-  location.addEventListener('dblclick', (object) => {
-    const event = object;
-    if (event.target.classList.contains('completed')) {
-      event.target.classList.remove('completed');
-    } else {
-      event.target.classList.add('completed');
-    }
-  });
+const underScoreItem = (event) => {
+  if (event.target.classList.contains('completed')) {
+    event.target.classList.remove('completed');
+  } else {
+    event.target.classList.add('completed');
+  }
 };
 const clearList = () => {
-  const itemList = document.getElementById('lista-tarefas');
+  const itemList = document.getElementById(listTarefas);
   itemList.remove();
-  createNewElement('ol', '', sectionListContent, 1, 'id', 'lista-tarefas');
+  createNewElement('ol', '', sectionListContent, 1, 'id', listTarefas);
 };
 const clearCompleted = () => {
   const completedItens = document.getElementsByClassName('completed');
@@ -73,13 +67,11 @@ const clearCompleted = () => {
 };
 
 const saveTask = () => {
-  const taskItens = document.getElementById('lista-tarefas');
-  const listText = [];
-  const listClass = [];
+  const taskItens = document.getElementById(listTarefas);
   sessionStorage.setItem('itens', JSON.stringify(taskItens.innerHTML));
 };
 const restoreTask = () => {
-  const ol = document.getElementById('lista-tarefas');
+  const ol = document.getElementById(listTarefas);
   const list = JSON.parse(sessionStorage.getItem('itens'));
   console.log(list);
   ol.innerHTML = list;
@@ -88,13 +80,14 @@ const restoreTask = () => {
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
 
 // #REQ 2
-createNewElement('p', 'Clique duas vezes em um item para marcá-lo como completo', header, 1, 'id', 'funcionamento');
+createNewElement('p', 'Clique duas vezes em um item para marcá-lo como completo', header, 1, 'id',
+  'funcionamento');
 
 // #REQ 3
 createNewElement('input', '', sectionListControl, 1, 'id', 'texto-tarefa');
 
 // #REQ 4
-createNewElement('ol', '', sectionListContent, 1, 'id', 'lista-tarefas');
+createNewElement('ol', '', sectionListContent, 1, 'id', listTarefas);
 
 // #REQ 5 e 6
 createNewElement('button', 'Adicionar', sectionListControl, 1, 'id', 'criar-tarefa');
@@ -102,11 +95,13 @@ const buttonAddNewTask = document.getElementById('criar-tarefa');
 newEvent(buttonAddNewTask, 'click', addNewTask);
 
 // #REQ 7 e 8
-const taskList = document.getElementById('lista-tarefas');
-highLightItem(taskList);
+const taskList = document.getElementById(listTarefas);
+// highLightItem(taskList);
+newEvent(taskList, 'click', highLightItem);
 
 // #REQ 9
-underScoreItem(taskList);
+// underScoreItem(taskList);
+newEvent(taskList, 'dblclick', underScoreItem);
 
 // #REQ 10
 createNewElement('button', 'Limpar Lista', sectionItemControl, 1, 'id', 'apaga-tudo');
@@ -114,7 +109,8 @@ const buttonClearList = document.getElementById('apaga-tudo');
 newEvent(buttonClearList, 'click', clearList);
 
 // #REQ 11
-createNewElement('button', 'Limpar Finalizados', sectionItemControl, 1, 'id', 'remover-finalizados');
+createNewElement('button', 'Limpar Finalizados', sectionItemControl, 1, 'id',
+  'remover-finalizados');
 const buttonClearCompleted = document.getElementById('remover-finalizados');
 newEvent(buttonClearCompleted, 'click', clearCompleted);
 
@@ -124,4 +120,4 @@ const buttonSaveTask = document.getElementById('salvar-tarefas');
 
 newEvent(buttonSaveTask, 'click', saveTask);
 
-restoreTask();
+window.onload = restoreTask;
