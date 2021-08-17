@@ -1,6 +1,7 @@
 body {
   background-color: rgb(76 , 175 , 80);
   font-family: sans-serif;
+  
 }
 
 #content {
@@ -42,5 +43,10 @@ button {
 
 .selected {
   background-color: rgb(128 , 128 , 128);
+  user-select: none;
 }
 
+.completed {
+  text-decoration: line-through;
+  user-select: none;
+}
