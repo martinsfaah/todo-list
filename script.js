@@ -42,3 +42,18 @@ function taskChangeBgColor(task) {
 }
 
 taskList.addEventListener('click', taskChangeBgColor);
+
+// Adiciona um risco ao elemento selecionado, indicando que a tarefa foi cumprida
+// Um salve pro Pedro Guarize que me iluminou nessa aqui
+function addCompletedTask(task) {
+  const taskTarget = task.target;
+  if (taskTarget.className !== 'completed') {
+    taskTarget.className = 'completed';
+    taskTarget.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
+  } else {
+    taskTarget.style.textDecoration = '';
+    taskTarget.className = '';
+  }
+}
+
+taskList.addEventListener('dblclick', addCompletedTask);
