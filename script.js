@@ -8,7 +8,28 @@ function listatarefas() {
     listaTarefas.appendChild(lista);
     lista.innerHTML = textoTarefa.value;
     textoTarefa.value = '';
+
+    backTarefas();
   });
+
+//   lista.addEventListener('click', function (event){
+//     // event.target.className = 'alterback'
+//     console.log(event.target);
+//   }) 
 }
 
 listatarefas();
+
+function backTarefas() {
+  let listaDeTarefas = document.querySelectorAll('li');
+
+  for (let i = 0; i <listaDeTarefas.length; i += 1) {
+    listaDeTarefas[i].addEventListener('click', function(){
+    listaDeTarefas[i].className = 'alterBack';
+    })
+    }
+  }
+
+
+
+
