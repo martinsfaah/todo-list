@@ -34,6 +34,15 @@ function changeColor() {
     }
 }
 
+function markDone(){
+    const doneTask = event.currentTarget;
+    if (doneTask.className === 'task') {
+        doneTask.classList.add('completed');
+    } else {
+        doneTask.classList.remove('completed');
+    }
+}
+
 function createTask(){
     const writtenTask = document.querySelector('#texto-tarefa').value;
     const list = document.querySelector('#lista-tarefas');
@@ -41,6 +50,7 @@ function createTask(){
     newTask.innerText = writtenTask;
     newTask.className = 'task';
     newTask.addEventListener('click', changeColor);
+    newTask.addEventListener('dblclick', markDone);
     list.appendChild(newTask);
     document.querySelector('#texto-tarefa').value = '';
 }
