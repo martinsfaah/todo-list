@@ -93,10 +93,10 @@ criarBotaoDeRemoverFinalizados();
 // nodeList
 function pegarFinalizdosParaRemover() {
   const lista = document.querySelectorAll('.completed');
-  for (let index = 0; index < lista.length; index +=1) {
+  for (let index = 0; index < lista.length; index += 1) {
     const aLista = lista[index];
     resgateLista.removeChild(aLista); // é o pai que está na linha 73
-  } 
+  }
 }
 
 const resgataBotaoFinalizador = document.querySelector('#remover-finalizados');
