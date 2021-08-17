@@ -5,6 +5,8 @@ const clearAll = document.querySelector('#apaga-tudo');
 const clearFinish = document.querySelector('#remover-finalizados');
 const salveList = document.querySelector('#salvar-tarefas');
 const removeSelected = document.querySelector('#remover-selecionado');
+const moveUp = document.querySelector('#mover-cima');
+const moveDown = document.querySelector('#mover-baixo');
 
 function createTask() {
   const newTask = document.createElement('li');
@@ -112,3 +114,41 @@ function removeTaskSelected() {
 }
 
 removeSelected.addEventListener('click', removeTaskSelected);
+
+function moveTaskUp() {
+  const tasks = document.querySelectorAll('.task');
+  const taskSelected = document.querySelector('.selected');
+  console.log(tasks);
+  for (let i = 0; i < tasks.length; i += 1) {
+    if (tasks[i] === taskSelected) {
+      const assistant = tasks[i - 1].innerHTML;
+      assistant.classList = tasks[i - 1].classList;
+      tasks[i - 1].innerHTML = tasks[i].innerHTML;
+      tasks[i - 1].classList = tasks[i].classList;
+      tasks[i].innerHTML = assistant;
+      tasks[i].classList = assistant.classList;
+      console.log(tasks);
+    }
+  }
+}
+
+moveUp.addEventListener('click', moveTaskUp);
+
+function moveTaskDown() {
+  const tasks = document.querySelectorAll('.task');
+  const taskSelected = document.querySelector('.selected');
+  console.log(tasks);
+
+  for (let i = 0; i < tasks.length; i += 1) {
+    if (tasks[i] === taskSelected) {
+      const assistant = tasks[i + 1].innerHTML;
+      assistant.classList = tasks[i + 1].classList;
+      tasks[i + 1].innerHTML = tasks[i].innerHTML;
+      tasks[i + 1].classList = tasks[i].classList;
+      tasks[i].innerHTML = assistant;
+      tasks[i].classList = assistant.classList;
+    }
+  }
+}
+
+moveDown.addEventListener('click', moveTaskDown);
