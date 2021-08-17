@@ -118,7 +118,13 @@ function CreateresetButton (){
 }
 CreateresetButton();
 
+const butonDelet = document.getElementById('apaga-tudo');
+const ListOlId = document.getElementById('lista-tarefas')
 
+function clearAllList() {
+  ListOlId.innerHTML = "";
+}
+butonDelet.addEventListener('click', clearAllList);
 
 
 
