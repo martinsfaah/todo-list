@@ -106,7 +106,7 @@ function moverPraCima() {
   const selecionado = document.querySelector('.selected');
   const listaItens = lista.childNodes;
   for (let index = 0; index < listaItens.length; index += 1) {
-    if (selecionado === listaItens[index]) {
+    if (selecionado === listaItens[index] && index !== 0) {
       lista.insertBefore(selecionado, listaItens[index - 1]);
       break;
     }
@@ -117,7 +117,7 @@ function moverPraBaixo() {
   const selecionado = document.querySelector('.selected');
   const listaItens = lista.childNodes;
   for (let index = 0; index < listaItens.length; index += 1) {
-    if (selecionado === listaItens[index]) {
+    if (selecionado === listaItens[index] && index !== listaItens.length - 1) {
       lista.insertBefore(selecionado, listaItens[index + 2]);
       break;
     }
