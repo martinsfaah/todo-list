@@ -61,7 +61,7 @@ function salvarItens() {
   if (localStorage.length !== 0) {
     localStorage.clear();
   }
-  const valor = lista.innerHTML;
+  const valor = JSON.stringify(lista.innerHTML);
   localStorage.setItem('listaSalva', valor);
   // const listaAtual = document.getElementsByTagName('li');
   // for (let index = 0; index < listaAtual.length; index += 1) {
@@ -73,12 +73,10 @@ function salvarItens() {
 }
 
 function recarregarElementosSalvos() {
-  lista.innerHTML = localStorage.getItem('listaSalva');
+  lista.innerHTML = JSON.parse(localStorage.getItem('listaSalva'));
   const tamanhoStorage = lista.children.length;
-  console.log(lista);
   for (let index = 0; index < tamanhoStorage; index += 1) {
-    let elemento = lista.children[index];
-    elemento.classList.remove('undefined');
+    const elemento = lista.children[index];
     adicionarEventos(elemento, 'click', fundoCinza);
     adicionarEventos(elemento, 'dblclick', linhaRiscada);
   }
