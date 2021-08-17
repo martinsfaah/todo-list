@@ -1,5 +1,6 @@
 const botaoAdicionar = document.getElementById('criar-tarefa');
 const botaoRemoverTudo = document.getElementById('apaga-tudo')
+const botaoRemoverFinalizado = document.getElementById('remover-finalizados')
 const digitarLista = document.getElementById('texto-tarefa');
 let lista = document.getElementById('lista-tarefas')
 let selecao = document.querySelectorAll('li');
@@ -16,6 +17,17 @@ botaoRemoverTudo.addEventListener('click', function apagarTudo() {
     var lis = document.querySelectorAll('#lista-tarefas li');
     for(var i=0; i < lis.length; i+= 1) {
     lis[i].parentNode.removeChild(lis[i]);
+    }
+  }
+})
+
+botaoRemoverFinalizado.addEventListener('click', function removeF() {
+  let listaGeral = document.querySelectorAll('li')
+  for ( let index = 0; index < listaGeral.length; index += 1) {
+    if (listaGeral[index].classList.value === "completed") {
+      listaGeral[index].parentNode.removeChild(listaGeral[index]);
+    } else if (listaGeral[index].classList.value === "completed selecao" || listaGeral[index].classList.value === "selecao completed") {
+      listaGeral[index].parentNode.removeChild(listaGeral[index]);
     }
   }
 })
