@@ -18,6 +18,8 @@ window.onload = function() {
         }
         
         evento.target.classList.add("selected");
+
+        
       }
     })
 
@@ -53,7 +55,7 @@ window.onload = function() {
 
   let apagaFinalizados = document.getElementById("remover-finalizados");
   apagaFinalizados.addEventListener("click", function() {
-    for (let index = 0; index < itensLista.length; index += 1) {
+    for (let index = itensLista.length - 1; index >= 0; index -= 1) {
       if (itensLista[index].classList.contains("completed") == true) {
         let listaInteira = document.getElementById("lista-tarefas");
         listaInteira.removeChild(itensLista[index]);
@@ -63,14 +65,28 @@ window.onload = function() {
 
   let removeSelecionado = document.getElementById("remover-selecionado");
   removeSelecionado.addEventListener("click", function() {
-    let listaCompleta = document.getElementById("lista-tarefas")
     for (let index = 0; index < itensLista.length; index += 1) {
       if (itensLista[index].classList.contains("selected") == true) {
+        let listaCompleta = document.getElementById("lista-tarefas")
         listaCompleta.removeChild(itensLista[index]);
       }
     }
   })
   
+  let todasTarefas = document.getElementById("lista-tarefas")
+  
+  let sobe = document.getElementById("mover-cima");
+  sobe.addEventListener("click", subir());
+
+
+  function subir() {
+    for (let index = 0; index < todasTarefas.length; index += 1) {
+      if (todasTarefas[index].classList.contains("selected")) {
+        todasTarefas[index].classList.remove("selected");
+        todasTarefas[index - 1].classList.add("selected");
+      }
+    }
+  }
 }
 
 function adicionaNoStorage(item) {
