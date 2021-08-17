@@ -30,8 +30,6 @@ window.onload = function(){
                 novaMensagem.classList.add("completed");
             }
         })
-
-
     })
 }
 // localStorage.querySelector(".apaga-tudo")
