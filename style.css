@@ -1,0 +1,10 @@
+body {
+background-color: rgba(0, 255, 255, 0.397);
+font-family: monospace;
+}
+.completed{
+  text-decoration: line-through;
+}
+.selected{
+  background-color: rgb(128, 128, 128);
+}

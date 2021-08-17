@@ -1,16 +1,29 @@
 const input = document.getElementById('texto-tarefa');
 const button = document.getElementById('criar-tarefa');
 const ol = document.getElementById('lista-tarefas');
-  
+const buttonDelete = document.getElementById('apaga-tudo');
+const li = document.getElementsByTagName('li'); 
+
 button.addEventListener('click',function(){
 const li = document.createElement('li');
 const task = input.value;
 li.innerText = task;
 ol.appendChild(li);
+li.addEventListener('click',liSelected)
 input.value = '';
 input.focus();
 });
 
-  ol.addEventListener('click',function(event) {
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
- });
+function liSelected(event){
+  for(let index = 0; index < li.length; index += 1){
+    li[index].classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+
+};
+
+
+
+
+ 
+ 
