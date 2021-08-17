@@ -3,6 +3,7 @@ const button = document.querySelector("button");
 const list = document.querySelector("ol")
 const listElements = list.children;
 const buttonRemove = document.querySelector("#apaga-tudo")
+const buttonRemoveDone = document.querySelector("#remover-finalizados")
 
 button.addEventListener("click", addFromInputToList);
 
@@ -46,5 +47,14 @@ buttonRemove.addEventListener("click", removeChild);
 function removeChild(event) {
     for (let index = listElements.length; index > 0; index -= 1) {
         list.removeChild(listElements[0])
+    }
+}
+
+buttonRemoveDone.addEventListener("click", removeDone);
+
+function removeDone(event) {
+    let doneItems = document.querySelectorAll(".completed");
+    for (index = 0; index < doneItems.length; index += 1) {
+        list.removeChild(doneItems[index])
     }
 }
