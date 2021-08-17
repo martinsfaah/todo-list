@@ -7,18 +7,19 @@ const btnMoveCima = document.getElementById('mover-cima');
 const btnMoveBaixo = document.getElementById('mover-baixo');
 const btnMRemoveSelected = document.getElementById('remover-selecionado');
 
-function mudaPosition(arr, from, to){
-  arr.splice(to, 0, arr.splice(from,1)[0]);
-  return arr;
-}
-
 btnMoveCima.addEventListener('click', () => {
-  const list = document.querySelectorAll('.list');
-  for (let index = 0; index < list.length; index += 1) {
-    if(list[index].className === 'list selected'){
-      list.splice(1,0,list.splice(0,1)[0]);
-    }
-    
+  const listSelected = document.querySelector('.selected');
+  const moveUp = listSelected.previousSibling;
+  if (moveUp) {
+    moveUp.before(listSelected);
+  }
+});
+
+btnMoveBaixo.addEventListener('click', () => {
+  const listSelected = document.querySelector('.selected');
+  const moveDown = listSelected.nextSibling;
+  if (moveDown) {
+    moveDown.after(listSelected);
   }
 });
 
@@ -35,7 +36,7 @@ btnMRemoveSelected.addEventListener('click', () => {
   for (let index = 0; index < listSelected.length; index += 1) {
     listSelected[index].remove();
   }
-  while(ol.firstElementChild){
+  while (ol.firstElementChild) {
     ol.firstElementChild.classList.add('selected');
     break;
   }
@@ -73,7 +74,7 @@ function selectTarefa(event) {
   const listSelected = document.querySelector('.selected');
   listSelected.classList.remove('selected');
   event.target.classList.add('selected');
-  
+
   selectColor(event);
 }
 
