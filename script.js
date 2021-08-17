@@ -1,8 +1,7 @@
 const addButton = document.querySelector('#criar-tarefa');
+const clearAllButton = document.querySelector('#apaga-tudo');
 const txtInput = document.querySelector('#texto-tarefa');
 const orderedList = document.querySelector('#lista-tarefas');
-
-addButton.addEventListener('click', addToList);
 
 function changeColor(event) {
   const selected = document.querySelector('.selected');
@@ -32,3 +31,15 @@ function addToList() {
   listItem.addEventListener('click', changeColor);
   listItem.addEventListener('dblclick', completeTask);
 }
+
+function clearAll() {
+  const list = document.querySelector('#lista-tarefas');
+  const allItens = document.querySelectorAll('.list-item');
+
+  for (let index = allItens.length; index > 0; index--) {
+    list.removeChild(list.childNodes[index]);
+  }
+}
+
+addButton.addEventListener('click', addToList);
+clearAllButton.addEventListener('click', clearAll);
