@@ -25,11 +25,11 @@ function cleanSelected() {
 }
 
 function selectListElement(event) {
-  const target = event.target;
   cleanSelected();
-  target.classList.toggle('selected');
+  event.target.classList.toggle('selected');
   /*
   Solucao alternativa mas que nao passa na verificacao.
+  Alternative solution but it doesn't go through the check.
   const select = document.querySelector('.selected')
   if (!select) { // if select return false the condition add the class, else, it removes the class.
     target.classList.add('selected');
@@ -40,7 +40,6 @@ function selectListElement(event) {
   } */
 }
 
-
 //  events
 btnAddToList.addEventListener('click', addToList);
-list.addEventListener('click', selectListElement)
+list.addEventListener('click', selectListElement);
