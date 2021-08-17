@@ -100,10 +100,27 @@ function chekItenList (event){
   if (event.target.className !== 'completed') {
     event.target.className = 'completed';
   } else {
-    event.className.className = 'completed';
+    event.target.className = 'completed';
   }
 }
 setList2.addEventListener('dblclick', chekItenList);
 
 //Requisito 10 botão clear
+
+const createSectionButons = document.createElement('section');
+
+const buttonResetList = document.createElement('button');
+function CreateresetButton (){
+  createMain.appendChild(createSectionButons);
+  buttonResetList.id = "apaga-tudo"
+  buttonResetList.innerHTML = "Apagar Lista"
+  createSectionButons.appendChild(buttonResetList);
+}
+CreateresetButton();
+
+
+
+
+
+
 

@@ -1,7 +1,14 @@
-
+body {
+  background-color: rgb(16, 206, 101);
+}
 
 .colorGray {
   background-color:rgb(128, 128, 128);
+}
+
+#criar-tarefa {
+  background-color: rgb(44, 127, 204);
+  border-radius: 30px;
 }
 
 .completed {
@@ -9,7 +16,7 @@
 }
 
 .borda {
-  background-color: rgb(172, 6, 6);
+  background-color: rgb(255, 255, 255);
   border-radius: 30px;
   margin: rgb(2, 2, 2) solid 2px;
   padding: 10px;
