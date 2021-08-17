@@ -1,5 +1,3 @@
-
-
 //list
 let inputItem = document.querySelector('#texto-tarefa');
 let buttonCreate =  document.querySelector('#criar-tarefa');
@@ -25,7 +23,21 @@ ol.addEventListener('click', liColor);
         click = event.target
         click.style.backgroundColor = 'rgb(128, 128, 128)';  
     }
+
+ol.addEventListener('dblclick', lineThrough);
+
+    function lineThrough(event) {
+       if (event.target.className === 'completed'){
+        event.target.classList.remove('completed')         
+    }  else {
+        event.target.classList.add('completed') 
+    }
+
+    }
     
+
+
+
 
    
 
