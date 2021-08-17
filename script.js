@@ -13,7 +13,6 @@ botao.addEventListener("click", event => {
   limparInput();
   criarLi(textoInput);
 
-
 });
 
 // Atribui uma string vazia no input
@@ -31,7 +30,6 @@ function criarLi(textoInput) {
 
   ol.appendChild(li);
 
-
   li.addEventListener("click", liSelecionada);
   li.addEventListener("dblclick", riscarLi);
 }
@@ -46,9 +44,9 @@ function liSelecionada(event) {
   }
 
   event.target.classList.add("liSelecionada");
-
 }
 
+// Verificar se a tarefa já foi completa
 function riscarLi(event) {
 
   if (event.target.classList.contains("completed")) {
@@ -58,5 +56,26 @@ function riscarLi(event) {
 
     event.target.classList.add("completed");
   }
-
 }
+
+// Botao apagar tudo
+let botaoApagar = document.querySelector("#apaga-tudo");
+
+botaoApagar.addEventListener("click", () => {
+
+  let li = document.querySelectorAll("li");
+
+  li.forEach(li => li.remove());
+});
+
+// Botao apagar finalizados
+
+let botaoFinalizados = document.querySelector("#remover-finalizados");
+
+botaoFinalizados.addEventListener("click", () => {
+
+  let tarefasFinalizadas = document.querySelectorAll(".completed")
+  console.log(tarefasFinalizadas);
+
+  tarefasFinalizadas.forEach(tarefas => tarefas.remove());
+});
