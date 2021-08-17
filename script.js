@@ -1,7 +1,7 @@
 const botao = document.getElementById('criar-tarefa');
 const digitarLista = document.getElementById('texto-tarefa');
 let lista = document.getElementById('lista-tarefas')
-let selecao = document.querySelectorAll('.lista')
+let selecao = document.querySelectorAll('li')
 
 
 
@@ -13,6 +13,12 @@ botao.addEventListener('click', function criarElementoLista() {
 })
 
 lista.addEventListener('click', function cinzaBg(selecao) {
-  selecao.target.style.backgroundColor = "rgb(128, 128, 128)";
-})
-
+  if (selecao.target.classList.length === 0) {
+    if(document.querySelectorAll('#lista-tarefas .selecao').length > 0) {
+      document.querySelectorAll('#lista-tarefas .selecao')[0].classList.remove('selecao');
+    }
+    selecao.target.classList.add("selecao");
+  } else {
+    selecao.target.classList.remove("selecao")
+  }
+}) 
