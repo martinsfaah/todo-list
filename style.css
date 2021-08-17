@@ -1,6 +1,9 @@
 header{
-    background-color: burlywood;
+    background-color: rgb(196, 190, 169);
 
+}
+body{
+    background-color: rgb(211, 211, 104);
 }
 .selected {
     background-color: rgb(128, 128, 128);
