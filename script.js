@@ -42,7 +42,7 @@ tagOl.addEventListener('dblclick', function (event) {
 });
 
 const btApagarTarefas = document.createElement('button');
-btApagarTarefas.id="apagar-tudo"
+btApagarTarefas.id="apaga-tudo"
 btApagarTarefas.innerText = "Apagar Lista"
 tagTarefas.appendChild(btApagarTarefas);
 
