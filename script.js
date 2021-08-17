@@ -3,6 +3,7 @@ const listaTarefas = document.querySelector("#lista-tarefas");
 const criarTarefa = document.querySelector("#criar-tarefa");
 const deleteBtn = document.querySelector("#apaga-tudo");
 const deleteBtnComplete = document.querySelector("#remover-finalizados");
+const deleteBtnSelected = document.querySelector("#remover-selecionado");
 
 function addTask(){
 if (textoTarefa.value === ''){
@@ -39,12 +40,21 @@ function clearButton(){
 }
 deleteBtn.addEventListener ('click', clearButton)   
 
-function clearSelectedButton(){
+function clearCompletedButton(){
 let completedTask= document.querySelectorAll('.completed')
 for (i=0 ; i < completedTask.length; i += 1) { 
 completedTask[i].parentNode.removeChild(completedTask[i]); //Fonte: https://www.w3schools.com/jsref/met_node_removechild.asp
 }
 }
-deleteBtnComplete.addEventListener('click', clearSelectedButton);
+deleteBtnComplete.addEventListener('click', clearCompletedButton);
+
+function clearSelectedButton(){
+    let selectedTask= document.querySelectorAll('.selected')
+    for (i=0 ; i < selectedTask.length; i += 1) { 
+    selectedTask[i].parentNode.removeChild(selectedTask[i]);
+    }
+    }
+    deleteBtnSelected.addEventListener('click', clearSelectedButton);
+
 
 
