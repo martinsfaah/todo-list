@@ -63,3 +63,17 @@ function toButtonClearTasks() {
 }
 
 toButtonClearTasks();
+
+function clearDone() {
+  const doneTask = document.getElementsByClassName('completed');
+  for (let i = doneTask.length - 1; i >= 0; i -= 1) {
+    doneTask[i].remove();
+  }
+}
+
+function toButtonClearTasksDone() {
+  const buttonClearTasks = document.getElementById('remover-finalizados');
+  buttonClearTasks.addEventListener('click', clearDone);
+}
+
+toButtonClearTasksDone();
