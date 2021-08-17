@@ -4,45 +4,29 @@ let buttonCriaTarefa = document.getElementById('criar-tarefa');
 let changeBackColor = document.getElementsByClassName('lista');
 let botaoApaga = document.getElementById('apaga-tudo');
 let tarefasLista = document.getElementsByClassName('lista');
-let taferasCriadas = document.querySelectorAll('.lista');
 
 // Exercicio 5,6,7,8
 
-function changeClass(event) {
-    if (event.target.className.includes('color')) {
-        for (let index = 0; index < tarefasLista.length; index += 1) {
-         tarefasLista[index].classList.remove('color');
-         event.target.classList.add('color'); 
-}
+function changeBack(event) {
+    if (event.target.style.backgroundColor != 'rgb(128, 128, 128)') { for (let index = 0; index < tarefasLista.length; index += 1) {
+        tarefasLista[index].style.backgroundColor = '';
     }
-}
-
-function changeColor(event) {
-    if (event.target.style.backgroundColor != 'rgb(128, 128, 128)') {
-        event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+    event.target.style.backgroundColor = 'rgb(128, 128, 128'; 
+        } 
     }
-    else {
-        event.target.style.backgroundColor = 'white';
-    }
-}
-
-function criaTarefa() {
-    let tarefas = document.createElement('li');
-    tarefas.className = 'lista';
-    tarefas.innerText = tarefasInput.value;
-    listaTarefas.appendChild(tarefas);
-    tarefasInput.value = ''; 
     
-    tarefas.addEventListener('click', changeColor)
-    tarefas.addEventListener('click', changeClass)
+    function criaTarefa() {
+        let tarefas = document.createElement('li');
+        tarefas.className = 'lista';
+        tarefas.innerText = tarefasInput.value;
+        listaTarefas.appendChild(tarefas);
+        tarefasInput.value = ''; 
+
+        
+        tarefas.addEventListener('click', changeBack)
+    }
     
-}
-
-buttonCriaTarefa.addEventListener('click', criaTarefa);
-
-
-
-
+    buttonCriaTarefa.addEventListener('click', criaTarefa);
 
 // Exercicio 10
 
