@@ -1,7 +1,8 @@
 console.log('hello world!');
 
+const secction = document.querySelector('#section-principal');
+
 function criarInput() {
-  const secction = document.querySelector('#section-principal');
   const input = document.createElement('input');
   input.placeholder = 'digite aqui sua tarefa';
   input.type = 'text';
@@ -19,11 +20,10 @@ function criarTag() {
 criarTag();
 
 function CriarBotaoAddTarefa() {
-  const sectionPrincipal = document.querySelector('#section-principal');
   const criarBotão = document.createElement('button');
   criarBotão.id = 'criar-tarefa';
   criarBotão.innerText = 'adicionar';
-  sectionPrincipal.appendChild(criarBotão);
+  secction.appendChild(criarBotão);
 }
 CriarBotaoAddTarefa();
 
@@ -53,11 +53,10 @@ const restateBotaoAdd = document.querySelector('#criar-tarefa');
 restateBotaoAdd.addEventListener('click', pegarValorDoInput);
 
 function criarOBotaoApagar() {
-  const resgateSecaoPrincipal = document.querySelector('#section-principal');
   const botaoApagar = document.createElement('button');
   botaoApagar.id = 'apaga-tudo';
   botaoApagar.innerText = 'apagar';
-  resgateSecaoPrincipal.appendChild(botaoApagar);
+  secction.appendChild(botaoApagar);
 }
 criarOBotaoApagar();
 
