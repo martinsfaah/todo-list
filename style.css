@@ -39,3 +39,8 @@ button {
   background-color: rgb(76 , 175 , 80);
   color: white;
 }
+
+.selected {
+  background-color: rgb(128 , 128 , 128);
+}
+
