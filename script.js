@@ -1,9 +1,7 @@
 function createTask() {
   const button = document.querySelector('#criar-tarefa');
   const input = document.querySelector('#texto-tarefa');
-  let ol = document.querySelector('#lista-tarefas');
-
-  button.addEventListener('click', addTask);
+  const ol = document.querySelector('#lista-tarefas');
 
   function addTask() {    
     let task = document.createElement('li');
@@ -14,14 +12,23 @@ function createTask() {
     task.addEventListener('click', changeColor);
     task.addEventListener('dblclick', taskCompleted);
   }
+
+  button.addEventListener('click', addTask);
+
 }
+
+  
 
 createTask();
 
-function changeColor() {
-  let item = document.querySelectorAll('.task');
-  if (event.target.style.backgroundColor){
-    event.target.removeAttribute('style');
+function changeColor(event) {
+  let item = document.querySelector('.selected');
+  if (item) {
+    item.classList.remove('selected');
+  } 
+  event.target.classList.add('selected');
+
+    /* event.target.removeAttribute('style');
   } else {
     for (let index = 0; index < item.length; index += 1) {
       if (item[index].style.backgroundColor){
@@ -29,7 +36,7 @@ function changeColor() {
       }
     }
     event.target.style.backgroundColor = 'rgb(128,128,128)';
-  }
+  } */
 }
 
 function taskCompleted() {
@@ -61,10 +68,8 @@ function removeTaskCompletedButton() {
     const li = document.querySelectorAll('.task');
     const ol = document.querySelector('#lista-tarefas');
     for (let index = 0; index < li.length; index += 1) {
-      if (li[index].className == 'task completed') {
+      if (li[index].classList.contains('completed')) {
         ol.removeChild(li[index]);
-      } else {
-        console.log('não achou');
       }
     }    
   }
@@ -110,3 +115,63 @@ window.onload = function () {
     }
   }
 }
+
+function moveUpTask() {
+  const button = document.querySelector('#mover-cima');
+
+  function moveUp() {
+    const li = document.querySelectorAll('.task');
+    const ol = document.querySelector('#lista-tarefas');
+    for (let index = 0; index < li.length; index += 1) {
+      if (li[index].classList.contains('selected')) {
+        if (index != 0) {
+          let previousLi = li[index].previousElementSibling;
+          ol.insertBefore(li[index], previousLi);
+        }
+      } 
+    }
+  }
+
+  button.addEventListener('click', moveUp);
+}
+
+moveUpTask();
+
+function moveDownTask() {
+  const button = document.querySelector('#mover-baixo');
+
+  function moveDown() {
+    const li = document.querySelectorAll(".task");
+    const ol = document.querySelector('#lista-tarefas');
+    for (let index = 0; index < li.length; index += 1) {
+      if(li[index].classList.contains('selected')) {
+        if(index != li.length - 1) {
+          let nextLi = li[index].nextElementSibling;
+          ol.insertBefore(li[index], nextLi.nextElementSibling);
+        }
+      }
+    }
+  }
+
+  button.addEventListener('click', moveDown);
+}
+
+moveDownTask();
+
+function removeTaskSelectedButton() {
+  const button = document.getElementById('remover-selecionado');
+
+  button.addEventListener('click', removeTaskSelected);
+
+  function removeTaskSelected() {
+    const li = document.querySelectorAll('.task');
+    const ol = document.querySelector('#lista-tarefas');
+    for (let index = 0; index < li.length; index += 1) {
+      if (li[index].classList.contains('selected')) {
+        ol.removeChild(li[index]);
+      }
+    }    
+  }
+}
+
+removeTaskSelectedButton();
