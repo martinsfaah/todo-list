@@ -70,4 +70,35 @@ btnSalvarLista.addEventListener('click', salvaLista);
 
 window.onload = function initPage() {
   listaTarefas.innerHTML = localStorage.getItem('lista');
+  for (let i = 0; i < tarefas.length; i += 1) {
+    tarefas[i].addEventListener('click', selectTarefa);
+    tarefas[i].addEventListener('dblclick', completeTarefa);
+  }
 };
+
+// requisito 13
+const btnParaCima = document.getElementById('mover-cima');
+function moveCima() {
+  const selectedTarefa = document.querySelector('.selected');
+  if (selectedTarefa === null || selectedTarefa.previousElementSibling === null) {
+    return;
+  }
+  selectedTarefa.previousElementSibling.before(selectedTarefa);
+}
+btnParaCima.addEventListener('click', moveCima);
+
+const btnParaBaixo = document.getElementById('mover-baixo');
+function moveBaixo() {
+  const selectedTarefa = document.querySelector('.selected');
+  if (selectedTarefa === null || selectedTarefa.nextElementSibling === null) {
+    return;
+  }
+  selectedTarefa.nextElementSibling.after(selectedTarefa);
+}
+btnParaBaixo.addEventListener('click', moveBaixo);
+
+function removeSelected() {
+  const selectedTarefa = document.querySelector('.selected');
+  selectedTarefa.className = selectedTarefa.className.replace(' selected', '');
+}
+document.querySelector('header').addEventListener('click', removeSelected);
