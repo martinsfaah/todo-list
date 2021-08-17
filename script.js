@@ -7,7 +7,7 @@ const inputValue = document.getElementById('texto-tarefa');
 function addToList() {
   const li = document.createElement('li');
 
-  if (!inputValue.value) { // se o valor for falso o alert eh ativado e sai da funcao.
+  if (!inputValue.value) { // if the value is empty send an alert and exit the function
     alert('Valor invalido!');
     return;
   }
@@ -17,9 +17,29 @@ function addToList() {
   inputValue.value = '';
 }
 
-function selectListElement(event) {
-  event.target.classList.toggle('selected');
+function cleanSelected() {
+  const listChild = list.children;
+  for (const value of listChild) {
+    value.classList.remove('selected');
+  }
 }
+
+function selectListElement(event) {
+  const target = event.target;
+  cleanSelected();
+  target.classList.toggle('selected');
+  /*
+  Solucao alternativa mas que nao passa na verificacao.
+  const select = document.querySelector('.selected')
+  if (!select) { // if select return false the condition add the class, else, it removes the class.
+    target.classList.add('selected');
+    return;
+  } else {
+    select.classList.remove('selected');
+    return;
+  } */
+}
+
 
 //  events
 btnAddToList.addEventListener('click', addToList);
