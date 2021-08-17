@@ -14,11 +14,17 @@ botao.addEventListener('click', function criarElementoLista() {
 
 lista.addEventListener('click', function cinzaBg(selecao) {
   if (selecao.target.classList.length === 0) {
-    if(document.querySelectorAll('#lista-tarefas .selecao').length > 0) {
-      document.querySelectorAll('#lista-tarefas .selecao')[0].classList.remove('selecao');
+    if(document.querySelectorAll('#lista-tarefas .selecao').length > 0) { //verificação para entrar no if, e garantir que nunca vai existir mais de uma li selecionada.
+      document.querySelectorAll('#lista-tarefas .selecao')[0].classList.remove('selecao'); //limpa a classe existente se houver, levando em conta que só vai existir uma com indice 0
     }
-    selecao.target.classList.add("selecao");
+    selecao.target.classList.add("selecao"); //adição da classe na li clicada.
+  } 
+});
+
+lista.addEventListener('dblclick',function riscar(selecao) {
+  if (selecao.target.classList.value === "selecao") {
+    selecao.target.classList.add("completed")
   } else {
-    selecao.target.classList.remove("selecao")
+    selecao.target.classList.remove("completed")
   }
-}) 
+})
