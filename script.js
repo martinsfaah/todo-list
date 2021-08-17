@@ -14,6 +14,7 @@ window.onload = function() {
   // Adiciona a task criada à tela
   getButton.addEventListener('click', function() {
     const createTask = document.createElement('li');
+    
     createTask.innerHTML = getTask.value;
     getOL.appendChild(createTask);
     getTask.value = '';    
@@ -24,12 +25,14 @@ window.onload = function() {
 
     // Reseta o id de todos os itens da lista
     const getLi = document.querySelectorAll('li');
+
     for (let index = 0; index < getLi.length; index += 1) {
       getLi[index].id = '';
     }
 
     // Seta o id do selecionado para 'selected'
     const changeId = event.target.id;
+
     if (changeId !== 'selected') {
       event.target.id = 'selected';
     } else {
@@ -41,6 +44,7 @@ window.onload = function() {
   getOL.addEventListener('dblclick', function(event) {
     const changeClass = event.target.className;
     const getLi = document.querySelectorAll('li');
+
     if (changeClass !== 'completed') {
       event.target.className = 'completed';
     } else {
@@ -51,6 +55,7 @@ window.onload = function() {
   // Limpa todas as tasks
   getClearButton.addEventListener('click', function() {
     const getLi = document.querySelectorAll('li');
+
     for (let index = 0; index < getLi.length; index += 1) {
       getLi[index].remove();
     }
@@ -60,6 +65,7 @@ window.onload = function() {
   getRemoveButton.addEventListener('click', function() {
     const getLi = document.querySelectorAll('li');
     const getCompleted = document.querySelectorAll('.completed');
+
     for (let index = 0; index < getCompleted.length; index += 1) {
       getCompleted[index].remove();
     }
@@ -68,6 +74,7 @@ window.onload = function() {
   // Armazena localmente as tasks criadas
   getSaveButton.addEventListener('click', function() {
     let savedList = [];
+
     for (let index = 0; index < getOL.children.length; index += 1) {
       if(getOL.children[index].className === 'completed') {
         savedList.push('[' + getOL.children[index].innerHTML + ']');
@@ -88,8 +95,9 @@ window.onload = function() {
 
     if (getSelected) {
       const selectedContent = getSelected.outerHTML;
+
       for (let index = 0; index < getLi.length; index += 1) {
-        let listContent = getLi[index].outerHTML;
+
         if (getLi[index] === getSelected && index > 0) {
           getSelected.outerHTML = getLi[index - 1].outerHTML;
           getLi[index - 1].outerHTML = selectedContent;
@@ -106,7 +114,7 @@ window.onload = function() {
     if (getSelected) {
       const selectedContent = getSelected.outerHTML;
       for (let index = 0; index < getLi.length; index += 1) {
-        let listContent = getLi[index].outerHTML;
+        
         if (getLi[index] === getSelected && index < getLi.length - 1) {
           getSelected.outerHTML = getLi[index + 1].outerHTML;
           getLi[index + 1].outerHTML = selectedContent;
@@ -138,4 +146,3 @@ window.onload = function() {
     }
   }
 }
-
