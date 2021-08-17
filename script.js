@@ -50,3 +50,11 @@ btApagarTarefas.addEventListener('click', (evento) => {
   tagOl.innerText = ''
 });
 
+const btRemoverFinalizado = document.createElement('button');
+btRemoverFinalizado.id = "remover-finalizados"
+let complete = document.querySelectorAll('.completed');
+btRemoverFinalizado.addEventListener('click', function() {
+  for (index = 0;index < complete.length; index += 1){
+    complete[index]. remove();
+  };
+});
