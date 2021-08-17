@@ -36,16 +36,29 @@ risca();
 
 function limpaTarefa() {
   const getList = document.querySelector('ol');
-  let child = getList.lastElementChild;
-  while (child) {
-    getList.removeChild(child);
-    child = getList.lastElementChild;
+  let ultimaLi = getList.lastElementChild;
+  while (ultimaLi) {
+    getList.removeChild(ultimaLi);
+    ultimaLi = getList.lastElementChild;
   }
 }
 // codigo aprendido em: www.geeksforgeeks.org/remove-all-the-child-elements-of-a-dom-node-in-javascript
 
 function getBotaoTarefa() {
-  const botãoTarefa = document.getElementById('apaga-tudo');
-  botãoTarefa.addEventListener('click', limpaTarefa);
+  const botaoTarefa = document.getElementById('apaga-tudo');
+  botaoTarefa.addEventListener('click', limpaTarefa);
 }
 getBotaoTarefa();
+
+function limpaRiscado() {
+  const tarefasCompletas = document.getElementsByClassName('completed');
+  const list = document.querySelector('ol');
+  for (let index = tarefasCompletas.length - 1; index >= 0; index -= 1) {
+    list.removeChild(tarefasCompletas[index]);
+  }
+}
+function getBotaoRiscado() {
+  const botaoRiscado = document.getElementById('remover-finalizados');
+  botaoRiscado.addEventListener('click', limpaRiscado);
+}
+getBotaoRiscado();
