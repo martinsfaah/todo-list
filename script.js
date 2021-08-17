@@ -76,3 +76,17 @@ const lista = document.getElementById('lista-tarefas');
 resetListButton.addEventListener('click', () => {
   lista.innerHTML = '';
 });
+
+// Desafio 11
+
+const clearCompleted = document.createElement('button');
+clearCompleted.innerText = 'Apagar';
+clearCompleted.id = 'remover-finalizados';
+main.appendChild(clearCompleted);
+
+clearCompleted.addEventListener('click', () => {
+  const elementCompleted = document.getElementsByClassName('completed');
+  for (let index = elementCompleted.length - 1; index >= 0; index -= 1) {
+    elementCompleted[index].remove();
+  }
+});
