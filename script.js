@@ -4,6 +4,7 @@ const list = document.getElementById('lista-tarefas');
 const tasks = document.getElementsByTagName('li');
 const delAllBtn = document.getElementById('apaga-tudo');
 const doneBtn = document.getElementById('remover-finalizados');
+const delActBtn = document.getElementById('remover-selecionado');
 
 function colorTask(e) {
   for (let i = 0; i < tasks.length; i += 1) {
@@ -48,3 +49,10 @@ function eraseDone() {
 }
 
 doneBtn.addEventListener('click', eraseDone);
+
+function eraseSelected() {
+  const selectedTask = document.querySelector('.selected');
+  list.removeChild(selectedTask);
+}
+
+delActBtn.addEventListener('click', eraseSelected);
