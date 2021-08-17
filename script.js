@@ -70,8 +70,8 @@ function criarOBotaoApagar() {
 }
 criarOBotaoApagar();
 
+const resgateLista = document.querySelector('#lista-tarefas');
 function apagarTodosOsElementosDaLista() {
-  const resgateLista = document.querySelector('#lista-tarefas');
   while (resgateLista.lastChild) {
     resgateLista.removeChild(resgateLista.lastChild);
   }
@@ -80,6 +80,25 @@ const resgateBotaoApagar = document.querySelector('#apaga-tudo');
 resgateBotaoApagar.addEventListener('click', apagarTodosOsElementosDaLista);
 
 // criar botão para remover todos que tiverem a classe selecionados.
-// function criarBotãoDeRemoverFinalizados() {
+function criarBotaoDeRemoverFinalizados() {
+  const botaoFinalizador = document.createElement('button');
+  botaoFinalizador.id = 'remover-finalizados';
+  botaoFinalizador.innerText = 'apagar finalizados';
+  secction.appendChild(botaoFinalizador);
+}
 
-// }
+criarBotaoDeRemoverFinalizados();
+
+// quando tiver essa função é porque temos certeza que vai ter o elemento que queremos, e vai retornar um
+// nodeList
+function pegarFinalizdosParaRemover() {
+  const lista = document.querySelectorAll('.completed');
+  console.log(lista);
+  for(let index = 0; index < lista.length; index +=1) {
+    let aLista = lista[index];
+    resgateLista.removeChild(aLista); // é o pai que está na linha 73
+  } 
+}
+
+const resgataBotaoFinalizador = document.querySelector('#remover-finalizados');
+resgataBotaoFinalizador.addEventListener('click', pegarFinalizdosParaRemover);
