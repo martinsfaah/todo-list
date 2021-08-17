@@ -2,10 +2,12 @@ const list = document.getElementById('lista-tarefas');
 const buttonAdd = document.getElementById('criar-tarefa');
 const input = document.getElementById('texto-tarefa');
 const buttonClearAll = document.getElementById('apaga-tudo');
+const buttonClearComplete = document.getElementById('remover-finalizados');
+const buttonRemoveSelect = document.getElementById('remover-selecionado');
 
 function insertList() {
   const tarefa = document.createElement('li');
-  tarefa.className = 'lineList';
+  tarefa.classList.add('lineList');
   tarefa.innerText = input.value;
   list.appendChild(tarefa);
   tarefa.addEventListener('click', selectList);
@@ -16,18 +18,21 @@ function insertList() {
 buttonAdd.addEventListener('click', insertList);
 
 function selectList(event) {
-  const lineListClass = document.querySelectorAll('.lineList');
-  for (let index = 0; index < lineListClass.length; index += 1) {
-    lineListClass[index].style.background = '';
+  const lineListClass = document.querySelector('.selected');
+  if (document.getElementsByClassName('selected').length === 0) {
+    event.target.classList.add('selected');
+  } else {
+    event.target.classList.add('selected');
+    lineListClass.classList.remove('selected');
   }
-  event.target.style.background = 'rgb(128, 128, 128)';
 }
 
 function lineThrough(event) {
-  const classe2 = document.querySelector('.completed');
-
-  event.target.classList.add('completed');
-  classe2.addEventListener('dblclick', removeCompleted);
+  if (event.target.className === 'completed') {
+    event.target.className.remove('completed');
+  } else {
+    event.target.className = 'completed';
+  }
 }
 
 function removeCompleted(event) {
@@ -35,9 +40,26 @@ function removeCompleted(event) {
 }
 
 function clearList() {
-  const list = document.querySelectorAll('.lineList');
-  for (let index of list) {
-    index.parentNode.removeChild(index);
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
   }
 }
 buttonClearAll.addEventListener('click', clearList);
+
+function clearCompleted() {
+  const listCompleted = document.querySelectorAll('completed');
+  while (listCompleted.pare) {
+    listCompleted.parentNode.removeChild(listCompleted);
+  }
+}
+
+buttonClearComplete.addEventListener('click', clearCompleted);
+
+function removeSelected() {
+  const listCompleted = document.querySelectorAll('.selected');
+  if (document.getElementsByClassName('selected').length === 1) {
+    listCompleted[0].remove();
+  }
+}
+
+buttonRemoveSelect.addEventListener('click', removeSelected);
