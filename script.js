@@ -1,6 +1,7 @@
 const textoTarefa = document.querySelector("#texto-tarefa");
 const listaTarefas = document.querySelector("#lista-tarefas");
 const criarTarefa = document.querySelector("#criar-tarefa");
+const deleteBtn = document.querySelector("#apaga-tudo");
 
 function addTask(){
 if (textoTarefa.value === ''){
@@ -32,5 +33,8 @@ event.target.classList.toggle ('completed') //Com o toggle consegui adicionar e 
 }
 listaTarefas.addEventListener ('dblclick', doubleClick)
 
+function clearButton(){
+ listaTarefas.innerHTML = ''   
+}
 
-    
+ deleteBtn.addEventListener ('click', clearButton)   
