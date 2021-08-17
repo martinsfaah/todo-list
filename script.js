@@ -72,6 +72,7 @@ function deleteCompletedTasks() {
 
 deleteCompletedTasks();
 
+// BÔNUS
 // Salva tarefas
 // Consulta: https://tableless.com.br/guia-f%C3%A1cil-sobre-usar-localstorage-com-javascript/
 const saveTasksButton = document.getElementById('salvar-tarefas');
@@ -87,3 +88,14 @@ saveTasks();
 window.onload = function returnSavedTasks() {
   taskList.innerHTML = localStorage.getItem('task');
 };
+
+// Exclui o item selecionado
+// Consulta: https://stackoverflow.com/a/19136877
+const removeSelectedTaskButton = document.getElementById('remover-selecionado');
+
+function removeSelected() {
+  const getTasks = document.querySelector('li[style');
+  getTasks.remove();
+}
+
+removeSelectedTaskButton.addEventListener('click', removeSelected);
