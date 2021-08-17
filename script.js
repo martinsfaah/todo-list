@@ -71,3 +71,42 @@ function removeTaskCompletedButton() {
 }
 
 removeTaskCompletedButton();
+
+function saveTasks() {
+  const button = document.querySelector('#salvar-tarefas');  
+
+  button.addEventListener('click', saveLocal);
+
+  function saveLocal() {
+    const li = document.querySelectorAll('.task');
+    let liArray = [];
+    let liClassArray = [];
+    for (let index = 0; index < li.length; index += 1) {
+      let textLi = li[index].innerHTML;
+      let classLi = li[index].className;
+      liArray.push(textLi);
+      liClassArray.push(classLi);
+    }
+    localStorage.setItem('task', liArray);
+    localStorage.setItem('classTask', liClassArray);
+  } 
+}
+
+saveTasks();
+
+window.onload = function () {
+  let taskLoad = localStorage.getItem('task');
+  let taskClassLoad = localStorage.getItem('classTask');
+  if (taskLoad != undefined && taskClassLoad != undefined) {
+    let listTaskLoad = taskLoad.split(',');
+    let listTaskClassLoad = taskClassLoad.split(',');
+    for (let index = 0; index < listTaskLoad.length; index += 1) {
+      const li = document.createElement('li');
+      li.innerHTML = listTaskLoad[index];
+      li.className = listTaskClassLoad[index];
+      const ol = document.querySelector('#lista-tarefas');
+
+      ol.appendChild(li);
+    }
+  }
+}
