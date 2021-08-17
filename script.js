@@ -63,14 +63,26 @@ const clearList = () => {
   itemList.remove();
   createNewElement('ol', '', sectionListContent, 1, 'id', 'lista-tarefas');
 };
-const clearCompleted = (location) => {
+const clearCompleted = () => {
   const completedItens = document.getElementsByClassName('completed');
   const list = document.querySelector('ol');
   // Percorrendo o array ao contrário
   for (let index = completedItens.length - 1; index >= 0; index -= 1) {
     list.removeChild(completedItens[index]);
   }
-  
+};
+
+const saveTask = () => {
+  const taskItens = document.getElementById('lista-tarefas');
+  const listText = [];
+  const listClass = [];
+  sessionStorage.setItem('itens', JSON.stringify(taskItens.innerHTML));
+};
+const restoreTask = () => {
+  const ol = document.getElementById('lista-tarefas');
+  const list = JSON.parse(sessionStorage.getItem('itens'));
+  console.log(list);
+  ol.innerHTML = list;
 };
 // #REQ 1
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
@@ -105,8 +117,11 @@ newEvent(buttonClearList, 'click', clearList);
 createNewElement('button', 'Limpar Finalizados', sectionItemControl, 1, 'id', 'remover-finalizados');
 const buttonClearCompleted = document.getElementById('remover-finalizados');
 newEvent(buttonClearCompleted, 'click', clearCompleted);
-clearCompleted(buttonClearCompleted);
 
 // #REQ 12
-// createNewElement('button', 'Limpar Finalizados', sectionItemControl, 1, 'id', 'remover-finalizados');
-// const buttonClearCompleted = document.getElementById('remover-finalizados');
+createNewElement('button', 'Salvar Tarefas', sectionItemControl, 1, 'id', 'salvar-tarefas');
+const buttonSaveTask = document.getElementById('salvar-tarefas');
+
+newEvent(buttonSaveTask, 'click', saveTask);
+
+restoreTask();
