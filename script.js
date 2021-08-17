@@ -57,3 +57,17 @@ function addCompletedTask(task) {
 }
 
 taskList.addEventListener('dblclick', addCompletedTask);
+
+// Remover tarefas finalizadas
+const deleteCompletedTasksButton = document.getElementById('remover-finalizados');
+
+function deleteCompletedTasks() {
+  deleteCompletedTasksButton.addEventListener('click', () => {
+    const getTasks = document.querySelectorAll('.completed');
+    for (let i = 0; i < getTasks.length; i += 1) {
+      getTasks[i].remove();
+    }
+  });
+}
+
+deleteCompletedTasks();
