@@ -2,6 +2,7 @@ const addBtn = document.getElementById('criar-tarefa');
 const input = document.getElementById('texto-tarefa');
 const list = document.getElementById('lista-tarefas');
 const tasks = document.getElementsByTagName('li');
+const delAllBtn = document.getElementById('apaga-tudo');
 
 function colorTask(e) {
   for (let i = 0; i < tasks.length; i += 1) {
@@ -30,3 +31,9 @@ function addTask() {
 }
 
 addBtn.addEventListener('click', addTask);
+
+function eraseTasks() {
+  list.innerHTML = '';
+}
+
+delAllBtn.addEventListener('click', eraseTasks);
