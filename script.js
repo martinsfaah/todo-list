@@ -33,12 +33,12 @@ function lineDecor(event) {
 }
 list.addEventListener('dblclick', lineDecor);
 
-// const listRemove = document.getElementById('apaga-tudo');
+const listRemove = document.getElementById('apaga-tudo');
 
-// function removeList() {
-//   const selectionOl = document.querySelector('ol')
-//   selectionOl.removeChildren(document.querySelectorAll('li'))
+function removeList() {
+  const selectionOl = document.querySelector('ol')
+  selectionOl.innerHTML = '';
   
-// }
+}
 
-// listRemove.addEventListener('click', removeList);
+listRemove.addEventListener('click', removeList);
