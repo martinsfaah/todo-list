@@ -75,7 +75,33 @@ window.onload = function initialState() {
     let li = document.createElement('li');
     li.innerText = savedLi[index];
     li.className = savedLi2[index];
+    li.addEventListener('click', addGreyColor);
+    li.addEventListener('dblclick', lineThrough);
     ol.appendChild(li);
+    }
+  }
+}
+
+const upButton = document.querySelector('#mover-cima');
+upButton.addEventListener('click', switchIndex);
+function switchIndex() {
+  let lista = document.querySelectorAll('li');
+  let colorRgb = 'rgb(128, 128, 128)';
+  for( let index = 1; index < lista.length; index += 1) {
+    if(lista[index].style.backgroundColor === colorRgb) {
+      ol.insertBefore(lista[index], lista[index-1]);
+    }
+  }
+}
+
+const downButton = document.querySelector('#mover-baixo');
+downButton.addEventListener('click', switchIndex2);
+function switchIndex2() {
+  let lista = document.querySelectorAll('li');
+  let colorRgb = 'rgb(128, 128, 128)';
+  for( let index = 0; index < lista.length; index += 1) {
+    if(lista[index].style.backgroundColor === colorRgb) {
+      ol.insertBefore(lista[index], lista[index+2]);
     }
   }
 }
