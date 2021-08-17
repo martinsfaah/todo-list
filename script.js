@@ -1,37 +1,43 @@
-//resquisito 6 e 7//
-
-let botao = document.getElementById("criar-tarefa");
-botao.addEventListener("click", addLi);
-let input = document.getElementById("texto-tarefa");
-let ol = document.getElementById("lista-tarefas")
+const botao = document.getElementById('criar-tarefa');
+const input = document.getElementById('texto-tarefa');
+const ol = document.getElementById('lista-tarefas');
+const creatLi = document.querySelector('#lista-tarefas');
+const remove = creatLi.children;
+const botaoRemove = document.querySelector('#apaga-tudo');
+const listas = document.querySelectorAll('#lista-tarefas');
+const botaoRemoveDone = document.querySelector('#remover-finalizados');
+const colorSelected = 'rgb(128, 128, 128)';
+const botaoUp = document.getElementById('mover-cima');
+const botaoDown = document.getElementById('mover-baixo');
+const botaoRemoveSelected = document.getElementById('remover-selecionado');
+/*  resquisito 6 e 7  */
 
 function addLi() {
-  let li = document.createElement("li");
-  li.className = "classLi"
+  const li = document.createElement('li');
+  li.className = 'classLi';
   li.innerText = input.value;
   input.value = '';
   ol.appendChild(li);
 }
 
-//ex 8
+botao.addEventListener('click', addLi);
 
-let creatLi = document.querySelector("#lista-tarefas");
-creatLi.addEventListener("click", backColor);
-let remove = creatLi.children
+/* ex 8 */
 
-
-function backColor(event) {
-  for (elemento of remove) {
-    elemento.style.removeProperty('background-color');
+function backColor(e) {
+  const event = e;
+  for (let index = 0; index < remove.length; index += 1) {
+    remove[index].style.removeProperty('background-color');
   }
   event.target.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 
-//ex 9
+creatLi.addEventListener('click', backColor);
 
-creatLi.addEventListener("dblclick", check);
+/* ex 9 */
 
-function check(event) {
+function check(e) {
+  const event = e;
   if (event.target.className === 'classLi') {
     event.target.className += ' completed';
   } else if (event.target.className === 'classLi completed') {
@@ -39,114 +45,99 @@ function check(event) {
   }
 }
 
-// ex 10
+creatLi.addEventListener('dblclick', check);
 
-let botaoRemove = document.querySelector('#apaga-tudo');
-botaoRemove.addEventListener('click', removeAll);
-let listas = document.querySelectorAll('#lista-tarefas')
+/* ex 10 */
 
 function removeAll() {
-  for (let elemento of listas) {
-    elemento.innerHTML = ''
+  for (let index = 0; index < listas.length; index += 1) {
+    listas[index].innerHTML = '';
   }
 }
 
-let botaoRemoveDone = document.querySelector('#remover-finalizados');
-botaoRemoveDone.addEventListener('click', removeDone);
+botaoRemove.addEventListener('click', removeAll);
 
-//ex 11
+/* ex 11 */
 
 function removeDone() {
-  let listas2 = document.querySelectorAll('.completed');
-  for (let elemento of listas2) {
-    elemento.remove();
+  const listas2 = document.querySelectorAll('.completed');
+  for (let i = 0; i < listas2.length; i += 1) {
+    listas2[i].remove();
   }
 }
 
-// ex 12 
+botaoRemoveDone.addEventListener('click', removeDone);
+
+/* ex 12 */
 
 function saveLis() {
-  let li = document.querySelectorAll('li')
-  let saveLi = [];
-  for (let elementos of li) {
-    saveLi.push(elementos.innerText)
+  const li = document.querySelectorAll('li');
+  const saveLi = [];
+  for (let index = 0; index < li.length; index += 1) {
+    saveLi.push(li[index].innerText);
   }
   localStorage.setItem('tarefas', JSON.stringify(saveLi));
 }
 
-let saveTask = document.getElementById('salvar-tarefas');
-saveTask.addEventListener('click', saveLis)
+const saveTask = document.getElementById('salvar-tarefas');
+saveTask.addEventListener('click', saveLis);
 
-// function saveClasse() {
-//   let ol = document.querySelectorAll('.classLi')
-//   let saveC = [];
-//   for (let elementos of classes) {
-//     saveC.push(elementos.innerText)
-//   }
-//   localStorage.setItem('classe', JSON.stringify(saveC));
-// }
+//  function saveClasse() {
+//    let ol = document.querySelectorAll('.classLi')
+//    let saveC = [];
+//    for (let elementos of classes) {
+//      saveC.push(elementos.innerText)
+//    }
+//    localStorage.setItem('classe', JSON.stringify(saveC));
+//  }
 
-
-
-// saveClass.addEventListener('click', saveClass)
+//  saveClass.addEventListener('click', saveClass)
 
 window.onload = function loadPage() {
-  let saved
+  let saved;
   if (localStorage.getItem('tarefas') !== null) {
-    saved = JSON.parse(localStorage.getItem('tarefas'))
-    for (let elementos of saved) {
-      let li = document.createElement('li')
-      li.innerText = elementos
-      li.className = "classLi"
+    saved = JSON.parse(localStorage.getItem('tarefas'));
+    for (let i = 0; i < saved.length; i += 1) {
+      const li = document.createElement('li');
+      li.innerText = saved[i];
+      li.className = 'classLi';
       ol.appendChild(li);
-
     }
   }
-}
+};
 
-
-
-// ex 13
+/*  ex 13 */
 
 function up() {
-  let classLi = document.querySelectorAll(".classLi");
+  const classLi = document.querySelectorAll('.classLi');
 
   for (let i = 1; i < classLi.length; i += 1) {
     if (classLi[i].style.backgroundColor === colorSelected) {
-      ol.insertBefore(classLi[i], classLi[i - 1])
+      ol.insertBefore(classLi[i], classLi[i - 1]);
     }
   }
 }
-let colorSelected = 'rgb(128, 128, 128)'
-let botaoUp = document.getElementById('mover-cima');
+
 botaoUp.addEventListener('click', up);
 
 function down() {
-  let classLi = document.querySelectorAll(".classLi");
+  const classLi = document.querySelectorAll('.classLi');
   for (let i = 0; i < classLi.length - 1; i += 1) {
     if (classLi[i].style.backgroundColor === colorSelected) {
-      ol.insertBefore(classLi[i + 1], classLi[i])
-
+      ol.insertBefore(classLi[i + 1], classLi[i]);
     }
   }
 }
 
-let botaoDown = document.getElementById('mover-baixo');
 botaoDown.addEventListener('click', down);
 
-// ex 14
+/*  ex 14  */
 
 function removeSelected() {
-  let classLiSelected = document.querySelectorAll('.classLi[style]');
-  for (let elemento of classLiSelected) {
-    elemento.remove();
+  const classLiSelected = document.querySelectorAll('.classLi[style]');
+  for (let i = 0; i < classLiSelected.length; i += 1) {
+    classLiSelected[i].remove();
   }
 }
 
-let botaoRemoveSelected = document.getElementById('remover-selecionado');
-botaoRemoveSelected.addEventListener('click', removeSelected)
-
-
-
-
-
+botaoRemoveSelected.addEventListener('click', removeSelected);
