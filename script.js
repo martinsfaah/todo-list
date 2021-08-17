@@ -4,6 +4,7 @@ const list = document.getElementById('lista-tarefas');
 const inputValue = document.getElementById('texto-tarefa');
 const btnClearList = document.getElementById('apaga-tudo');
 const btnRemoveFinishedAssign = document.getElementById('remover-finalizados');
+const btnSaveSession = document.getElementById('salvar-tarefas');
 
 //  Functions
 function addToList() {
@@ -58,9 +59,22 @@ function removeFinished() {
   }
 }
 
+function saveSession() {
+  const key = 'assignment';
+  sessionStorage.setItem(key, list.innerHTML);
+}
+
+function verifySavedSession() {
+  const key = 'assignment';
+  if (sessionStorage.length === 0) { return; }
+  list.innerHTML = sessionStorage.getItem(key);
+}
+
 //  events
+window.addEventListener('load', verifySavedSession);
 btnAddToList.addEventListener('click', addToList);
 list.addEventListener('click', selectListElement);
 list.addEventListener('dblclick', checkAssignment);
 btnClearList.addEventListener('click', clearAllListItems);
 btnRemoveFinishedAssign.addEventListener('click', removeFinished);
+btnSaveSession.addEventListener('click', saveSession);
