@@ -6,6 +6,8 @@ const todo = document.getElementsByClassName('todo');
 const apagaFeito = document.getElementById('remover-finalizados');
 const removeSelecionado = document.getElementById('remover-selecionado');
 const salve = document.getElementById('salvar-tarefas');
+const subir = document.getElementById('mover-cima');
+const descer = document.getElementById('mover-baixo');
 
 function addLista() {
   const ol = document.getElementById('lista-tarefas');
@@ -107,4 +109,20 @@ function recarregar() {
 }
 
 salve.addEventListener('click', salvar);
+
+function up() {
+  const select = document.getElementsByClassName('selected')[0];
+  if (select !== todoList.firstElementChild && select !== undefined) {
+    todoList.insertBefore(select, select.previousSibling);
+  }
+}
+subir.addEventListener('click', up);
+function down() {
+  const select = document.getElementsByClassName('selected')[0];
+  if (select !== todoList.lastElementChild && select !== undefined) {
+    todoList.insertBefore(select, select.nextSibling.nextSibling);
+  }
+}
+
+descer.addEventListener('click', down);
 window.onload = recarregar;
