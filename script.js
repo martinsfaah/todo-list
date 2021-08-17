@@ -40,3 +40,13 @@ tagOl.addEventListener('dblclick', function (event) {
     }
   }
 });
+
+const btApagarTarefas = document.createElement('button');
+btApagarTarefas.id="apagar-tudo"
+btApagarTarefas.innerText = "Apagar Lista"
+tagTarefas.appendChild(btApagarTarefas);
+
+btApagarTarefas.addEventListener('click', (evento) => {
+  tagOl.innerText = ''
+});
+
