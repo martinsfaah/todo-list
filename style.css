@@ -5,3 +5,44 @@
 .completed {
   text-decoration: line-through;
 }
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #b8c1ec;
+}
+
+main {
+  display: inline-block;
+  background-color: #232946;
+  padding: 40px;
+  width: 70%;
+  border-radius: 30px;
+  margin-left: 50%;
+  margin-top: 100px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+h1 {
+  font-weight: bold;
+  color: #fffffe;
+  margin: 0px;
+}
+
+#funcionamento {
+  color: #b8c1ec;
+  font-family: Courier;
+  margin-top: 5px;
+}
+
+button {
+  background-color: #eebbc3;
+  color: #232946;
+  border-radius: 30px;
+  padding: 5px;
+  border: 0;
+  margin: 2px;
+}

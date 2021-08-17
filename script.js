@@ -97,8 +97,16 @@ function moveBaixo() {
 }
 btnParaBaixo.addEventListener('click', moveBaixo);
 
-function removeSelected() {
+function unSelected() {
   const selectedTarefa = document.querySelector('.selected');
   selectedTarefa.className = selectedTarefa.className.replace(' selected', '');
 }
-document.querySelector('header').addEventListener('click', removeSelected);
+document.querySelector('header').addEventListener('click', unSelected);
+
+// requisito 14
+const btnRemoveSelected = document.getElementById('remover-selecionado');
+
+function removeSelected() {
+  document.querySelector('.selected').remove();
+}
+btnRemoveSelected.addEventListener('click', removeSelected);
