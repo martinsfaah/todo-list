@@ -49,3 +49,17 @@ task.addEventListener('dblclick', (task2) => {
     doubleClicked.add('completed');
   }
 });
+
+function clearTasks() {
+  const tasks = task.children;
+  for (let i = tasks.length - 1; i >= 0; i -= 1) {
+    tasks[i].remove();
+  }
+}
+
+function toButtonClearTasks() {
+  const buttonClearTasks = document.getElementById('apaga-tudo');
+  buttonClearTasks.addEventListener('click', clearTasks);
+}
+
+toButtonClearTasks();
