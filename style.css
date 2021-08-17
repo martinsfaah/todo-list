@@ -1,8 +1,8 @@
 .completed {
-  text-decoration: line-through solid rgb(0 , 0 , 0);
+  text-decoration: line-through solid black;
   background-color: white;
 }
 
 .backgroundRgb {
-  background-color: rgb(128 , 128 , 128);
+  background-color: grey;
 }
