@@ -82,4 +82,29 @@ function clearItem() {
     ordList.innerText = ''; // consultei essa página para entender que o innerText atribuido a uma string vazia removeria (na verdade substituí seu conteúdo pela string vazia) todos os descendentes de ordList : https://pt.stackoverflow.com/questions/441373/como-remover-todos-os-elementos-de-uma-div-em-javascript
   });
 }
-clearItem(); 
+clearItem();
+
+function createButtonClear() {
+
+  const buttonClearComp = document.createElement('button');
+  const buttonSection = document.getElementById('buttonSection');
+  buttonSection.appendChild(buttonClearComp);
+  buttonClearComp.innerHTML = 'Limpa Completos';
+  buttonClearComp.id = 'remover-finalizados';
+}
+createButtonClear();
+
+function clearCompleted() {
+
+  const buttonClearComp = document.getElementById('remover-finalizados');
+
+  buttonClearComp.addEventListener('click', function(){
+    const listItem = document.querySelectorAll('.selected');
+    for (let i = 0; i < listItem.length; i += 1) {
+      if (listItem[i].classList.contains('completed')) {
+        listItem[i].remove(); 
+      }
+    } 
+  });
+}
+clearCompleted();
