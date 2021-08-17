@@ -2,7 +2,7 @@ const taskList = document.getElementById('lista-tarefas');
 const inputTask = document.getElementById('texto-tarefa');
 inputTask.value = '';
 const btnAddTask = document.getElementById('criar-tarefa');
-const selectedTaskId = 'selected-task'
+const selectedTaskId = 'selected-task';
 
 function selectTask(event) {
   let selectedTask = document.getElementById(selectedTaskId);
