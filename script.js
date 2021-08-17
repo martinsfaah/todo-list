@@ -36,7 +36,7 @@ function clearAll() {
   const list = document.querySelector('#lista-tarefas');
   const allItens = document.querySelectorAll('.list-item');
 
-  for (let index = allItens.length; index > 0; index--) {
+  for (let index = allItens.length; index > 0; index -= 1) {
     list.removeChild(list.childNodes[index]);
   }
 }
