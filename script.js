@@ -28,3 +28,13 @@ listTasks.addEventListener('dblclick', riskTask);
 function riskTask (event) {   
     event.target.classList.toggle('completed');
 }
+
+//Limpar tarefas
+const buttonDelete = document.getElementById('apaga-tudo');
+buttonDelete.addEventListener('click', clearList);
+
+function clearList() {
+  while(listTasks.firstChild) {
+    listTasks.removeChild(listTasks.lastChild);
+  }  
+}
