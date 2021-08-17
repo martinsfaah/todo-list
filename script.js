@@ -49,11 +49,11 @@ function completedTask() {
 
 completedTask();
 
-// CLEAR BUTTON
+// CLEAR ALL BUTTON
 
 function clearList() {
-  let clearButton = document.getElementById('apaga-tudo');
-  clearButton.addEventListener('click', function() {
+  let clearAllButton = document.getElementById('apaga-tudo');
+  clearAllButton.addEventListener('click', function() {
     let tasksList = document.getElementById('lista-tarefas');
     while (tasksList.firstChild) {
       tasksList.removeChild(tasksList.firstChild);
@@ -62,3 +62,21 @@ function clearList() {
 }
 
 clearList();
+
+// CLEAR COMPLETED BUTTON
+
+function clearCompleted() {
+  let clearCompletedButton = document.getElementById('remover-finalizados');
+  clearCompletedButton.addEventListener('click', function() {
+    let completedTasks = document.getElementsByClassName('completed');
+    console.log(completedTasks);
+    console.log(completedTasks.length);
+    for (let index = completedTasks.length - 1; index >= 0; index -= 1 ) {
+      console.log(index)
+      console.log(completedTasks[index])
+      completedTasks[index].parentNode.removeChild(completedTasks[index]);
+    }
+  })
+}
+
+clearCompleted();
