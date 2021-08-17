@@ -20,7 +20,7 @@ btCriarTarefas.addEventListener('click', (evento) => {
   inputTexto.value = '';
 });
 
-const tagOl = document.querySelector('#lista-tarefas')
+const tagOl = document.querySelector('#lista-tarefas');
 tagOl.addEventListener('click', function (event) {
   if (event.target.classList.contains('item')) {
     const atual = document.querySelector('.atual');
@@ -35,8 +35,8 @@ tagOl.addEventListener('dblclick', function (event) {
   if (event.target.classList.contains('item')) {
     if (event.target.classList.contains('completed')) {
       event.target.classList.remove('completed');
-    } 
+    }else {
     event.target.classList.add('completed');
+    }
   }
 });
-
