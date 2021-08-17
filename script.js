@@ -61,28 +61,48 @@ function salvarItens() {
   if (localStorage.length !== 0) {
     localStorage.clear();
   }
-  const listaAtual = document.getElementsByTagName('li');
-  for (let index = 0; index < listaAtual.length; index += 1) {
-    let valor = listaAtual[index].innerText;
-    valor += ';; ';
-    valor += listaAtual[index].className;
-    localStorage.setItem(index, valor);
-  }
+  const valor = lista.innerHTML;
+  localStorage.setItem('listaSalva', valor);
+  // const listaAtual = document.getElementsByTagName('li');
+  // for (let index = 0; index < listaAtual.length; index += 1) {
+  //   let valor = listaAtual[index].innerText;
+  //   valor += ';; ';
+  //   valor += listaAtual[index].className;
+  //   localStorage.setItem(index, valor);
+  // }
 }
-const um = 1;
-const zero = 0;
+
 function recarregarElementosSalvos() {
-  const tamanhoStorage = localStorage.length;
+  lista.innerHTML = localStorage.getItem('listaSalva');
+  const tamanhoStorage = lista.children.length;
+  console.log(lista);
   for (let index = 0; index < tamanhoStorage; index += 1) {
-    const valor = localStorage.getItem(index).split(';; ');
-    const elemento = document.createElement('li');
-    elemento.innerText = valor[zero];
-    elemento.className = valor[um];
+    let elemento = lista.children[index];
+    elemento.classList.remove('undefined');
     adicionarEventos(elemento, 'click', fundoCinza);
     adicionarEventos(elemento, 'dblclick', linhaRiscada);
-    lista.appendChild(elemento);
   }
 }
+
+// function moverPraCima() {
+//   if (document.getElementsByClassName('selected')[0]) {
+//     const liCompleted = document.getElementsByClassName('selected')[0];
+//     if (liCompleted.previousSibling) {
+//       const beforeSibling = liCompleted.previousSibling;
+//       beforeSibling.before(liCompleted);
+//     }
+//   }
+// }
+
+// function moverPraBaixo() {
+//   if (document.getElementsByClassName('selected')[0]) {
+//     const liCompleted = document.getElementsByClassName('selected')[0];
+//     if (liCompleted.nextSibling) {
+//       const afterSibling = liCompleted.nextSibling;
+//       afterSibling.after(liCompleted);
+//     }
+//   }
+// }
 
 function moverPraCima() {
   const selecionado = document.querySelector('.selected');
