@@ -2,7 +2,7 @@
 function selecionaTarefa(evento) {
   const ultimaTarefa = document.querySelector('.selected');
   if (ultimaTarefa !== null) ultimaTarefa.classList.remove('selected');
-  if (!(ultimaTarefa === evento.target)) evento.target.classList.add('selected');
+  if ((ultimaTarefa !== evento.target)) evento.target.classList.add('selected');
 }
 
 // Função para riscar a tarefa completa
