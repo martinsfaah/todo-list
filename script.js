@@ -11,12 +11,20 @@ window.onload = function() {
   });
 
   getOL.addEventListener('click', function(event) {
-    const changeStyle = event.target.style;
+
+    //reseta o id de todos os itens da lista
     const getLi = document.querySelectorAll('li');
     for (let index = 0; index < getLi.length; index += 1) {
-      getLi[index].style.backgroundColor = 'white';
+      getLi[index].id = '';
     }
-    changeStyle.backgroundColor = 'rgb(128,128,128)';
+
+    //seta o id do selecionado para 'selected'
+    const changeId = event.target.id;
+    if (changeId !== 'selected') {
+      event.target.id = 'selected';
+    } else {
+      event.target.id = '';
+    }
   });
 
   getOL.addEventListener('dblclick', function(event) {
@@ -66,6 +74,41 @@ window.onload = function() {
     localStorage.setItem('list', strangerThings);
   });
 
+  const getDownButton = document.querySelector('#mover-baixo');
+  const getUpButton = document.querySelector('#mover-cima');
+
+  getUpButton.addEventListener('click', function() {
+    const getSelected = document.querySelector('#selected');
+    const getLi = document.querySelectorAll('li');
+
+    if (getSelected) {
+      const selectedContent = getSelected.outerHTML;
+      for (let index = 0; index < getLi.length; index += 1) {
+        let listContent = getLi[index].outerHTML;
+        if (getLi[index] === getSelected && index > 0) {
+          getSelected.outerHTML = getLi[index - 1].outerHTML;
+          getLi[index - 1].outerHTML = selectedContent;
+        }
+      }
+    }  
+  })
+
+  getDownButton.addEventListener('click', function() {
+    const getSelected = document.querySelector('#selected');
+    const getLi = document.querySelectorAll('li');
+
+    if (getSelected) {
+      const selectedContent = getSelected.outerHTML;
+      for (let index = 0; index < getLi.length; index += 1) {
+        let listContent = getLi[index].outerHTML;
+        if (getLi[index] === getSelected && index < getLi.length - 1) {
+          getSelected.outerHTML = getLi[index + 1].outerHTML;
+          getLi[index + 1].outerHTML = selectedContent;
+        }
+      }
+    }  
+  });
+
   if (localStorage.getItem('list')) {
     const splitedThings = localStorage.getItem('list').split('||');
     for (let item of splitedThings) {
@@ -81,10 +124,3 @@ window.onload = function() {
   }
 }
 
-// ### 12 - Adicione um botão com id="salvar-tarefas" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava
-
-// **O que será verificado:**
-
-// - Será verificado que existe um elemento `button` com o id `salvar-tarefas`
-
-// - Será verificado que, quando a lista tiver vários elementos, alguns dos quais marcados como finalizados, um recarregamento da página mantém a lista exatamente como está.
