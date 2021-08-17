@@ -1,48 +1,39 @@
-//section
-let section = document.querySelector('section')
 
-//<p>
-let p = document.createElement('p');
-p.innerText = 'Clique duas vezes em um item para marcá-lo como completo';
-p.id = 'funcionamento';
-section.appendChild(p);
-
-//input
-let input = document.createElement('input');
-
-input.id = 'texto-tarefa';
-section.appendChild(input);
-
-//ol
-let ol = document.createElement('ol');
-ol.id = 'lista-tarefas'
-document.body.appendChild(ol);
-
-//button
-let button = document.createElement('button');
-button.id = 'criar-tarefa';
-button.innerText = 'adicionar'
-section.appendChild(button);
 
 //list
 let inputItem = document.querySelector('#texto-tarefa');
 let buttonCreate =  document.querySelector('#criar-tarefa');
+let ol = document.querySelector('ol')
 
-function inputAdd (){
-    li = document.createElement('li');
-    ol.appendChild(li)
-    li.innerText = inputItem.value 
-    li.addEventListener('click', liColor);
+buttonCreate.addEventListener ('click', inputAdd);
     
-    inputItem.value = '';
+    function inputAdd (){
+        let li = document.createElement('li');
+        ol.appendChild(li)
+        li.innerText = inputItem.value     
+        inputItem.value = '';     
+    }
     
-}
-    buttonCreate.addEventListener ('click', inputAdd);
+    
+ol.addEventListener('click', liColor);
 
-function liColor(event) {
-    click = event.target
-    click.style.backgroundColor = 'rgb(128, 128, 128)';
-}
+    function liColor(event) {
+        let clear = document.querySelectorAll('li')    
+        for (let i = 0; i < clear.length; i += 1) {
+            clear[i].style.backgroundColor = ''
+        }
+        click = event.target
+        click.style.backgroundColor = 'rgb(128, 128, 128)';  
+    }
+    
+
+   
+
+  
+      
+   
+
+
 
 
 
