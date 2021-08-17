@@ -108,13 +108,25 @@ function moveTaskListItems() {
   const moveUpBtn = document.getElementById('mover-cima');
 
   moveUpBtn.addEventListener('click', function () {
-    let selectedTaskListElement = document.querySelector('.selected');
-    let selectedPreviousElement = selectedTaskListElement.previousElementSibling;
-    // ref: https://devdocs.io/dom/node/insertbefore --> elementoPai.insertBefore(elementoQueDesejaMover, elementoQueEstaNaPosicaoDesejada)
-    taskList.insertBefore(selectedTaskListElement, selectedPreviousElement); 
-  })
+    const selectedTaskListElement = document.querySelector('.selected');
+    const selectedPreviousElement = selectedTaskListElement.previousElementSibling;
+
+    if (selectedPreviousElement !== null) {
+      // ref: https://devdocs.io/dom/node/insertbefore --> elementoPai.insertBefore(elementoQueDesejaMover, elementoQueEstaNaPosicaoDesejada)
+      taskList.insertBefore(selectedTaskListElement, selectedPreviousElement); 
+    }
+  });
 
   const moveDownBtn = document.getElementById('mover-baixo');
+
+  moveDownBtn.addEventListener('click', function () {
+    const selectedTaskListElement = document.querySelector('.selected');
+    const selectedNextElement = selectedTaskListElement.nextElementSibling;
+
+    if (selectedNextElement !== null) {
+      taskList.insertBefore(selectedNextElement, selectedTaskListElement); 
+    }
+  });
 }
 
 window.onload = function () {
@@ -126,5 +138,5 @@ window.onload = function () {
   excludeSelected();
   deleteAllConcludedTasks();
   deleteAllTasks();
-  moveTaskListItems()
+  moveTaskListItems();
 };
