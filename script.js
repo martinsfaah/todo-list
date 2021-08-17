@@ -1,36 +1,40 @@
-    function createItem (buttonItem){
+    const newInput = document.querySelector("#texto-tarefa");  
+    const buttonTask = document.querySelector("#criar-tarefa");
+    const taskItens = document.querySelector("#lista-tarefas");
+    const liItem = document.getElementsByTagName("li");
 
+    
 
-    let newInput = document.querySelector("#texto-tarefa");  
-    let buttonTask = document.querySelector("#criar-tarefa");
-    let taskItens = document.querySelector("#lista-tarefas");
+    function mudarCor(event){
+      for (let i = 0 ; i < liItem.length ; i += 1 ){        
+          liItem[i].style.backgroundColor = "transparent";
+        event.target.style.backgroundColor = "rgb(128,128,128)"        
+      }
+    }
 
-
-    buttonTask.addEventListener('click', function() {
+    function creatLi() {
     if(newInput.value.length > 0){
-
-    let newLi = document.createElement("li");
+    const newLi = document.createElement("li");
     taskItens.appendChild(newLi);
+    newLi.addEventListener('click', mudarCor) 
 
     newLi.innerText = newInput.value; 
     newInput.value = "";
-
     } else {
     alert("Erro, digite alguma coisa.")
-
     }
-  })    
-  }
-  createItem();
+    }        
+    buttonTask.addEventListener('click', creatLi) 
 
-/* 7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)] */
-
-  let ol = document.querySelector("#lista-tarefas");
- 
-     ol.addEventListener('click', function(event) {  
-    event.target.style.backgroundColor = "rgb(128,128,128)"
-  })
-
-  /* [8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo] */
-
-  func
+  /* [8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo] */        
+     
+   /* 9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item*/
+  
+   /* 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista] */
+/* 
+function createItem
+   const resetListButton = document.createElement("button");
+   resetListButton.innerText = "clear";
+   resetListButton.id = "apaga-tudo";
+   
+ */
