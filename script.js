@@ -73,20 +73,32 @@ window.onload = function() {
     }
   })
   
-  let todasTarefas = document.getElementById("lista-tarefas")
+  let todasTarefas = document.getElementsByTagName("li")
   
   let sobe = document.getElementById("mover-cima");
-  sobe.addEventListener("click", subir());
-
-
-  function subir() {
+  sobe.addEventListener("click", function() {
     for (let index = 0; index < todasTarefas.length; index += 1) {
-      if (todasTarefas[index].classList.contains("selected")) {
+      if (todasTarefas[index].classList.contains("selected") == true) {
+        if (index > 0) {
         todasTarefas[index].classList.remove("selected");
         todasTarefas[index - 1].classList.add("selected");
+        }
       }
     }
-  }
+  });
+
+  let desce = document.getElementById("mover-baixo");
+  desce.addEventListener("click", function() {
+    for (let index = todasTarefas.length -2; index > -1; index -= 1) {
+      if (todasTarefas[index].classList.contains("selected") == true) {
+        todasTarefas[index].classList.remove("selected");
+        todasTarefas[index + 1].classList.add("selected");
+      }
+    }
+  })
+
+
+  
 }
 
 function adicionaNoStorage(item) {
