@@ -22,11 +22,15 @@ function add () {
     
     button.addEventListener("click", function () {
         let listas = document.createElement("li")
+        listas.className = 'listinhas';
         ol.appendChild(listas)
         listas.innerHTML = input.value;
         input.value = "";
-})
+    })
 } 
-window.onload = function() {
-    add()
-}
+add()
+const ol = document.getElementById('lista-tarefas')
+ol.addEventListener('click', function (event) {
+    event.target.style.backgroundColor = 'rgb(128, 128, 128)'
+})
+
