@@ -46,6 +46,13 @@ function CreateLista() {
   const createLista = document.createElement('ol');
   createLista.id = "lista-tarefas"
   createMain.appendChild(createLista);
+  createLista.innerHTML = sessionStorage.getItem('save')
+  const creatLi = document.getElementsByTagName('li');
+  for(let index = 0; index < creatLi.length; index+= 1) {
+    creatLi[index].addEventListener('dblclick', chekItenList);
+    creatLi[index].addEventListener('click', paintLiGray);
+  }
+  sessionStorage.clear();
 }
 CreateLista();
 
@@ -150,4 +157,56 @@ buttonFinished.addEventListener('click', deleteFineshadTask);
 
 // referencia código https://cursos.alura.com.br/forum/topico-excluir-todos-os-elementos-com-uma-classe-159597
 
+// Requisito 12 botão salvar Tarefas
+
+const buttonSaveTask = document.createElement('button');
+buttonSaveTask.id = "salvar-tarefas"
+buttonSaveTask.innerHTML = "salvar tarefas"
+buttonSaveTask.className = "saveTask"
+sectionButtons.appendChild(buttonSaveTask);
+
+function saveTaskCharge (){
+  const saveOlList = document.querySelector('ol')  
+  sessionStorage.setItem('save', saveOlList.innerHTML)  
+}
+buttonSaveTask.addEventListener('click', saveTaskCharge);
+
+//Requisito 13 bonus
+
+function createMoveButtons (){
+  const moveUpButton = document.createElement('button');
+  moveUpButton.className = 'moveUp'
+  moveUpButton.id = "mover-cima"
+  moveUpButton.innerHTML = "Up"
+  sectionButtons.appendChild(moveUpButton);
+
+  const moveDownButton = document.createElement('button');
+  moveDownButton.className = 'moveDown'
+  moveDownButton.id = "mover-baixo"
+  moveDownButton.innerHTML = "Down"
+  sectionButtons.appendChild(moveDownButton);
+} 
+createMoveButtons();
+
+function moveUpTask (){
+  const setOL = document.querySelector('ol');
+  const setLiItens = document.querySelectorAll('li');
+  for (let index = 1; index < setLiItens.length; index += 1){
+    if (setLiItens[index].className === 'colorGray' )
+    setOL.insertBefore(setLiItens[index], setLiItens[index - 1]);
+  }
+}
+const setUpButton = document.querySelector('#mover-cima')
+setUpButton.addEventListener('click', moveUpTask);
+
+function moveDownTask (){
+  const setOL = document.querySelector('ol');
+  const setLiItens = document.querySelectorAll('li');
+  for (let index = 0; index < setLiItens.length -1; index += 1){
+    if (setLiItens[index].className === 'colorGray' )
+    setOL.insertBefore(setLiItens[index], setLiItens[index + 2]);
+  }
+}
+const setDownButton = document.querySelector('#mover-baixo')
+setDownButton.addEventListener('click', moveDownTask);
 
