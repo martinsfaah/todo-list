@@ -55,7 +55,6 @@ function clearButton() {
     for (let i = items.length - 1; i >= 0; i -= 1) {
       orderList.removeChild(items[i]);
     }
-    
-  })
+  });
 }
 clearButton();
