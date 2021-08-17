@@ -1,12 +1,14 @@
 //list
-let inputItem = document.querySelector('#texto-tarefa');
-let buttonCreate =  document.querySelector('#criar-tarefa');
-let ol = document.querySelector('ol')
+const inputItem = document.querySelector('#texto-tarefa');
+const buttonCreate =  document.querySelector('#criar-tarefa');
+const ol = document.querySelector('ol');
+const deleteAll = document.querySelector('#apaga-tudo');
+
 
 buttonCreate.addEventListener ('click', inputAdd);
     
-    function inputAdd (){
-        let li = document.createElement('li');
+    function inputAdd() {
+        const li = document.createElement('li');
         ol.appendChild(li)
         li.innerText = inputItem.value     
         inputItem.value = '';     
@@ -14,13 +16,24 @@ buttonCreate.addEventListener ('click', inputAdd);
     
     
 ol.addEventListener('click', liColor);
-
+    
     function liColor(event) {
-        let clear = document.querySelectorAll('li')    
+        const clear = document.querySelectorAll('li')    
         for (let i = 0; i < clear.length; i += 1) {
             clear[i].style.backgroundColor = ''
         }
-        click = event.target
+        const click = event.target
+        click.style.backgroundColor = 'rgb(128, 128, 128)';  
+    }
+
+
+
+    function liColor(event) {
+        const clear = document.querySelectorAll('li')    
+        for (let i = 0; i < clear.length; i += 1) {
+            clear[i].style.backgroundColor = ''
+        }
+        const click = event.target
         click.style.backgroundColor = 'rgb(128, 128, 128)';  
     }
 
@@ -32,8 +45,18 @@ ol.addEventListener('dblclick', lineThrough);
     }  else {
         event.target.classList.add('completed') 
     }
+    }
+
+deleteAll.addEventListener('click', dAll);
+
+    function dAll() {
+        const dAll = document.querySelectorAll('li')
+        for (let i = 0; i < dAll.length; i +=1){
+        dAll[i].remove();
+        }
 
     }
+    
     
 
 
