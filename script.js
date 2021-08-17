@@ -51,10 +51,11 @@ btApagarTarefas.addEventListener('click', (evento) => {
 });
 
 const btRemoverFinalizado = document.createElement('button');
-btRemoverFinalizado.id = "remover-finalizados"
-let complete = document.querySelectorAll('.completed');
+btRemoverFinalizado.id = "remover-finalizados";
+tagTarefas.appendChild(btRemoverFinalizado);
 btRemoverFinalizado.addEventListener('click', function() {
+  let complete = document.querySelectorAll('.completed');
   for (index = 0;index < complete.length; index += 1){
-    complete[index]. remove();
+    complete[index].remove();
   };
 });
