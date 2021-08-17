@@ -71,3 +71,19 @@ function deleteCompletedTasks() {
 }
 
 deleteCompletedTasks();
+
+// Salva tarefas
+// Consulta: https://tableless.com.br/guia-f%C3%A1cil-sobre-usar-localstorage-com-javascript/
+const saveTasksButton = document.getElementById('salvar-tarefas');
+
+function saveTasks() {
+  saveTasksButton.addEventListener('click', () => {
+    localStorage.setItem('task', taskList.innerHTML);
+  });
+}
+
+saveTasks();
+
+window.onload = function returnSavedTasks() {
+  taskList.innerHTML = localStorage.getItem('task');
+};
