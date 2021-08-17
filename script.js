@@ -2,7 +2,7 @@
 function selecionaTarefa(evento) {
   const ultimaTarefa = document.querySelector('.selected');
   if (ultimaTarefa !== null) ultimaTarefa.classList.remove('selected');
-  evento.target.classList.add('selected');
+  if (!(ultimaTarefa === evento.target)) evento.target.classList.add('selected');
 }
 
 // Função para riscar a tarefa completa
@@ -10,10 +10,8 @@ function completaTarefa(evento) {
   const tarefaCompleta = evento.target;
   if (tarefaCompleta.className.includes('completed')) {
     tarefaCompleta.classList.remove('completed');
-    tarefaCompleta.classList.remove('selected');
   } else {
     tarefaCompleta.classList.add('completed');
-    tarefaCompleta.classList.remove('selected');
   }
 }
 
@@ -51,7 +49,9 @@ function apagaTudo() {
 // Função para remover tarefas finalizadas
 function removeFinalizados() {
   const completos = document.getElementsByClassName('completed');
-  while (completos[0]) completos[0].parentNode.removeChild(completos[0]);
+  for (let i = completos.length - 1; i > 0; i -= 1) {
+    if (completos[i].tagName === 'LI') completos[i].parentNode.removeChild(completos[i]);
+  }
 }
 
 // Função para remover tarefas finalizadas
