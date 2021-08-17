@@ -23,7 +23,6 @@ function selecionaTarefa (event) {
         selected.classList.remove('selected');
         event.target.classList.add('selected');
     }
-
 }
 listaTarefas.addEventListener('dblclick', completaTarefa);
 function completaTarefa (event) {
@@ -57,4 +56,53 @@ function apagaSelecionado () {
     let selecionado = document.querySelector('.selected');
     let listaTarefas = document.getElementById('lista-tarefas');
     listaTarefas.removeChild(selecionado);
+}
+const buttonSubir = document.getElementById('mover-cima');
+buttonSubir.addEventListener('click', moverElementoCima);
+function moverElementoCima () {
+    let tarefas = document.querySelectorAll('.tarefa');
+    for (let index = 0; index < tarefas.length; index +=1) {
+        if (tarefas[index] !== tarefas[0] && tarefas[index].classList.contains('selected') === true) {
+            //O seguinte código foi baseado na resposta do usuário jfriend00 que se encontra no link https://stackoverflow.com/questions/9732624/how-to-swap-dom-child-nodes-in-javascript.
+            tarefas[index].parentNode.insertBefore(tarefas[index], tarefas[index -1]);
+        }
+    }
+}
+const buttonDescer = document.getElementById('mover-baixo');
+buttonDescer.addEventListener('click', moverElementoBaixo);
+function moverElementoBaixo () {
+    let tarefas = document.querySelectorAll('.tarefa');
+    for (let index = 0; index < tarefas.length ; index +=1) {
+        if (tarefas[index] !== tarefas[tarefas.length-1] && tarefas[index].classList.contains('selected') === true) {
+            tarefas[index +1].parentNode.insertBefore(tarefas[index +1], tarefas[index]);
+        }
+    }
+}
+const buttonSalvar = document.getElementById('salvar-tarefas');
+buttonSalvar.addEventListener('click', salvarPreferencias);
+function salvarPreferencias () {
+    //Código feito com o auxílio do aluno Marcelo Adriano
+    localStorage.clear();
+    let tarefas = document.getElementsByClassName('tarefa');
+    if (tarefas.length > 0) {
+        for (let i = 0; i < tarefas.length; i += 1) {
+            let value = tarefas[i].innerText;
+            value += '-'
+            value += tarefas[i].classList.value;
+            localStorage.setItem(i, value);
+        }
+    }
+    localStorage.setItem('tarefas',tarefas.length);
+}
+window.onload= usarPreferencias
+function usarPreferencias () {
+    let qntSalvos = localStorage.getItem('tarefas');
+    for (let i = 0; i < qntSalvos; i += 1){
+        let salvo = localStorage.getItem(i).split('-');
+        let itemLista = document.createElement('li');
+        itemLista.innerText = salvo[0];
+        itemLista.className = salvo[1];
+        let listaPai = document.getElementById('lista-tarefas');
+        listaPai.appendChild(itemLista);
+    }
 }
