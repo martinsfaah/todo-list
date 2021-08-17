@@ -28,16 +28,11 @@ function selectList(event) {
 }
 
 function lineThrough(event) {
-  if (event.target.className === 'completed') {
-    event.target.className.remove('completed');
-  } else {
-    event.target.className = 'completed';
-  }
-}
 
-function removeCompleted(event) {
-  event.target.classList.remove('completed');
-}
+    event.target.classList.remove('completed');
+    event.target.classList.add('completed');
+  }
+
 
 function clearList() {
   while (list.firstChild) {
@@ -47,12 +42,13 @@ function clearList() {
 buttonClearAll.addEventListener('click', clearList);
 
 function clearCompleted() {
-  const listCompleted = document.querySelectorAll('completed');
-  while (listCompleted.pare) {
-    listCompleted.parentNode.removeChild(listCompleted);
+  const classCompleted = document.querySelectorAll('.completed');
+  if (classCompleted.length > 0) {
+    for (let index = classCompleted.length - 1; index >= 0; index -= 1) {
+      list.removeChild(classCompleted[index]);
+    }
   }
 }
-
 buttonClearComplete.addEventListener('click', clearCompleted);
 
 function removeSelected() {
@@ -61,5 +57,4 @@ function removeSelected() {
     listCompleted[0].remove();
   }
 }
-
 buttonRemoveSelect.addEventListener('click', removeSelected);
