@@ -15,22 +15,51 @@ function taskCreator() {
 
 taskCreator();
 
-// CHANGE ITEN BACKGROUND COLOR WHEN CLICKED
+// CHANGE ITEM BACKGROUND COLOR WHEN CLICKED
 
 function selectTask() {
   let tasksList = document.getElementById('lista-tarefas');
   tasksList.addEventListener('click', function(event) {
-    // let tasks = document.getElementsByClassName('tarefas')
-    if (event.target.className === 'tarefa') {
-      let currentSelected = document.getElementsByClassName('tarefa selecionada')[0];
+    if (event.target.classList.contains('selecionada')) {
+      event.target.classList.remove('selecionada');
+    } else {
+      let currentSelected = document.getElementsByClassName('selecionada')[0];
       if (currentSelected !== undefined) {
-        currentSelected.className = 'tarefa';
+        currentSelected.classList.remove('selecionada');
       }
-      event.target.className = 'tarefa selecionada';
-    } else if (event.target.className === 'tarefa selecionada') {
-      event.target.className = 'tarefa';
+      event.target.classList.add('selecionada');
     }
   })
 }
 
 selectTask();
+
+// MARK ITEM AS COMPLETED
+
+function completedTaskOld() {
+  let tasksList = document.getElementById('lista-tarefas');
+  tasksList.addEventListener('dblclick', function(event) {
+    if (event.target.className === 'tarefa') {
+      event.target.className = 'tarefa completa';
+    } else if (event.target.className === 'tarefa selecionada') {
+      event.target.className = 'tarefa selecionada completa';
+    } else if (event.target.className === 'tarefa completa') {
+      event.target.className === 'tarefa';
+    } else if (event.target.className === 'tarefa selecionada completa') {
+      event.target.className === 'tarefa selecionada';
+    }
+  })
+}
+
+function completedTask() {
+  let tasksList = document.getElementById('lista-tarefas');
+  tasksList.addEventListener('dblclick', function(event) {
+    if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
+    } else {
+      event.target.classList.add('completed');
+    }
+  })
+}
+
+completedTask();

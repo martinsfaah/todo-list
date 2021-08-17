@@ -49,6 +49,10 @@ input {
   /* color: white; */
 }
 
+.completed {
+  text-decoration: line-through solid black;
+}
+
 ol {
   list-style: circle;
 }
