@@ -40,6 +40,11 @@ function selectListElement(event) {
   } */
 }
 
+function checkAssignment(event) {
+  event.target.classList.toggle('completed');
+}
+
 //  events
 btnAddToList.addEventListener('click', addToList);
 list.addEventListener('click', selectListElement);
+list.addEventListener('dblclick', checkAssignment);
