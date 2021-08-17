@@ -210,3 +210,21 @@ function moveDownTask (){
 const setDownButton = document.querySelector('#mover-baixo')
 setDownButton.addEventListener('click', moveDownTask);
 
+// Requisito  14 remove item selecionado
+
+function createRemoveSelectedButtons (){
+  const moveUpButton = document.createElement('button');
+  moveUpButton.className = 'removeSelect'
+  moveUpButton.id = "remover-selecionado"
+  moveUpButton.innerHTML = "remover selecionado"
+  sectionButtons.appendChild(moveUpButton);
+}
+createRemoveSelectedButtons();
+
+const buttonRemoveSelect = document.getElementById('remover-selecionado');
+
+function deleteSelectTask (){
+  const selectdTask = document.getElementsByClassName('colorGray');
+  selectdTask[0].remove()
+}
+buttonRemoveSelect.addEventListener('click', deleteSelectTask);
