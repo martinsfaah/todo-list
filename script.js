@@ -14,6 +14,7 @@ function listaTarefas () {
     textoTarefa.value = "";
 
     lista.addEventListener("click", colorTarefas)
+    lista.addEventListener("dblclick", testCompleted)
 })
 }
 
@@ -24,6 +25,19 @@ function colorTarefas (event) {
     }
     event.target.classList.add("selected")
   }
+}
+
+function testCompleted (event) {
+  if (!event.target.className.includes("completed")) {
+    event.target.classList.add("completed")
+  } else {
+    event.target.classList.remove("completed")
+  }
+
+  // event.target.classList.add("completed")
+  // if (event.target.className.includes("completed")) {
+  //   event.target.classList.remove("completed")
+  // }
 }
 
 listaTarefas()
