@@ -1,14 +1,13 @@
 //  constants declaration
 const btnAddToList = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
+const inputValue = document.getElementById('texto-tarefa');
 
 //  Functions
 function addToList() {
-  const inputValue = document.getElementById('texto-tarefa');
-  const list = document.getElementById('lista-tarefas');
   const li = document.createElement('li');
 
-  if (!inputValue) { // se o valor for falso o alert eh ativado e sai da funcao.
+  if (!inputValue.value) { // se o valor for falso o alert eh ativado e sai da funcao.
     alert('Valor invalido!');
     return;
   }
