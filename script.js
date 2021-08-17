@@ -100,3 +100,21 @@ function deleteAllTasks() {
   createButtonDeleteAll.addEventListener('click', removeAllTasks)
 }
 deleteAllTasks();
+
+// Requisito 11 - Adicione um botão com id="remover-finalizados" que quando clicado remove somente os elementos finalizados da sua lista.
+function deleteCompletedTasks() {
+  const callLiCompleted = document.querySelectorAll('.completed');
+  console.log(callLiCompleted);
+  for (let i = 0; i < callLiCompleted.length; i += 1) {
+    callLiCompleted[i].remove();
+  }
+}
+
+function removeCompletedTasks() {
+  const createButtonRemoveCompletedTasks = document.createElement('button');
+  createButtonRemoveCompletedTasks.id = 'remover-finalizados';
+  createButtonRemoveCompletedTasks.innerHTML = 'Remover Tarefas Finalizadas';
+  callParent.insertBefore(createButtonRemoveCompletedTasks, callScript);
+  createButtonRemoveCompletedTasks.addEventListener('click', deleteCompletedTasks)
+}
+removeCompletedTasks();
