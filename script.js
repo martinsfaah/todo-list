@@ -68,6 +68,8 @@ function addTask (){
   creatLi.innerText = targetInput.value;
   setList.appendChild(creatLi);
   targetInput.value = '';
+  creatLi.addEventListener('dblclick', chekItenList);
+  creatLi.addEventListener('click', paintLiGray);
 }
 
 const setButton = document.querySelector('#criar-tarefa')
@@ -79,11 +81,8 @@ setButton.addEventListener('click', addTask);
 function paintLiGray (event) {
   removeColor();
   const backGrayColor = event.target
-  backGrayColor.className = 'colorGray';
+  backGrayColor.classList.add('colorGray');
 }
-
-const setList2 = document.querySelector('ol');
-setList2.addEventListener('click', paintLiGray);
 
 //Requisito 8 RESETANDO O selecionado
 
@@ -98,13 +97,12 @@ function removeColor() {
 
 function chekItenList (event){
   const li = event;
-  if (li.target.className !== 'completed') {
-    li.target.className = 'completed';
+  if (li.target.classList.contains('completed') ) {
+    li.target.classList.remove('completed');
   } else {
-    li.target.className = '';
+    li.target.classList.add ('completed');
   }
 }
-setList2.addEventListener('dblclick', chekItenList);
 
 //Requisito 10 botão clear
 
