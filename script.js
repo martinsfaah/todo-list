@@ -1,4 +1,5 @@
-let listItem = document.getElementsByClassName("list-item")
+let listItem = document.getElementsByTagName("li")
+let listatarefa = document.getElementById("lista-tarefas")
 
 function listaTarefas () {
   let textoTarefa = document.querySelector("#texto-tarefa")
@@ -19,12 +20,22 @@ function listaTarefas () {
 }
 
 function colorTarefas (event) {
-  if (event.target.className != "selected") {
+  if (!event.target.className.includes("selected")) {
   for (let index = 0; index < listItem.length; index += 1) {
     listItem[index].classList.remove("selected")
     }
     event.target.classList.add("selected")
+  } else {
+    event.target.classList.remove("selected")
   }
+
+  // if (event.target.style.backgroundColor !== "rgb(128, 128, 128)") {
+  //   for (index = 0; index < listItem.length; index += 1) { 
+  //     listItem[index].style.backgroundColor = ""  
+  //   }
+  //   event.target.style.backgroundColor = "rgb(128, 128, 128)"
+  //   }
+
 }
 
 function testCompleted (event) {
@@ -42,9 +53,11 @@ function testCompleted (event) {
 
 listaTarefas()
 
-  // if (event.target.style.backgroundColor !== "rgb(128, 128, 128)") {
-  //   for (index = 0; index < listItem.length; index += 1) { 
-  //     listItem[index].style.backgroundColor = ""  
-  //   }
-  //   event.target.style.backgroundColor = "rgb(128, 128, 128)"
-  //   }
+function apagarLista () {
+  let botaoLimpar = document.getElementById("apaga-tudo")
+    botaoLimpar.addEventListener("click", function () {
+    listatarefa.innerHTML = ""
+  })
+}
+
+apagarLista ()
