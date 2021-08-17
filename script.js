@@ -1,3 +1,5 @@
+// CRIAÇÃO DA MECANICA DE ADD TAREFAS COM O BOTAO E INPUT
+
 function criarTarefa() {
   const inputTarefa = document.getElementById('texto-tarefa');
   const listaTarefas = document.getElementById('lista-tarefas');
@@ -9,6 +11,7 @@ function criarTarefa() {
 
   // chama a função bgCinza logo depois de criar a tarefa, antes disso a tarefa não existe portanto se eu chamar depois, ela não vai funcionar, não tem como atribuir algo, a alguma coisa que não existe
   tarefa.addEventListener('click', bgCinza);
+  tarefa.addEventListener('dblclick', riscado);
 }
 const btnAddTarefa = document.getElementById('criar-tarefa');
 btnAddTarefa.addEventListener('click', criarTarefa);
@@ -20,4 +23,8 @@ function bgCinza(event) {
     tarefa[index].classList.remove('bgCinza');
     event.target.classList.add('bgCinza');
   }
+}
+
+function riscado(event) {
+  event.target.classList.toggle('completed');
 }
