@@ -24,6 +24,7 @@ const listaOl = document.querySelector('#lista-tarefas');
 function adicionaTexto() {
     botaoAdiciona.addEventListener('click', function eventoClick() {
         const itemLista = document.createElement('li');
+        itemLista.className = 'complected'
         itemLista.innerText = document.getElementById('texto-tarefa').value;
         listaOl.appendChild(itemLista);
         document.getElementById('texto-tarefa').value = null;
@@ -42,3 +43,14 @@ function selecionaTexto(texto) {
     }
 }
 listaOl.addEventListener('click', selecionaTexto);
+
+// Requisito 9
+function riscaItem(textos) {
+    const classeCompleted = document.querySelector('.completed');
+    if (!textos.target.classList.contains('completed')) {
+        textos.target.classList.add('completed');
+    } else {
+        classeCompleted.classList.remove('completed');
+    }
+}
+listaOl.addEventListener('dblclick', riscaItem);
