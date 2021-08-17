@@ -9,8 +9,8 @@ const list = document.querySelector('#lista-tarefas');
 const listItems = document.querySelectorAll('ol li');
 const btnRemoveAll = document.getElementById('apaga-tudo');
 const btnRemoveSelected = document.getElementById('remover-selecionado');
-const btnMoveUp = document.getElementById('mover-cima');
-const btnMoveDown = document.getElementById('mover-baixo');
+// const btnMoveUp = document.getElementById('mover-cima');
+// const btnMoveDown = document.getElementById('mover-baixo');
 
 function createListItems() {
   const item = list.appendChild(createTag('li'));
@@ -25,10 +25,12 @@ function createListItems() {
 //   newListSection.appendChild(createTag('ol')).id = 'lista-tarefas';
 // }
 function removeSelected() {
-  const completedItens = document.getElementsByClassName('completed');
-  const newList = document.querySelector('ol');
-  for (let index = completedItens.length; index > completedItens.length; index -= 1) {
-    newList.removeChild(completedItens[index]);
+  const completedItens = document.getElementsByClassName('selected');
+  for (let index = 0; index < completedItens.length; index += 1) {
+    completedItens[index] = this.parentElement;
+    list.removeChild(completedItens[index]);
+    // completedItens[index].style.display = 'none';
+    // console.log(completedItens[index]);
   }
 }
 
@@ -49,4 +51,4 @@ list.addEventListener('click', listItemsInteract, false);
 list.addEventListener('dblclick', listItemsCompleted, false);
 btnCreateItem.addEventListener('click', createListItems);
 btnRemoveAll.addEventListener('click', removeAll);
-// btnRemoveSelected.addEventListener('click', removeSelected);
+btnRemoveSelected.addEventListener('click', removeSelected);
