@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: rgb(255, 252, 208);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(82, 82, 82);
+  /* color: rgb(82, 82, 82); */
 }
 
 #container {
@@ -50,7 +50,7 @@ input {
 }
 
 .completed {
-  text-decoration: line-through solid black;
+  text-decoration: line-through;
 }
 
 ol {

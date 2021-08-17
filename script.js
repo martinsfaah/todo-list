@@ -36,21 +36,6 @@ selectTask();
 
 // MARK ITEM AS COMPLETED
 
-function completedTaskOld() {
-  let tasksList = document.getElementById('lista-tarefas');
-  tasksList.addEventListener('dblclick', function(event) {
-    if (event.target.className === 'tarefa') {
-      event.target.className = 'tarefa completa';
-    } else if (event.target.className === 'tarefa selecionada') {
-      event.target.className = 'tarefa selecionada completa';
-    } else if (event.target.className === 'tarefa completa') {
-      event.target.className === 'tarefa';
-    } else if (event.target.className === 'tarefa selecionada completa') {
-      event.target.className === 'tarefa selecionada';
-    }
-  })
-}
-
 function completedTask() {
   let tasksList = document.getElementById('lista-tarefas');
   tasksList.addEventListener('dblclick', function(event) {
@@ -63,3 +48,17 @@ function completedTask() {
 }
 
 completedTask();
+
+// CLEAR BUTTON
+
+function clearList() {
+  let clearButton = document.getElementById('apaga-tudo');
+  clearButton.addEventListener('click', function() {
+    let tasksList = document.getElementById('lista-tarefas');
+    while (tasksList.firstChild) {
+      tasksList.removeChild(tasksList.firstChild);
+    }
+  })
+}
+
+clearList();
