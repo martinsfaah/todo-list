@@ -17,7 +17,7 @@ const listaTarefas = document.getElementById('lista-tarefas');
 listaTarefas.addEventListener('click', selecionaTarefa);
 function selecionaTarefa (event) {
     let selected = document.querySelector('.selected');
-    if (!document.querySelector('.selected')) {
+        if (!document.querySelector('.selected')) {
         event.target.classList.add('selected');
     } else {
         selected.classList.remove('selected');
