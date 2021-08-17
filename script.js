@@ -74,3 +74,27 @@ window.onload = function init() {
     }
   }
 };
+
+// Source: https://ramigs.dev/blog/dynamic-order-change-html/
+// https://www.javascripttutorial.net/javascript-dom/javascript-insertafter/
+// Conteúdo dos links utilizado para aprender a modificar posição de elemento em relação a elementos irmãos
+
+function moveUp() {
+  const selectedTask = document.getElementById(selectedTaskId);
+  if (selectedTask && selectedTask.previousSibling) {
+    taskList.insertBefore(selectedTask, selectedTask.previousSibling);
+  }
+}
+
+function moveDown() {
+  const selectedTask = document.getElementById(selectedTaskId);
+  if (selectedTask && selectedTask.nextSibling) {
+    taskList.insertBefore(selectedTask.nextSibling, selectedTask);
+  }
+}
+
+const btnMoveUp = document.getElementById('mover-cima');
+const btnMoveDown = document.getElementById('mover-baixo');
+
+btnMoveUp.addEventListener('click', moveUp);
+btnMoveDown.addEventListener('click', moveDown);
