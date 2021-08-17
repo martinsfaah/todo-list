@@ -1,5 +1,6 @@
 const taskButton = document.getElementById('criar-tarefa');
 const cleanButton = document.getElementById('apaga-tudo');
+const cleanFinished = document.getElementById('remover-finalizados');
 
 function makeSelected(event) {
   const addSelectedClass = event.target;
@@ -43,3 +44,14 @@ function deleteButton() {
   }
 }
 cleanButton.addEventListener('click', deleteButton);
+
+function finishedButton() {
+  const verifyItemList = document.querySelectorAll('li');
+
+  for (let index = 0; index < verifyItemList.length; index += 1) {
+    if (verifyItemList[index].classList.contains('completed')) {
+      verifyItemList[index].remove();
+    }
+  }
+}
+cleanFinished.addEventListener('click', finishedButton);
