@@ -73,8 +73,24 @@ const saveTask = () => {
 const restoreTask = () => {
   const ol = document.getElementById(listTarefas);
   const list = JSON.parse(sessionStorage.getItem('itens'));
-  console.log(list);
   ol.innerHTML = list;
+};
+
+const moveTaskUp = () => {
+  const taskItens = document.getElementsByClassName('task-item');
+  const newItem = document.querySelector('.selected');
+  const ol = document.getElementById('lista-tarefas');
+  // console.log(taskItens[3].classList.contains('selected'));
+  for (let index = 0; index < taskItens.length; index += 1) {
+    const selectedTask = taskItens[index].classList;
+    if (selectedTask.contains('selected') && index > 0) {
+      ol.insertBefore(newItem, taskItens[index - 1]);
+    }
+  }
+
+};
+const moveTaskDown = () => {
+  console.log('oi');
 };
 // #REQ 1
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
@@ -121,3 +137,12 @@ const buttonSaveTask = document.getElementById('salvar-tarefas');
 newEvent(buttonSaveTask, 'click', saveTask);
 
 window.onload = restoreTask;
+
+// #REQ 13
+
+createNewElement('button', 'mover para cima', sectionItemControl, 1, 'id', 'mover-cima');
+createNewElement('button', 'mover para baixo', sectionItemControl, 1, 'id', 'mover-baixo');
+const buttonMoveUp = document.getElementById('mover-cima');
+const buttonMoveDown = document.getElementById('mover-baixo');
+newEvent(buttonMoveUp, 'click', moveTaskUp);
+newEvent(buttonMoveDown, 'click', moveTaskDown);
