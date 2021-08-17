@@ -148,19 +148,43 @@ removeSelected();
 
 // MoveUp e MoveDown feitos com ajuda do Eric Cruz.
 
+// function moveUp() {
+//   for (let i = 0; i < itensLista.length; i += 1) {
+//     if (itensLista[i].classList.contains('selecionado') && itensLista[i].previousSibling) {
+//       const beforeSibling = itensLista[i].previousSibling;
+//       beforeSibling.before(itensLista[i]);
+//       break;
+//     }
+//   }
+// }
+
+// function moveDown() {
+//   for (let i = 0; i < itensLista.length; i += 1) {
+//     if (itensLista[i].classList.contains('selecionado') && itensLista[i].nextSibling) {
+//       const afterSibling = itensLista[i].nextSibling;
+//       afterSibling.after(itensLista[i]);
+//       break;
+//     }
+//   }
+// }
+
 function moveUp() {
-  const liCompleted = document.getElementsByClassName('selecionado')[0];
-  if (liCompleted.previousSibling) {
-    const beforeSibling = liCompleted.previousSibling;
-    beforeSibling.before(liCompleted);
+  if (document.getElementsByClassName('selecionado')[0]) {
+    const liCompleted = document.getElementsByClassName('selecionado')[0];
+    if (liCompleted.previousSibling) {
+      const beforeSibling = liCompleted.previousSibling;
+      beforeSibling.before(liCompleted);
+    }
   }
 }
 
 function moveDown() {
-  const liCompleted = document.getElementsByClassName('selecionado')[0];
-  if (liCompleted.nextSibling) {
-    const afterSibling = liCompleted.nextSibling;
-    afterSibling.after(liCompleted);
+  if (document.getElementsByClassName('selecionado')[0]) {
+    const liCompleted = document.getElementsByClassName('selecionado')[0];
+    if (liCompleted.nextSibling) {
+      const afterSibling = liCompleted.nextSibling;
+      afterSibling.after(liCompleted);
+    }
   }
 }
 
