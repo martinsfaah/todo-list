@@ -28,7 +28,18 @@ function itemClopleted(evt) {
   if (!completed.className.includes('completed')) {
     completed.classList.add('completed');
     completed.classList.remove('selected');
-  }else {
+  } else {
     completed.classList.remove('completed');
   }
+} // 9 ok
+
+function deleteAll() {
+  let apagaTudo = document.getElementById('apaga-tudo');
+  let li = document.getElementsByTagName('li');
+  apagaTudo.addEventListener('click', function () {
+    for (let index = li.length - 1; index >= 0; index -= 1) {
+      ol.removeChild(li[index]);
+    }
+  });
 }
+deleteAll();
