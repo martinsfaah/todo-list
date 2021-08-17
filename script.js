@@ -38,11 +38,21 @@ function mudarACorDeFundo(event) {
   }
 }
 
+function addOuRemoverClasseCompleted(event) {
+  const evento = event.target;
+  if (!evento.classList.contains('completed')) {
+    evento.classList.add('completed');
+  } else {
+    evento.classList.remove('completed');
+  }
+}
+
 function pegarValorDoInput() {
   const listaOrdenada = document.querySelector('#lista-tarefas');
   const resgateInput = document.querySelector('#texto-tarefa');
   const criarLista = document.createElement('li');
   criarLista.addEventListener('click', mudarACorDeFundo);
+  criarLista.addEventListener('dblclick', addOuRemoverClasseCompleted);
   // evento que vou criado na função da linha  30.
   criarLista.innerText = resgateInput.value;
   listaOrdenada.appendChild(criarLista);
@@ -68,3 +78,6 @@ function apagarTodosOsElementosDaLista() {
 }
 const resgateBotaoApagar = document.querySelector('#apaga-tudo');
 resgateBotaoApagar.addEventListener('click', apagarTodosOsElementosDaLista);
+
+// Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível 
+// desfazer essa ação clicando novamente duas vezes no item
