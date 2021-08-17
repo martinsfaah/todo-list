@@ -2,6 +2,18 @@ const input = document.getElementById('texto-tarefa');
 const ol = document.getElementById('lista-tarefas');
 const button = document.getElementById('criar-tarefa');
 const btnApgTudo = document.getElementById('apaga-tudo');
+const btnApgFinish = document.getElementById('remover-finalizados');
+
+btnApgFinish.addEventListener('click', () => {
+  const listCompleted = document.querySelectorAll('.completed');
+  for(let index = 0; index < listCompleted.length; index += 1){
+    listCompleted[index].remove();
+  }
+ 
+  while (ol.classList.contains('completed')) {
+    ol.removeChild(ol.childNodes);
+  }
+});
 
 btnApgTudo.addEventListener('click', () => {
   while (ol.firstChild) {
