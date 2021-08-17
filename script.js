@@ -2,6 +2,7 @@ const buttonAdd = document.querySelector('#criar-tarefa');
 const ol = document.querySelector('#lista-tarefas');
 const header = document.querySelector('header');
 const textBox = document.createElement('input');
+const buttonDeleted = document.querySelector('#apaga-tudo');
 
 function inputTxt() {
   textBox.setAttribute('type', 'text');
@@ -32,7 +33,6 @@ function selectedTask(task) {
 ol.addEventListener('click', selectedTask);
 
 function completedTask(e) {
-  const completed = document.querySelectorAll('.completed');
   if (!e.target.classList.contains('completed')) {
     e.target.classList.add('completed');
   } else {
@@ -40,3 +40,10 @@ function completedTask(e) {
   }
 }
 ol.addEventListener('dblclick', completedTask);
+
+function deletedTask() {
+  buttonDeleted.addEventListener('click', function eventeClick() {
+    ol.textContent = ' ';
+  });
+}
+deletedTask();
