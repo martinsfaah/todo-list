@@ -6,6 +6,7 @@ const btRemoverFinalizados = document.querySelector('#remover-finalizados');
 const btRemoverSelecionado = document.querySelector('#remover-selecionado');
 const btMoverCima = document.querySelector('#mover-cima');
 const btMoverBaixo = document.querySelector('#mover-baixo');
+const btSalvarTarefas = document.querySelector('#salvar-tarefas');
 
 function addTarefa() {
   const input = document.querySelector('#texto-tarefa');
@@ -114,3 +115,18 @@ function moverBaixo() {
 }
 
 btMoverBaixo.addEventListener('click', moverBaixo);
+
+function salvarLista() {
+  localStorage.setItem('lista', listaTarefas.innerHTML);
+}
+
+btSalvarTarefas.addEventListener('click', salvarLista);
+
+window.onload = function abrirPagina() {
+  listaTarefas.innerHTML = localStorage.getItem('lista');
+  const tarefas = document.querySelectorAll('li');
+  for (let i = 0; i < tarefas.length; i += 1) {
+    tarefas[i].addEventListener('click', selecTarefa);
+    tarefas[i].addEventListener('dblclick', riscarTarefa);
+  }
+};

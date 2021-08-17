@@ -28,23 +28,19 @@ button {
   margin: 5px;
 }
 
-#remover-selecionado,
-#apaga-tudo,
-#remover-finalizados {
+#remover-selecionado, #apaga-tudo, #remover-finalizados {
   background-color: red;
 }
 
-#mover-cima,
-#mover-baixo {
+#mover-cima, #mover-baixo {
   background-color: orange;
 }
 
-#criar-tarefa,
-#salvar-tarefas {
+#criar-tarefa, #salvar-tarefas {
   background-color: blue;
 }
 
 #funcionamento {
   font-style: italic;
-  margin-top: 0px;
+  margin-top: 0;
 }
