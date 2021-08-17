@@ -38,6 +38,21 @@
     botao.style.marginLeft = '15px'
     botao.id = 'criar-tarefa'    
 
+    
+
+
+    let divBotoes = document.createElement('div')
+    body.appendChild(divBotoes)
+
+    let botaoReset = document.createElement('button')
+    divBotoes.appendChild(botaoReset)
+    botaoReset.innerHTML = 'Apagar tudo'
+    botaoReset.id = 'apaga-tudo'
+    botaoReset.style.marginLeft = '50px'
+
+   
+    
+
     botao.addEventListener('click', function (){
         let tarefa = input.value
         let li = document.createElement('li')
@@ -49,8 +64,8 @@
         function removeSelected (){
             let aux = document.querySelectorAll('li')
             for (let i = 0; i < aux.length; i ++) {
-                if (aux[i].className = 'selected'){
-                    aux[i].classList.remove('selected')
+                if (aux[i].id = 'selected'){
+                    aux[i].id = ''
                 }
             }
         }
@@ -69,14 +84,39 @@
         li.addEventListener('click', function (){
             removeSelected()
             removeColor()
-            li.className = 'selected'
-            let selected = document.querySelector('.selected')
-            console.log(selected)
+            li.id = 'selected'
+            let selected = document.querySelector('#selected')
+            
             selected.style.backgroundColor = 'rgb(128, 128, 128)'
-  
             
         })
+        
+        // depois volto para o requisito 9
+        
+        
+
+        botaoReset.addEventListener('click', function (){
+            let tarefasAdcionadas = document.querySelectorAll('li')
+            for (let i = 0; i < tarefasAdcionadas.length; i++){
+                let auxReset = tarefasAdcionadas[i]
+                auxReset.remove()
+            }
+        })
     })
+    
+    
+        
+
+
+        
+
+        
+        
+        
+
+        
+
+    
     
     
     
