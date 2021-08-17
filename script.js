@@ -1,4 +1,4 @@
-/* Inicializando o botão*/
+/* Inicializando o botão adcionar*/
 let botao = document.getElementById('criar-tarefa');
 botao.addEventListener('click', criaTarefa);
 
@@ -19,7 +19,7 @@ function criaTarefa(){
     caixaDeTexto.value = '';
 
     item.addEventListener('click',lineColor);
-    /* item.addEventListener('dbclick',cutLine); */
+    item.addEventListener('dblclick',cutLine); 
 
 
 }
@@ -36,3 +36,19 @@ function lineColor(event){
     linhaSelecionada = true;
 }
 
+function cutLine(event){
+    let linhaCortada = event.target;
+    if(linhaCortada.className === 'completed'){
+        linhaCortada.className = '';
+    }else{
+    linhaCortada.className = 'completed';
+    }
+}
+/* Inicializando o botão apaga tudo*/
+let apagador = document.getElementById('apaga-tudo');
+apagador.addEventListener('click',apagaTudo);
+
+function apagaTudo (){
+    let apagarAqui = document.getElementById('lista-tarefas');
+    apagarAqui.innerText = '';
+}
