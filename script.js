@@ -1,7 +1,8 @@
-//  constants declaration
+//  declarations
 const btnAddToList = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
 const inputValue = document.getElementById('texto-tarefa');
+const btnClearList = document.getElementById('apaga-tudo');
 
 //  Functions
 function addToList() {
@@ -44,7 +45,12 @@ function checkAssignment(event) {
   event.target.classList.toggle('completed');
 }
 
+function clearAllListItems() {
+  list.textContent = '';
+}
+
 //  events
 btnAddToList.addEventListener('click', addToList);
 list.addEventListener('click', selectListElement);
 list.addEventListener('dblclick', checkAssignment);
+btnClearList.addEventListener('click', clearAllListItems)
