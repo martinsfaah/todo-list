@@ -3,8 +3,14 @@ const cleanButton = document.querySelector('#apaga-tudo');
 
 function makeSelected(event) {
   const addSelectedClass = event.target;
+  const selectedItemList = document.querySelector('.selected');
   addSelectedClass.classList.add('selected');
   addSelectedClass.style.backgroundColor = 'rgb(128,128,128)';
+
+  if (selectedItemList) {
+    selectedItemList.classList.remove('selected');
+    selectedItemList.style.backgroundColor = '';
+  }
 }
 
 function addToList() {
