@@ -22,7 +22,7 @@ function selectTask() {
   tasksList.addEventListener('click', function(event) {
     if (event.target.classList.contains('tarefa')) {
       if (event.target.classList.contains('selecionada')) {
-        event.target.classList.remove('selecionada');
+        // event.target.classList.remove('selecionada');
       } else {
         let currentSelected = document.getElementsByClassName('selecionada')[0];
         if (currentSelected !== undefined) {
