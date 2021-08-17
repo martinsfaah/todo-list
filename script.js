@@ -1,68 +1,42 @@
-const main = document.querySelector('body');
-let ol = document.getElementById('lista-tarefas');
-let btn = document.createElement('BUTTON');
 
+const addBtn = document.getElementById('criar-tarefa'); // Botão de Criar tarefa
+const ol = document.getElementById('lista-tarefas'); // Lista ordenada
 
-
-// Cria Header
-function createHeader () {
-  const header = document.createElement('header');
-  header.innerText = "Minha Lista de Tarefas";
-  main.appendChild(header);
-}
-
-createHeader();
-
-// Cria Small Text
-function createSmallText () {
-  const smallText = document.createElement('div');
-  smallText. innerText = 'Clique duas vezes em um item para marcá-lo como completo';
-  smallText.id = 'funcionamento';
-  main.appendChild(smallText);
-}
-
-createSmallText();
-
-// Cria Input Box
-function createInputBox () {
-  const inputBox = document.createElement('input');
-  inputBox.id = 'texto-tarefa';
-  main.appendChild(inputBox);
-}
-
-createInputBox();
-
-//Cria Button
-function createInputBtn() {
-  btn.innerHTML = 'Add Task';
-  btn.id = 'criar-tarefa';
-  main.appendChild(btn);
-  btn.addEventListener('click', createTaskList);
-  }
-
-createInputBtn();
-
-//Cria OL - HTML
-function createOL () {
-  const ol = document.createElement('ol');
-  ol.id = 'lista-tarefas';
-  main.appendChild(ol);
-}
-
-createOL();
-
-// Cria a lista
 function createTaskList () {
-  let inputText = document.getElementById('texto-tarefa');
+  const textInput = document.getElementById('texto-tarefa'); // Campo de input
   const li = document.createElement('li');
-  li.addEventListener('click', targetLi);
-  li.innerHTML = inputText.value;
-  document.getElementById('lista-tarefas').appendChild(li);
-  inputText.value = '';
+  li.innerText = textInput.value;
+  ol.appendChild(li);
+  textInput.value = '';
 }
+addBtn.addEventListener('click', createTaskList);
 
-function targetLi (event) {
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)'
+function changeBackgroundColor (event) {
+  const selected = event.target;
+  const oldSelected = document.querySelector('.selected');
+  if(selected.classList.contains('selected')) {
+    return;
+  }
+  if (selected.tagName === 'li') {
+    selected.style.changeBackgroundColor = 'rgb(128,128,128)';
+  }
+  if (oldSelected) {
+    oldSelected.classList.remove('selected');
+    oldSelected.style.changeBackgroundColor = '';
+  }
+  selected.classList.add('selected');
 }
+ol.addEventListener('click', changeBackgroundColor);
 
+function itenCompleted (event) {
+  const completed = event.target;
+  if (completed.style.textDecoration !== '') {
+    completed.style.textDecoration = '';
+    completed.classList.remove('completed');
+    return;
+  }
+  completed.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
+  completed.classList.add('completed');
 
+}
+ol.addEventListener('dblclick', itenCompleted);
