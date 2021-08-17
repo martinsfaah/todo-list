@@ -10,6 +10,8 @@ const colorSelected = 'rgb(128, 128, 128)';
 const botaoUp = document.getElementById('mover-cima');
 const botaoDown = document.getElementById('mover-baixo');
 const botaoRemoveSelected = document.getElementById('remover-selecionado');
+const saveTask = document.getElementById('salvar-tarefas');
+// const saveClass = document.getElementById('salvar-tarefas');
 /*  resquisito 6 e 7  */
 
 function addLi() {
@@ -70,37 +72,39 @@ botaoRemoveDone.addEventListener('click', removeDone);
 
 /* ex 12 */
 
+function saveClasse() {
+  const ol1 = document.querySelectorAll('.classLi');
+  const saveC = [];
+  for (let i = 0; i < ol1.length; i += 1) {
+    saveC.push(ol1[i].className);
+  }
+  localStorage.setItem('classe', JSON.stringify(saveC));
+}
+
 function saveLis() {
   const li = document.querySelectorAll('li');
   const saveLi = [];
   for (let index = 0; index < li.length; index += 1) {
-    saveLi.push(li[index].innerText);
+    if (li[index].className !== 'completed') {
+      saveLi.push(li[index].innerText);
+    }
   }
   localStorage.setItem('tarefas', JSON.stringify(saveLi));
+  saveClasse();
 }
 
-const saveTask = document.getElementById('salvar-tarefas');
 saveTask.addEventListener('click', saveLis);
-
-//  function saveClasse() {
-//    let ol = document.querySelectorAll('.classLi')
-//    let saveC = [];
-//    for (let elementos of classes) {
-//      saveC.push(elementos.innerText)
-//    }
-//    localStorage.setItem('classe', JSON.stringify(saveC));
-//  }
-
-//  saveClass.addEventListener('click', saveClass)
 
 window.onload = function loadPage() {
   let saved;
+  let saved2;
   if (localStorage.getItem('tarefas') !== null) {
     saved = JSON.parse(localStorage.getItem('tarefas'));
+    saved2 = JSON.parse(localStorage.getItem('classe'));
     for (let i = 0; i < saved.length; i += 1) {
       const li = document.createElement('li');
       li.innerText = saved[i];
-      li.className = 'classLi';
+      li.className = saved2[i];
       ol.appendChild(li);
     }
   }
