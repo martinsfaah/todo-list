@@ -11,7 +11,7 @@ function createInput() {
   const input = document.createElement('input');
   const mySection = document.querySelector('section');
   mySection.appendChild(input);
-  input.id = "texto-tarefa";
+  input.id = 'texto-tarefa';
 }
 createInput();
 
@@ -19,7 +19,7 @@ function createOrdList() {
   const ordList = document.createElement('ol');
   const olSection = document.getElementById('olSection');
   olSection.appendChild(ordList);
-  ordList.id = "lista-tarefas";
+  ordList.id = 'lista-tarefas';
 }
 createOrdList();
 
@@ -27,18 +27,18 @@ function createButton() {
   const button = document.createElement('button');
   const mySection = document.querySelector('section');
   mySection.appendChild(button);
-  button.id = "criar-tarefa";
+  button.id = 'criar-tarefa';
   button.innerHTML = 'Adicionar';
 }
 createButton();
 
 function criaTarefa() {
 
-  const button = document.getElementById("criar-tarefa");
-  const input = document.getElementById("texto-tarefa");
-  const ordList = document.getElementById("lista-tarefas");
+  const button = document.getElementById('criar-tarefa');
+  const input = document.getElementById('texto-tarefa');
+  const ordList = document.getElementById('lista-tarefas');
 
-  button.addEventListener('click', function(){
+  button.addEventListener('click', function() {
     let listItem = document.createElement('li');
     ordList.appendChild(listItem);
     listItem.className = 'selected';
@@ -51,7 +51,7 @@ function criaTarefa() {
 }
 criaTarefa();
 
-function changeBgColor (event) {
+function changeBgColor(event) {
   let listItem = document.querySelectorAll('.selected');
   for (let index = 0; index < listItem.length; index += 1){
     listItem[index].style.backgroundColor = '';
@@ -63,3 +63,23 @@ function lineTrough(event) {
 
   event.target.classList.toggle('completed');
 }
+
+function clearButton() {
+  const clearList = document.createElement('button');
+  const buttonSection = document.getElementById('buttonSection');
+  buttonSection.appendChild(clearList);
+  clearList.innerHTML = 'Limpar Lista';
+  clearList.id = 'apaga-tudo';
+}
+clearButton();
+
+function clearItem() {
+
+  const clearList = document.getElementById('apaga-tudo');
+  const ordList = document.getElementById('lista-tarefas');
+
+  clearList.addEventListener('click', function(){
+    ordList.innerText = ''; // consultei essa página para entender que o innerText atribuido a uma string vazia removeria (na verdade substituí seu conteúdo pela string vazia) todos os descendentes de ordList : https://pt.stackoverflow.com/questions/441373/como-remover-todos-os-elementos-de-uma-div-em-javascript
+  });
+}
+clearItem(); 
