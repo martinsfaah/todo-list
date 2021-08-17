@@ -1,5 +1,5 @@
 const taskButton = document.getElementById('criar-tarefa');
-const cleanButton = document.querySelector('#apaga-tudo');
+const cleanButton = document.getElementById('apaga-tudo');
 
 function makeSelected(event) {
   const addSelectedClass = event.target;
@@ -16,14 +16,11 @@ function makeSelected(event) {
 function completedTask(event) {
   const cutItemList = event.target;
 
-  if (cutItemList.style.textDecoration.length > 1) {
-    cutItemList.style.textDecoration = '';
+  if (!cutItemList.classList.contains('completed')) {
+    cutItemList.classList.add('completed');
+  } else {
     cutItemList.classList.remove('completed');
-    return;
   }
-
-  cutItemList.style.textDecoration = 'line-through';
-  cutItemList.classList.add('completed');
 }
 
 function addToList() {
@@ -38,12 +35,11 @@ function addToList() {
 }
 
 taskButton.addEventListener('click', addToList);
-// makeSelected('dblclick');
 
-// function deleteButton() {
-//   const getList = document.querySelector('#lista-tarefas').children;
-//   if (getList.length > 0) {
-//     getList.removeChild(getList.length);
-//   }
-// }
-// cleanButton.addEventListener('click', deleteButton);
+function deleteButton() {
+  const getList = document.querySelectorAll('li');
+  for (let index = 0; index < getList.length; index += 1) {
+    getList[index].remove();
+  }
+}
+cleanButton.addEventListener('click', deleteButton);
