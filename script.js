@@ -33,14 +33,19 @@ function riscando(event) {
 // Requisito 10
 let botaoApagar = document.getElementById('apaga-tudo')
 function apagando() {
-//   // listaTarefa.removeChild
-  alert('Botão funcionando?')
+  let itens = document.getElementsByTagName('li');
+  let listaTarefa = document.getElementById('lista-tarefas');
+  for (let index = itens.length - 1; index >= 0 ; index -= 1) {
+  listaTarefa.removeChild(itens[index])
+  }
 }
 botaoApagar.addEventListener('click', apagando)
 
 // // Requisito 11
+// Adicione um botão com id="remover-finalizados" que quando clicado remove somente os elementos finalizados da sua lista
 let botaoRemover = document.getElementById('remover-finalizados')
 function removendo() {
+  let finalizados = document.getElementsByClassName('completed')
   alert('Outro botão. Ok?')
 }
 botaoRemover.addEventListener('click', removendo)
