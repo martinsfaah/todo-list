@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
   background-color: rgb(240 , 240 , 240);
+  font-family: Roboto , sans-serif , Georgia , Times , serif;
 }
 
 header {
@@ -9,6 +12,16 @@ header {
 
 h1 {
   color: rgb(40 , 40 , 40);
+}
+
+main {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px 20px 20px;
+  border: 1px solid black;
+  border-radius: 40px;
+  background-color: white;
 }
 
 #funcionamento {
@@ -22,4 +35,58 @@ h1 {
 
 .completed {
   text-decoration: line-through;
+}
+
+.input-section {
+  text-align: center;
+}
+
+.options-section {
+  text-align: center;
+}
+
+.buttons-line {
+  margin-top: 10px;
+}
+
+.input-section label {
+  display: block;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  color: rgb(40 , 40 , 40);
+  font-weight: 600;
+}
+
+button {
+  background-color: teal;
+  border-radius: 5px;
+  color: rgb(240 , 240 , 240);
+  font-weight: 600;
+}
+
+button:hover {
+  color: teal;
+  background-color: rgb(240 , 240 , 240);
+}
+
+#remover-selecionado {
+  background-color: red;
+  font-size: larger;
+}
+
+#remover-selecionado:hover {
+  background-color: rgb(240 , 240 , 240);
+  color: red;
+}
+
+#mover-cima , #mover-baixo {
+  font-size: large;
+}
+
+#mover-cima:hover {
+  color: green;
+}
+
+#mover-baixo:hover {
+  color: blue;
 }
