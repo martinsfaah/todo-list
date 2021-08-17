@@ -51,4 +51,26 @@ for (let index = 0; index < taskList.children.length; index += 1) {
   }
 }
 });
- 
+
+const saveTask = document.querySelector('#salvar-tarefas');
+let count = 0;
+saveTask.addEventListener('click', () => {
+  for (let index = 0;index < taskList.children.length; index += 1) {
+    let taskNameContainer = 'taskName' + index;
+    let taskClassContainer = 'taskClass' + index;
+    localStorage.setItem(taskNameContainer, taskList.children[index].innerHTML);
+    localStorage.setItem(taskClassContainer, taskList.children[index].className);
+    count++;
+  
+  }
+  localStorage.setItem('count',count);
+});
+
+if(localStorage.getItem('taskName0') !== null) {
+  for(let index = 0; index < localStorage.getItem('count'); index ++) {
+  let recoveredLi = document.createElement('li');
+  recoveredLi.innerHTML = localStorage.getItem('taskName' + index);
+  recoveredLi.className = localStorage.getItem('taskClass' + index);
+  taskList.appendChild(recoveredLi);
+  }
+}
