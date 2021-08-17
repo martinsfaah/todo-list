@@ -1,8 +1,17 @@
 window.onload = function() {
+
+  // Constantes para resgatar os IDs
   const getTask = document.querySelector('#texto-tarefa');
   const getButton = document.querySelector('#criar-tarefa');
   const getOL = document.querySelector('#lista-tarefas');
-
+  const getClearButton = document.querySelector('#apaga-tudo');
+  const getRemoveButton = document.querySelector('#remover-finalizados');
+  const getSaveButton = document.querySelector('#salvar-tarefas');
+  const getDownButton = document.querySelector('#mover-baixo');
+  const getUpButton = document.querySelector('#mover-cima');
+  const getRemoveOneButton = document.querySelector('#remover-selecionado');
+  
+  // Adiciona a task criada à tela
   getButton.addEventListener('click', function() {
     const createTask = document.createElement('li');
     createTask.innerHTML = getTask.value;
@@ -10,15 +19,16 @@ window.onload = function() {
     getTask.value = '';    
   });
 
+  // Adiciona ID selected para a task selecionada
   getOL.addEventListener('click', function(event) {
 
-    //reseta o id de todos os itens da lista
+    // Reseta o id de todos os itens da lista
     const getLi = document.querySelectorAll('li');
     for (let index = 0; index < getLi.length; index += 1) {
       getLi[index].id = '';
     }
 
-    //seta o id do selecionado para 'selected'
+    // Seta o id do selecionado para 'selected'
     const changeId = event.target.id;
     if (changeId !== 'selected') {
       event.target.id = 'selected';
@@ -27,8 +37,8 @@ window.onload = function() {
     }
   });
 
+  // Altera classe da task completada para completed
   getOL.addEventListener('dblclick', function(event) {
-    const changeStyle = event.target.style;
     const changeClass = event.target.className;
     const getLi = document.querySelectorAll('li');
     if (changeClass !== 'completed') {
@@ -38,8 +48,7 @@ window.onload = function() {
     }
   });
 
-  const getClearButton = document.querySelector('#apaga-tudo');
-
+  // Limpa todas as tasks
   getClearButton.addEventListener('click', function() {
     const getLi = document.querySelectorAll('li');
     for (let index = 0; index < getLi.length; index += 1) {
@@ -47,8 +56,7 @@ window.onload = function() {
     }
   });
 
-  const getRemoveButton = document.querySelector('#remover-finalizados');
-
+  // Limpa as tasks concluídas
   getRemoveButton.addEventListener('click', function() {
     const getLi = document.querySelectorAll('li');
     const getCompleted = document.querySelectorAll('.completed');
@@ -57,8 +65,7 @@ window.onload = function() {
     }
   });
 
-  const getSaveButton = document.querySelector('#salvar-tarefas');
-
+  // Armazena localmente as tasks criadas
   getSaveButton.addEventListener('click', function() {
     let savedList = [];
     for (let index = 0; index < getOL.children.length; index += 1) {
@@ -74,9 +81,7 @@ window.onload = function() {
     localStorage.setItem('list', strangerThings);
   });
 
-  const getDownButton = document.querySelector('#mover-baixo');
-  const getUpButton = document.querySelector('#mover-cima');
-
+  // Troca a posição da task selecionada com a de cima
   getUpButton.addEventListener('click', function() {
     const getSelected = document.querySelector('#selected');
     const getLi = document.querySelectorAll('li');
@@ -93,6 +98,7 @@ window.onload = function() {
     }  
   })
 
+  // Troca a posição da task selecionada com a de baixo
   getDownButton.addEventListener('click', function() {
     const getSelected = document.querySelector('#selected');
     const getLi = document.querySelectorAll('li');
@@ -108,9 +114,8 @@ window.onload = function() {
       }
     }  
   });
-
-  const getRemoveOneButton = document.querySelector('#remover-selecionado');
-
+  
+  // Remove a task selecionada
   getRemoveOneButton.addEventListener('click', function() {
     const getSelected = document.querySelector('#selected');
     if (getSelected) {
@@ -118,6 +123,7 @@ window.onload = function() {
     }
   })
 
+  // Recupera a lista salva no local storage assim que a página carrega
   if (localStorage.getItem('list')) {
     const splitedThings = localStorage.getItem('list').split('||');
     for (let item of splitedThings) {
