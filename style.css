@@ -22,12 +22,14 @@ h1 {
   background-color: white;
   border-radius: 30px;
   padding: 40px;
+  width: 650px;
+  display: inline-block;
 }
 
 #buttons-container {
   float: right;
   background-color: white;
-  padding: 20px;
+  padding: 24px;
   border-radius: 30px;
   text-align: center;
 }
