@@ -2,6 +2,7 @@
 let btnCriarTarefa = document.getElementById('criar-tarefa');
 let ol = document.getElementById('lista-tarefas');
 btnCriarTarefa.addEventListener('click', createInput);
+let li = document.getElementsByTagName('li');
 
 function createInput() {
   let elemento = document.getElementById('texto-tarefa').value;
@@ -10,7 +11,7 @@ function createInput() {
   li.innerText = elemento;
   ol.appendChild(li);
   document.getElementById('texto-tarefa').value = '';
-  li.addEventListener('dblclick', itemClopleted);
+  li.addEventListener('dblclick', itemClompleted);
 } // 5 e 6 ok
 
 function changeBackgroundColor(evt) {
@@ -23,7 +24,7 @@ function changeBackgroundColor(evt) {
   }
 } // 7 e 8 ok
 
-function itemClopleted(evt) {
+function itemClompleted(evt) {
   let completed = evt.target;
   if (!completed.className.includes('completed')) {
     completed.classList.add('completed');
@@ -35,11 +36,30 @@ function itemClopleted(evt) {
 
 function deleteAll() {
   let apagaTudo = document.getElementById('apaga-tudo');
-  let li = document.getElementsByTagName('li');
   apagaTudo.addEventListener('click', function () {
     for (let index = li.length - 1; index >= 0; index -= 1) {
       ol.removeChild(li[index]);
     }
   });
 }
-deleteAll();
+deleteAll(); // 10 ok
+
+// function deleteAll() {
+//   let li = document.getElementsByTagName('li');
+//   apagaTudo.addEventListener('click', function () {
+//     li.innerHTML = ''; // ao clicar substitui as li's com html vazio.
+//   });
+// }
+// deleteAll(); // 10 outra forma de fazer
+
+function deleteFinished() {
+  let apagarFinalizados = document.getElementById('remover-finalizados');
+  apagarFinalizados.addEventListener('click', function () {
+    for (let index = li.length - 1; index >= 0; index -= 1) {
+      if (li[index].className.includes('completed')) {
+        ol.removeChild(li[index]);
+      }
+    }
+  });
+} // 11
+deleteFinished();
