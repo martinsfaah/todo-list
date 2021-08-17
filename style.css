@@ -25,4 +25,9 @@ body {
 header {
   width: 100%;
   align-items: center;
+  display: inline-block;
+}
+
+p {
+  color: rgb(119, 117, 117);
 }

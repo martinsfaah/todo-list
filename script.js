@@ -97,24 +97,25 @@ function removeColor() {
 //Requisito 9 duplo clik para dar Check
 
 function chekItenList (event){
-  if (event.target.className !== 'completed') {
-    event.target.className = 'completed';
+  const li = event;
+  if (li.target.className !== 'completed') {
+    li.target.className = 'completed';
   } else {
-    event.target.className = 'completed';
+    li.target.className = '';
   }
 }
 setList2.addEventListener('dblclick', chekItenList);
 
 //Requisito 10 botão clear
 
-const createSectionButons = document.createElement('section');
+const sectionButtons = document.createElement('section');
 
 const buttonResetList = document.createElement('button');
 function CreateresetButton (){
-  createMain.appendChild(createSectionButons);
+  createMain.appendChild(sectionButtons);
   buttonResetList.id = "apaga-tudo"
   buttonResetList.innerHTML = "Apagar Lista"
-  createSectionButons.appendChild(buttonResetList);
+  sectionButtons.appendChild(buttonResetList);
 }
 CreateresetButton();
 
@@ -126,7 +127,26 @@ function clearAllList() {
 }
 butonDelet.addEventListener('click', clearAllList);
 
+// Requisito 11 botão remover Finalizaddos
 
+function createButonRemoveFinished (){
+  const removeFineshd = document.createElement('button');
+  removeFineshd.id = "remover-finalizados"
+  removeFineshd.innerHTML = "Limpa completos"
+  sectionButtons.appendChild(removeFineshd);
+}
+createButonRemoveFinished();
 
+const buttonFinished = document.getElementById('remover-finalizados');
+
+function deleteFineshadTask (){
+  const completedTask = document.getElementsByClassName('completed');
+  for (let index = completedTask.length - 1; index >= 0; index-=1) {
+    completedTask[index].remove();
+  }
+}
+buttonFinished.addEventListener('click', deleteFineshadTask);
+
+// referencia código https://cursos.alura.com.br/forum/topico-excluir-todos-os-elementos-com-uma-classe-159597
 
 
