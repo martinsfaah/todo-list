@@ -150,14 +150,18 @@ removeSelected();
 
 function moveUp() {
   const liCompleted = document.getElementsByClassName('selecionado')[0];
-  const beforeSibling = liCompleted.previousSibling;
-  beforeSibling.before(liCompleted);
+  if (liCompleted.previousSibling) {
+    const beforeSibling = liCompleted.previousSibling;
+    beforeSibling.before(liCompleted);
+  }
 }
 
 function moveDown() {
   const liCompleted = document.getElementsByClassName('selecionado')[0];
-  const afterSibling = liCompleted.nextSibling;
-  afterSibling.after(liCompleted);
+  if (liCompleted.nextSibling) {
+    const afterSibling = liCompleted.nextSibling;
+    afterSibling.after(liCompleted);
+  }
 }
 
 function removeSelectedItem() {
