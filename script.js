@@ -26,7 +26,7 @@ function createListItem(input) {
 
 function selectionHandler() {
   if (this.classList.contains('selected')) {
-    this.classList.remove('selected');
+    // this.classList.remove('selected');
     this.style.backgroundColor = null;
   } else {
     for (let i = 0; i < todoItems.length; i += 1) {
