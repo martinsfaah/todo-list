@@ -6,17 +6,14 @@ let botaoApaga = document.getElementById('apaga-tudo');
 let tarefasLista = document.getElementsByClassName('lista');
 let taferasCriadas = document.querySelectorAll('.lista');
 
-// Exercicio 5
-
+// Exercicio 5,6,7,8
 
 function changeColor(event) {
     if (event.target.style.backgroundColor != 'rgb(128, 128, 128)') {
-        console.log('rgb(128, 128, 128)');
         event.target.style.backgroundColor = 'rgb(128, 128, 128)';
     }
     else {
         event.target.style.backgroundColor = 'white';
-        console.log('ola');
     }
 }
 
@@ -37,8 +34,8 @@ buttonCriaTarefa.addEventListener('click', criaTarefa);
 
 // Exercicio 10
 
-// botaoApaga.addEventListener('click', apagar);
+botaoApaga.addEventListener('click', apagar);
 
-// function apagar() {
-//         taferasCriadas.reset(); 
-//     }
+function apagar() {
+    listaTarefas.parentNode.removeChild(listaTarefas);
+}
