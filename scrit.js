@@ -9,11 +9,20 @@ function liColor(event) {
   event.target.classList.add('selected');
 }
 
+function linethrough(event) {
+  const Target = event.target;
+  if (Target.className.includes('completed')) {
+    Target.classList.remove('completed');
+  } else {
+    Target.classList.add('completed');
+  }
+}
+
 function addItens() {
   const Li = document.createElement('li');
   Li.innerHTML = input.value;
-  Li.className = 'listItem';
   Li.addEventListener('click', liColor);
+  Li.addEventListener('dblclick', linethrough);
   input.value = '';
   List.appendChild(Li);
 
