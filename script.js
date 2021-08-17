@@ -1,26 +1,7 @@
 const ol = document.querySelector('ol');
 const button = document.getElementById('criar-tarefa');
 const input = document.getElementById('texto-tarefa');
-button.addEventListener('click', addListItem);
-function addListItem() {
-  const newLi = document.createElement('li');
-  newLi.innerText = input.value;
-  ol.appendChild(newLi);
-  input.value = '';
-  const li = document.getElementsByTagName('li');
-  for (const index of li) {
-    index.addEventListener('click', addGreyColor);
-    index.addEventListener('dblclick', lineThrough);
-  }
-}
-
-function addGreyColor(event) {
-  const li = document.getElementsByTagName('li');
-  for (const index of li) {
-    index.style.backgroundColor = 'white';
-  }
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
-}
+const colorRgb = 'rgb(128, 128, 128)';
 
 function lineThrough(event) {
   if (event.target.className === 'completed') {
@@ -30,23 +11,58 @@ function lineThrough(event) {
   }
 }
 
+function addGreyColor(e) {
+  const event = e;
+  const li = document.getElementsByTagName('li');
+  for (let index = 0; index < li.length; index += 1) {
+    li[index].style.backgroundColor = 'white';
+  }
+  event.target.style.backgroundColor = colorRgb;
+}
+
+function addListItem() {
+  const newLi = document.createElement('li');
+  newLi.innerText = input.value;
+  ol.appendChild(newLi);
+  input.value = '';
+  const li = document.getElementsByTagName('li');
+  for (let index = 0; index < li.length; index += 1) {
+    li[index].addEventListener('click', addGreyColor);
+    li[index].addEventListener('dblclick', lineThrough);
+  }
+}
+
+button.addEventListener('click', addListItem);
+
 const eraseButton = document.getElementById('apaga-tudo');
-eraseButton.addEventListener('click', eraseTaskList);
+
 function eraseTaskList() {
   ol.innerText = '';
 }
 
-const eraseDoneTasks = document.getElementById('remover-finalizados');
-eraseDoneTasks.addEventListener('click', eraseOnlyDones);
 function eraseOnlyDones() {
   const completed = document.querySelectorAll('.completed');
-  for (const element of completed) {
-    element.remove();
+  for (let index = 0; index < completed.length; index += 1) {
+    completed[index].remove();
   }
 }
 
+const eraseDoneTasks = document.getElementById('remover-finalizados');
+eraseDoneTasks.addEventListener('click', eraseOnlyDones);
+
+eraseButton.addEventListener('click', eraseTaskList);
+
+const arrayClasses = [];
+
+function addClassToLocal() {
+  const saveClass = document.querySelectorAll('li');
+  for (let index = 0; index < saveClass.length; index += 1) {
+    arrayClasses.push(saveClass[index].className);
+  }
+  localStorage.setItem('classes', JSON.stringify(arrayClasses));
+}
+
 const saveTasks = document.querySelector('#salvar-tarefas');
-saveTasks.addEventListener('click', saveToLocal);
 const saveLi = [];
 function saveToLocal() {
   const li = document.querySelectorAll('li');
@@ -56,19 +72,13 @@ function saveToLocal() {
   localStorage.setItem('tasks', JSON.stringify(saveLi));
   addClassToLocal();
 }
-const arrayClasses = [];
-function addClassToLocal() {
-  const saveClass = document.querySelectorAll('li');
-  for (let index = 0; index < saveClass.length; index += 1) {
-    arrayClasses.push(saveClass[index].className);
-  }
-  localStorage.setItem('classes', JSON.stringify(arrayClasses));
-}
+
+saveTasks.addEventListener('click', saveToLocal);
 
 window.onload = function initialState() {
   let savedLi;
   let savedLi2;
-  if (localStorage.getItem('tasks') !== null && localStorage.getItem('classes') !== null ){
+  if (localStorage.getItem('tasks') !== null && localStorage.getItem('classes') !== null) {
     savedLi = JSON.parse(localStorage.getItem('tasks'));
     savedLi2 = JSON.parse(localStorage.getItem('classes'));
     for (let index = 0; index < savedLi.length; index += 1) {
@@ -82,36 +92,36 @@ window.onload = function initialState() {
   }
 };
 
-const upButton = document.querySelector('#mover-cima');
-upButton.addEventListener('click', switchIndex);
 function switchIndex() {
   const lista = document.querySelectorAll('li');
-  const colorRgb = 'rgb(128, 128, 128)';
-  for ( let index = 1; index < lista.length; index += 1){
+  for (let index = 1; index < lista.length; index += 1) {
     if (lista[index].style.backgroundColor === colorRgb) {
       ol.insertBefore(lista[index], lista[index - 1]);
     }
   }
 }
 
+const upButton = document.querySelector('#mover-cima');
+upButton.addEventListener('click', switchIndex);
+
 const downButton = document.querySelector('#mover-baixo');
-downButton.addEventListener('click', switchIndex2);
 function switchIndex2() {
   const lista = document.querySelectorAll('li');
-  const colorRgb = 'rgb(128, 128, 128)';
-  for ( let index = 0; index < lista.length; index += 1){
+  for (let index = 0; index < lista.length; index += 1) {
     if (lista[index].style.backgroundColor === colorRgb) {
       ol.insertBefore(lista[index], lista[index + 2]);
     }
   }
 }
 
+downButton.addEventListener('click', switchIndex2);
+
 const removeDoneTask = document.querySelector('#remover-selecionado');
 removeDoneTask.onclick = function onlyDoneTask() {
   const li = document.querySelectorAll('li');
-  for (const element of li) {
-    if (element.style.backgroundColor === 'rgb(128, 128, 128)') {
-      element.remove();
+  for (let index = 0; index < li.length; index += 1) {
+    if (li[index].style.backgroundColor === colorRgb) {
+      li[index].remove();
     }
   }
 };
