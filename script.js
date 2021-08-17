@@ -45,11 +45,6 @@ listTask.addEventListener('dblclick', riskTaskCompleted);
 function clearAllTask() {
   localStorage.removeItem('task');
   localStorage.removeItem('class');
-  // const tasks = document.querySelectorAll('.task');
-
-  // for (let i = 0; i < tasks.length; i += 1) {
-  //   tasks[i].parentElement.removeChild(tasks[i]);
-  // }
   window.location.reload();
 }
 
@@ -116,9 +111,9 @@ function removeTaskSelected() {
 removeSelected.addEventListener('click', removeTaskSelected);
 
 function moveTaskUp() {
-  const tasks = document.querySelectorAll('.task');
+  const tasks = document.querySelectorAll('li');
   const taskSelected = document.querySelector('.selected');
-  console.log(tasks);
+
   for (let i = 0; i < tasks.length; i += 1) {
     if (tasks[i] === taskSelected) {
       const assistant = tasks[i - 1].innerHTML;
@@ -135,9 +130,8 @@ function moveTaskUp() {
 moveUp.addEventListener('click', moveTaskUp);
 
 function moveTaskDown() {
-  const tasks = document.querySelectorAll('.task');
+  const tasks = document.querySelectorAll('li');
   const taskSelected = document.querySelector('.selected');
-  console.log(tasks);
 
   for (let i = 0; i < tasks.length; i += 1) {
     if (tasks[i] === taskSelected) {
