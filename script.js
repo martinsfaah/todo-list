@@ -29,7 +29,7 @@ function riskTask (event) {
     event.target.classList.toggle('completed');
 }
 
-//Limpar tarefas
+//Limpar todas tarefas
 const buttonDelete = document.getElementById('apaga-tudo');
 buttonDelete.addEventListener('click', clearList);
 
@@ -38,3 +38,18 @@ function clearList() {
     listTasks.removeChild(listTasks.lastChild);
   }  
 }
+
+//Limpar tarefas completas
+const btnRemoveTasksCompleted = document.getElementById('remover-finalizados');
+btnRemoveTasksCompleted.addEventListener('click', removeTasksCompleted);
+
+function removeTasksCompleted() {
+  for (let i = listTasks.children.length - 1; i >= 0; i -= 1) {
+    if (listTasks.children[i].classList.contains('completed')){
+      listTasks.children[i].remove();
+    }
+  }
+}
+
+
+
