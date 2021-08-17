@@ -46,13 +46,9 @@ addButton();
 // Requisito 7 e 8 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)(7) e Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo(8).
 function selectTask(event) {
   const callTask = document.querySelectorAll('.task');
-  if (event.target.classList.contains('backgroundRgb')) {
-    event.target.classList.remove('backgroundRgb');
-  } else {
-    for (let i = 0; i < callTask.length; i += 1) {
-      callTask[i].classList.remove('backgroundRgb');
-      event.target.classList.add('backgroundRgb');
-    }
+  for (let i = 0; i < callTask.length; i += 1) {
+    callTask[i].classList.remove('backgroundRgb');
+    event.target.classList.add('backgroundRgb');
   }
 }
 
@@ -84,8 +80,9 @@ const callButton = document.querySelector('#criar-tarefa');
 callButton.addEventListener('click', addTask);
 
 // Requisito 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista.
+const getOl = document.querySelector('#lista-tarefas');
+
 function removeAllTasks() {
-  const getOl = document.querySelector('#lista-tarefas');
   const size = getOl.childNodes.length;
   for (let i = 0; i < size; i += 1) {
     getOl.childNodes[0].remove();
@@ -95,7 +92,7 @@ function removeAllTasks() {
 function deleteAllTasks() {
   const createButtonDeleteAll = document.createElement('button');
   createButtonDeleteAll.id = 'apaga-tudo';
-  createButtonDeleteAll.innerHTML = 'Remover todos os itens da lista';
+  createButtonDeleteAll.innerHTML = 'Limpar Lista';
   callParent.insertBefore(createButtonDeleteAll, callScript);
   createButtonDeleteAll.addEventListener('click', removeAllTasks);
 }
@@ -112,7 +109,7 @@ function deleteCompletedTasks() {
 function removeCompletedTasks() {
   const createButtonRemoveCompletedTasks = document.createElement('button');
   createButtonRemoveCompletedTasks.id = 'remover-finalizados';
-  createButtonRemoveCompletedTasks.innerHTML = 'Remover Tarefas Finalizadas';
+  createButtonRemoveCompletedTasks.innerHTML = 'Limpar Tarefas Finalizadas';
   callParent.insertBefore(createButtonRemoveCompletedTasks, callScript);
   createButtonRemoveCompletedTasks.addEventListener('click', deleteCompletedTasks);
 }
@@ -120,28 +117,82 @@ removeCompletedTasks();
 
 // Requisito 12 - Adicione um botão com id="salvar-tarefas" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava.
 function saveTasks() {
-  const callBackOl = document.querySelector('#lista-tarefas');
-  if (callBackOl.innerHTML.length === 0) {
-    alert('Erro: Lista de Tarefas Vazia!');
-  } else {
-    localStorage.setItem('tasks', (callBackOl.innerHTML));
-  }
+  localStorage.setItem('tasks', (getOl.innerHTML));
 }
 
 function buttonToSaveTasks() {
   const createButtonToSaveTasks = document.createElement('button');
   createButtonToSaveTasks.id = 'salvar-tarefas';
-  createButtonToSaveTasks.innerHTML = 'Clique aqui para Salvar a Lista';
+  createButtonToSaveTasks.innerHTML = 'Salvar Lista';
   callParent.insertBefore(createButtonToSaveTasks, callScript);
-  createButtonToSaveTasks.addEventListener('click', saveTasks)
+  createButtonToSaveTasks.addEventListener('click', saveTasks);
 }
 buttonToSaveTasks();
 
 function load() {
-  const getBackOl = document.querySelector('#lista-tarefas');
-    getBackOl.innerHTML = localStorage.getItem('tasks');
+  getOl.innerHTML = localStorage.getItem('tasks');
+  const childrenOfgetBackOl = getOl.children;
+  for (let i = 0; i < childrenOfgetBackOl.length; i += 1) {
+    childrenOfgetBackOl[i].addEventListener('click', selectTask);
+    childrenOfgetBackOl[i].addEventListener('dblclick', completeTask);
+  }
 }
 
 window.onload = load;
 
 // Requisito 13 - Adicione dois botões, um com id="mover-cima" e outro com id="mover-baixo", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas.
+function createButtonsMove() {
+  const createButtonUp = document.createElement('button');
+  const createButtonDown = document.createElement('button');
+  createButtonUp.innerHTML = 'Mover Para Cima';
+  createButtonDown.innerHTML = 'Mover Para Baixo';
+  createButtonUp.id = 'mover-cima';
+  createButtonDown.id = 'mover-baixo';
+  callParent.insertBefore(createButtonUp, callScript);
+  callParent.insertBefore(createButtonDown, callScript);
+  createButtonUp.addEventListener('click', moveUp);
+  createButtonDown.addEventListener('click', moveDown);
+}
+createButtonsMove();
+
+function moveUp() {
+  const selectedTask = document.querySelector('.backgroundRgb');
+  if (selectedTask !== null) {
+    const previousSelectedTask = selectedTask.previousSibling;
+    if (previousSelectedTask !== null) {
+      getOl.insertBefore(selectedTask, previousSelectedTask);
+    } else {
+      // console.log(getOl)
+      // selectTask(event);
+      // getOl.lastElementChild.classList.add('backgroundRgb');
+    }
+  }
+}
+
+function moveDown() {
+  const selectedTask = document.querySelector('.backgroundRgb');
+  if (selectedTask !== null) {
+    const nextSelectedTask = selectedTask.nextSibling;
+    if (nextSelectedTask !== null) {
+      getOl.insertBefore(nextSelectedTask, selectedTask);
+    }
+  }
+}
+
+// Requisito 14 - Adicione um botão com id="remover-selecionado" que, quando clicado, remove o item selecionado
+function removeSelected() {
+  for (let i = 0; i < getOl.childNodes.length; i += 1) {
+    if (getOl.childNodes[i].classList.contains('backgroundRgb')) {
+      getOl.childNodes[i].remove();      
+    }
+  }
+}
+
+function buttonToRemoveSelected() {
+  const createButtonToRemoveSelected = document.createElement('button');
+  createButtonToRemoveSelected.id = 'remover-selecionado';
+  createButtonToRemoveSelected.innerHTML = 'Remover Item Selecionado';
+  callParent.insertBefore(createButtonToRemoveSelected, callScript);
+  createButtonToRemoveSelected.addEventListener('click', removeSelected);
+}
+buttonToRemoveSelected();
