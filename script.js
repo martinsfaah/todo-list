@@ -22,10 +22,15 @@ selected[i].style.backgroundColor = ''
 }
 event.target.classList.add('selected')
 event.target.style.backgroundColor = 'rgb(128, 128, 128)';
- 
-
-}
-
+ }
 
 listaTarefas.addEventListener ('click', oneClick)
 
+
+function doubleClick (event){
+event.target.classList.toggle ('completed') //Com o toggle consegui adicionar e remover a clase ao clicar. Link de referência: https://www.w3schools.com/howto/howto_js_toggle_class.asp
+}
+listaTarefas.addEventListener ('dblclick', doubleClick)
+
+
+    
