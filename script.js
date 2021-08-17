@@ -46,7 +46,7 @@ function criaTarefa() {
     input.value = '';
 
     listItem.addEventListener('click', changeBgColor);
-    
+    listItem.addEventListener('dblclick', lineTrough);
   });
 }
 criaTarefa();
@@ -59,15 +59,7 @@ function changeBgColor (event) {
   }
 }
 
+function lineTrough(event) {
 
-
-
-
-
-
-
-
-
-
-
-  
+  event.target.classList.toggle('completed');
+}
