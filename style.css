@@ -1,0 +1,12 @@
+button {
+    display: inline-block;
+    margin-left: 1%;
+}
+
+.selected {
+    background-color: rgb(128, 128,128);
+}
+
+.completed {
+    text-decoration: line-through;
+}
