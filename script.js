@@ -98,3 +98,12 @@ const btnMoveDown = document.getElementById('mover-baixo');
 
 btnMoveUp.addEventListener('click', moveUp);
 btnMoveDown.addEventListener('click', moveDown);
+
+const btnRemoveSelected = document.getElementById('remover-selecionado');
+
+function removeSelected() {
+  const selectedTask = document.getElementById(selectedTaskId);
+  taskList.removeChild(selectedTask);
+}
+
+btnRemoveSelected.addEventListener('click', removeSelected);
