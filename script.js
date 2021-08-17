@@ -109,6 +109,15 @@ window.onload = function() {
     }  
   });
 
+  const getRemoveOneButton = document.querySelector('#remover-selecionado');
+
+  getRemoveOneButton.addEventListener('click', function() {
+    const getSelected = document.querySelector('#selected');
+    if (getSelected) {
+      getSelected.remove();
+    }
+  })
+
   if (localStorage.getItem('list')) {
     const splitedThings = localStorage.getItem('list').split('||');
     for (let item of splitedThings) {
