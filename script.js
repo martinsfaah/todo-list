@@ -27,7 +27,6 @@ function armazenarTarefa() {
     addLista();
   }
 }
-botaoTarefa.addEventListener('click', armazenarTarefa);
 
 function limpaBg() {
   const lista = document.querySelectorAll('li');
@@ -44,19 +43,10 @@ function changeBg(clicado) {
   alvo.target.classList.add('selected');
 }
 
-todoList.addEventListener('click', changeBg);
-
 function completo(clicado) {
   const compl = clicado;
-  // if (compl.target.classList.contains('completed')) {
-  //   compl.target.classList.remove('completed');
-  // } else {
-  //   compl.target.classList.add('completed');
-  // }
   compl.target.classList.toggle('completed');
 }
-
-todoList.addEventListener('dblclick', completo);
 
 function deletaLista() {
   const elemento = todoList.children;
@@ -65,15 +55,12 @@ function deletaLista() {
   }
 }
 
-apagaTudo.addEventListener('click', deletaLista);
-
 function apagaFinalizado() {
   const remover = document.getElementsByClassName('completed');
   for (let i = 0; i < remover.length; i += 0) {
     todoList.removeChild(remover[0]);
   }
 }
-apagaFeito.addEventListener('click', apagaFinalizado);
 
 function remSelecionado() {
   const remover = document.getElementsByClassName('selected');
@@ -81,8 +68,6 @@ function remSelecionado() {
     todoList.removeChild(remover[0]);
   }
 }
-
-removeSelecionado.addEventListener('click', remSelecionado);
 
 // 12 feita com ideia do colega Marcelo Adriano
 function salvar() {
@@ -108,8 +93,6 @@ function recarregar() {
   }
 }
 
-salve.addEventListener('click', salvar);
-
 function up() {
   const select = document.getElementsByClassName('selected')[0];
   if (select !== todoList.firstElementChild && select !== undefined) {
@@ -124,5 +107,15 @@ function down() {
   }
 }
 
-descer.addEventListener('click', down);
+function carregadorDeFuncao() {
+  descer.addEventListener('click', down);
+  salve.addEventListener('click', salvar);
+  removeSelecionado.addEventListener('click', remSelecionado);
+  todoList.addEventListener('dblclick', completo);
+  apagaFeito.addEventListener('click', apagaFinalizado);
+  apagaTudo.addEventListener('click', deletaLista);
+  todoList.addEventListener('click', changeBg);
+  botaoTarefa.addEventListener('click', armazenarTarefa);
+}
+carregadorDeFuncao();
 window.onload = recarregar;
