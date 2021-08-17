@@ -39,14 +39,14 @@ function selectListItem() {
 }
 
 function completeItems (event) {
-    if (!event.target.className.includes('completed')) {
-      event.target.classList.add('completed');
-      event.target.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
-    }
-    else {
-      event.target.classList.remove('completed');
-      event.target.style.removeProperty('text-decoration');
-    }
+  if (!event.target.className.includes('completed')) {
+    event.target.classList.add('completed');
+    event.target.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
+  }
+  else {
+    event.target.classList.remove('completed');
+    event.target.style.removeProperty('text-decoration');
+  }
 }
 
 const items = document.getElementsByClassName('list-items');
@@ -62,3 +62,18 @@ function clearButton() {
   });
 }
 clearButton();
+
+function clearCompletedItems() {
+  const completeButton = document.createElement('button');
+  completeButton.id = 'remover-finalizados';
+  completeButton.innerText = 'Limpar Completos';
+  buttonSection.appendChild(completeButton);
+  completeButton.addEventListener('click', function (event) {
+    for (let i = items.length - 1; i >= 0; i -= 1) {
+      if (items[i].className.includes('completed')) {
+        orderList.removeChild(items[i]);
+      }
+    }
+  });
+}
+clearCompletedItems();
