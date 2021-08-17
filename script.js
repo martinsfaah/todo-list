@@ -3,6 +3,7 @@ const inputItem = document.querySelector('#texto-tarefa');
 const buttonCreate =  document.querySelector('#criar-tarefa');
 const ol = document.querySelector('ol');
 const deleteAll = document.querySelector('#apaga-tudo');
+const deleteCompleted = document.querySelector('#remover-finalizados')
 
 
 buttonCreate.addEventListener ('click', inputAdd);
@@ -50,12 +51,22 @@ ol.addEventListener('dblclick', lineThrough);
 deleteAll.addEventListener('click', dAll);
 
     function dAll() {
-        const dAll = document.querySelectorAll('li')
-        for (let i = 0; i < dAll.length; i +=1){
-        dAll[i].remove();
+        const delAll = document.querySelectorAll('li')
+        for (let i = 0; i < delAll.length; i +=1){
+        delAll[i].remove();
         }
 
     }
+
+deleteCompleted.addEventListener('click', dCompleted);
+
+    function dCompleted() {
+        const delCompleted = document.querySelectorAll('.completed')
+        for (let x = 0; x < delCompleted.length; x += 1){
+            delCompleted[x].remove();
+        }
+    }
+
     
     
 
