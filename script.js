@@ -1,7 +1,7 @@
 const accessButton = document.querySelector('#criar-tarefa');
 const accessOl = document.querySelector('#lista-tarefas');
 const accessInput = document.querySelector('#texto-tarefa');
-const accessDelete = document.querySelector('#apaga-tudo')
+const accessDelete = document.querySelector('#apaga-tudo');
 
 function addText() {
   const createLi = document.createElement('li');
@@ -9,26 +9,34 @@ function addText() {
   createLi.classList.add('list');
   accessOl.appendChild(createLi);
   accessInput.value = ''; 
-  createLi.addEventListener('dblclick', completedTask)
-  createLi.addEventListener('click', paint)
+  createLi.addEventListener('dblclick', completedTask);
+  createLi.addEventListener('click', paint);
 }
 
-accessButton.addEventListener('click', addText)
+accessButton.addEventListener('click', addText);
 
 function deleteList() {
   accessOl.innerText = ''
 }
 
-accessDelete.addEventListener('click', deleteList)
+accessDelete.addEventListener('click', deleteList);
 
-function completedTask(event) {
- if (event.target.style.textDecoration == ''){
-  event.target.style.textDecoration = 'line-through'
+/* function completedTask(event) {
+ if (event.target.style.textDecoration === ''){
+  event.target.style.textDecoration = 'line-through';
  }
- else if (event.target.style.textDecoration = '') {
-  }
-}
+ else  event.target.style.textDecoration = '';
+} */
 
 function paint(event) {
   event.target.style.backgroundColor = 'rgb(128, 128, 128)';
 }
+
+function completedTask(event) { 
+  if (event.target.classList == 'list'){
+    event.target.classList.add('completed')
+  }
+  else 
+  event.target.classList.remove('completed')
+}
+
