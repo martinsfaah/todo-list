@@ -1,5 +1,5 @@
 function createParagraph() {
-  let paragraph = document.createElement('p');
+  const paragraph = document.createElement('p');
   const myHeader = document.querySelector('header');
   myHeader.appendChild(paragraph);
   paragraph.id = 'funcionamento';
@@ -8,7 +8,7 @@ function createParagraph() {
 createParagraph();
 
 function createInput() {
-  let input = document.createElement('input');
+  const input = document.createElement('input');
   const mySection = document.querySelector('section');
   mySection.appendChild(input);
   input.id = "texto-tarefa";
@@ -16,7 +16,7 @@ function createInput() {
 createInput();
 
 function createOrdList() {
-  let ordList = document.createElement('ol');
+  const ordList = document.createElement('ol');
   const olSection = document.getElementById('olSection');
   olSection.appendChild(ordList);
   ordList.id = "lista-tarefas";
@@ -34,21 +34,32 @@ createButton();
 
 function criaTarefa() {
 
-  const button = document.getElementById("criar-tarefa"); 
+  const button = document.getElementById("criar-tarefa");
   const input = document.getElementById("texto-tarefa");
   const ordList = document.getElementById("lista-tarefas");
 
   button.addEventListener('click', function(){
-    let listItem = document.createElement('li'); 
-    ordList.appendChild(listItem); 
+    let listItem = document.createElement('li');
+    ordList.appendChild(listItem);
+    listItem.className = 'selected';
     listItem.innerHTML = input.value;
-    input.value = '';  
+    input.value = '';
+
+    listItem.addEventListener('click', changeBgColor); 
   });
 }
-criaTarefa(); 
- 
+criaTarefa();
 
-  
+function changeBgColor (event) {
+  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
+
+
+
+
+
+
 
 
 
