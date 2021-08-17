@@ -57,13 +57,23 @@ clearCompletedBtn.addEventListener('click', () => {
 });
 
 saveTasksBtn.addEventListener('click', () => {
-  localStorage.clear();
-  localStorage.setItem("savedTaskList", JSON.stringify(taskList.innerHTML));
-  console.log("List saved to local storage");
+  if (taskList.childElementCount > 0) {
+    localStorage.clear();
+    localStorage.setItem('savedTaskList', JSON.stringify(taskList.innerHTML));
+    console.log('List saved to local storage');
+  } else {
+    localStorage.clear();
+    console.log('Local storage cleared');
+  }
 });
 
-// window.onload = function restoreSavedList() {
-  // if (localStorage.length > 0){
-  //   taskList.innerHTML = JSON.parse(localStorage.getItem("savedTaskList"));
-  // }
-// }
+window.onload = function restoreSavedList() {
+  if (localStorage.length > 0) {
+    taskList.innerHTML = JSON.parse(localStorage.getItem('savedTaskList'));
+    fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
+    fullTaskLi.forEach((element) => {
+      makeTasksClicable(element);
+      toggleTaskCompletion(element);
+    });
+  }
+};
