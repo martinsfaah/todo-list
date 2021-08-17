@@ -6,21 +6,18 @@ botao.addEventListener('click', adiciona )
 
 function adiciona (){
   let criacao = document.createElement('li');
+  criacao.className = 'lista'
   lista.appendChild(criacao)
   criacao.innerText = input.value
   input.value = "";
+  addEventListener('click', addColor)
 }
-  
-  
 
+function addColor(event){
+  let item = document.querySelector('.selected');
+  if (item){
+    item.classList.remove('selected')
+  }
+  event.target.classList.add('selected')
+}
 
-//<input type="text" id="texto-tarefa">
-//<ol id="lista-tarefas"></ol>
-//<button id="criar-tarefa">criar tarefa</button>
-
-
-
-//function (){
-  //const texto = document.querySelector('texto-tarefa')
-  //texto.appendChild('lista-tarefas')
-//}
