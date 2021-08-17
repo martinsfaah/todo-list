@@ -5,3 +5,11 @@
 
 #lista-tarefas {
 }
+
+.lista {
+  background-color: white;
+}
+
+.completed {
+  text-decoration: line-through;
+}
