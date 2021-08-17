@@ -36,9 +36,20 @@ list.addEventListener('dblclick', lineDecor);
 const listRemove = document.getElementById('apaga-tudo');
 
 function removeList() {
-  const selectionOl = document.querySelector('ol')
+  const selectionOl = document.querySelector('ol');
   selectionOl.innerHTML = '';
-  
 }
 
 listRemove.addEventListener('click', removeList);
+
+const removeFin = document.getElementById('remover-finalizados');
+
+function finsRemove() {
+  const myClass = document.getElementsByClassName('completed');
+
+  for (let index = myClass.length - 1; index >= 0; index -= 1) {
+    myClass[index].remove();
+  }
+}
+
+removeFin.addEventListener('click', finsRemove);
