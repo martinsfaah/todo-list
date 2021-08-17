@@ -10,12 +10,8 @@ function listatarefas() {
     textoTarefa.value = '';
 
     backTarefas();
-  });
 
-//   lista.addEventListener('click', function (event){
-//     // event.target.className = 'alterback'
-//     console.log(event.target);
-//   }) 
+  });
 }
 
 listatarefas();
@@ -23,13 +19,16 @@ listatarefas();
 function backTarefas() {
   let listaDeTarefas = document.querySelectorAll('li');
 
-  for (let i = 0; i <listaDeTarefas.length; i += 1) {
-    listaDeTarefas[i].addEventListener('click', function(){
-    listaDeTarefas[i].className = 'alterBack';
-    })
+  for (let i = 0; i < listaDeTarefas.length; i += 1) {
+  listaDeTarefas[i].addEventListener('click', function(event){
+  for (let i = 0; i < listaDeTarefas.length; i += 1) {   
+  listaDeTarefas[i].classList.remove('alterBack');
+  event.target.classList.add('alterBack');
     }
-  }
-
+  }) 
+ }
+}
+  // listaDeTarefas[i].className = 'alterBack';
 
 
 
