@@ -26,13 +26,14 @@ function selectList(event) {
     lineListClass.classList.remove('selected');
   }
 }
-
+// https://stackoverflow.com/questions/16681786/why-doesnt-arraylist-containsobject-class-work-for-finding-instances-types
 function lineThrough(event) {
-
+  if (event.target.classList.contains('completed')) {
     event.target.classList.remove('completed');
+  } else {
     event.target.classList.add('completed');
   }
-
+}
 
 function clearList() {
   while (list.firstChild) {
