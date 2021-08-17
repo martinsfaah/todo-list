@@ -2,6 +2,7 @@ const taskList = document.querySelector('#lista-tarefas');
 const addTaskBtn = document.querySelector('#criar-tarefa');
 const clearListBtn = document.querySelector('#apaga-tudo');
 const clearCompletedBtn = document.querySelector('#remover-finalizados');
+const saveTasksBtn = document.querySelector('#salvar-tarefas');
 let fullTaskLi = document.querySelectorAll('ol#lista-tarefas li');
 
 // Create a function to reset the task selection
@@ -54,3 +55,15 @@ clearCompletedBtn.addEventListener('click', () => {
     }
   }
 });
+
+saveTasksBtn.addEventListener('click', () => {
+  localStorage.clear();
+  localStorage.setItem("savedTaskList", JSON.stringify(taskList.innerHTML));
+  console.log("List saved to local storage");
+});
+
+// window.onload = function restoreSavedList() {
+  // if (localStorage.length > 0){
+  //   taskList.innerHTML = JSON.parse(localStorage.getItem("savedTaskList"));
+  // }
+// }
