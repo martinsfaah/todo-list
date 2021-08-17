@@ -28,3 +28,13 @@ function bgCinza(event) {
 function riscado(event) {
   event.target.classList.toggle('completed');
 }
+
+function removeTodasTarefas() {
+  const deletaTodasTarefas = document.getElementById('lista-tarefas');
+
+  while (deletaTodasTarefas.lastChild) {
+    deletaTodasTarefas.removeChild(deletaTodasTarefas.lastChild);
+  }
+}
+const btnRemoveTodasTarefas = document.getElementById('apaga-tudo');
+btnRemoveTodasTarefas.addEventListener('click', removeTodasTarefas);
