@@ -30,8 +30,8 @@ CriarBotaoAddTarefa();
 function mudarACorDeFundo(event) {
   const evento = event.target;
   let selection = document.querySelector('.selected');
-  if(selection) selection.classList.remove('selected');
-  if(evento.classList.contains('selected')) {
+  if (selection) selection.classList.remove('selected');
+  if (evento.classList.contains('selected')) {
     evento.classList.remove('selected')
   } else {
     evento.classList.add('selected');
@@ -49,5 +49,23 @@ function pegarValorDoInput() {
   resgateInput.value = '';
 }
 
-const restateBotãoAdd = document.querySelector('#criar-tarefa');
-restateBotãoAdd.addEventListener('click', pegarValorDoInput);
+const restateBotaoAdd = document.querySelector('#criar-tarefa');
+restateBotaoAdd.addEventListener('click', pegarValorDoInput);
+
+function criarOBotaoApagar() {
+  let resgateSecaoPrincipal = document.querySelector('#section-principal');
+  let botaoApagar = document.createElement('button');
+  botaoApagar.id = 'apaga-tudo';
+  botaoApagar.innerText = 'apagar';
+  resgateSecaoPrincipal.appendChild(botaoApagar);
+}
+criarOBotaoApagar();
+
+function apagarTodosOsElementosDaLista() {
+  let resgateLista = document.querySelector('#lista-tarefas');
+  while(resgateLista.lastChild) {
+    resgateLista.removeChild(resgateLista.lastChild);
+  }
+}
+let resgateBotaoApagar = document.querySelector('#apaga-tudo');
+resgateBotaoApagar.addEventListener('click', apagarTodosOsElementosDaLista);
