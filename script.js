@@ -24,7 +24,14 @@ function createElements(){
 createElements();
 
 function changeColor() {
-    event.currentTarget.style.backgroundColor = 'rgb(128, 128, 128)';
+    const selectedTask = event.currentTarget;
+    const selecteds = document.getElementsByClassName('task');
+    if (selectedTask.style.backgroundColor === '' | selectedTask.style.backgroundColor === 'white') {
+        for (let i = 0; i < selecteds.length; i += 1) {
+            selecteds[i].style.backgroundColor = 'white';
+        }
+        selectedTask.style.backgroundColor = 'rgb(128, 128, 128)';
+    }
 }
 
 function createTask(){
@@ -32,6 +39,7 @@ function createTask(){
     const list = document.querySelector('#lista-tarefas');
     const newTask = document.createElement('li');
     newTask.innerText = writtenTask;
+    newTask.className = 'task';
     newTask.addEventListener('click', changeColor);
     list.appendChild(newTask);
     document.querySelector('#texto-tarefa').value = '';
