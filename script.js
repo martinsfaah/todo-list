@@ -35,3 +35,13 @@ eraseButton.addEventListener('click', eraseTaskList);
 function eraseTaskList() {
     ol.innerText = '';
 }
+
+const eraseDoneTasks = document.getElementById('remover-finalizados');
+eraseDoneTasks.addEventListener('click', eraseOnlyDones);
+function eraseOnlyDones() {
+    let completed = document.querySelectorAll('.completed');
+    for(const element of completed) {
+        element.remove();
+        }
+    }
+
