@@ -1,10 +1,16 @@
+const selectBody = document.querySelector('body');
+const createMain = document.createElement('main');
+createMain.className = 'borda';
+selectBody.appendChild(createMain);
+
 // Requisito 1 Criando o HEADER
 
-function CreateHeader () {
-  const setBody = document.getElementsByTagName('body')[0];
-  const creatHeader = document.createElement('header')
-  creatHeader.innerHTML = "Minha Lista de Tarefas";
-  setBody.appendChild(creatHeader);
+function CreateHeader () {  
+  const creatHeader = document.createElement('header');
+  const createTitle = document.createElement('h1');
+  createTitle.innerHTML = "Minha Lista de Tarefas"
+  creatHeader.appendChild(createTitle);
+  createMain.appendChild(creatHeader);
 }
 CreateHeader();
 
@@ -23,9 +29,8 @@ CreateP();
 // Requisito 3 Criando o input
 
 function CreateInput (){
-  const setBody3 = document.getElementsByTagName('body')[0];
   const createSec = document.createElement('section');
-  setBody3.appendChild(createSec);
+  createMain.appendChild(createSec);
   createSec.id ="input-section"
   const createInput = document.createElement('input');
   createInput.setAttribute('type', 'text');
@@ -38,10 +43,9 @@ CreateInput();
 // Requisito 4 Criando Lista
 
 function CreateLista() {
-  const setBody4 = document.getElementsByTagName('body')[0];
   const createLista = document.createElement('ol');
   createLista.id = "lista-tarefas"
-  setBody4.appendChild(createLista);
+  createMain.appendChild(createLista);
 }
 CreateLista();
 
@@ -65,6 +69,7 @@ function addTask (){
   setList.appendChild(creatLi);
   targetInput.value = '';
 }
+
 const setButton = document.querySelector('#criar-tarefa')
 setButton.addEventListener('click', addTask);
 // setButton.addEventListener('keypress', addTask);
@@ -74,7 +79,7 @@ setButton.addEventListener('click', addTask);
 function paintLiGray (event) {
   removeColor();
   const backGrayColor = event.target
-  backGrayColor.className = 'colorGray'
+  backGrayColor.className = 'colorGray';
 }
 
 const setList2 = document.querySelector('ol');
@@ -82,13 +87,23 @@ setList2.addEventListener('click', paintLiGray);
 
 //Requisito 8 RESETANDO O selecionado
 
-// for(let index = 0; index < clickListItem.length; index+= 1) {
-  //   clickListItem[index].addEventListener('click' );
-  // }
-  const clickListItem = document.getElementsByTagName('li');
-  
-  function removeColor() {
-    for (let index = 0; index < clickListItem.length; index+= 1) {
+const clickListItem = document.getElementsByTagName('li');
+function removeColor() {
+  for (let index = 0; index < clickListItem.length; index += 1) {
     clickListItem[index].classList.remove('colorGray')
   }
 }
+
+//Requisito 9 duplo clik para dar Check
+
+function chekItenList (event){
+  if (event.target.className !== 'completed') {
+    event.target.className = 'completed';
+  } else {
+    event.className.className = 'completed';
+  }
+}
+setList2.addEventListener('dblclick', chekItenList);
+
+//Requisito 10 botão clear
+

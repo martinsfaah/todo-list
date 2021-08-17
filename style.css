@@ -1,3 +1,21 @@
+
+
 .colorGray {
   background-color:rgb(128, 128, 128);
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.borda {
+  background-color: rgb(172, 6, 6);
+  border-radius: 30px;
+  margin: rgb(2, 2, 2) solid 2px;
+  padding: 10px;
+}
+
+header {
+  width: 100%;
+  align-items: center;
 }
