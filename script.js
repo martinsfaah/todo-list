@@ -79,15 +79,28 @@ clearCompleted();
 
 // SAVE LIST BUTTON
 
-// function saveList() {
-//   let saveButton = document.getElementById('salvar-tarefas');
-//   let tasksList = document.getElementById('lista-tarefas');
-//   saveButton.addEventListener('click', function() {
-//     localStorage.setItem(tasksList);
-//   })
-// }
+function saveList() {
+  let saveButton = document.getElementById('salvar-tarefas');
+  saveButton.addEventListener('click', function() {
+    let tasksList = document.getElementById('lista-tarefas');
+    localStorage.setItem('tasks', tasksList.innerHTML);
+  })
+}
 
-// saveList();
+saveList();
+
+// RECOVER SAVED LIST
+
+function recoverList() {
+  let tasksList = document.getElementById('lista-tarefas');
+  tasksList.innerHTML = localStorage.getItem('tasks');
+}
+
+recoverList();
+
+// MOVE ITENS 
+
+
 
 // CLEAR SELECTEDS
 
