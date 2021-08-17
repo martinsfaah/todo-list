@@ -8,8 +8,34 @@ body {
 
 #criar-tarefa {
   background-color: rgb(44, 127, 204);
-  border-radius: 30px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin: 15px;
+  text-decoration: none; 
+  font-weight: bolder;
+  font-size: 15px; 
 }
+
+.clearAll {
+  background-color: rgb(255, 6, 243);
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin: 15px;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.clearComplet {
+  background-color: rgb(114, 116, 26);
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin: 15px;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
 
 .completed {
   text-decoration: line-through;
@@ -18,7 +44,7 @@ body {
 .borda {
   background-color: rgb(255, 255, 255);
   border-radius: 30px;
-  margin: rgb(2, 2, 2) solid 2px;
+  margin: 2px solid rgb(2,2,2);
   padding: 10px;
 }
 

@@ -111,8 +111,10 @@ setList2.addEventListener('dblclick', chekItenList);
 const sectionButtons = document.createElement('section');
 
 const buttonResetList = document.createElement('button');
+
 function CreateresetButton (){
   createMain.appendChild(sectionButtons);
+  buttonResetList.className = "clearAll"
   buttonResetList.id = "apaga-tudo"
   buttonResetList.innerHTML = "Apagar Lista"
   sectionButtons.appendChild(buttonResetList);
@@ -131,6 +133,7 @@ butonDelet.addEventListener('click', clearAllList);
 
 function createButonRemoveFinished (){
   const removeFineshd = document.createElement('button');
+  removeFineshd.className = 'clearComplet'
   removeFineshd.id = "remover-finalizados"
   removeFineshd.innerHTML = "Limpa completos"
   sectionButtons.appendChild(removeFineshd);
