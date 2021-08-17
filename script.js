@@ -9,5 +9,5 @@ function handleButtonClick(){
     li.innerText = input.value;
     orderedList.appendChild(li);
     input.value = "";
-
 }
+
