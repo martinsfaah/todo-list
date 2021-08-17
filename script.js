@@ -1,6 +1,7 @@
 
 const addBtn = document.getElementById('criar-tarefa'); // Botão de Criar tarefa
 const ol = document.getElementById('lista-tarefas'); // Lista ordenada
+const clearBtn = document.getElementById('apaga-tudo'); // Botão de CLEAR
 
 function createTaskList () {
   const textInput = document.getElementById('texto-tarefa'); // Campo de input
@@ -40,3 +41,8 @@ function itenCompleted (event) {
 
 }
 ol.addEventListener('dblclick', itenCompleted);
+
+function clearList () {
+  ol.textContent = '';
+}
+clearBtn.addEventListener('click', clearList);
