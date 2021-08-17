@@ -62,7 +62,7 @@ main section {
 }
 
 #criar-tarefa:hover {
-  background-color: rgb(148, 174, 103);
+  background-color: rgb(148 , 174 , 103);
   color: ghostwhite;
   font-size: 1.1em;
 }
@@ -91,13 +91,13 @@ main section {
 }
 
 #salvar-tarefas:hover {
-  background-color: rgb(138, 176, 177);
+  background-color: rgb(138 , 176 , 177);
   color: black;
   font-size: 1em;
 }
 
 #remover-finalizados {
-  background-color: rgb(9, 9, 169);
+  background-color: rgb(9 , 9 , 169);
   border-radius: 15%;
   border: none;
   color: ghostwhite;
@@ -111,7 +111,7 @@ main section {
 }
 
 #remover-finalizados:hover {
-  background-color: rgb(55, 55, 208);
+  background-color: rgb(55 , 55 , 208);
   color: wheat;
   font-size: 1em;
 }
