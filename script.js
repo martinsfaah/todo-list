@@ -45,13 +45,18 @@ function criaTarefa() {
     listItem.innerHTML = input.value;
     input.value = '';
 
-    listItem.addEventListener('click', changeBgColor); 
+    listItem.addEventListener('click', changeBgColor);
+    
   });
 }
 criaTarefa();
 
 function changeBgColor (event) {
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  let listItem = document.querySelectorAll('.selected');
+  for (let index = 0; index < listItem.length; index += 1){
+    listItem[index].style.backgroundColor = '';
+    event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  }
 }
 
 
