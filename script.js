@@ -16,13 +16,18 @@ const lista = document.createElement('ol');
 lista.id = 'lista-tarefas';
 main.appendChild(lista);
 
-// Requisito 5: adiciona botao, add informacao na ol e limpa o input
+// Requisito 5 e 6: adiciona botao, add informacao na ol e limpa o input
 function adicionaTexto() {
     let botaoAdiciona = document.querySelector('#criar-tarefa');
     let listaOl = document.querySelector('#lista-tarefas');
 
-    botaoAdiciona.addEventListener('click', function eventoClick() {
+    botaoAdiciona.addEventListener('click', function () {
         const itemLista = document.createElement('li');
+        itemLista.addEventListener('click', function () {
+            if (itemLista.style.backgroundColor !== 'rgb(128, 128, 128)') {
+                itemLista.style.backgroundColor = 'rgb(128, 128, 128)';
+            }
+        })
         itemLista.innerText = document.getElementById('texto-tarefa').value;
         listaOl.appendChild(itemLista);
         document.getElementById('texto-tarefa').value = null;
