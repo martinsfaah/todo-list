@@ -90,6 +90,7 @@ function criarTarefa(){
     })
     criaTag.addEventListener('dblclick', function(event){
       event.target.classList.toggle('completed')
+      //trecho feito com a ajuda de https://www.w3schools.com/howto/howto_js_toggle_class.asp
        
       
     })
@@ -102,3 +103,29 @@ criarTarefa();
 // 7.Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)
 // Foi feito na função anterior, criamos a tag li já com escutor de eventos juntamente com a função de mudar cor quando ela for clicada.
 
+function criaButtonApaga(nomeTag, nomeTagPai){
+  // declara tag criada 
+  const criaTag = document.createElement(nomeTag);
+  criaTag.innerText = 'LIMPAR!';
+  criaTag.id = 'apaga-tudo';
+  const tagPai = document.querySelector(nomeTagPai);
+  tagPai.appendChild(criaTag);
+  console.log('decimo requisito ok');
+}
+criaButtonApaga('button', 'body');
+
+
+let filhoDaLista = document.querySelector('ol').childNodes;
+
+function zerarTudo(){
+  let botao = document.querySelector('#apaga-tudo');
+  botao.addEventListener('click', function(){
+    let lista = document.querySelector('ol');
+    for(index = filhoDaLista.length;1 < filhoDaLista.length; index-=1){
+      console.log(filhoDaLista.length)
+      lista.removeChild(lista.firstElementChild)
+      
+    }
+  })
+}
+zerarTudo()
