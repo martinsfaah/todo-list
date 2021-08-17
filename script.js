@@ -1,15 +1,23 @@
-const botao = document.getElementById('criar-tarefa');
+const botaoAdicionar = document.getElementById('criar-tarefa');
+const botaoRemoverTudo = document.getElementById('apaga-tudo')
 const digitarLista = document.getElementById('texto-tarefa');
 let lista = document.getElementById('lista-tarefas')
-let selecao = document.querySelectorAll('li')
+let selecao = document.querySelectorAll('li');
 
-
-
-botao.addEventListener('click', function criarElementoLista() {
+botaoAdicionar.addEventListener('click', function criarElementoLista() {
   let itemLista = document.createElement('li');
   lista.appendChild(itemLista);
   itemLista.innerText = digitarLista.value;
   digitarLista.value = "";
+})
+
+botaoRemoverTudo.addEventListener('click', function apagarTudo() {
+  if (lista.childNodes.length >= 0) {
+    var lis = document.querySelectorAll('#lista-tarefas li');
+    for(var i=0; i < lis.length; i+= 1) {
+    lis[i].parentNode.removeChild(lis[i]);
+    }
+  }
 })
 
 lista.addEventListener('click', function cinzaBg(selecao) {
