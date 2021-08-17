@@ -3,6 +3,7 @@ const btnAddToList = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
 const inputValue = document.getElementById('texto-tarefa');
 const btnClearList = document.getElementById('apaga-tudo');
+const btnRemoveFinishedAssign = document.getElementById('remover-finalizados');
 
 //  Functions
 function addToList() {
@@ -49,8 +50,17 @@ function clearAllListItems() {
   list.textContent = '';
 }
 
+function removeFinished() {
+  const completed = document.querySelectorAll('.completed');
+  if (completed.length === 0) { return; }
+  for (let i = 0; i < completed.length; i += 1) {
+    completed[i].remove();
+  }
+}
+
 //  events
 btnAddToList.addEventListener('click', addToList);
 list.addEventListener('click', selectListElement);
 list.addEventListener('dblclick', checkAssignment);
-btnClearList.addEventListener('click', clearAllListItems)
+btnClearList.addEventListener('click', clearAllListItems);
+btnRemoveFinishedAssign.addEventListener('click', removeFinished);
