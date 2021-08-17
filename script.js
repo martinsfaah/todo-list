@@ -10,6 +10,9 @@ body.addEventListener("dblclick", checkItem2);
 document.getElementById("apaga-tudo").addEventListener("click", eraseList);
 document.getElementById("remover-finalizados").addEventListener("click", removeCheck);
 document.getElementById("salvar-tarefas").addEventListener("click", saveList);
+document.getElementById("mover-cima").addEventListener("click", upList);
+document.getElementById("mover-baixo").addEventListener("click", downList);
+document.getElementById("remover-selecionado").addEventListener("click", removeSelected);
 
 function addTask (){
     let taskValue = inputTasks.value;
@@ -72,4 +75,31 @@ window.onload = loadList;
 
 function saveList() {
   localStorage.setItem('tasks', taskList.innerHTML);
+}
+
+function upList() {
+  let arrayList = Array.from(taskList.children);
+  for( let i = 1; i < arrayList.length; i += 1) {
+    if(arrayList[i].classList.contains("selected")) {
+      taskList.insertBefore(arrayList[i], arrayList[i-1]);
+    }
+  }
+}
+
+function downList() {
+  let arrayList = Array.from(taskList.children);
+  for( let i = 0; i < arrayList.length; i += 1) {
+    if(arrayList[i].classList.contains("selected")) {
+      taskList.insertBefore(arrayList[i], arrayList[i+2]);
+    }
+  }
+}
+
+function removeSelected(){
+  let arrayList = Array.from(taskList.children);
+    for(let i = 0; i < arrayList.length; i += 1){
+        if(arrayList[i].classList.contains("selected")){
+            taskList.removeChild(arrayList[i]);
+        }
+    }
 }
