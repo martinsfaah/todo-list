@@ -1,7 +1,8 @@
 const input = document.getElementById('texto-tarefa');
 const button = document.getElementById('criar-tarefa');
 const ol = document.getElementById('lista-tarefas');
-const buttonDelete = document.getElementById('apaga-tudo');
+const buttonDeleteAll = document.getElementById('apaga-tudo');
+const buttonDeleteItem = document.getElementById('remover-selecionado');
 const li = document.getElementsByTagName('li'); 
 
 button.addEventListener('click',function(){
@@ -22,12 +23,23 @@ function liSelected(event){
   }
 };
 function clickTwice(event){
-event.target.classList.add('completed');
+  //event.target.classList.toggle('completed');
+if(event.target.classList.contains('completed')){
+  event.target.classList.remove('completed')
+} else{
+  event.target.classList.add('completed')
+}
 };
 
-buttonDelete.addEventListener('click',deletar);
-function deletar(){
+buttonDeleteAll.addEventListener('click',deleteAll);
+function deleteAll(){
   ol.remove();
+}
+buttonDeleteItem.addEventListener('click',deleteItem);
+function deleteItem(event){
+if(event.target.classList.contains('completed')){
+  li.remove();
+}
 }
 
 
