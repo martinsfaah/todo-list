@@ -1,15 +1,16 @@
 const taskList = document.getElementById('lista-tarefas');
 const inputTask = document.getElementById('texto-tarefa');
 inputTask.value = '';
-let selectedTask = document.getElementById('selected-task')
 const btnAddTask = document.getElementById('criar-tarefa');
+const selectedTaskId = 'selected-task'
 
 function selectTask(event) {
+  let selectedTask = document.getElementById(selectedTaskId);
   if (selectedTask !== null) {
     selectedTask.id = '';
   }
   selectedTask = event.target;
-  selectedTask.id = 'selected-task';
+  selectedTask.id = selectedTaskId;
 }
 
 function completeTask(event) {
@@ -62,9 +63,9 @@ btnSaveList.addEventListener('click', saveList);
 window.onload = function init() {
   const savedList = JSON.parse(localStorage.getItem('tasklist'));
   taskList.innerHTML = savedList;
-  const selectedTask = document.getElementById('selected-task');
-  if (selectedTask !== null) {
-    selectedTask.id = '';
+  const initSelectedTask = document.getElementById(selectedTaskId);
+  if (initSelectedTask !== null) {
+    initSelectedTask.id = '';
   }
   if (taskList.innerHTML !== '') {
     for (let i = 0; i < taskList.childNodes.length; i += 1) {
