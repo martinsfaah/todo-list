@@ -57,7 +57,7 @@ function saveTaskList() {
   saveTaskListBtn.addEventListener('click', function () {
     const olContentToSave = document.getElementById('lista-tarefas').innerHTML;
     localStorage.setItem('savedTaskList', olContentToSave);
-  })
+  });
 }
 
 function initialize() {
@@ -70,7 +70,7 @@ function initialize() {
 function excludeSelected() {
   const deleteSelectedTaskBtn = document.getElementById('remover-selecionado');
 
-  deleteSelectedTaskBtn.addEventListener ('click', function () {
+  deleteSelectedTaskBtn.addEventListener('click', function () {
     const taskListArray = document.querySelector('#lista-tarefas').children;
 
     for (const li of taskListArray) {
@@ -103,8 +103,22 @@ function deleteAllTasks() {
   });
 }
 
+// Adicione dois botões, um "mover-cima" e outro "mover-baixo", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas:
+function moveTaskListItems() {
+  const moveUpBtn = document.getElementById('mover-cima');
+
+  moveUpBtn.addEventListener('click', function () {
+    let selectedTaskListElement = document.querySelector('.selected');
+    let selectedPreviousElement = selectedTaskListElement.previousElementSibling;
+    // ref: https://devdocs.io/dom/node/insertbefore --> elementoPai.insertBefore(elementoQueDesejaMover, elementoQueEstaNaPosicaoDesejada)
+    taskList.insertBefore(selectedTaskListElement, selectedPreviousElement); 
+  })
+
+  const moveDownBtn = document.getElementById('mover-baixo');
+}
+
 window.onload = function () {
-  initialize()
+  initialize();
   addTask();
   selectUnselectLi();
   tickUntickLi();
@@ -112,4 +126,5 @@ window.onload = function () {
   excludeSelected();
   deleteAllConcludedTasks();
   deleteAllTasks();
+  moveTaskListItems()
 };
