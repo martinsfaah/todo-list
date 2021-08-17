@@ -2,17 +2,6 @@ const addButton = document.querySelector('#criar-tarefa');
 const txtInput = document.querySelector('#texto-tarefa');
 const orderedList = document.querySelector('#lista-tarefas');
 
-function addToList() {
-  const listItem = document.createElement('li');
-  listItem.innerHTML = txtInput.value;
-  listItem.classList.add('list-item');
-  orderedList.appendChild(listItem);
-  txtInput.value = '';
-  listItem.addEventListener('dblclick', completeTask)
-  listItem.addEventListener('click', changeColor);
-
-}
-
 addButton.addEventListener('click', addToList);
 
 function changeColor(event) {
@@ -28,8 +17,18 @@ function changeColor(event) {
 
 function completeTask(event) {
   if (event.target.classList.contains('completed')) {
-    event.target.classList.remove('completed')
+    event.target.classList.remove('completed');
   } else {
-    event.target.classList.add('completed')
+    event.target.classList.add('completed');
   }
+}
+
+function addToList() {
+  const listItem = document.createElement('li');
+  listItem.innerHTML = txtInput.value;
+  listItem.classList.add('list-item');
+  orderedList.appendChild(listItem);
+  txtInput.value = '';
+  listItem.addEventListener('click', changeColor);
+  listItem.addEventListener('dblclick', completeTask);
 }
