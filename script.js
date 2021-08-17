@@ -17,32 +17,19 @@ taskCreator();
 
 // CHANGE ITEM BACKGROUND COLOR WHEN CLICKED
 
-function selectTaskOld() {
-  let tasksList = document.getElementById('lista-tarefas');
-  tasksList.addEventListener('click', function(event) {
-    if (event.target.classList.contains('selecionada')) {
-      event.target.classList.remove('selecionada');
-    } else {
-      let currentSelected = document.getElementsByClassName('selecionada')[0];
-      if (currentSelected !== undefined) {
-        currentSelected.classList.remove('selecionada');
-      }
-      event.target.classList.add('selecionada');
-    }
-  })
-}
-
 function selectTask() {
   let tasksList = document.getElementById('lista-tarefas');
   tasksList.addEventListener('click', function(event) {
-    if (event.target.classList.contains('selecionada')) {
-      event.target.classList.remove('selecionada');
-    } else {
-      let currentSelected = document.getElementsByClassName('selecionada')[0];
-      if (currentSelected !== undefined) {
-        currentSelected.classList.remove('selecionada');
+    if (event.target.classList.contains('tarefa')) {
+      if (event.target.classList.contains('selecionada')) {
+        event.target.classList.remove('selecionada');
+      } else {
+        let currentSelected = document.getElementsByClassName('selecionada')[0];
+        if (currentSelected !== undefined) {
+          currentSelected.classList.remove('selecionada');
+        }
+        event.target.classList.add('selecionada');
       }
-      event.target.classList.add('selecionada');
     }
   })
 }
@@ -54,10 +41,12 @@ selectTask();
 function completedTask() {
   let tasksList = document.getElementById('lista-tarefas');
   tasksList.addEventListener('dblclick', function(event) {
-    if (event.target.classList.contains('completed')) {
-      event.target.classList.remove('completed');
-    } else {
-      event.target.classList.add('completed');
+    if (event.target.classList.contains('tarefa')) {
+      if (event.target.classList.contains('completed')) {
+        event.target.classList.remove('completed');
+      } else {
+        event.target.classList.add('completed');
+      }
     }
   })
 }
@@ -113,9 +102,42 @@ function recoverList() {
 
 recoverList();
 
-// MOVE ITENS 
+// MOVE ITENS
+// this block was inspired on Marcelo Adriano work, where I learned about .inserbefore() method
 
+function moveItemUp() {
+  let moveUpButton = document.getElementById('mover-cima');
+  moveUpButton.addEventListener('click', function() {
+    let itemSelected = document.getElementsByClassName('selecionada')[0];
+    let tasksList = document.getElementById('lista-tarefas');
+    let tasksListChildrens = tasksList.children;
+    for (index = 0; index < tasksListChildrens.length; index += 1) {
+      if (index !== 0 && tasksListChildrens[index] === itemSelected) {
+        tasksList.insertBefore(itemSelected, tasksListChildrens[index - 1]);
+        break;
+      }
+    }
+  })
+}
 
+moveItemUp();
+
+function moveItemDown() {
+  let moveDownButton = document.getElementById('mover-baixo');
+  moveDownButton.addEventListener('click', function() {
+    let itemSelected = document.getElementsByClassName('selecionada')[0];
+    let tasksList = document.getElementById('lista-tarefas');
+    let tasksListChildrens = tasksList.children;
+    for (index = 0; index < tasksListChildrens.length; index += 1) {
+      if (index !== (tasksListChildrens.length -1) && tasksListChildrens[index] === itemSelected) {
+        tasksList.insertBefore(itemSelected, tasksListChildrens[index + 2]);
+        break;
+      }
+    }
+  })
+}
+
+moveItemDown();
 
 // CLEAR SELECTEDS
 
