@@ -54,3 +54,17 @@ function limparCompletos() {
 }
 const btnLimparCompletos = document.getElementById('remover-finalizados');
 btnLimparCompletos.addEventListener('click', limparCompletos);
+
+function salvarLista() {
+  const listaTarefas = document.getElementById('lista-tarefas');
+  localStorage.setItem('listaTarefas', JSON.stringify(listaTarefas.innerHTML));
+  console.log(listaTarefas.innerHTML);
+}
+const btnSalvarLista = document.getElementById('salvar-tarefas');
+btnSalvarLista.addEventListener('click', salvarLista);
+
+const exibir = JSON.parse(localStorage.getItem('listaTarefas'));
+window.onload = exibir;
+
+const listaTarefas = document.querySelector('#lista-tarefas');
+listaTarefas.innerHTML = exibir;
