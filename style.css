@@ -38,7 +38,7 @@ button {
   margin: 5px 0;
   padding: 10px 20px;
   border-radius: 20px;
-  background-color: rgb(132, 223, 199);
+  background-color: rgb(132 , 223 , 199);
   font-size: 0.75rem;
   border-style: none;
 
@@ -50,11 +50,12 @@ input {
   width: 300px;
   font-size: 0.75rem;
   border-style: none;
-  background-color: rgb(132, 223, 199);
+  background-color: rgb(132 , 223 , 199);
 }
 
 .selecionada {
-  background-color: rgb(128, 128, 128);
+  background-color: gray;
+
   /* color: white; */
 }
 
