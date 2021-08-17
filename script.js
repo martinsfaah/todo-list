@@ -1,22 +1,49 @@
 // Requisito 5
 const botaoAdicionar = document.getElementById('criar-tarefa');
-let tarefa = document.getElementById('texto-tarefa');
-let listaTarefa = document.getElementById('lista-tarefas');
+const tarefa = document.getElementById('texto-tarefa');
+const listaTarefa = document.getElementById('lista-tarefas');
 function criandoTarefa() {
-  let lista = document.createElement('li');
+  const lista = document.createElement('li');
   listaTarefa.appendChild(lista);
   lista.innerText = tarefa.value;
   tarefa.value = '';
-  lista.addEventListener('click', deixandoCinza);
+  lista.addEventListener('click', deixandoCinza); 
+  lista.addEventListener('dblclick', riscando);
 }
 botaoAdicionar.addEventListener('click', criandoTarefa);
 
 // Requisito 7
-let itemLista = document.getElementsByTagName('li');
+const itemLista = document.getElementsByTagName('li');
 function deixandoCinza(event) {
   for (let index = 0; index < itemLista.length; index += 1) {
-   itemLista[index].style.backgroundColor = 'white'; 
+    itemLista[index].style.backgroundColor = 'white';
   }
   event.target.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 
+// Requisito 9
+function riscando(event) {
+  if (event.target.className === 'completed'){
+    event.target.classList.remove('completed');
+  } else {
+    event.target.className = 'completed';
+  }
+}
+
+// Requisito 10
+let botaoApagar = document.getElementById('apaga-tudo')
+function apagando() {
+//   // listaTarefa.removeChild
+  alert('Botão funcionando?')
+}
+botaoApagar.addEventListener('click', apagando)
+
+// // Requisito 11
+let botaoRemover = document.getElementById('remover-finalizados')
+function removendo() {
+  alert('Outro botão. Ok?')
+}
+botaoRemover.addEventListener('click', removendo)
+
+// // Todos os elementos da classe 'completed': removeChild
+// // classe presentes nos <li>. Pedir para remover da <ol>
