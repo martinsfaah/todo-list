@@ -1,6 +1,8 @@
 const input = document.getElementById('texto-tarefa');
 const add = document.getElementById('criar-tarefa');
 const List = document.getElementById('lista-tarefas');
+const deleteButton = document.getElementById('apaga-tudo');
+const deleteCompleteds = document.getElementById('remover-finalizados');
 
 function liColor(event) {
   if (document.querySelector('.selected')) {
@@ -30,3 +32,18 @@ function addItens() {
 }
 
 add.addEventListener('click', addItens);
+
+function deleteItems() {
+  while (List.firstChild) {
+    List.removeChild(List.firstChild);
+  }
+}
+deleteButton.addEventListener('click', deleteItems);
+
+function deleteCompletedItems() {
+  const CompletedItems = document.getElementsByClassName('completed');
+  while (CompletedItems.length !== 0) {
+    document.querySelector('.completed').remove();
+  }
+}
+deleteCompleteds.addEventListener('click', deleteCompletedItems);
