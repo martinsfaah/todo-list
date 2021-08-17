@@ -26,15 +26,31 @@ function bgCinza(event) {
 }
 
 function riscado(event) {
-  event.target.classList.toggle('completed');
+  console.log(event.target.classList.toggle('completed'));
 }
 
-function removeTodasTarefas() {
-  const deletaTodasTarefas = document.getElementById('lista-tarefas');
+function limparLista() {
+  const deletaLista = document.getElementById('lista-tarefas');
 
-  while (deletaTodasTarefas.lastChild) {
-    deletaTodasTarefas.removeChild(deletaTodasTarefas.lastChild);
+  while (deletaLista.lastChild) {
+    deletaLista.removeChild(deletaLista.lastChild);
   }
 }
-const btnRemoveTodasTarefas = document.getElementById('apaga-tudo');
-btnRemoveTodasTarefas.addEventListener('click', removeTodasTarefas);
+const btnlimparLista = document.getElementById('apaga-tudo');
+btnlimparLista.addEventListener('click', limparLista);
+
+function limparCompletos() {
+  const deletaCompletos = document.getElementsByClassName('completed');
+  // console.log(deletaCompletos);
+  // aqui preciso pedir para o while excluir o indice 0 pois, se eu pedir pra ele excluir os elementos que contém a classe completed, quando a lista estiver vazia, ela ainda existirá, e da erro de lista indefinida
+  while (deletaCompletos[0]) {
+    // console.log(deletaCompletos[0]);
+    deletaCompletos[0].remove();
+  }
+  // condição para excluir apenas um elemento riscado por click
+  // for (let index = 0; index < deletaCompletos.length; index += 1) {
+  //   deletaCompletos[index].remove(deletaCompletos[index]);
+  // }
+}
+const btnLimparCompletos = document.getElementById('remover-finalizados');
+btnLimparCompletos.addEventListener('click', limparCompletos);
