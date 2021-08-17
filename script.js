@@ -9,10 +9,16 @@ function criarTarefa() {
 
   // chama a função bgCinza logo depois de criar a tarefa, antes disso a tarefa não existe portanto se eu chamar depois, ela não vai funcionar, não tem como atribuir algo, a alguma coisa que não existe
   tarefa.addEventListener('click', bgCinza);
+  // tarefa.addEventListener('click', trocaBgCinza);
 }
 const btnAddTarefa = document.getElementById('criar-tarefa');
 btnAddTarefa.addEventListener('click', criarTarefa);
 
 function bgCinza(event) {
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  const tarefa = document.getElementsByClassName('tarefa');
+
+  for (let index = 0; index < tarefa.length; index += 1) {
+    tarefa[index].classList.remove('bgCinza');
+    event.target.classList.add('bgCinza');
+  }
 }
