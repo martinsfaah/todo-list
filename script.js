@@ -4,6 +4,7 @@ let buttonCriaTarefa = document.getElementById('criar-tarefa');
 let changeBackColor = document.getElementsByClassName('lista');
 let botaoApaga = document.getElementById('apaga-tudo');
 let tarefasLista = document.getElementsByClassName('lista');
+let apagaFinalizados = document.getElementById('remover-finalizados');
 
 // Exercicio 5,6,7,8
 
@@ -39,14 +40,21 @@ tarefas.addEventListener('dblclick', complitedTask)
 }
     
 buttonCriaTarefa.addEventListener('click', criaTarefa);
-//buttonCriaTarefa.addEventListener('keyup', criaTarefa);
 
 // Exercicio 10
 
+function apagar() {
+  while (listaTarefas.hasChildNodes()) {
+    listaTarefas.removeChild(listaTarefas.firstChild);
+  }
+}
 botaoApaga.addEventListener('click', apagar);
 
-function apagar() {
- while (listaTarefas.hasChildNodes()) {
-  listaTarefas.removeChild(listaTarefas.firstChild);
- }
+function finalizados() {
+  for (let i = tarefasLista.length - 1; i >= 0; i -= 1) {
+    if (tarefasLista[i].className.includes('completed')) {
+      listaTarefas.removeChild(tarefasLista[i]);
+    }
+  }
 }
+apagaFinalizados.addEventListener('click', finalizados);
