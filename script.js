@@ -46,9 +46,13 @@ addButton();
 // Requisito 7 e 8 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)(7) e Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo(8).
 function selectTask(event) {
   const callTask = document.querySelectorAll('.task');
-  for (let i = 0; i < callTask.length; i += 1) {
-    callTask[i].classList.remove('backgroundRgb');
-    event.target.classList.add('backgroundRgb');
+  if (event.target.classList.contains('backgroundRgb')) {
+    event.target.classList.remove('backgroundRgb');
+  } else {
+      for (let i = 0; i < callTask.length; i += 1) {
+      callTask[i].classList.remove('backgroundRgb');
+      event.target.classList.add('backgroundRgb');
+    }    
   }
 }
 
@@ -78,3 +82,21 @@ function addTask() {
 
 const callButton = document.querySelector('#criar-tarefa');
 callButton.addEventListener('click', addTask);
+
+// Requisito 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista.
+function removeAllTasks() {
+  const getOl = document.querySelector('#lista-tarefas');
+  const size = getOl.childNodes.length;
+  for (let i = 0; i < size; i += 1) {
+    getOl.childNodes[0].remove();
+  }
+}
+
+function deleteAllTasks() {
+  const createButtonDeleteAll = document.createElement('button');
+  createButtonDeleteAll.id = 'apaga-tudo';
+  createButtonDeleteAll.innerHTML = 'Remover todos os itens da lista';
+  callParent.insertBefore(createButtonDeleteAll, callScript);
+  createButtonDeleteAll.addEventListener('click', removeAllTasks)
+}
+deleteAllTasks();
