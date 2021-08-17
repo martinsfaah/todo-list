@@ -30,3 +30,13 @@ function selectedTask(task) {
   }
 }
 ol.addEventListener('click', selectedTask);
+
+function completedTask(e) {
+  const completed = document.querySelectorAll('.completed');
+  if (!e.target.classList.contains('completed')) {
+    e.target.classList.add('completed');
+  } else {
+    e.target.classList.remove('completed');
+  }
+}
+ol.addEventListener('dblclick', completedTask);
