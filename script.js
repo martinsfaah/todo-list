@@ -11,27 +11,34 @@ function inputText() {
 adicionar.addEventListener('click', inputText);
 
 function backPrint(event) {
-  whiteLine()
-  const evento = event.target
-  evento.style.backgroundColor = 'rgb(128, 128, 128)'
+  whiteLine();
+  const evento = event.target;
+  evento.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 list.addEventListener('click', backPrint);
 
-
 function whiteLine() {
-  const resetLine = document.querySelectorAll('li')
+  const resetLine = document.querySelectorAll('li');
   for (let index = 0; index < resetLine.length; index += 1) {
-   resetLine[index].style.backgroundColor = 'white'
+    resetLine[index].style.backgroundColor = 'white';
   }
 }
 
 function lineDecor(event) {
-  if(event.target.className !== 'completed') {
-    event.target.className = 'completed'
+  if (event.target.className !== 'completed') {
+    event.target.className = 'completed';
   } else {
-      event.target.className = '';
+    event.target.className = '';
   }
 }
 list.addEventListener('dblclick', lineDecor);
 
+// const listRemove = document.getElementById('apaga-tudo');
+
+// function removeList() {
+//   const selectionOl = document.querySelector('ol')
+//   selectionOl.removeChildren(document.querySelectorAll('li'))
   
+// }
+
+// listRemove.addEventListener('click', removeList);
