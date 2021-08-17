@@ -49,10 +49,10 @@ function selectTask(event) {
   if (event.target.classList.contains('backgroundRgb')) {
     event.target.classList.remove('backgroundRgb');
   } else {
-      for (let i = 0; i < callTask.length; i += 1) {
+    for (let i = 0; i < callTask.length; i += 1) {
       callTask[i].classList.remove('backgroundRgb');
       event.target.classList.add('backgroundRgb');
-    }    
+    }
   }
 }
 
@@ -68,7 +68,7 @@ function completeTask(event) {
 function addTask() {
   const callInput = document.getElementById('texto-tarefa');
   if (callInput.value.length === 0) {
-    alert('Erro: Texto vazio')
+    alert('Erro: Texto vazio');
   } else {
     const newLi = document.createElement('li');
     newLi.className = 'task';
@@ -97,14 +97,13 @@ function deleteAllTasks() {
   createButtonDeleteAll.id = 'apaga-tudo';
   createButtonDeleteAll.innerHTML = 'Remover todos os itens da lista';
   callParent.insertBefore(createButtonDeleteAll, callScript);
-  createButtonDeleteAll.addEventListener('click', removeAllTasks)
+  createButtonDeleteAll.addEventListener('click', removeAllTasks);
 }
 deleteAllTasks();
 
 // Requisito 11 - Adicione um botão com id="remover-finalizados" que quando clicado remove somente os elementos finalizados da sua lista.
 function deleteCompletedTasks() {
   const callLiCompleted = document.querySelectorAll('.completed');
-  console.log(callLiCompleted);
   for (let i = 0; i < callLiCompleted.length; i += 1) {
     callLiCompleted[i].remove();
   }
@@ -115,6 +114,34 @@ function removeCompletedTasks() {
   createButtonRemoveCompletedTasks.id = 'remover-finalizados';
   createButtonRemoveCompletedTasks.innerHTML = 'Remover Tarefas Finalizadas';
   callParent.insertBefore(createButtonRemoveCompletedTasks, callScript);
-  createButtonRemoveCompletedTasks.addEventListener('click', deleteCompletedTasks)
+  createButtonRemoveCompletedTasks.addEventListener('click', deleteCompletedTasks);
 }
 removeCompletedTasks();
+
+// Requisito 12 - Adicione um botão com id="salvar-tarefas" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava.
+function saveTasks() {
+  const callBackOl = document.querySelector('#lista-tarefas');
+  if (callBackOl.innerHTML.length === 0) {
+    alert('Erro: Lista de Tarefas Vazia!');
+  } else {
+    localStorage.setItem('tasks', (callBackOl.innerHTML));
+  }
+}
+
+function buttonToSaveTasks() {
+  const createButtonToSaveTasks = document.createElement('button');
+  createButtonToSaveTasks.id = 'salvar-tarefas';
+  createButtonToSaveTasks.innerHTML = 'Clique aqui para Salvar a Lista';
+  callParent.insertBefore(createButtonToSaveTasks, callScript);
+  createButtonToSaveTasks.addEventListener('click', saveTasks)
+}
+buttonToSaveTasks();
+
+function load() {
+  const getBackOl = document.querySelector('#lista-tarefas');
+    getBackOl.innerHTML = localStorage.getItem('tasks');
+}
+
+window.onload = load;
+
+// Requisito 13 - Adicione dois botões, um com id="mover-cima" e outro com id="mover-baixo", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas.
