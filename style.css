@@ -38,7 +38,7 @@ main section {
   color: #44475a;
   font-size: 0.9em;
   width: 50%;
-  margin-bottom: 0.5%;
+  margin-bottom: 0.7%;
   padding: 1%;
   outline: none;
 }
@@ -49,14 +49,22 @@ main section {
 }
 
 #criar-tarefa {
-  width: 25%;
   background-color: #50fa7b;
+  border-radius: 40%;
   border: none;
   color: #282a36;
+  cursor: pointer;
+  width: 23%;
   font-size: 1em;
   font-weight: 600;
   margin-left: 1%;
-  cursor: pointer;
+  padding: 0.4%;
+}
+
+#criar-tarefa:hover {
+  background-color:rgb(148, 174, 103);
+  color: ghostwhite;
+  font-size: 1.1em;
 }
 
 #lista-tarefas {
@@ -70,56 +78,80 @@ main section {
 }
 
 #salvar-tarefas {
-  width: 28%;
   background-color: cadetblue;
   border-radius: 15%;
-  color: black;
-  font-size: 1em;
-  font-weight: 600;
   border: none;
+  color: ghostwhite;
   cursor: pointer;
+  width: 28%;
+  font-size: 0.95em;
+  font-weight: 600;
   margin-right: 2%;
   padding: 1%;
+}
+
+#salvar-tarefas:hover {
+  background-color:rgb(138, 176, 177);
+  color: black;
+  font-size: 1em;
 }
 
 #remover-finalizados {
-  width: 28%;
   background-color: rgb(9, 9, 169);
   border-radius: 15%;
-  color: ghostwhite;
-  font-size: 1em;
-  font-weight: 600;
   border: none;
+  color: ghostwhite;
   cursor: pointer;
+  width: 28%;
+  font-size: 0.95em;
+  font-weight: 600;
   margin-left: 2%;
   margin-right: 2%;
   padding: 1%;
 }
 
+#remover-finalizados:hover {
+  background-color: rgb(55, 55, 208);
+  color:wheat;
+  font-size: 1em;
+}
+
 #remover-selecionado {
-  width: 28%;
   background-color: #f1fa8c;
   border-radius: 15%;
-  color: #282a36;
-  font-size: 1em;
-  font-weight: 600;
   border: none;
+  color: #282a36;
   cursor: pointer;
+  width: 28%;
+  font-size: 0.95em;
+  font-weight: 600;
   margin-left: 2%;
   padding: 1%;
 }
 
+#remover-selecionado:hover {
+  background-color: #d1d699;
+  color:#44475a;
+  font-size: 1em;
+}
+
 #apaga-tudo {
-  width: 30%;
   background-color: #ffb86c;
   border-radius: 15%;
-  color: #282a36;
-  font-size: 1em;
-  font-weight: 600;
   border: none;
+  color: #282a36;
   cursor: pointer;
-  margin-top: 2%;
+  width: 30%;
+  font-size: 0.95em;
+  font-weight: 600;
+  margin-top: 3%;
   padding: 1%;
+}
+
+#apaga-tudo:hover {
+  background-color: #ed9f4c;
+  color:ghostwhite;
+  font-size: 1em;
 }
 
 footer {

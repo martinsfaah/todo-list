@@ -50,6 +50,22 @@ function tickUntickLi() {
   });
 }
 
+// Adicione um botão "salvar" que, quando clicado, salvará todos os itens da lista, mesmo se o website for fechado:
+function saveTaskList() {
+  const saveTaskListBtn = document.getElementById('salvar-tarefas');
+
+  saveTaskListBtn.addEventListener('click', function () {
+    const olContentToSave = document.getElementById('lista-tarefas').innerHTML;
+    localStorage.setItem('savedTaskList', olContentToSave);
+  })
+}
+
+function initialize() {
+  if (localStorage.getItem('savedTaskList') !== null) {
+    taskList.innerHTML = localStorage.getItem('savedTaskList');
+  }
+}
+
 // Adicione um botão "remover-selecionado" que, quando clicado, remove o item selecionado:
 function excludeSelected() {
   const deleteSelectedTaskBtn = document.getElementById('remover-selecionado');
@@ -64,10 +80,6 @@ function excludeSelected() {
     }
   });
 }
-
-/* Adicione um botão "salvar" que, quando clicado, salvará todos os itens da lista, mesmo se o website for fechado:
-function saveTaskList() {
-} */
 
 // Adicione um botão "remover-finalizados" que, quando clicado, deve apagar todos os itens já finalizados:
 function deleteAllConcludedTasks() {
@@ -92,9 +104,11 @@ function deleteAllTasks() {
 }
 
 window.onload = function () {
+  initialize()
   addTask();
   selectUnselectLi();
   tickUntickLi();
+  saveTaskList();
   excludeSelected();
   deleteAllConcludedTasks();
   deleteAllTasks();
