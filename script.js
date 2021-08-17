@@ -9,7 +9,8 @@ const li = document.createElement('li');
 const task = input.value;
 li.innerText = task;
 ol.appendChild(li);
-li.addEventListener('click',liSelected)
+li.addEventListener('click',liSelected);
+li.addEventListener('dblclick',clickTwice);
 input.value = '';
 input.focus();
 });
@@ -19,8 +20,19 @@ function liSelected(event){
     li[index].classList.remove('selected');
     event.target.classList.add('selected');
   }
-
 };
+function clickTwice(event){
+event.target.classList.add('completed');
+};
+
+buttonDelete.addEventListener('click',deletar);
+function deletar(){
+  ol.remove();
+}
+
+
+
+
 
 
 
