@@ -46,7 +46,9 @@ botaoApagar.addEventListener('click', apagando)
 let botaoRemover = document.getElementById('remover-finalizados')
 function removendo() {
   let finalizados = document.getElementsByClassName('completed')
-  alert('Outro botão. Ok?')
+  for (let index = finalizados.length - 1; index >= 0 ; index -= 1) {
+  finalizados[index].remove()
+  }
 }
 botaoRemover.addEventListener('click', removendo)
 
