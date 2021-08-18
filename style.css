@@ -20,3 +20,7 @@
 .selected {
   background-color: rgb(128, 128, 128);
 }
+
+body {
+  font-family: sans-serif;
+}
