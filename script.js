@@ -1,10 +1,10 @@
+const task = document.getElementById('lista-tarefas');
 function clearInput() {
   const clear = document.getElementById('texto-tarefa');
   clear.value = '';
 }
 
 function receiveTask() {
-  const task = document.getElementById('lista-tarefas');
   const val = document.getElementById('texto-tarefa').value;
   const listLine = document.createElement('li');
   listLine.innerText = val;
@@ -18,7 +18,6 @@ function listTasks() {
 }
 listTasks();
 
-const task = document.getElementById('lista-tarefas');
 function clearColor() {
   const tasks = task.children;
   for (let i = 0; i < tasks.length; i += 1) {
@@ -77,3 +76,15 @@ function toButtonClearTasksDone() {
 }
 
 toButtonClearTasksDone();
+
+const selectedSelector = '[style="background-color: rgb(128, 128, 128);"]';
+function removeTask() {
+  const selected = document.querySelector(selectedSelector);
+  selected.remove();
+}
+
+function toButtonRemoveTask() {
+  const buttonRemoveTask = document.getElementById('remover-selecionado');
+  buttonRemoveTask.addEventListener('click', removeTask);
+}
+toButtonRemoveTask();
