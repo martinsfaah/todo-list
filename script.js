@@ -16,3 +16,21 @@ function insertP() {
     getBody.appendChild(paragrafo);
 }
 insertP();
+
+function insertInput() {
+    let body = document.querySelector('body');
+    let input = document.createElement('input');
+    input.id = ('texto-tarefa');
+    input.innerHTML;
+    body.appendChild(input);
+}
+insertInput();
+
+function addOl() {
+    let getBody = document.querySelector('body');
+    let ol = document.createElement('ol');
+    ol.id = ('lista-tarefas');
+    ol.innerHTML;
+    getBody.appendChild(ol);
+}
+addOl();
