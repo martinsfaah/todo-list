@@ -1,5 +1,4 @@
 function changeColor(event) {
-  KeyboardEvent = 13;
   const selectedTask = event.currentTarget;
   const selecteds = document.getElementsByClassName('task');
   if (selectedTask.style.backgroundColor === '' || selectedTask.style.backgroundColor === 'white') {
@@ -54,7 +53,6 @@ function createElements() {
   p.innerText = 'Clique duas vezes em um item para marcá-lo como completo';
   p.id = 'funcionamento';
   input.id = 'texto-tarefa';
-  input.addEventListener('keyup', createTask);
   button.id = 'criar-tarefa';
   button.innerText = 'Adicionar Tarefa';
   button.addEventListener('click', createTask);
