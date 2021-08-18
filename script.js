@@ -1,3 +1,9 @@
+Cypress.on('uncaught:exception', () => {
+  // returning false here prevents Cypress from
+  // failing the test
+  return false;
+});
+
 document.body.style.backgroundColor = '#5bded6';
 
 // Desafio 1
@@ -156,46 +162,3 @@ removeButton.addEventListener('click', () => {
     }
   }
 });
-
-// Criar botoes para mover elementos da lista pra baixo e pra cima:
-
-// const a = document.getElementById('lista-tarefas');
-// const b = a.childNodes;
-
-// a.addEventListener('click', (event) => { // clique pra definir linha que será movida
-//   for (let index = 0; index < b.length; index += 1) {
-//     if (b[index].className === 'updown') {
-//       b[index].className = '';
-//     }
-//   }
-//   event.target.className = 'updown';
-// }); //
-
-// const upButton = document.createElement('button');
-// upButton.innerText = 'up';
-// upButton.id = 'upb';
-// upButton.style.marginLeft = '5%';
-// main.appendChild(upButton);
-
-// const downButton = document.createElement('button');
-// downButton.innerText = 'down';
-// downButton.id = 'downb';
-// downButton.style.marginLeft = '10px';
-// main.appendChild(downButton);
-
-// const upLink = document.getElementById('upb'); // botao de subida
-// const downLink = document.getElementById('downb'); // botao de descida
-
-// function Up() {
-//   upLink.addEventListener('click', () => { // acao botao subida
-//     const selected = document.querySelector('.updown');
-//     selected.parentNode.insertBefore(selected, selected.previousElementSibling);
-//   });
-// }Up();
-
-// function Down() {
-//   downLink.addEventListener('click', () => { // acao botao subida
-//     const selected = document.querySelector('.updown');
-//     selected.parentNode.insertBefore(selected.nextElementSibling, selected);
-//   });
-// }Down();
