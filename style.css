@@ -13,3 +13,7 @@ button {
 .completed {
     text-decoration: line-through;
 }
+
+#section-botoes {
+    margin-top: 2%;
+}
