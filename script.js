@@ -53,3 +53,18 @@ function finsRemove() {
 }
 
 removeFin.addEventListener('click', finsRemove);
+
+const saving = document.getElementById('salvar-tarefas');
+
+function storeLocation() {
+  const listAll = document.querySelector('ol').innerHTML;
+  localStorage.setItem('safe', listAll);
+}
+
+saving.addEventListener('click', storeLocation);
+
+function reload() {
+  const listAll = document.querySelector('ol');
+  listAll.innerHTML = localStorage.getItem('safe');
+}
+reload();
