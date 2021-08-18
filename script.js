@@ -1,11 +1,4 @@
-/* windows.onload =() =>{
-    const inputTexto = document.querySelector('#texto-tarefa');
-    inputTexto.addEventListener('keyup', (evento) => {
-    let texto = evento.target.value;
-    });
-}; */
-
-const tagTarefas = document.querySelector('#tarefas');
+const tagTarefas=document.querySelector('#tarefas')
 const btCriarTarefas = document.createElement('button');
 const inputTexto = document.querySelector('#texto-tarefa');
 btCriarTarefas.id = 'criar-tarefa';
@@ -52,6 +45,7 @@ btApagarTarefas.addEventListener('click', (evento) => {
 
 const btRemoverFinalizado = document.createElement('button');
 btRemoverFinalizado.id = "remover-finalizados";
+btRemoverFinalizado.innerText = "Remover Finalizados"
 tagTarefas.appendChild(btRemoverFinalizado);
 btRemoverFinalizado.addEventListener('click', function() {
   let complete = document.querySelectorAll('.completed');
@@ -59,3 +53,34 @@ btRemoverFinalizado.addEventListener('click', function() {
     complete[index].remove();
   };
 });
+
+const btSalvarTarefas = document.createElement('button');
+btSalvarTarefas.id = "salvar-tarefas";
+btSalvarTarefas.innerText = "Salvar Tarefas"
+tagTarefas.appendChild(btSalvarTarefas); 
+btSalvarTarefas.addEventListener('click', function() {
+  const tagItem = document.querySelectorAll('.item');
+  let items = [];
+  for (index=0; index < tagItem.length; index +=1) {
+    //criando um objeto
+    const item = {
+      innerText: tagItem[index].innerText,
+      classes: tagItem[index].className
+    };
+    items.push(item);
+  };
+  localStorage.setItem('itensDaLista', JSON.stringify(items));
+});
+
+window.onload = function () {
+  const itensRecall = JSON.parse(localStorage.getItem('itensDaLista'));
+  if (itensRecall !== null) {
+    const tagOl = document.querySelector('ol');
+    for (let index = 0; index < itensRecall.length; index += 1) {
+      const tagLi = document.createElement('li');
+      tagLi.innerText = itensRecall[index].innerText;
+      tagLi.className = itensRecall[index].classes;
+      tagOl.appendChild(tagLi);  
+   }
+  } 
+}
