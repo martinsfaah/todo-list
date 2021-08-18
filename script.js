@@ -1,8 +1,8 @@
 
 const listOfOrder = document.querySelector("#lista-tarefas")
-const createOrder = document.querySelector("#criar-tarefa")
 const inputButton = document.querySelector("#texto-tarefa")
 const sectionButtonAll = document.getElementById("button-all")
+
 
 function createListOrder() {
   const elementList = document.createElement("li");
@@ -11,7 +11,7 @@ function createListOrder() {
   elementList.addEventListener("click", changeColorBackground);
   listOfOrder.appendChild(elementList);
 }
-createOrder.addEventListener("click", createListOrder);
+
 
 function changeColorBackground(evento) {
   if( document.querySelector(".selected")){
@@ -25,16 +25,37 @@ function markAndUnmark(evento) {
 }
 listOfOrder.addEventListener("dblclick", markAndUnmark);
 
-function CreateButtonClearAll(evento) {
+function createButtonAddOrder() {
+  const buttonAddOrder = document.createElement("button");
+  buttonAddOrder.id = "criar-tarefa"
+  buttonAddOrder.innerText = "adicionar";
+  sectionButtonAll.appendChild(buttonAddOrder);
+
+  buttonAddOrder.addEventListener("click", createListOrder);
+}
+createButtonAddOrder();
+
+function createButtonRemovefinishOrder() {
+  const buttonFinishOrder = document.createElement("button");
+  buttonFinishOrder.id = "remover-finalizados";
+  buttonFinishOrder.innerText = "Remover finalizados";
+  sectionButtonAll.appendChild(buttonFinishOrder);
+
+  buttonFinishOrder.addEventListener("click");
+}
+createButtonRemovefinishOrder();
+
+function createButtonClearAll(evento) {
   const buttonClearAll = document.createElement("button");
-  console.log(buttonClearAll);
   buttonClearAll.id = "apaga-tudo"
   buttonClearAll.innerText = "Botão de apagar";
   sectionButtonAll.appendChild(buttonClearAll);
   
   buttonClearAll.addEventListener("click", clearList);
 }
-CreateButtonClearAll();
+createButtonClearAll();
+
+
 
 function clearList(){
   while (listOfOrder.lastChild) {
