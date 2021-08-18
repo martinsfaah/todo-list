@@ -1,4 +1,10 @@
-function changeColor() {
+function loadList() {
+  const ol = document.querySelector('ol');
+  const itensSaved = localStorage.getItem('lista');
+  ol.innerHTML = itensSaved;
+}
+
+function changeColor(event) {
   const selectedTask = event.currentTarget;
   const selecteds = document.getElementsByClassName('task');
   if (selectedTask.style.backgroundColor === '' || selectedTask.style.backgroundColor === 'white') {
@@ -9,7 +15,7 @@ function changeColor() {
   }
 }
 
-function markDone() {
+function markDone(event) {
   const doneTask = event.currentTarget;
   if (doneTask.className === 'task') {
     doneTask.classList.add('completed');
@@ -80,5 +86,21 @@ function createOlAndButton() {
   body.appendChild(button2);
 }
 
+function saveTasks() {
+  const list = document.querySelector('#lista-tarefas').innerHTML;
+  localStorage.setItem('lista', list)
+}
+
+function createButtons() {
+  const body = document.querySelector('body');
+  const buttonSave = document.createElement('button');
+  buttonSave.id = 'salvar-tarefas';
+  buttonSave.innerText = 'Salvar';
+  buttonSave.addEventListener('click', saveTasks);
+  body.appendChild(buttonSave);
+}
+
 createElements();
 createOlAndButton();
+createButtons();
+loadList();
