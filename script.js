@@ -3,23 +3,25 @@ let botaoTarefas = document.getElementById('criar-tarefa'); // Botão
 let lista = document.getElementById('lista-tarefas'); // Lista
 
 function criarTarefa() {
-  const newTask = document.createElement('li');
-  newTask.innerText = campoEntrada.value;
-  lista.appendChild(newTask);
+  const novaTarefa = document.createElement('li');
+  novaTarefa.innerText = campoEntrada.value;
+  lista.appendChild(novaTarefa);
   campoEntrada.value = '';
 }
   
 botaoTarefas.addEventListener('click', criarTarefa);
 
 // Requisito 7
-let itemJaSelecionado = 'false';
+
 
 function mudarCor (event){
-  // console.log('Teste click');
-  if(itemJaSelecionado === 'false'){
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
-  itemJaSelecionado = 'True';
+  let tagTarefa = document.querySelector(".liSelecionada");
+
+  if (tagTarefa !== null){
+    tagTarefa.classList.remove("liSelecionada");
   }
+console.log(tagTarefa);
+  event.target.classList.add("liSelecionada");
 }
 
 lista.addEventListener('click', mudarCor);

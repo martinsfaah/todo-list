@@ -1,0 +1,37 @@
+/*
+  Estilizando o site
+*/
+#conteudo{
+  background-color: #FFFFFF;
+}
+
+/*
+  Estilizando o header = Frase Clique duas vezes em um item para marcá-lo como completo
+*/
+#funcionamento{
+  color: red;
+}
+
+/*
+  Estilizando o formulario
+*/
+
+#texto-tarefa{
+  padding: 10px;
+}
+
+#criar-tarefa{
+  padding: 5px;
+  width: 120px;
+  margin-left: 50px;
+  border-radius: 10px;
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/*
+  Requisito 7 - mudando a cor de fundo do item selecionado
+*/
+.liSelecionada{
+  background:rgb(128, 128, 128);
+}
