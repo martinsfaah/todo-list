@@ -1,6 +1,7 @@
 const addBtn = document.getElementById('criar-tarefa');
 const input = document.getElementById('texto-tarefa');
 const ordList = document.getElementById('lista-tarefas');
+const listText = document.getElementsByTagName('li');
 
 function addNErase() {
   const listItem = document.createElement('li');
@@ -10,14 +11,18 @@ function addNErase() {
 }
 addBtn.addEventListener('click', addNErase);
 
-// console.log('epa nenem')
 function paintItGray(event) {
-  let listText = document.getElementsByTagName('li');
   for (let i = 0; i < listText.length; i += 1) {
-  if (listText[i].style.backgroundColor = 'gray') {
+    if (listText[i].style.backgroundColor = 'gray') {
       listText[i].style.backgroundColor = 'white';
       event.target.style.backgroundColor = 'gray';
-  }
+    }
   }
 }
 ordList.addEventListener('click', paintItGray);
+
+function linhaDireta(event) {
+  event.target.classList.toggle('completed');
+}
+ordList.addEventListener('dblclick', linhaDireta);
+      
