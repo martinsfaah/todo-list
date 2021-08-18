@@ -24,6 +24,7 @@ window.onload = function(){
         })
         novaMensagem.addEventListener("dblclick", function(){
             
+            
             if(novaMensagem.classList.contains("completed")){
                 novaMensagem.classList.remove("completed");
             }else{
@@ -35,6 +36,13 @@ window.onload = function(){
             
             if(buttonDelete){
                 novaMensagem.remove();
+            }
+        })
+        let buttonTarefas = document.querySelector("#remover-finalizados");
+        buttonTarefas.addEventListener("click", function(){
+            let completed = document.querySelector(".completed")
+            if(buttonTarefas && completed != null){
+                completed.remove();
             }
         })
     })
