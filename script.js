@@ -92,16 +92,19 @@ const moveTaskUp = () => {
   }
 };
 const moveTaskDown = () => {
-  const taskItens = document.getElementsByClassName('task-item');
+  // const taskItens = document.getElementsByClassName('task-item');
   const selectedItem = document.querySelector('.selected');
-  const brother = selectedItem.nextSibling;
   const ol = document.getElementById(listTarefas);
-  for (let index = 0; index < taskItens.length; index += 1) {
-    const selectedTask = taskItens[index].classList;
-    if (selectedTask.contains('selected') && index < taskItens.length - 1) {
+  // const selectedTask = event.target.classList;
+  // console.log(selectedItem.nextSibling);
+  if (selectedItem !== null) {
+    const brother = selectedItem.nextSibling;
+    if (brother !== null) {
       ol.insertBefore(brother, selectedItem);
     }
   }
+  // for (let index = 0; index < taskItens.length; index += 1) {
+  // }
 };
 
 // #REQ 1
