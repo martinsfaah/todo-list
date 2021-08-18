@@ -9,35 +9,29 @@ function listatarefas() {
     lista.innerHTML = textoTarefa.value;
     textoTarefa.value = '';
 
-    backTarefas();
+    backTarefas(lista);
 
-    duploClick();
-
-    });
+    duploClick(lista);
+  });
 }
 
 listatarefas();
 
-function backTarefas() {
-  let listaDeTarefas = document.querySelectorAll('li');
-
-  for (let i = 0; i < listaDeTarefas.length; i += 1) {
-  listaDeTarefas[i].addEventListener('click', function(event){
-  for (let i = 0; i < listaDeTarefas.length; i += 1) {   
-  listaDeTarefas[i].classList.remove('alterBack');
-  event.target.classList.add('alterBack');
-    }
-  }) 
- }
+function backTarefas(elementoLi) {
+  elementoLi.addEventListener('click', addBack);
 }
 
-function duploClick() {
+function addBack(event) {
   let listaDeTarefas = document.querySelectorAll('li');
-
   for (let i = 0; i < listaDeTarefas.length; i += 1) {
-  listaDeTarefas[i].addEventListener('dblclick', function(event){
-  event.target.classList.add('completed');
-    })
+    listaDeTarefas[i].classList.remove('alterBack');
   }
+  event.target.classList.add('alterBack');
+}
+function duploClick(elementoLi) {
+  elementoLi.addEventListener('dblclick', addDlclick);
 }
 
+function addDlclick(event) {
+  event.target.classList.toggle('completed');
+}
