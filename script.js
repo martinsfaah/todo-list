@@ -54,3 +54,12 @@ function riscaItem(textos) {
     }
 }
 listaOl.addEventListener('dblclick', riscaItem);
+
+// Requisito 10
+function deletaItem() {
+    const botaoLimpar = document.querySelector("#apaga-tudo");
+    botaoLimpar.addEventListener('click', function () {
+        listaOl.textContent = ' ';
+    })
+}
+deletaItem();
