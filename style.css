@@ -1,14 +1,38 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  background-color: #D45F6F;
+}
+
+#main-content {
+  background-color: #EBC38B;
+  padding: 20px 10px 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 50px;
+}
+
+#main-content h1 {
+  color: #181a2e;
+}
+
+#main-content p {
+  color: #202341;
+}
+
+#apaga-tudo {
+  margin-top: 10px;
 }
 
 input {
   font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 button {
   font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 /* li {

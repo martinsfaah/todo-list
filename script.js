@@ -2,6 +2,7 @@ const button = document.querySelector('#criar-tarefa');
 const input = document.querySelector('#texto-tarefa');
 const ol = document.querySelector('#lista-tarefas');
 let cont = 0;
+const cleanButton = document.querySelector('#apaga-tudo')
 // Requisito 5 e 6:
 // Adicionar o elemento li na ol com click
 button.addEventListener('click', function () {  
@@ -63,6 +64,7 @@ function addBackgroundColor(event) {
   }
 }
 
+// Requisito 9:
 function lineThrough(event) {
   let eventTarget = event.target;
 
@@ -74,6 +76,18 @@ function lineThrough(event) {
     eventTarget.classList.remove('completed');
   }
 }
+
+// Requisito 10:
+function cleanTasks() {
+  let ol = document.querySelector('#lista-tarefas')
+  let children = document.querySelectorAll('.list-item')
+
+  for (let index = 0; index < children.length; index += 1) {
+    ol.removeChild(children[index])
+  }
+}
+
+cleanButton.addEventListener('click', cleanTasks);
 
 window.addEventListener('click', function(event) {
   console.log(event);
