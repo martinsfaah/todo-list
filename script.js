@@ -80,8 +80,9 @@ window.onload = function() {
     for (let index = 0; index < todasTarefas.length; index += 1) {
       if (todasTarefas[index].classList.contains("selected") == true) {
         if (index > 0) {
-        todasTarefas[index].classList.remove("selected");
-        todasTarefas[index - 1].classList.add("selected");
+        let temporario = todasTarefas[index - 1];
+        todasTarefas[index - 1] = todasTarefas[index];
+        todasTarefas[index] = temporario;
         }
       }
     }
@@ -91,8 +92,9 @@ window.onload = function() {
   desce.addEventListener("click", function() {
     for (let index = todasTarefas.length -2; index > -1; index -= 1) {
       if (todasTarefas[index].classList.contains("selected") == true) {
-        todasTarefas[index].classList.remove("selected");
-        todasTarefas[index + 1].classList.add("selected");
+        let temp = todasTarefas[index + 1];
+        todasTarefas[index + 1] = todasTarefas[index];
+        todasTarefas[index] = temp;
       }
     }
   })
