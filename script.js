@@ -44,7 +44,7 @@ function selectListElement(event) {
   } */ else {
     cleanSelected();
     event.target.classList.toggle('selected');
-    isSelected = true;
+    //isSelected = false;
   }
 }
 
@@ -54,7 +54,6 @@ function checkAssignment(event) {
 
 function clearAllListItems() {
   list.textContent = '';
-  saveSession();
 }
 
 function removeFinished() {
