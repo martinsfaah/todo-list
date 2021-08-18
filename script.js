@@ -27,8 +27,8 @@ lista.addEventListener('click', mudarCor);
 
 // Requisito 9
 
-function duploRisco(event){
-  if(event.target.classList.contains('completed')) {
+function duploRisco(event) {
+  if (event.target.classList.contains('completed')) {
     event.target.classList.remove('completed');
   } else {
     event.target.classList.add('completed');
@@ -36,3 +36,11 @@ function duploRisco(event){
 }
 
 lista.addEventListener('dblclick', duploRisco);
+
+// Requisito 10
+
+const botaoApagaTudo = document.getElementById('apaga-tudo'); // Botão
+
+botaoApagaTudo.addEventListener('click', () => {
+  lista.innerHTML = '';
+});
