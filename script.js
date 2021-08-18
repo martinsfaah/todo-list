@@ -2,15 +2,6 @@
 // so it's applied to all spec files
 // cypress/support/index.js
 
-/* eslint-disable arrow-body-style */
-// eslint-disable-next-line no-undef
-Cypress.on('uncaught:exception', () => {
-  // returning false here prevents Cypress from
-  // failing the test
-  return false;
-});
-
-/* eslint-disable sonarjs/no-duplicate-string */
 document.body.style.backgroundColor = '#5bded6';
 
 // Desafio 1
@@ -63,11 +54,11 @@ function resetColor() {
   }
 }
 
-const taskListTarget = document.getElementById('lista-tarefas');
+const taskListTarget = document.querySelector('ol');
 function paintLine(event) {
   resetColor();
   const evento = event.target;
-  evento.style.background = 'rgb(128, 128, 128)';
+  evento.style.background = 'grey';
 }
 taskListTarget.addEventListener('click', paintLine);
 
@@ -88,7 +79,7 @@ resetListButton.innerText = 'Reset';
 resetListButton.id = 'apaga-tudo';
 main.appendChild(resetListButton);
 
-const lista = document.getElementById('lista-tarefas');
+const lista = document.querySelector('ol');
 
 resetListButton.addEventListener('click', () => {
   lista.innerHTML = '';
@@ -115,7 +106,7 @@ strButton.innerText = 'Salvar';
 main.appendChild(strButton);
 
 function saveStr() {
-  const locStr = document.getElementById('lista-tarefas').innerHTML;
+  const locStr = document.querySelector('ol').innerHTML;
   localStorage.setItem('saveUserList', locStr);
 }
 strButton.addEventListener('click', saveStr);
@@ -139,7 +130,7 @@ main.appendChild(downButton);
 function moveUp() {
   const selectedItem = document.querySelectorAll('li');
   for (let index = 1; index < selectedItem.length; index += 1) {
-    if (selectedItem[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+    if (selectedItem[index].style.backgroundColor === 'grey') {
       selectedItem[index].parentElement.insertBefore(selectedItem[index], selectedItem[index - 1]);
     }
   }
@@ -149,7 +140,7 @@ upButton.addEventListener('click', moveUp);
 function moveDown() {
   const selectedItem = document.querySelectorAll('li');
   for (let index = 0; index < selectedItem.length; index += 1) {
-    if (selectedItem[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+    if (selectedItem[index].style.backgroundColor === 'grey') {
       selectedItem[index].parentElement.insertBefore(selectedItem[index + 1], selectedItem[index]);
     }
   }
@@ -165,7 +156,7 @@ main.appendChild(removeButton);
 removeButton.addEventListener('click', () => {
   const selectedColor = document.querySelectorAll('li');
   for (let index = 0; index < selectedColor.length; index += 1) {
-    if (selectedColor[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+    if (selectedColor[index].style.backgroundColor === 'grey') {
       selectedColor[index].remove();
     }
   }

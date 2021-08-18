@@ -1,3 +1,9 @@
+Cypress.on('uncaught:exception', () => {
+  // returning false here prevents Cypress from
+  // failing the test
+  return false;
+});
+
 const TODO_PAGE_TITLE = 'Minha Lista de Tarefas';
 const TODO_PAGE_DESCRIPTION_SELECTOR = '#funcionamento';
 const TODO_PAGE_DESCRIPTION = 'Clique duas vezes em um item para marcá-lo como completo';

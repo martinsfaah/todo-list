@@ -1,16 +1,10 @@
-::selection { /* Adicional - Fundo do texto selecionado, para dblclick do text*/
-    background: grey;
+::selection { /* Adicional - Fundo do texto selecionado, para dblclick do text */
+  background: grey;
 }
 
 #cria-tarefa {
-    display: inline-block;
+  display: inline-block;
 }
 .completed {
-    text-decoration: line-through solid black;
+  text-decoration: line-through solid black;
 }
-
-
-/* #upb {
-    display: inline-block;
-    margin-left: 30px;
-} */
