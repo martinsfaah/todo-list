@@ -18,13 +18,33 @@ function insertP() {
 insertP();
 
 function insertInput() {
+    let getBody = document.querySelector('body');
+    let divPaiAddTaref = document.createElement('div');
+    divPaiAddTaref.id = ('divPaiAddTarefa');
+    divPaiAddTaref.className = ('estDivpaiAddTarefa ');
+    getBody.appendChild(divPaiAddTaref);
+
     let body = document.querySelector('body');
     let input = document.createElement('input');
     input.id = ('texto-tarefa');
+    input.className = ('estInput');
     input.innerHTML;
-    body.appendChild(input);
+    divPaiAddTaref.appendChild(input);
+
 }
 insertInput();
+
+function btnCrTarefa() {
+    let getDvPai = document.getElementById('divPaiAddTarefa');
+    let btnCriaTarefa = document.createElement('button');
+    btnCriaTarefa.id = ('criar-tarefa');
+    btnCriaTarefa.className = ('estBtnAdd');
+    btnCriaTarefa.innerText = ('Adicionar');
+    btnCriaTarefa.innerHTML;
+    getDvPai.appendChild(btnCriaTarefa);
+
+}
+btnCrTarefa();
 
 function addOl() {
     let getBody = document.querySelector('body');
@@ -32,5 +52,17 @@ function addOl() {
     ol.id = ('lista-tarefas');
     ol.innerHTML;
     getBody.appendChild(ol);
+
+    // Captura texto da ul e adiciona a lista //
+    let tagInput = document.getElementById('texto-tarefa');
+    let botao = document.getElementById('criar-tarefa');
+
+
+    botao.addEventListener('click', function(event) {
+
+        ol = ol + "<li>" + tagInput.value + "</li>";
+        document.getElementById("lista-tarefas").innerHTML = ol;
+        tagInput.value = '';
+    });
 }
 addOl();
