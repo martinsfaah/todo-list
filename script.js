@@ -26,7 +26,6 @@ function loadList() {
   ol.innerHTML = itensSaved;
   const itens = document.querySelectorAll('li');
   for (let i = 0; i < itens.length; i += 1) {
-    itens[i].className = 'task';
     itens[i].addEventListener('click', changeColor);
     itens[i].addEventListener('dblclick', markDone);
   }
