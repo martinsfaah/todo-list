@@ -94,24 +94,6 @@ function createButtonRemoveDone() {
 }
 createButtonRemoveDone();
 
-// Duas formas diferentes de fazer o removeDone.
-
-// function removeDone() {
-//   const olListParent = document.getElementById('lista-tarefas');
-//   for (let i = itensLista.length - 1; i >= 0; i -= 1) {
-//     if (itensLista[i].classList.contains('completed')) {
-//       olListParent.removeChild(itensLista[i]);
-//     }
-//   }
-// }
-
-// function removeDone() {
-//   const liCompleted = document.querySelectorAll('.completed');
-//   for (let i = liCompleted.length - 1; i >= 0; i -= 1) {
-//     liCompleted[i].remove();
-//   }
-// }
-
 function removeDone() {
   const liCompleted = document.getElementsByClassName('completed');
   while (liCompleted.length) {
@@ -201,3 +183,59 @@ const buttonDown = document.getElementById('mover-baixo');
 buttonUp.addEventListener('click', moveUp);
 buttonDown.addEventListener('click', moveDown);
 buttonRemoveSelected.addEventListener('click', removeSelectedItem);
+
+function newDiv() {
+  const divSave = document.createElement('div');
+  mainSection.appendChild(divSave);
+  divSave.id = 'div-save';
+}
+newDiv();
+
+function createButtonSave() {
+  const buttonSave = document.createElement('button');
+  const newDivTag = document.getElementById('div-save');
+  newDivTag.appendChild(buttonSave);
+  buttonSave.id = 'salvar-tarefas';
+  buttonSave.innerHTML = 'Salvar Tarefas';
+}
+createButtonSave();
+
+function saveData() {
+  const nomesArray = [];
+  const classesArray = [];
+  const colorArray = [];
+  for (let i = 0; i < itensLista.length; i += 1) {
+    nomesArray.push(itensLista[i].innerText);
+    colorArray.push(itensLista[i].style.backgroundColor);
+    classesArray.push(itensLista[i].className);
+  }
+  console.log(classesArray);
+  console.log(colorArray);
+  console.log(nomesArray);
+  localStorage.setItem('nome', JSON.stringify(nomesArray));
+  localStorage.setItem('cor', JSON.stringify(colorArray));
+  localStorage.setItem('classes', JSON.stringify(classesArray));
+}
+
+const buttonSaveA = document.getElementById('salvar-tarefas');
+buttonSaveA.addEventListener('click', saveData);
+
+function reloadItens() {
+  const orderList = document.querySelector('#lista-tarefas');
+  const nomesArrayVolta = JSON.parse(localStorage.getItem('nome'));
+  const colorArrayVolta = JSON.parse(localStorage.getItem('cor'));
+  const classesArrayVolta = JSON.parse(localStorage.getItem('classes'));
+  if (nomesArrayVolta !== null) {
+    for (let i = 0; i < nomesArrayVolta.length; i += 1) {
+      const listItem = document.createElement('li');
+      orderList.appendChild(listItem);
+      listItem.innerText = nomesArrayVolta[i];
+      listItem.className = classesArrayVolta[i];
+      listItem.style.backgroundColor = colorArrayVolta[i];
+      listItem.addEventListener('click', colorListItem);
+      listItem.addEventListener('dblclick', strikeItem);
+    }
+  }
+}
+
+window.onload = reloadItens;
