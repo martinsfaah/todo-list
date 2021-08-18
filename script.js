@@ -1,17 +1,21 @@
 //  declarations
+const key = 'assignment';
 const btnAddToList = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
 const inputValue = document.getElementById('texto-tarefa');
 const btnClearList = document.getElementById('apaga-tudo');
 const btnRemoveFinishedAssign = document.getElementById('remover-finalizados');
 const btnSaveSession = document.getElementById('salvar-tarefas');
+const btnMoveUp = document.getElementById('mover-cima');
+const btnMoveDown = document.getElementById('mover-baixo');
+let isSelected = false;
 
 //  Functions
 function addToList() {
   const li = document.createElement('li');
 
   if (!inputValue.value) { // if the value is empty send an alert and exit the function
-    alert('Valor invalido!');
+    alert('Escreva algo!');
     return;
   }
 
@@ -23,24 +27,26 @@ function addToList() {
 function cleanSelected() {
   const listChild = list.children;
   for (const value of listChild) {
-    value.classList.remove('selected');
+    if(value.classList.contains('selected')) {
+      value.classList.remove('selected');
+      
+    }
   }
 }
 
 function selectListElement(event) {
-  cleanSelected();
-  event.target.classList.toggle('selected');
-  /*
-  Solucao alternativa mas que nao passa na verificacao.
-  Alternative solution but it doesn't go through the check.
-  const select = document.querySelector('.selected')
-  if (!select) { // if select return false the condition add the class, else, it removes the class.
-    target.classList.add('selected');
-    return;
+  if (!isSelected) {
+    event.target.classList.toggle('selected');
+    isSelected = true;
+    
+  } else if (isSelected && event.target.classList.contains('selected')) {
+    event.target.classList.toggle('selected');
+    isSelected = false;
   } else {
-    select.classList.remove('selected');
-    return;
-  } */
+    cleanSelected();
+    event.target.classList.toggle('selected');
+    isSelected = true;
+  }
 }
 
 function checkAssignment(event) {
@@ -60,14 +66,41 @@ function removeFinished() {
 }
 
 function saveSession() {
-  const key = 'assignment';
   sessionStorage.setItem(key, list.innerHTML);
 }
 
 function verifySavedSession() {
-  const key = 'assignment';
   if (sessionStorage.length === 0) { return; }
   list.innerHTML = sessionStorage.getItem(key);
+}
+
+function moveUp(event) {
+  const selectedElement = document.querySelector('.selected');
+  let auxClass = '';
+  let auxText = '';
+  if (!list.hasChildNodes()) { return; }
+  if (!selectedElement.previousElementSibling) { return; }
+  auxClass = selectedElement.previousElementSibling.className;
+  auxText = selectedElement.previousElementSibling.textContent;
+  selectedElement.previousElementSibling.className = selectedElement.className;
+  selectedElement.previousElementSibling.textContent = selectedElement.textContent;
+  selectedElement.className = auxClass;
+  selectedElement.textContent = auxText;
+
+}
+
+function moveDown() {
+  const selectedElement = document.querySelector('.selected');
+  let auxClass = '';
+  let auxText = '';
+  if (!list.hasChildNodes()) { return; }
+  if (!selectedElement.nextElementSibling) { return; }
+  auxClass = selectedElement.nextElementSibling.className;
+  auxText = selectedElement.nextElementSibling.textContent;
+  selectedElement.nextElementSibling.className = selectedElement.className;
+  selectedElement.nextElementSibling.textContent = selectedElement.textContent;
+  selectedElement.className = auxClass;
+  selectedElement.textContent = auxText;
 }
 
 //  events
@@ -78,3 +111,5 @@ list.addEventListener('dblclick', checkAssignment);
 btnClearList.addEventListener('click', clearAllListItems);
 btnRemoveFinishedAssign.addEventListener('click', removeFinished);
 btnSaveSession.addEventListener('click', saveSession);
+btnMoveUp.addEventListener('click', moveUp);
+btnMoveDown.addEventListener('click', moveDown);
