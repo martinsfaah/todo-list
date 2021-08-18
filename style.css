@@ -42,7 +42,7 @@ main {
   border-radius: 10px;
   height: 2rem;
   width: 6rem;
-  background-color:silver;
+  background-color: silver;
 }
 
 #section-2 {
@@ -51,4 +51,8 @@ main {
   margin-top: 11rem;
   margin-left: 5rem;
   line-height: 1.5rem;
+}
+
+.completed {
+  text-decoration: line-through;
 }
