@@ -99,10 +99,13 @@ clearListBtn.addEventListener('click', () => {
 
 clearCompletedBtn.addEventListener('click', () => {
   refreshTaskLi();
-  for (const comp of fullTaskLi) {
-    if (comp.classList.contains('completed')) {
-      comp.parentNode.removeChild(comp);
+  const completeTasks = document.getElementsByClassName('completed');
+  if (completeTasks.length > 0) {
+    for (let comp = completeTasks.length - 1; comp >= 0; comp -= 1) {
+      completeTasks[comp].remove();
     }
+  } else {
+    console.log('There is no task to remove');
   }
 });
 
@@ -137,7 +140,11 @@ moveDwnBtn.addEventListener('click', () => {
 
 removeBtn.addEventListener('click', () => {
   const currentTask = document.querySelector('.selected');
-  currentTask.parentElement.removeChild(currentTask);
+  if (currentTask !== null) {
+    currentTask.parentElement.removeChild(currentTask);
+  } else {
+    console.log('There is no task to remove');
+  }
 });
 
 window.onload = function restoreSavedList() {
