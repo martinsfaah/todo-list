@@ -1,9 +1,16 @@
+// likely want to do this in a support file
+// so it's applied to all spec files
+// cypress/support/index.js
+
+/* eslint-disable arrow-body-style */
+// eslint-disable-next-line no-undef
 Cypress.on('uncaught:exception', () => {
   // returning false here prevents Cypress from
   // failing the test
   return false;
 });
 
+/* eslint-disable sonarjs/no-duplicate-string */
 document.body.style.backgroundColor = '#5bded6';
 
 // Desafio 1
@@ -59,7 +66,8 @@ function resetColor() {
 const taskListTarget = document.getElementById('lista-tarefas');
 function paintLine(event) {
   resetColor();
-  event.target.style.background = 'rgb(128, 128, 128)';
+  const evento = event.target;
+  evento.style.background = 'rgb(128, 128, 128)';
 }
 taskListTarget.addEventListener('click', paintLine);
 
@@ -101,16 +109,16 @@ clearCompleted.addEventListener('click', () => {
 });
 
 // Desafio 12 - BONUS
-const storageButton = document.createElement('button');
-storageButton.id = 'salvar-tarefas';
-storageButton.innerText = 'Salvar';
-main.appendChild(storageButton);
+const strButton = document.createElement('button');
+strButton.id = 'salvar-tarefas';
+strButton.innerText = 'Salvar';
+main.appendChild(strButton);
 
-function saveStorage() {
-  const locStorage = document.getElementById('lista-tarefas').innerHTML;
-  localStorage.setItem('saveUserList', locStorage);
+function saveStr() {
+  const locStr = document.getElementById('lista-tarefas').innerHTML;
+  localStorage.setItem('saveUserList', locStr);
 }
-storageButton.addEventListener('click', saveStorage);
+strButton.addEventListener('click', saveStr);
 
 function saveReload() {
   const saveReloading = document.getElementById('lista-tarefas');
@@ -132,7 +140,7 @@ function moveUp() {
   const selectedItem = document.querySelectorAll('li');
   for (let index = 1; index < selectedItem.length; index += 1) {
     if (selectedItem[index].style.backgroundColor === 'rgb(128, 128, 128)') {
-      selectedItem[index].parentNode.insertBefore(selectedItem[index], selectedItem[index - 1]);
+      selectedItem[index].parentElement.insertBefore(selectedItem[index], selectedItem[index - 1]);
     }
   }
 }
@@ -142,7 +150,7 @@ function moveDown() {
   const selectedItem = document.querySelectorAll('li');
   for (let index = 0; index < selectedItem.length; index += 1) {
     if (selectedItem[index].style.backgroundColor === 'rgb(128, 128, 128)') {
-      selectedItem[index].parentNode.insertBefore(selectedItem[index + 1], selectedItem[index]);
+      selectedItem[index].parentElement.insertBefore(selectedItem[index + 1], selectedItem[index]);
     }
   }
 }
