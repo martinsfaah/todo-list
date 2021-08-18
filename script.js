@@ -1,15 +1,3 @@
-function loadList() {
-  const ol = document.querySelector('ol');
-  const itensSaved = localStorage.getItem('lista');
-  ol.innerHTML = itensSaved;
-  const itens = document.querySelectorAll('li');
-  for (let i = 0; i < itens.length; i += 1) {
-    itens[i].className = 'task';
-    itens[i].addEventListener('click', changeColor);
-    itens[i].addEventListener('dblclick', markDone);
-  }
-}
-
 function changeColor(event) {
   const selectedTask = event.currentTarget;
   const selecteds = document.getElementsByClassName('task');
@@ -29,6 +17,18 @@ function markDone(event) {
     doneTask.classList.add('completed');
   } else {
     doneTask.classList.remove('completed');
+  }
+}
+
+function loadList() {
+  const ol = document.querySelector('ol');
+  const itensSaved = localStorage.getItem('lista');
+  ol.innerHTML = itensSaved;
+  const itens = document.querySelectorAll('li');
+  for (let i = 0; i < itens.length; i += 1) {
+    itens[i].className = 'task';
+    itens[i].addEventListener('click', changeColor);
+    itens[i].addEventListener('dblclick', markDone);
   }
 }
 
