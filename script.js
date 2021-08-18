@@ -4,6 +4,9 @@ const input = document.getElementById('texto-tarefa');
 const buttonClearAll = document.getElementById('apaga-tudo');
 const buttonClearComplete = document.getElementById('remover-finalizados');
 const buttonRemoveSelect = document.getElementById('remover-selecionado');
+const buttonSave = document.getElementById('salvar-tarefas');
+const buttonUp = document.getElementById('mover-cima');
+const buttonDown = document.getElementById('mover-baixo');
 
 function insertList() {
   const tarefa = document.createElement('li');
@@ -59,3 +62,29 @@ function removeSelected() {
   }
 }
 buttonRemoveSelect.addEventListener('click', removeSelected);
+
+const toDolist = JSON.parse(localStorage.getItem('list-toDo')) || [];
+function saveLocalStorage() {
+  const textToDoList = document.querySelectorAll('.lineList');
+  for (let index = 0; index < textToDoList.length; index += 1) {
+    toDolist.push(textToDoList[index].innerText);
+  }
+  localStorage.setItem('list-toDo', JSON.stringify(toDolist));
+}
+
+buttonSave.addEventListener('click', saveLocalStorage);
+function mostraTarefas() {
+  
+
+  for (item of toDolist) {
+    const itemList = document.createElement('li');
+    const itemText = document.createTextNode(item);
+    itemList.classList.add('lineList');
+    itemList.appendChild(itemText);
+    list.appendChild(itemList);
+    itemList.addEventListener('click', selectList);
+    itemList.addEventListener('dblclick', lineThrough);
+  }
+}
+
+mostraTarefas();
