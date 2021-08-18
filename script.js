@@ -109,11 +109,20 @@ function moveUp() {
   }
 }
 
+function removeSelected() {
+  const selected = document.querySelector('.selected');
+  const parent = document.querySelector('ol');
+  parent.removeChild(selected);
+}
+
 function createButtons() {
   const body = document.querySelector('body');
   const buttonSave = document.createElement('button');
   const buttonUp = document.createElement('button');
   const buttonDown = document.createElement('button');
+  const buttonRemove = document.createElement('button');
+  buttonRemove.id = 'remover-selecionado';
+  buttonRemove.innerText = 'Remover Selecionado';
   buttonUp.innerText = '↑';
   buttonUp.id = 'mover-cima';
   buttonDown.id = 'mover-baixo';
@@ -123,9 +132,11 @@ function createButtons() {
   buttonSave.addEventListener('click', saveTasks);
   buttonUp.addEventListener('click', moveUp);
   buttonDown.addEventListener('click', moveDown);
+  buttonRemove.addEventListener('click', removeSelected);
   body.appendChild(buttonUp);
   body.appendChild(buttonDown);
   body.appendChild(buttonSave);
+  body.appendChild(buttonRemove);
 }
 
 createElements();
