@@ -6,6 +6,7 @@ function includingTasks(){
     const task = document.createElement("li");
     task.innerHTML = inputText.value;
     task.addEventListener("click", colorCheck);
+    task.addEventListener("dblclick", lineThrough);
     
     tasksList.appendChild(task);
     inputText.value = "";
@@ -22,5 +23,14 @@ function colorCheck(event){
     
     const clickedTask = event.target
     clickedTask.style.backgroundColor = "rgb(128,128,128)";
-    
+
+}
+
+function lineThrough(event){
+    const item = event.target;
+    if(item.className.includes(" completed")){
+        item.className = item.className.replace(" completed","");
+    }else {
+        item.className += " completed";
+    }
 }
