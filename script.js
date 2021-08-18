@@ -83,7 +83,7 @@ function upList() {
     if (listMoveUp[index].classList.contains('selected') && index - 1 >= 0) {
       listMoveUp[index].parentNode.insertBefore(
         listMoveUp[index],
-        listMoveUp[index - 1]
+        listMoveUp[index].previousSibling
       );
     }
   }
@@ -92,7 +92,7 @@ function upList() {
 buttonDownArrow.addEventListener('click', downList);
 function downList() {
   let selectedToDown = document.querySelector('.selected');
-  if (!selectedToDown.nextSibling) {
+  if (selectedToDown === null || selectedToDown.nextSibling === null) {
     return;
   }
   selectedToDown.nextSibling.after(selectedToDown);
