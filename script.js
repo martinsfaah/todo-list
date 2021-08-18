@@ -8,6 +8,15 @@ let caixaDeTexto = document.getElementById('texto-tarefa')
 /* seleção de item na lista*/ 
 let linhaSelecionada = false; 
 
+/* Inicializando o botão apaga tudo*/
+let apagador = document.getElementById('apaga-tudo');
+apagador.addEventListener('click',apagaTudo);
+
+/* Inicializando o botão para apagar tarefas completas */
+let apagadorCompletas = document.getElementById('remover-finalizados');
+apagadorCompletas.addEventListener ('click',apagaSelecionadas);
+
+
 /* Função para criar criar a tarefa */
 function criaTarefa(){
     let textoInserido = caixaDeTexto.value;
@@ -35,7 +44,7 @@ function lineColor(event){
     itemSelecionado.style.backgroundColor = 'rgb(128,128,128)'; 
     linhaSelecionada = true;
 }
-
+/*função para cortar o texto da lista*/
 function cutLine(event){
     let linhaCortada = event.target;
     if(linhaCortada.className === 'completed'){
@@ -44,11 +53,18 @@ function cutLine(event){
     linhaCortada.className = 'completed';
     }
 }
-/* Inicializando o botão apaga tudo*/
-let apagador = document.getElementById('apaga-tudo');
-apagador.addEventListener('click',apagaTudo);
-
+/* Função para apagar todos os elementos da lista*/
 function apagaTudo (){
     let apagarAqui = document.getElementById('lista-tarefas');
     apagarAqui.innerText = '';
+}
+/* Função para apagar  os elementos completos da lista*/
+function apagaSelecionadas(){
+ 
+    let li = document.querySelectorAll('li');
+    for (let key in li){
+        if (li[key].className === 'completed'){
+            li[key].remove();
+        }
+    }
 }
