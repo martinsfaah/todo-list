@@ -39,17 +39,21 @@ const addNewTask = () => {
 };
 
 const highLightItem = (event) => {
-  if (document.querySelector('.selected') !== null) {
-    document.querySelector('.selected').classList.remove('selected');
+  if (event.target.classList.contains('task-item')) {
+    if (document.querySelector('.selected') !== null) {
+      document.querySelector('.selected').classList.remove('selected');
+    }
+    event.target.classList.add('selected');
   }
-  event.target.classList.add('selected');
 };
 
 const underScoreItem = (event) => {
-  if (event.target.classList.contains('completed')) {
-    event.target.classList.remove('completed');
-  } else {
-    event.target.classList.add('completed');
+  if (event.target.classList.contains('task-item')) {
+    if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
+    } else {
+      event.target.classList.add('completed');
+    }
   }
 };
 const clearList = () => {
@@ -79,19 +83,28 @@ const restoreTask = () => {
 const moveTaskUp = () => {
   const taskItens = document.getElementsByClassName('task-item');
   const newItem = document.querySelector('.selected');
-  const ol = document.getElementById('lista-tarefas');
-  // console.log(taskItens[3].classList.contains('selected'));
+  const ol = document.getElementById(listTarefas);
   for (let index = 0; index < taskItens.length; index += 1) {
     const selectedTask = taskItens[index].classList;
     if (selectedTask.contains('selected') && index > 0) {
       ol.insertBefore(newItem, taskItens[index - 1]);
     }
   }
-
 };
 const moveTaskDown = () => {
-  console.log('oi');
+  const taskItens = document.getElementsByClassName('task-item');
+  const newItem = document.querySelector('.selected');
+  const brother = newItem.nextSibling;
+  console.log(brother);
+  const ol = document.getElementById(listTarefas);
+  for (let index = 0; index < taskItens.length; index += 1) {
+    const selectedTask = taskItens[index].classList;
+    if (selectedTask.contains('selected')) {
+      ol.insertBefore(brother, newItem);
+    }
+  }
 };
+
 // #REQ 1
 createNewElement('h1', 'Minha Lista de Tarefas', header, 1);
 
@@ -104,7 +117,6 @@ createNewElement('input', '', sectionListControl, 1, 'id', 'texto-tarefa');
 
 // #REQ 4
 createNewElement('ol', '', sectionListContent, 1, 'id', listTarefas);
-
 // #REQ 5 e 6
 createNewElement('button', 'Adicionar', sectionListControl, 1, 'id', 'criar-tarefa');
 const buttonAddNewTask = document.getElementById('criar-tarefa');
