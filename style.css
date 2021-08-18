@@ -1,14 +1,16 @@
 /*
   Estilizando o site
 */
-#conteudo{
-  background-color: #FFFFFF;
+
+#conteudo {
+  background-color: white;
 }
 
 /*
   Estilizando o header = Frase Clique duas vezes em um item para marcá-lo como completo
 */
-#funcionamento{
+
+#funcionamento {
   color: red;
 }
 
@@ -16,11 +18,11 @@
   Estilizando o formulario
 */
 
-#texto-tarefa{
+#texto-tarefa {
   padding: 10px;
 }
 
-#criar-tarefa{
+#criar-tarefa {
   padding: 5px;
   width: 120px;
   margin-left: 50px;
@@ -32,6 +34,15 @@
 /*
   Requisito 7 - mudando a cor de fundo do item selecionado
 */
-.liSelecionada{
-  background:rgb(128, 128, 128);
+
+.liSelecionada {
+  background: rgb(128, 128, 128);
+}
+
+/*
+  Requisito 9 - mudando a cor de fundo do item selecionado
+*/
+
+.completed {
+  text-decoration: line-through solid rgb(0, 0, 0);
 }
