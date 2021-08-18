@@ -10,14 +10,16 @@ function changeColor(event) {
   if (selectedTask.style.backgroundColor === '' || selectedTask.style.backgroundColor === 'white') {
     for (let i = 0; i < selecteds.length; i += 1) {
       selecteds[i].style.backgroundColor = 'white';
+      selecteds[i].classList.remove('selected');
     }
     selectedTask.style.backgroundColor = 'rgb(128, 128, 128)';
+    selectedTask.classList.add('selected');
   }
 }
 
 function markDone(event) {
   const doneTask = event.currentTarget;
-  if (doneTask.className === 'task') {
+  if (doneTask.className === 'task selected') {
     doneTask.classList.add('completed');
   } else {
     doneTask.classList.remove('completed');
@@ -91,12 +93,38 @@ function saveTasks() {
   localStorage.setItem('lista', list)
 }
 
+function moveDown() {
+  const selected = document.querySelector('.selected');
+  const parent = document.querySelector('ol');
+  if (selected !== parent.lastChild && selected !== null) {
+  selected.parentNode.insertBefore(selected.nextElementSibling, selected);
+  }
+}
+
+function moveUp() {
+  const selected = document.querySelector('.selected');
+  const parent = document.querySelector('ol');
+  if (selected !== parent.firstChild && selected !== null) {
+  selected.parentNode.insertBefore(selected, selected.previousElementSibling);
+  }
+}
+
 function createButtons() {
   const body = document.querySelector('body');
   const buttonSave = document.createElement('button');
+  const buttonUp = document.createElement('button');
+  const buttonDown = document.createElement('button');
+  buttonUp.innerText = '↑';
+  buttonUp.id = 'mover-cima';
+  buttonDown.id = 'mover-baixo';
+  buttonDown.innerText = '↓'
   buttonSave.id = 'salvar-tarefas';
   buttonSave.innerText = 'Salvar';
   buttonSave.addEventListener('click', saveTasks);
+  buttonUp.addEventListener('click', moveUp);
+  buttonDown.addEventListener('click', moveDown);
+  body.appendChild(buttonUp);
+  body.appendChild(buttonDown);
   body.appendChild(buttonSave);
 }
 
