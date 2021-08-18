@@ -1,4 +1,4 @@
-//Requisitos 5, 6, 10 e 11
+//Requisitos 5, 6, 7, 9, 10 e 11
 function createAndDeleteTasks () {
     const buttonCreate = document.getElementById("criar-tarefa");
     const input = document.getElementById("texto-tarefa");
@@ -9,6 +9,14 @@ function createAndDeleteTasks () {
     buttonCreate.addEventListener("click", function (){
         let newItem = document.createElement("li");
         newItem.innerText = input.value;
+        newItem.className ="tasks"
+        newItem.addEventListener("click", function (event){
+            let selected = document.getElementsByClassName("selected")
+            for (let i = 0; i < selected.length; i += 1){
+                selected[i].classList.remove("selected")
+            }
+            event.target.classList.add("selected")
+        })
         fatherItem.appendChild(newItem);
         input.value = "";
     })
@@ -28,23 +36,7 @@ function createAndDeleteTasks () {
 }
 createAndDeleteTasks()
 
-//Requisitos 7 e 8 
-function changeItemColor(color1, color2){
-
-let taskFather = document.getElementById("lista-tarefas");
-
-taskFather.addEventListener("click", function(event){
-    if (event.target.style.backgroundColor !== color1){
-        event.target.style.backgroundColor = color1
-    } else {
-        event.target.style.backgroundColor = color2 
-    }
-})
-}
-
 //Requisito 9
-changeItemColor("rgb(128, 128, 128)", "white")
-
 function riskItem (liClass) {
     let taskFather = document.getElementById("lista-tarefas")
     taskFather.addEventListener("dblclick", function(event){
