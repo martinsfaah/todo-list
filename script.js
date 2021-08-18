@@ -2,6 +2,12 @@ function loadList() {
   const ol = document.querySelector('ol');
   const itensSaved = localStorage.getItem('lista');
   ol.innerHTML = itensSaved;
+  const itens = document.querySelectorAll('li');
+  for (let i = 0; i < itens.length; i += 1) {
+    itens[i].className = 'task';
+    itens[i].addEventListener('click', changeColor);
+    itens[i].addEventListener('dblclick', markDone);
+  }
 }
 
 function changeColor(event) {
@@ -90,14 +96,14 @@ function createOlAndButton() {
 
 function saveTasks() {
   const list = document.querySelector('#lista-tarefas').innerHTML;
-  localStorage.setItem('lista', list)
+  localStorage.setItem('lista', list);
 }
 
 function moveDown() {
   const selected = document.querySelector('.selected');
   const parent = document.querySelector('ol');
   if (selected !== parent.lastChild && selected !== null) {
-  selected.parentNode.insertBefore(selected.nextElementSibling, selected);
+    selected.parentNode.insertBefore(selected.nextElementSibling, selected);
   }
 }
 
@@ -105,7 +111,7 @@ function moveUp() {
   const selected = document.querySelector('.selected');
   const parent = document.querySelector('ol');
   if (selected !== parent.firstChild && selected !== null) {
-  selected.parentNode.insertBefore(selected, selected.previousElementSibling);
+    selected.parentNode.insertBefore(selected, selected.previousElementSibling);
   }
 }
 
@@ -117,7 +123,6 @@ function removeSelected() {
 
 function createButtons() {
   const body = document.querySelector('body');
-  const buttonSave = document.createElement('button');
   const buttonUp = document.createElement('button');
   const buttonDown = document.createElement('button');
   const buttonRemove = document.createElement('button');
@@ -126,20 +131,26 @@ function createButtons() {
   buttonUp.innerText = '↑';
   buttonUp.id = 'mover-cima';
   buttonDown.id = 'mover-baixo';
-  buttonDown.innerText = '↓'
-  buttonSave.id = 'salvar-tarefas';
-  buttonSave.innerText = 'Salvar';
-  buttonSave.addEventListener('click', saveTasks);
+  buttonDown.innerText = '↓';
   buttonUp.addEventListener('click', moveUp);
   buttonDown.addEventListener('click', moveDown);
   buttonRemove.addEventListener('click', removeSelected);
   body.appendChild(buttonUp);
   body.appendChild(buttonDown);
-  body.appendChild(buttonSave);
   body.appendChild(buttonRemove);
+}
+
+function createSave() {
+  const body = document.querySelector('body');
+  const buttonSave = document.createElement('button');
+  buttonSave.id = 'salvar-tarefas';
+  buttonSave.innerText = 'Salvar';
+  buttonSave.addEventListener('click', saveTasks);
+  body.appendChild(buttonSave);
 }
 
 createElements();
 createOlAndButton();
 createButtons();
+createSave();
 loadList();
