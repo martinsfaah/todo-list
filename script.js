@@ -17,6 +17,13 @@ function createAndDeleteTasks () {
             }
             event.target.classList.add("selected")
         })
+        newItem.addEventListener("dblclick", function(event){
+            if (event.target.className === "tasks completed selected"){
+                event.target.className = "tasks"
+            } else {
+                event.target.className = "tasks completed"
+            }
+           })
         fatherItem.appendChild(newItem);
         input.value = "";
     })
@@ -37,18 +44,16 @@ function createAndDeleteTasks () {
 createAndDeleteTasks()
 
 //Requisito 9
-function riskItem (liClass) {
+function riskItem () {
     let taskFather = document.getElementById("lista-tarefas")
     taskFather.addEventListener("dblclick", function(event){
-         if (event.target.className !== liClass){
-             event.target.className = liClass
+         if (event.target.className !== "completed"){
+             event.target.className = "completed"
          } else {
              event.target.className = ""
          }
     })
 }
-
-riskItem("completed")
 
 
 
