@@ -57,8 +57,8 @@ removeFin.addEventListener('click', finsRemove);
 const saving = document.getElementById('salvar-tarefas');
 
 function storeLocation() {
-  const listAll = document.querySelector('ol').innerHTML;
-  localStorage.setItem('safe', listAll);
+  const listAllInner = document.querySelector('ol').innerHTML;
+  localStorage.setItem('safe', listAllInner);
 }
 
 saving.addEventListener('click', storeLocation);
@@ -68,3 +68,16 @@ function reload() {
   listAll.innerHTML = localStorage.getItem('safe');
 }
 reload();
+
+const removeSel = document.getElementById('remover-selecionado');
+
+function selRemover() {
+  const list = document.querySelectorAll('li');
+  for (let index = 0; index < list.length; index += 1) {
+    if (list[index].style.backgroundColor == 'rgb(128, 128, 128)') {
+      list[index].remove();
+    }
+  }
+}
+
+removeSel.addEventListener('click', selRemover);
