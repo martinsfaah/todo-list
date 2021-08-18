@@ -82,25 +82,24 @@ const restoreTask = () => {
 
 const moveTaskUp = () => {
   const taskItens = document.getElementsByClassName('task-item');
-  const newItem = document.querySelector('.selected');
+  const selectedItem = document.querySelector('.selected');
   const ol = document.getElementById(listTarefas);
   for (let index = 0; index < taskItens.length; index += 1) {
     const selectedTask = taskItens[index].classList;
     if (selectedTask.contains('selected') && index > 0) {
-      ol.insertBefore(newItem, taskItens[index - 1]);
+      ol.insertBefore(selectedItem, taskItens[index - 1]);
     }
   }
 };
 const moveTaskDown = () => {
   const taskItens = document.getElementsByClassName('task-item');
-  const newItem = document.querySelector('.selected');
-  const brother = newItem.nextSibling;
-  console.log(brother);
+  const selectedItem = document.querySelector('.selected');
+  const brother = selectedItem.nextSibling;
   const ol = document.getElementById(listTarefas);
   for (let index = 0; index < taskItens.length; index += 1) {
     const selectedTask = taskItens[index].classList;
-    if (selectedTask.contains('selected')) {
-      ol.insertBefore(brother, newItem);
+    if (selectedTask.contains('selected') && index < taskItens.length - 1) {
+      ol.insertBefore(brother, selectedItem);
     }
   }
 };
