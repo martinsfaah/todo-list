@@ -3,6 +3,7 @@ const input = document.querySelector('#texto-tarefa');
 const ol = document.querySelector('#lista-tarefas');
 let cont = 0;
 const cleanButton = document.querySelector('#apaga-tudo')
+const removeCompletedButton = document.querySelector('#remover-finalizados')
 // Requisito 5 e 6:
 // Adicionar o elemento li na ol com click
 button.addEventListener('click', function () {  
@@ -88,6 +89,20 @@ function cleanTasks() {
 }
 
 cleanButton.addEventListener('click', cleanTasks);
+
+// Requisito 11:
+function cleanCompletedTasks() {
+  let ol = document.querySelector('#lista-tarefas')
+  let children = document.querySelectorAll('.list-item')
+
+  for (let index = 0; index < children.length; index += 1) {
+    if (children[index].style.textDecoration === 'line-through solid rgb(0, 0, 0)') {
+      ol.removeChild(children[index])
+    }
+  }
+}
+
+removeCompletedButton.addEventListener('click', cleanCompletedTasks)
 
 window.addEventListener('click', function(event) {
   console.log(event);

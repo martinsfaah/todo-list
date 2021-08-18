@@ -1,11 +1,11 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  background-color: #D45F6F;
+  background-color: #f7905c;
 }
 
 #main-content {
-  background-color: #EBC38B;
+  background-color: white;
   padding: 20px 10px 50px 40px;
   border-radius: 20px;
   box-shadow: 0 0 50px;
@@ -21,6 +21,11 @@ body {
 
 #apaga-tudo {
   margin-top: 10px;
+  background-color: #ee3850;
+}
+
+#remover-finalizados {
+  background-color: #ca4b5c;
 }
 
 input {
@@ -33,6 +38,7 @@ button {
   font-size: 20px;
   border-radius: 10px;
   padding: 5px;
+  background-color: #fc9ba7
 }
 
 /* li {
