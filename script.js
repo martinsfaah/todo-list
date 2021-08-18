@@ -76,52 +76,48 @@ function moveUp() {
       if (taskList[idx6].className.includes('marked') && idx6 > 0) {
         taskList[idx6].parentNode.insertBefore(
           taskList[idx6],
-          taskList[idx6 - 1]
+          taskList[idx6].previousSibling
         );
+        // console.log(taskList[idx6].parentNode)
       }
     }
   });
 }
 
 function moveDown() {
-  const buttonDown = document.querySelector('#mover-baixo');
-  buttonDown.addEventListener('click', function (event) {
-    let taskList = document.querySelector('#lista-tarefas').children;
+  const buttonDown = document.getElementById('mover-baixo');
+  buttonDown.addEventListener('click', 
+  function () {
+const selectedElement = document.querySelector('.marked')
+if (selectedElement === null || selectedElement.nextElementSibling === null) {
+  return;
+}
 
+selectedElement.nextElementSibling.after(selectedElement)
 
-    
-    for (let idx6 = 0; idx6 < taskList.length; idx6 += 1) {
-        if (
-            taskList[idx6].className.includes('marked') &&
-            idx6  < taskList.length) {
-        
-              // existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
-              taskList[idx6+1].parentNode.insertBefore(taskList[idx6], taskList[idx6+1].nextSibling)
+    //Primeira tentativa
+    // let taskList = document.querySelector('#lista-tarefas').children;
 
-              // taskList[idx6+2].parentNode.insertBefore(taskList[idx6+2],taskList[idx6]);
-        // console.log(taskList[idx6 + 1]);
-      }
-    }
+    // for (let idx6 = 0; idx6 < taskList.length + 2; idx6 += 1) {
+    //   if (
+    //     taskList[idx6].className.includes('marked') &&
+    //     idx6 < taskList.length
+    //   ) {
+    //     taskList[idx6].parentNode.insertBefore(
+    //       taskList[idx6].nextSibling,
+    //       taskList[idx6]
+    //     );
 
+    //     console.log(elementContainer);
+    //   }
+    // }
   });
 }
-moveDown();
 
-// function removeSelectItens() {
-//   let buttonRemoveSelected = document.querySelector('#remover-selecionado')
-//   buttonRemoveSelected.addEventListener('click', function() {
-//     let oListArray = document.querySelector('#lista-tarefas').children;
-
-//     for (let idx = 0; idx < oListArray.length; idx += 1) {
-//       oListArray[idx].classList.remove('marked');
-//     }
-//     event.target.classList.add('marked');
-//   });
-// }
 
 function eraseMarked() {
   let buttonRemoveSelected = document.querySelector('#remover-selecionado');
-  buttonRemoveSelected.addEventListener('click', function() {
+  buttonRemoveSelected.addEventListener('click', function () {
     let markedItem = document.querySelectorAll('.marked');
 
     for (let idx3 = 0; idx3 < markedItem.length; idx3 += 1) {
@@ -132,7 +128,7 @@ function eraseMarked() {
   });
 }
 
-eraseMarked()
+
 
 ///funções storage ficam ao final
 function saveLocalStorage() {
@@ -145,16 +141,11 @@ function saveLocalStorage() {
     for (let idx4 = 0; idx4 < saveItens.length; idx4 += 1) {
       localStorage.setItem('li' + [idx4], saveItens[idx4].innerHTML);
       localStorage.setItem('class' + [idx4], saveItens[idx4].className);
-      console.log(saveItens[idx4]);
     }
 
-    console.log(document.querySelector('#lista-tarefas').children);
     // console.log(localStorage);
   });
 }
-
-
-
 
 function loadStorage() {
   for (let idx5 = 0; idx5 < localStorage.length / 2; idx5 += 1) {
@@ -179,6 +170,9 @@ selectItens();
 completedItens();
 eraseCompleted();
 eraseList();
+eraseMarked();
 moveUp();
+moveDown();
 saveLocalStorage();
 loadStorage();
+
