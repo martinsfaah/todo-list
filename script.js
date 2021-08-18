@@ -130,8 +130,8 @@ main.appendChild(downButton);
 function moveUp() {
   const selectedItem = document.querySelectorAll('li');
   for (let index = 1; index < selectedItem.length; index += 1) {
-    if (selectedItem[index].style.backgroundColor === 'grey') {
-      selectedItem[index].parentElement.insertBefore(selectedItem[index], selectedItem[index - 1]);
+    if (selectedItem[index].style.backgroundColor === 'grey' && index - 1 !== -1) {
+      selectedItem[index].parentNode.insertBefore(selectedItem[index], selectedItem[index - 1]);
     }
   }
 }
@@ -140,8 +140,8 @@ upButton.addEventListener('click', moveUp);
 function moveDown() {
   const selectedItem = document.querySelectorAll('li');
   for (let index = 0; index < selectedItem.length; index += 1) {
-    if (selectedItem[index].style.backgroundColor === 'grey') {
-      selectedItem[index].parentElement.insertBefore(selectedItem[index + 1], selectedItem[index]);
+    if (selectedItem[index].style.backgroundColor === 'grey' && index + 1 !== selectedItem.length) {
+      selectedItem[index].parentNode.insertBefore(selectedItem[index + 1], selectedItem[index]);
     }
   }
 }
