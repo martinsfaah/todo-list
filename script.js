@@ -21,16 +21,37 @@ function add () {
     const ol = document.getElementById('lista-tarefas')
     
     button.addEventListener("click", function () {
-        let listas = document.createElement("li")
-        listas.className = 'listinhas';
+        const listas = document.createElement("li")
         ol.appendChild(listas)
         listas.innerHTML = input.value;
         input.value = "";
     })
 } 
 add()
+
 const ol = document.getElementById('lista-tarefas')
 ol.addEventListener('click', function (event) {
+    let li = document.querySelectorAll('li')
+    for (let i = 0; i < li.length; i += 1) {
+        if (li[i].style.backgroundColor = 'rgb(128, 128, 128)') {
+            li[i].removeAttribute('style')
+        }
+    }
+    
     event.target.style.backgroundColor = 'rgb(128, 128, 128)'
 })
+// requisito 9
+ol.addEventListener('dblclick', (event) => {
+    // console.log(event.target)
+    // const li = document.getElementsByTagName('li')
+    console.log(event)
+    if (event.target.nodeName == 'LI') {
+       event.target.classList.add('completed')
+    console.log('cliquei em uma li')
+    }
+    //     console.log('fui clicado')
+    // }
+    
+})
 
+// const li = document.getElementsByTagName('li')

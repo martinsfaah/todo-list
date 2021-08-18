@@ -1,5 +1,7 @@
 .content {
-    background-color: rgb(78, 109, 73);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1)0%,
+    rgba(253, 29, 29, 1)50%,
+    rgba(252, 176, 69, 1)100%);
     border: 1px solid;
     border-radius: 10px;
     text-align: center;
@@ -13,4 +15,7 @@
 }
 #texto-tarefa {
     border-radius: 5px;
+}
+.completed {
+    text-decoration: line-through;
 }
