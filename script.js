@@ -14,14 +14,18 @@ function clear() {
   document.getElementById('texto-tarefa').value = '';
 }
 
+function changeColor(event) {
+  reset();
+  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
 buttonClick.addEventListener('click', createListItems);
 buttonClick.addEventListener('click', clear);
+toDoList.addEventListener('click', changeColor);
 
-let selectedItem = 'false';
-function changeColor(event) {
-  if (selectedItem === 'false') {
-    event.target.style.backgroundColor = 'rgb(128, 128,128)';
-    selectedItem = 'True';
+function reset() {
+  const elementList = document.querySelectorAll('li');
+  for(let index = 0; index < elementList.length; index += 1) {
+    document.querySelectorAll('li')[index].style.backgroundColor = '';
   }
 }
-toDoList.addEventListener('click', changeColor);
