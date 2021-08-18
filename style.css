@@ -1,6 +1,9 @@
+body {
+    margin: 5px;
+}
+
 button {
     display: inline-block;
-    margin-left: 1%;
 }
 
 .selected {
