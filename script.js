@@ -1,4 +1,5 @@
 const mainSection = document.getElementById('main-section');
+const olList = '#lista-tarefas';
 
 function addInput() {
   const inputField = document.createElement('input');
@@ -46,7 +47,7 @@ function strikeItem(event) {
 
 function addTask() {
   const inputField = document.querySelector('#texto-tarefa');
-  const orderList = document.querySelector('#lista-tarefas');
+  const orderList = document.querySelector(olList);
   const listItem = document.createElement('li');
   orderList.appendChild(listItem);
   listItem.className = 'itens-lista-individuais';
@@ -77,7 +78,7 @@ function createButtonClear() {
 createButtonClear();
 
 function clearAll() {
-  const olListParent = document.querySelector('#lista-tarefas');
+  const olListParent = document.querySelector(olList);
   while (olListParent.firstChild) {
     olListParent.removeChild(olListParent.firstChild);
   }
@@ -221,7 +222,7 @@ const buttonSaveA = document.getElementById('salvar-tarefas');
 buttonSaveA.addEventListener('click', saveData);
 
 function reloadItens() {
-  const orderList = document.querySelector('#lista-tarefas');
+  const orderList = document.querySelector(olList);
   const nomesArrayVolta = JSON.parse(localStorage.getItem('nome'));
   const colorArrayVolta = JSON.parse(localStorage.getItem('cor'));
   const classesArrayVolta = JSON.parse(localStorage.getItem('classes'));

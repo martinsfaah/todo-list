@@ -1,6 +1,6 @@
 @font-face {
   font-family: indieFlower;
-  src:url(/imagens/IndieFlower-Regular.ttf)
+  src: url('/imagens/IndieFlower-Regular.ttf');
 }
 
 /*
@@ -19,7 +19,7 @@ body {
   margin: 0;
   text-align: center;
   font-size: 30px;
-  background-image: url(/imagens/cover3.png);
+  background-image: url('/imagens/cover3.png');
   background-size: cover;
   font-family: indieFlower, cursive;
 }
@@ -50,22 +50,22 @@ header {
 }
 
 button {
-  font-family: indieFlower;
+  font-family: indieFlower, Verdana, Geneva, Tahoma, sans-serif;
   font-size: 50%;
   margin: 3px;
   height: 35px;
-  background-color: rgb(254, 238, 190);
-  border: 2px solid rgb(249, 229, 169);
+  background-color: rgb(254 , 238 , 190);
+  border: 2px solid rgb(249 , 229 , 169);
   border-radius: 10px;
 }
 
 button:hover {
-  background-color: rgb(245, 217, 131);
+  background-color: rgb(245 , 217 , 131);
 }
 
 #texto-tarefa {
   height: 30px;
-  background-color: rgb(254, 238, 190);
-  border: 2px solid rgb(249, 229, 169);
+  background-color: rgb(254 , 238 , 190);
+  border: 2px solid rgb(249 , 229 , 169);
   border-radius: 10px;
 }
