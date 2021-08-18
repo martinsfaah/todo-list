@@ -101,3 +101,23 @@ function pegarFinalizdosParaRemover() {
 
 const resgataBotaoFinalizador = document.querySelector('#remover-finalizados');
 resgataBotaoFinalizador.addEventListener('click', pegarFinalizdosParaRemover);
+
+// requisito 14 -> remover selecionados:
+
+function criarBotaoParaRemoverOsSelecionados() {
+  const botaoApagarSelecionados = document.createElement('button');
+  botaoApagarSelecionados.id = 'remover-selecionado';
+  botaoApagarSelecionados.innerText = 'remover selecionados';
+  secction.appendChild(botaoApagarSelecionados);
+}
+criarBotaoParaRemoverOsSelecionados();
+
+function removerSelecionados() {
+  const restageSelecionado = document.querySelector('.selected');
+  if (restageSelecionado) {
+    resgateLista.removeChild(restageSelecionado);
+  }
+}
+
+const botaoSelecionadoResgatado = document.querySelector('#remover-selecionado');
+botaoSelecionadoResgatado.addEventListener('click', removerSelecionados);
