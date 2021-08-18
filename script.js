@@ -112,12 +112,24 @@ moverParaBaixo.addEventListener('click', () => {
   }
   if (lista[selecionado].style.backgroundColor === 'rgb(128, 128, 128)') {
     if (lista.length > selecionado + 1) {
-    const p1 = lista[selecionado].innerText;
-    const p2 = lista[selecionado + 1].innerText;
-    lista[selecionado].innerText = p2;
-    lista[selecionado + 1].innerText = p1;
-    lista[selecionado + 1].style.backgroundColor = 'rgb(128, 128, 128)';
-    lista[selecionado].style.backgroundColor = '';
+      const p1 = lista[selecionado].innerText;
+      const p2 = lista[selecionado + 1].innerText;
+      lista[selecionado].innerText = p2;
+      lista[selecionado + 1].innerText = p1;
+      lista[selecionado + 1].style.backgroundColor = 'rgb(128, 128, 128)';
+      lista[selecionado].style.backgroundColor = '';
     }
   }
-}); 
+});
+
+// Remover item selecionado
+const btnRemoveSelecionado = document.querySelector('#remover-selecionado');
+btnRemoveSelecionado.addEventListener('click', () => {
+  const lista = document.querySelectorAll('li');
+  const lista2 = document.getElementById('lista-tarefas');
+  for (let i = 0; i < lista.length; i += 1) {
+    if (lista[i].style.backgroundColor === 'rgb(128, 128, 128)') {
+      lista2.removeChild(lista[i]);
+    }
+  }
+});
