@@ -30,6 +30,13 @@ window.onload = function(){
                 novaMensagem.classList.add("completed");
             }
         })
+        let buttonDelete = document.querySelector("#apaga-tudo");
+        buttonDelete.addEventListener("click", function(){
+            
+            if(buttonDelete){
+                novaMensagem.remove();
+            }
+        })
     })
 }
 // localStorage.querySelector(".apaga-tudo")
