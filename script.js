@@ -57,11 +57,13 @@ function addOl() {
     let tagInput = document.getElementById('texto-tarefa');
     let botao = document.getElementById('criar-tarefa');
 
-
     botao.addEventListener('click', function(event) {
 
-        ol = ol + "<li>" + tagInput.value + "</li>";
-        document.getElementById("lista-tarefas").innerHTML = ol;
+        let li = document.createElement('li');
+        li.id = ('li');
+        li.innerText = tagInput.value;
+        li.innerHTML;
+        ol.appendChild(li);
         tagInput.value = '';
     });
 }
