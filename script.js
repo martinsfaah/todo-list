@@ -50,8 +50,12 @@ botaoApagaTudo.addEventListener('click', () => {
 const botaoFinalizados = document.getElementById('remover-finalizados'); // Botão
 
 botaoFinalizados.addEventListener('click', () => {
-  let tarefasFinalizadas = document.querySelectorAll('.completed');
-  tarefasFinalizadas.forEach(tarefas => tarefas.remove());
+  const tarefasFinalizadas = document.getElementsByClassName('completed');
+  if (tarefasFinalizadas.length !== 0) {
+    for (let i = tarefasFinalizadas.length - 1; i >= 0; i -= 1) {
+      tarefasFinalizadas[i].remove();
+    }
+  }
 });
-// consulta site https://www.ti-enxame.com/pt/c%23/como-remover-elementos-de-uma-lista-generica-enquanto-iterar-sobre-ele/968788065/
+
 
