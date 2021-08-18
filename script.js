@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = '#5bded6';
+
 // Desafio 1
 const header = document.createElement('header');
 header.innerText = 'Minha Lista de Tarefas';
@@ -19,10 +21,10 @@ body.appendChild(main);
 main.appendChild(input);
 
 // Desafio 5 ...
-const button = document.createElement('button');
-button.id = 'criar-tarefa';
-button.innerText = 'Adicionar';
-main.appendChild(button);
+const taskButton = document.createElement('button');
+taskButton.id = 'criar-tarefa';
+taskButton.innerText = 'Adicionar';
+main.appendChild(taskButton);
 
 // Desafio 4
 const taskList = document.createElement('ol');
@@ -36,7 +38,7 @@ function addListItem() {
   taskList.appendChild(lineTaskList);
   input.value = '';
 }
-button.addEventListener('click', addListItem);
+taskButton.addEventListener('click', addListItem);
 
 // Desafio 6 check
 
@@ -51,23 +53,24 @@ function resetColor() {
 const taskListTarget = document.getElementById('lista-tarefas');
 function paintLine(event) {
   resetColor();
-  event.target.style.background = 'rgb(128, 128, 128';
+  event.target.style.background = 'rgb(128, 128, 128)';
 }
 taskListTarget.addEventListener('click', paintLine);
 
 // Desafio 9
 function riskLine(event) {
-  if (event.target.className !== 'completed') {
-    event.target.className = 'completed';
+  const evento = event.target;
+  if (evento.className !== 'completed') {
+    evento.className += 'completed';
   } else {
-    event.target.className = '';
+    evento.className = '';
   }
 }
 taskListTarget.addEventListener('dblclick', riskLine);
 
 // Desafio 10
 const resetListButton = document.createElement('button');
-resetListButton.innerText = 'reset';
+resetListButton.innerText = 'Reset';
 resetListButton.id = 'apaga-tudo';
 main.appendChild(resetListButton);
 
@@ -90,3 +93,81 @@ clearCompleted.addEventListener('click', () => {
     elementCompleted[index].remove();
   }
 });
+
+// Desafio 12 - BONUS
+const storageButton = document.createElement('button');
+storageButton.id = 'salvar-tarefas';
+storageButton.innerText = 'Salvar';
+main.appendChild(storageButton);
+
+function saveStorage() {
+  const locStorage = document.getElementById('lista-tarefas').innerHTML;
+  localStorage.setItem('saveUserList', locStorage);
+}
+storageButton.addEventListener('click', saveStorage);
+
+function saveReload() {
+  const saveReloading = document.getElementById('lista-tarefas');
+  saveReloading.innerHTML = localStorage.getItem('saveUserList');
+}
+saveReload();
+
+// Desafio 13
+
+// Desafio 14
+const removeButton = document.createElement('button');
+removeButton.id = 'remover-selecionado';
+removeButton.innerText = 'Remover';
+main.appendChild(removeButton);
+
+removeButton.addEventListener('click', () => {
+  const selectedColor = document.querySelectorAll('li');
+  for (let index = 0; index < selectedColor.length; index += 1) {
+    if (selectedColor[index].style.backgroundColor === 'rgb(128, 128, 128)') {
+      selectedColor[index].remove();
+    }
+  }
+});
+
+// Criar botoes para mover elementos da lista pra baixo e pra cima:
+
+// const a = document.getElementById('lista-tarefas');
+// const b = a.childNodes;
+
+// a.addEventListener('click', (event) => { // clique pra definir linha que será movida
+//   for (let index = 0; index < b.length; index += 1) {
+//     if (b[index].className === 'updown') {
+//       b[index].className = '';
+//     }
+//   }
+//   event.target.className = 'updown';
+// }); //
+
+// const upButton = document.createElement('button');
+// upButton.innerText = 'up';
+// upButton.id = 'upb';
+// upButton.style.marginLeft = '5%';
+// main.appendChild(upButton);
+
+// const downButton = document.createElement('button');
+// downButton.innerText = 'down';
+// downButton.id = 'downb';
+// downButton.style.marginLeft = '10px';
+// main.appendChild(downButton);
+
+// const upLink = document.getElementById('upb'); // botao de subida
+// const downLink = document.getElementById('downb'); // botao de descida
+
+// function Up() {
+//   upLink.addEventListener('click', () => { // acao botao subida
+//     const selected = document.querySelector('.updown');
+//     selected.parentNode.insertBefore(selected, selected.previousElementSibling);
+//   });
+// }Up();
+
+// function Down() {
+//   downLink.addEventListener('click', () => { // acao botao subida
+//     const selected = document.querySelector('.updown');
+//     selected.parentNode.insertBefore(selected.nextElementSibling, selected);
+//   });
+// }Down();
