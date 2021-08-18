@@ -69,12 +69,36 @@ function reload() {
 }
 reload();
 
-const removeSel = document.getElementById('remover-selecionado');
+const upMove = document.getElementById('mover-cima');
 
+function moveUp() {
+  const listOrd = document.querySelector('ol');
+  const listItens = document.querySelectorAll('li');
+  for (let index = 1; index < listItens.length; index += 1) {
+    if (listItens[index].style.backgroundColor === 'rgb(128, 128, 128)')
+      listOrd.insertBefore(listItens[index], listItens[index - 1]);
+  }
+}
+
+upMove.addEventListener('click', moveUp);
+
+const downMove = document.getElementById('mover-baixo');
+
+function moveDown() {
+  const listOrd = document.querySelector('ol');
+  const listItens = document.querySelectorAll('li');
+  for (let index = 0; index < listItens.length; index += 1) {
+    if (listItens[index].style.backgroundColor === 'rgb(128, 128, 128)')
+      listOrd.insertBefore(listItens[index], listItens[index + 2]);
+  }
+}
+downMove.addEventListener('click', moveDown);
+
+const removeSel = document.getElementById('remover-selecionado');
 function selRemover() {
   const list = document.querySelectorAll('li');
   for (let index = 0; index < list.length; index += 1) {
-    if (list[index].style.backgroundColor == 'rgb(128, 128, 128)') {
+    if (list[index].style.backgroundColor === 'rgb(128, 128, 128)') {
       list[index].remove();
     }
   }
