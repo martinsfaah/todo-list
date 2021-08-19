@@ -2,6 +2,7 @@
 const listOfOrder = document.querySelector("#lista-tarefas")
 const inputButton = document.querySelector("#texto-tarefa")
 const sectionButtonAll = document.getElementById("button-all")
+const buttonClearFinishOrder = document.getElementById("remover-finalizados")
 
 
 function createListOrder() {
@@ -41,9 +42,21 @@ function createButtonRemovefinishOrder() {
   buttonFinishOrder.innerText = "Remover finalizados";
   sectionButtonAll.appendChild(buttonFinishOrder);
 
-  //buttonFinishOrder.addEventListener("click");
+  //se tiver a classe completed retire o elemento da lista usando o botão remover finalizados 
+ 
+
+  buttonFinishOrder.addEventListener("click", clearCompletedAllOrder);
 }
 createButtonRemovefinishOrder();
+
+//toda vez que olho para essa função sinto orgulho de mim; 
+function clearCompletedAllOrder() {
+  let getClassCompleted = document.querySelectorAll(".completed")
+  for (let index = 0; index < getClassCompleted.length; index++) {
+    getClassCompleted[index].parentNode.removeChild(getClassCompleted[index]);
+    }
+}
+
 
 function createButtonClearAll() {
   const buttonClearAll = document.createElement("button");
@@ -59,9 +72,7 @@ createButtonClearAll();
 
 function clearList() {
   while (listOfOrder.lastChild) {
-    listOfOrder.removeChild(listOfOrder.lastChild); 
+    listOfOrder.removeChild(listOfOrder.lastChild);  //enquanto a o id da lista de ordem tiver filho, remova o filho; 
   }
 }
 
-// localButton
-// buttonClearAll
