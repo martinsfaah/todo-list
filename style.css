@@ -1,3 +1,37 @@
 .completed {
   text-decoration: line-through;
 }
+main {
+  width: 70%;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f4f3ee;
+}
+body {
+  background-color: #bcb8b1;
+}
+header {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+  font-size: 25px;
+}
+p {
+  text-align: center;
+  font-style: italic;
+}
+#apaga-tudo {
+  background-color: #e0afa0;
+}
+#criar-tarefa {
+  background-color: #8a817c;
+  color: white;
+}
+#remover-finalizados {
+  background-color: #e0afa0;
+}
+#lista-tarefas {
+  font-family: 'Balsamiq Sans', cursive;
+  line-height: 30px;
+  list-style: circle;
+}
