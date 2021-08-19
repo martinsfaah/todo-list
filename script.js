@@ -1,3 +1,4 @@
+//declarando constantese variaveis
 const button=document.getElementById("criar-tarefa");
 const input = document.getElementById("texto-tarefa");
 const listaOrdenada = document.getElementById("lista-tarefas");
@@ -6,23 +7,21 @@ const removerFinalizados=document.getElementById("remover-finalizados");
 const removerSelecionado=document.getElementById("remover-selecionado");
 const moverParaBaixo=document.getElementById("mover-baixo");
 const moverParaCima=document.getElementById("mover-cima");
+let lista = document.getElementsByClassName('listaDeTarefas');
+ 
 
-
+// Adicionar uma tarefa a lista:
 function adicionaTarefa ()
 {
     let valor = document.createElement('li');
-    const selecionado =document.querySelector('.selected');
-    if (selecionado!==null){selecionado.classList.remove('selected');}
-    valor.classList="listaDeTarefas";
-    
+    valor.classList="listaDeTarefas";    
     valor.innerText=input.value;
     listaOrdenada.appendChild(valor); 
     input.value=''; 
 }
 button.addEventListener('click',adicionaTarefa);
 
-
-
+//Mudando a cor de fundo do item selecionado
 function changeColor (event)
 {
     
@@ -36,6 +35,7 @@ function changeColor (event)
 }
 listaOrdenada.addEventListener('click',changeColor);
 
+//Marcando um item como completo.
 function itemCompleto (event)
 {
     const completed =document.querySelector('.completed');
@@ -47,31 +47,29 @@ function itemCompleto (event)
 }
 listaOrdenada.addEventListener('dblclick' ,itemCompleto);
 
+//apagando todos os itens da lista
 function apaga (event)
 {
-    let tamanhoLista = document.querySelector('ol');
-tamanhoLista.innerHTML="";
+    let apagarItem = document.querySelector('ol');
+apagarItem.innerHTML="";
 }
 apagaTudo.addEventListener('click',apaga);
 
+//apagando itens finalizados
 function removeFinalizados ()
-{   
-    let lista = document.getElementsByClassName('listaDeTarefas');
-    
+{     
     for (let i=lista.length-1;i>=0;i-=1)
     {
-        
         if (lista[i].classList.contains('completed')){ listaOrdenada.removeChild(lista[i]);}
     }
 }
 removerFinalizados.addEventListener('click',removeFinalizados);
 
+//apagando item selecionado
 function removeSelecionado ()
 {   
-    let lista = document.getElementsByClassName('listaDeTarefas');
-    for (let i=lista.length-1;i>=0;i-=1)
-    {
-        
+     for (let i=lista.length-1;i>=0;i-=1)
+    {        
         if (lista[i].classList.contains('selected'))
         { 
             listaOrdenada.removeChild(lista[i]);
@@ -82,21 +80,15 @@ function removeSelecionado ()
 }
 removerSelecionado.addEventListener('click',removeSelecionado);
 
+//movendo item selecionado para baixo
 function moverBaixo ()
-{   
-    
-    let lista = document.getElementsByTagName('li');
-    
+{    
     for (let i=0;i<lista.length;i+=1)
-    {
-        
+    {  
         if (lista[i].classList.contains('selected'))
-        { 
-           
-            if (i===lista.length-1){alert("item selecionado é o útimo");break;}
-            
+        {  
+            if (i===lista.length-1){alert("item selecionado é o útimo");break;} 
             else {
-                
                 let temp = lista[i+1].innerText;                 
                 lista[i+1].innerText=lista[i].innerText;
                 lista[i].innerText=temp;
@@ -106,31 +98,23 @@ function moverBaixo ()
                 {
                     lista[i].classList.remove('completed');
                 lista[i+1].classList.add('completed');
-                }   
-            
-                
-            
+                }
             break;}
         }
     }
 }
 moverParaBaixo.addEventListener('click',moverBaixo);
 
+//movendo para baixo
 function moverCima ()
-//arrumar isso 
 {   
     let lista = document.getElementsByTagName('li');
-    
     for (let i=0;i<lista.length;i+=1)
-    {
-        
+    {        
         if (lista[i].classList.contains('selected'))
-        { 
-           
-            if (i===0){alert("item selecionado é o primeiro");break;}
-            
+        {           
+            if (i===0){alert("item selecionado é o primeiro");break;} 
             else {
-                
                 let temp = lista[i-1].innerText; 
                 lista[i-1].innerText=lista[i].innerText;
                 lista[i].innerText=temp;
@@ -138,10 +122,9 @@ function moverCima ()
                 lista[i-1].classList.add('selected');
                 if (lista[i].classList.contains('completed')) 
                 {
-                    lista[i].classList.remove('completed');
+                lista[i].classList.remove('completed');
                 lista[i-1].classList.add('completed');
-                }   
-            
+                }
             break;}
         }
         
