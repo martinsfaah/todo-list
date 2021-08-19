@@ -2,14 +2,14 @@
   "stats": {
     "suites": 14,
     "tests": 28,
-    "passes": 12,
+    "passes": 13,
     "pending": 0,
-    "failures": 16,
-    "start": "2021-08-18T04:19:22.284Z",
-    "end": "2021-08-18T04:21:01.396Z",
-    "duration": 99112,
+    "failures": 15,
+    "start": "2021-08-19T03:01:54.650Z",
+    "end": "2021-08-19T03:03:30.723Z",
+    "duration": 96073,
     "testsRegistered": 28,
-    "passPercent": 42.857142857142854,
+    "passPercent": 46.42857142857143,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b39968a6-ab93-4965-a70f-e57b0ca783a2",
+      "uuid": "add6940e-bc93-4d8a-b2bc-53bd341d18fb",
       "title": "",
       "fullFile": "cypress/integration/project.spec.js",
       "file": "cypress/integration/project.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c142c567-aa12-4785-adc2-3ad42f4124c6",
+          "uuid": "66025a17-d4d2-43ac-abea-7a68fb77ea23",
           "title": "1 - Adicone à sua lista o título \"Minha Lista de Tarefas\" em uma tag <header>",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Será verificado se sua página possui uma tag `header` com o conteúdo `Minha Lista de Tarefas`",
               "fullTitle": "1 - Adicone à sua lista o título \"Minha Lista de Tarefas\" em uma tag <header> Será verificado se sua página possui uma tag `header` com o conteúdo `Minha Lista de Tarefas`",
               "timedOut": null,
-              "duration": 496,
+              "duration": 541,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,26 +47,26 @@
               "context": null,
               "code": "cy.get('header').contains(TODO_PAGE_TITLE);",
               "err": {},
-              "uuid": "ba30e665-e33e-4b3f-ab44-a3a370e552a8",
-              "parentUUID": "c142c567-aa12-4785-adc2-3ad42f4124c6",
+              "uuid": "23ba3303-253a-4dca-a7e2-6fccbd363d1b",
+              "parentUUID": "66025a17-d4d2-43ac-abea-7a68fb77ea23",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ba30e665-e33e-4b3f-ab44-a3a370e552a8"
+            "23ba3303-253a-4dca-a7e2-6fccbd363d1b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 496,
+          "duration": 541,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "6bc7fd0b-1179-431b-bcbe-beaad57d616b",
+          "uuid": "0040ddc1-f2cf-48d6-9b05-0fef53dd114b",
           "title": "2 - Adicione abaixo do título um pequeno e discreto parágrafo com id=\"funcionamento\" e com o texto \"Clique duas vezes em um item para marcá-lo como completo\"",
           "fullFile": "",
           "file": "",
@@ -77,7 +77,7 @@
               "title": "Será verificado que existe na sua página um elemento com o id `funcionamento` com o conteúdo `Clique duas vezes em um item para marcá-lo como completo`",
               "fullTitle": "2 - Adicione abaixo do título um pequeno e discreto parágrafo com id=\"funcionamento\" e com o texto \"Clique duas vezes em um item para marcá-lo como completo\" Será verificado que existe na sua página um elemento com o id `funcionamento` com o conteúdo `Clique duas vezes em um item para marcá-lo como completo`",
               "timedOut": null,
-              "duration": 230,
+              "duration": 381,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -86,26 +86,26 @@
               "context": null,
               "code": "cy.get(TODO_PAGE_DESCRIPTION_SELECTOR).contains(TODO_PAGE_DESCRIPTION);",
               "err": {},
-              "uuid": "93f21a9c-a723-4089-888b-1aee6810eb75",
-              "parentUUID": "6bc7fd0b-1179-431b-bcbe-beaad57d616b",
+              "uuid": "e4bce2f7-ed43-4ea4-af87-abb524a27a22",
+              "parentUUID": "0040ddc1-f2cf-48d6-9b05-0fef53dd114b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "93f21a9c-a723-4089-888b-1aee6810eb75"
+            "e4bce2f7-ed43-4ea4-af87-abb524a27a22"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 230,
+          "duration": 381,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "eddb2b1f-95ee-45e5-bc1d-42c342652f41",
+          "uuid": "eec6a3b4-ab8b-4c94-8270-f45497130093",
           "title": "3 - Adicione um input com o id=\"texto-tarefa\" onde o usuário poderá digitar o nome do item que deseja adicionar à lista",
           "fullFile": "",
           "file": "",
@@ -116,7 +116,7 @@
               "title": "Será verificada a existência de um elemento do tipo `input` com o id `texto-tarefa`",
               "fullTitle": "3 - Adicione um input com o id=\"texto-tarefa\" onde o usuário poderá digitar o nome do item que deseja adicionar à lista Será verificada a existência de um elemento do tipo `input` com o id `texto-tarefa`",
               "timedOut": null,
-              "duration": 364,
+              "duration": 333,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -125,26 +125,26 @@
               "context": null,
               "code": "cy.get(TODO_ADD_INPUT_SELECTOR).should('exist');",
               "err": {},
-              "uuid": "516cbe06-f098-48a0-bf5a-11c4a2f5da3b",
-              "parentUUID": "eddb2b1f-95ee-45e5-bc1d-42c342652f41",
+              "uuid": "ae356f4d-3dae-44ff-8044-0a07970c305e",
+              "parentUUID": "eec6a3b4-ab8b-4c94-8270-f45497130093",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "516cbe06-f098-48a0-bf5a-11c4a2f5da3b"
+            "ae356f4d-3dae-44ff-8044-0a07970c305e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 364,
+          "duration": 333,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "4d424da3-fd38-4d07-b911-00f852adbc5d",
+          "uuid": "ac1be3d3-4c6c-4d7d-94fe-70bfee8c05fd",
           "title": "4 - Adicione uma lista ordenada de tarefas com o id=\"lista-tarefas\"",
           "fullFile": "",
           "file": "",
@@ -155,7 +155,7 @@
               "title": "Será verificada a existência de um elemento `ol` com o id `lista-tarefas`",
               "fullTitle": "4 - Adicione uma lista ordenada de tarefas com o id=\"lista-tarefas\" Será verificada a existência de um elemento `ol` com o id `lista-tarefas`",
               "timedOut": null,
-              "duration": 138,
+              "duration": 229,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -164,26 +164,26 @@
               "context": null,
               "code": "cy.get(TODO_LIST_SELECTOR).should('exist');",
               "err": {},
-              "uuid": "7a930493-9e91-4e5e-af39-45ef982f3a62",
-              "parentUUID": "4d424da3-fd38-4d07-b911-00f852adbc5d",
+              "uuid": "d1f079ad-c78d-424c-8be5-bec3a79ff59c",
+              "parentUUID": "ac1be3d3-4c6c-4d7d-94fe-70bfee8c05fd",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7a930493-9e91-4e5e-af39-45ef982f3a62"
+            "d1f079ad-c78d-424c-8be5-bec3a79ff59c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 138,
+          "duration": 229,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "c99680b3-adf2-48c9-95c6-13f62088e8a7",
+          "uuid": "2de747da-9266-454b-a90f-dcc9d7380456",
           "title": "5 - Adicione um botão com id=\"criar-tarefa\" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo",
           "fullFile": "",
           "file": "",
@@ -194,7 +194,7 @@
               "title": "Será verificada a existência de um elemento do tipo `button` com o id `criar-tarefa",
               "fullTitle": "5 - Adicione um botão com id=\"criar-tarefa\" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo Será verificada a existência de um elemento do tipo `button` com o id `criar-tarefa",
               "timedOut": null,
-              "duration": 364,
+              "duration": 280,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -203,8 +203,8 @@
               "context": null,
               "code": "cy.get(TODO_ADD_BUTTON_SELECTOR).should('exist');",
               "err": {},
-              "uuid": "a6745b4b-a3c7-42ee-aec3-04fc68cc70dd",
-              "parentUUID": "c99680b3-adf2-48c9-95c6-13f62088e8a7",
+              "uuid": "19c1de5b-c8c3-435a-ab98-b82981c1158f",
+              "parentUUID": "2de747da-9266-454b-a90f-dcc9d7380456",
               "isHook": false,
               "skipped": false
             },
@@ -212,7 +212,7 @@
               "title": "No campo de input será digitado o texto de uma tarefa qualquer e, em seguida, clicar-se-á no botão de criar tarefa. Será verificado que, após o clique, o texto digitado aparece na lista e desaparece do input",
               "fullTitle": "5 - Adicione um botão com id=\"criar-tarefa\" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo No campo de input será digitado o texto de uma tarefa qualquer e, em seguida, clicar-se-á no botão de criar tarefa. Será verificado que, após o clique, o texto digitado aparece na lista e desaparece do input",
               "timedOut": null,
-              "duration": 770,
+              "duration": 654,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -221,8 +221,8 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'minha primeira tarefa'\n};\naddTodo(todo1);\ncheckTodoList([todo1]);\ncy.get(TODO_ADD_INPUT_SELECTOR).should('have.value', '');",
               "err": {},
-              "uuid": "ecd4db85-467c-4100-b438-d81209724049",
-              "parentUUID": "c99680b3-adf2-48c9-95c6-13f62088e8a7",
+              "uuid": "70c09f0b-8dd5-42c7-9ff7-2675c224b399",
+              "parentUUID": "2de747da-9266-454b-a90f-dcc9d7380456",
               "isHook": false,
               "skipped": false
             },
@@ -230,7 +230,7 @@
               "title": "A adição de elementos na lista será feita algumas vezes, e será checado se todos os itens criados permanecem na lista na medida em que novos são adicionados",
               "fullTitle": "5 - Adicione um botão com id=\"criar-tarefa\" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo A adição de elementos na lista será feita algumas vezes, e será checado se todos os itens criados permanecem na lista na medida em que novos são adicionados",
               "timedOut": null,
-              "duration": 1317,
+              "duration": 1258,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -239,28 +239,28 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'minha primeira tarefa'\n};\nvar todo2 = {\n  content: 'minha segunda tarefa'\n};\naddTodo(todo1);\ncheckTodoList([todo1]);\naddTodo(todo2);\ncheckTodoList([todo1, todo2]);\ncy.get(TODO_ADD_INPUT_SELECTOR).should('have.value', '');",
               "err": {},
-              "uuid": "ae06d3bb-b43a-4a7c-8f6c-a965befded31",
-              "parentUUID": "c99680b3-adf2-48c9-95c6-13f62088e8a7",
+              "uuid": "911eb0be-89a8-4778-bf7a-2a89a00f3f78",
+              "parentUUID": "2de747da-9266-454b-a90f-dcc9d7380456",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a6745b4b-a3c7-42ee-aec3-04fc68cc70dd",
-            "ecd4db85-467c-4100-b438-d81209724049",
-            "ae06d3bb-b43a-4a7c-8f6c-a965befded31"
+            "19c1de5b-c8c3-435a-ab98-b82981c1158f",
+            "70c09f0b-8dd5-42c7-9ff7-2675c224b399",
+            "911eb0be-89a8-4778-bf7a-2a89a00f3f78"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2451,
+          "duration": 2192,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "7314ce8d-f94d-4a69-915b-4785d647c3e5",
+          "uuid": "d6f86eca-d550-4908-b6f4-11f073227b74",
           "title": "6 - Ordene os itens da lista de tarefas por ordem de criação",
           "fullFile": "",
           "file": "",
@@ -271,7 +271,7 @@
               "title": "Três itens serão criados na lista e será checado se eles estão ordenados por ordem de criação - ou seja, primeiro o primeiro item criado, depois o segundo, e assim por diante",
               "fullTitle": "6 - Ordene os itens da lista de tarefas por ordem de criação Três itens serão criados na lista e será checado se eles estão ordenados por ordem de criação - ou seja, primeiro o primeiro item criado, depois o segundo, e assim por diante",
               "timedOut": null,
-              "duration": 1653,
+              "duration": 1775,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -280,26 +280,26 @@
               "context": null,
               "code": "var todo1 = {\n  content: 'minha tarefa'\n};\nvar todo2 = {\n  content: 'minha outra tarefa'\n};\nvar todo3 = {\n  content: 'minha terceira tarefa'\n};\naddTodo(todo1);\ncheckTodoList([todo1]);\naddTodo(todo2);\ncheckTodoList([todo1, todo2]);\naddTodo(todo3);\ncheckTodoList([todo1, todo2, todo3]);",
               "err": {},
-              "uuid": "4aa89cca-e0e8-4552-834c-e4a50dfefeb8",
-              "parentUUID": "7314ce8d-f94d-4a69-915b-4785d647c3e5",
+              "uuid": "a3601943-471c-4688-8358-b8ee3ea1f460",
+              "parentUUID": "d6f86eca-d550-4908-b6f4-11f073227b74",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4aa89cca-e0e8-4552-834c-e4a50dfefeb8"
+            "a3601943-471c-4688-8358-b8ee3ea1f460"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1653,
+          "duration": 1775,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "293221a6-4ffe-4ba0-b795-70f0d586f817",
+          "uuid": "22fec28b-844f-4d54-b9eb-3d216c61e1a3",
           "title": "7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)",
           "fullFile": "",
           "file": "",
@@ -310,7 +310,7 @@
               "title": "Será verificado que, ao se carregar a página, os itens da lista **não tem** o estilo CSS `background-color: rgb(128, 128, 128)`",
               "fullTitle": "7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128) Será verificado que, ao se carregar a página, os itens da lista **não tem** o estilo CSS `background-color: rgb(128, 128, 128)`",
               "timedOut": null,
-              "duration": 1289,
+              "duration": 1267,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -319,8 +319,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'uma tarefa qualquer'\n}, {\n  content: 'uma outra tarefa atoa'\n}];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.css', 'background-color', 'rgb(128, 128, 128)');",
               "err": {},
-              "uuid": "d9b131d2-c445-4364-877b-d4ab9237a5a4",
-              "parentUUID": "293221a6-4ffe-4ba0-b795-70f0d586f817",
+              "uuid": "ee78f4f2-103f-48d6-8b0d-d03cc3e8e2d7",
+              "parentUUID": "22fec28b-844f-4d54-b9eb-3d216c61e1a3",
               "isHook": false,
               "skipped": false
             },
@@ -328,7 +328,7 @@
               "title": "Será verificado que, ao se clicar em um item da lista, ele passa a ter o estilo CSS `background-color: rgb(128, 128, 128)`",
               "fullTitle": "7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128) Será verificado que, ao se clicar em um item da lista, ele passa a ter o estilo CSS `background-color: rgb(128, 128, 128)`",
               "timedOut": null,
-              "duration": 1337,
+              "duration": 1301,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -337,27 +337,27 @@
               "context": null,
               "code": "var todos = [{\n  content: 'uma tarefa qualquer'\n}, {\n  content: 'uma outra tarefa atoa'\n}];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().click().then(function ($li) {\n  expect($li).to.have.css('background-color', 'rgb(128, 128, 128)');\n});",
               "err": {},
-              "uuid": "52cd110d-d45b-4fb4-a247-0e286d14136e",
-              "parentUUID": "293221a6-4ffe-4ba0-b795-70f0d586f817",
+              "uuid": "9b9e5841-81d5-4808-8e01-fb6524e30060",
+              "parentUUID": "22fec28b-844f-4d54-b9eb-3d216c61e1a3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d9b131d2-c445-4364-877b-d4ab9237a5a4",
-            "52cd110d-d45b-4fb4-a247-0e286d14136e"
+            "ee78f4f2-103f-48d6-8b0d-d03cc3e8e2d7",
+            "9b9e5841-81d5-4808-8e01-fb6524e30060"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2626,
+          "duration": 2568,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "2121c912-65b4-4f8e-b9e7-9b50d37ff32d",
+          "uuid": "82fcf9bb-4827-432a-9353-1d814df2e25e",
           "title": "8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo",
           "fullFile": "",
           "file": "",
@@ -368,39 +368,35 @@
               "title": "Será verificado que, quando um elemento da lista é selecionado, o elemento selecionado previamente deixa de sê-lo. Isso é verificado através da presença ou não do estilo `background-color: rgb(128, 128, 128)` no elemento",
               "fullTitle": "8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo Será verificado que, quando um elemento da lista é selecionado, o elemento selecionado previamente deixa de sê-lo. Isso é verificado através da presença ou não do estilo `background-color: rgb(128, 128, 128)` no elemento",
               "timedOut": null,
-              "duration": 5859,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 1398,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "var todos = [{\n  content: 'uma tarefa qualquer'\n}, {\n  content: 'uma outra tarefa atoa'\n}];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.css', 'background-color', 'rgb(128, 128, 128)');\ncy.get(TODO_LIST_LINE_SELECTOR).first().click().then(function ($li) {\n  expect($li).to.have.css('background-color', 'rgb(128, 128, 128)');\n});\ncy.get(TODO_LIST_LINE_SELECTOR).last().click().then(function ($li) {\n  expect($li).to.have.css('background-color', 'rgb(128, 128, 128)');\n});\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.css', 'background-color', 'rgb(128, 128, 128)');",
-              "err": {
-                "message": "CypressError: Timed out retrying: expected '<li>' not to have CSS property 'background-color' with the value 'rgb(128, 128, 128)', but the value was 'rgb(128, 128, 128)'",
-                "estack": "CypressError: Timed out retrying: expected '<li>' not to have CSS property 'background-color' with the value 'rgb(128, 128, 128)', but the value was 'rgb(128, 128, 128)'\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
-                "diff": null
-              },
-              "uuid": "46dab90e-5132-4457-a899-0ff9a22beea4",
-              "parentUUID": "2121c912-65b4-4f8e-b9e7-9b50d37ff32d",
+              "err": {},
+              "uuid": "49a66858-e0e7-428d-900e-f430733e6df5",
+              "parentUUID": "82fcf9bb-4827-432a-9353-1d814df2e25e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "46dab90e-5132-4457-a899-0ff9a22beea4"
+          "passes": [
+            "49a66858-e0e7-428d-900e-f430733e6df5"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5859,
+          "duration": 1398,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "9e9fcbaf-179c-490e-901f-cb1c166faae5",
+          "uuid": "d4e99113-6588-424a-8011-b3567be7d631",
           "title": "9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item",
           "fullFile": "",
           "file": "",
@@ -411,7 +407,7 @@
               "title": "Será verificado que, antes da ação ser disparada, o elemento adicionado à lista não tem nem a classe `completed` nem o estilo `line-through solid rgb(0, 0, 0)`",
               "fullTitle": "9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item Será verificado que, antes da ação ser disparada, o elemento adicionado à lista não tem nem a classe `completed` nem o estilo `line-through solid rgb(0, 0, 0)`",
               "timedOut": null,
-              "duration": 1334,
+              "duration": 1326,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -420,8 +416,8 @@
               "context": null,
               "code": "var todos = [{\n  content: 'já terminei essa tarefa'\n}, {\n  content: 'está eu ainda não terminei'\n}];\naddTodos(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.class', 'completed');\ncy.get(TODO_LIST_LINE_SELECTOR).should('not.have.css', 'text-decoration', 'line-through solid rgb(0, 0, 0)');",
               "err": {},
-              "uuid": "b5142777-d1a7-4841-b4f3-6c4e6eeb0a7e",
-              "parentUUID": "9e9fcbaf-179c-490e-901f-cb1c166faae5",
+              "uuid": "10636c26-9ba6-4a8d-9f8d-30b826218608",
+              "parentUUID": "d4e99113-6588-424a-8011-b3567be7d631",
               "isHook": false,
               "skipped": false
             },
@@ -429,7 +425,7 @@
               "title": "Será verificado que a ação pedida é disparada mediante duplo clique no elemento da lista e que os elementos da lista completos tem em si a classe `completed` e a propriedade `text-decoration` com o valor `line-through solid rgb(0, 0, 0)`",
               "fullTitle": "9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item Será verificado que a ação pedida é disparada mediante duplo clique no elemento da lista e que os elementos da lista completos tem em si a classe `completed` e a propriedade `text-decoration` com o valor `line-through solid rgb(0, 0, 0)`",
               "timedOut": null,
-              "duration": 5776,
+              "duration": 5760,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -438,12 +434,12 @@
               "context": null,
               "code": "var todos = [{\n  content: 'já terminei essa tarefa'\n}, {\n  content: 'está eu ainda não terminei'\n}];\naddTodos(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().dblclick();\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('have.class', 'completed');\ncy.get('.completed').should('have.css', 'text-decoration', 'line-through solid rgb(0, 0, 0)');",
               "err": {
-                "message": "CypressError: Timed out retrying: expected '<li>' to have class 'completed'",
-                "estack": "CypressError: Timed out retrying: expected '<li>' to have class 'completed'\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "message": "CypressError: Timed out retrying: expected '<li.backgroundGray>' to have class 'completed'",
+                "estack": "CypressError: Timed out retrying: expected '<li.backgroundGray>' to have class 'completed'\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "32597fb1-4b6c-4504-988f-1b1f736624bc",
-              "parentUUID": "9e9fcbaf-179c-490e-901f-cb1c166faae5",
+              "uuid": "7b5fa213-b785-48e8-b05e-4d4daf878fb0",
+              "parentUUID": "d4e99113-6588-424a-8011-b3567be7d631",
               "isHook": false,
               "skipped": false
             },
@@ -451,7 +447,7 @@
               "title": "Será verificado que, com um segundo duplo clique, um elemento completo deixa de sê-lo",
               "fullTitle": "9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item Será verificado que, com um segundo duplo clique, um elemento completo deixa de sê-lo",
               "timedOut": null,
-              "duration": 1699,
+              "duration": 1852,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -460,29 +456,29 @@
               "context": null,
               "code": "var todos = [{\n  content: 'já terminei essa tarefa'\n}, {\n  content: 'está eu ainda não terminei'\n}];\naddTodos(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().dblclick().dblclick();\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.class', 'completed');\ncy.get(TODO_LIST_LINE_SELECTOR).first().should('not.have.css', 'text-decoration', 'line-through solid rgb(0, 0, 0)');",
               "err": {},
-              "uuid": "b61757dc-4ae2-45d9-a48d-51a766d5b7f9",
-              "parentUUID": "9e9fcbaf-179c-490e-901f-cb1c166faae5",
+              "uuid": "edafdd70-71dc-4a12-897b-68bed4c1a756",
+              "parentUUID": "d4e99113-6588-424a-8011-b3567be7d631",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b5142777-d1a7-4841-b4f3-6c4e6eeb0a7e",
-            "b61757dc-4ae2-45d9-a48d-51a766d5b7f9"
+            "10636c26-9ba6-4a8d-9f8d-30b826218608",
+            "edafdd70-71dc-4a12-897b-68bed4c1a756"
           ],
           "failures": [
-            "32597fb1-4b6c-4504-988f-1b1f736624bc"
+            "7b5fa213-b785-48e8-b05e-4d4daf878fb0"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 8809,
+          "duration": 8938,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "37ff7f25-7875-4e87-bd1f-aed6cdf37d1a",
+          "uuid": "1299b5e8-1fee-4f50-baa1-bccc579e50c6",
           "title": "10 - Adicione um botão com id=\"apaga-tudo\" que quando clicado deve apagar todos os itens da lista",
           "fullFile": "",
           "file": "",
@@ -493,7 +489,7 @@
               "title": "Será verificado que existe um elemento `button` com o id `apaga-tudo`",
               "fullTitle": "10 - Adicione um botão com id=\"apaga-tudo\" que quando clicado deve apagar todos os itens da lista Será verificado que existe um elemento `button` com o id `apaga-tudo`",
               "timedOut": null,
-              "duration": 4587,
+              "duration": 4641,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -503,11 +499,11 @@
               "code": "cy.get(TODO_REMOVE_ALL_BUTTON_SELECTOR).should('exist');",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#apaga-tudo', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#apaga-tudo', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#apaga-tudo', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "1612710b-71d6-4bd9-bd3c-55a60faf85ed",
-              "parentUUID": "37ff7f25-7875-4e87-bd1f-aed6cdf37d1a",
+              "uuid": "e3163833-180b-43f0-999c-98a3be5c7a18",
+              "parentUUID": "1299b5e8-1fee-4f50-baa1-bccc579e50c6",
               "isHook": false,
               "skipped": false
             },
@@ -515,7 +511,7 @@
               "title": "Será verificado que, dado que uma lista possui tarefas, um clique no botão a deixa vazia",
               "fullTitle": "10 - Adicione um botão com id=\"apaga-tudo\" que quando clicado deve apagar todos os itens da lista Será verificado que, dado que uma lista possui tarefas, um clique no botão a deixa vazia",
               "timedOut": null,
-              "duration": 5120,
+              "duration": 5238,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -525,11 +521,11 @@
               "code": "var todos = [{\n  content: 'blablabla'\n}, {\n  content: 'hahahahaha'\n}];\naddTodos(todos);\ncy.get(TODO_REMOVE_ALL_BUTTON_SELECTOR).click();\ncheckTodoList();",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#apaga-tudo', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#apaga-tudo', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#apaga-tudo', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "f84c17cd-9a73-42cd-a744-3b80d4eaa1de",
-              "parentUUID": "37ff7f25-7875-4e87-bd1f-aed6cdf37d1a",
+              "uuid": "63741e30-2c99-4803-9d40-e6b76f1ce360",
+              "parentUUID": "1299b5e8-1fee-4f50-baa1-bccc579e50c6",
               "isHook": false,
               "skipped": false
             }
@@ -537,18 +533,18 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "1612710b-71d6-4bd9-bd3c-55a60faf85ed",
-            "f84c17cd-9a73-42cd-a744-3b80d4eaa1de"
+            "e3163833-180b-43f0-999c-98a3be5c7a18",
+            "63741e30-2c99-4803-9d40-e6b76f1ce360"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 9707,
+          "duration": 9879,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "c9f995e7-e8bb-4bdf-8260-f78d188c54b0",
+          "uuid": "88c24806-98ac-4da4-8397-8aa6f774e3dc",
           "title": "11 - Adicione um botão com id=\"remover-finalizados\" que quando clicado remove **somente** os elementos finalizados da sua lista",
           "fullFile": "",
           "file": "",
@@ -559,7 +555,7 @@
               "title": "Será verificado que existe um elemento `button` com o id `remover-finalizados`",
               "fullTitle": "11 - Adicione um botão com id=\"remover-finalizados\" que quando clicado remove **somente** os elementos finalizados da sua lista Será verificado que existe um elemento `button` com o id `remover-finalizados`",
               "timedOut": null,
-              "duration": 4637,
+              "duration": 4620,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -569,11 +565,11 @@
               "code": "cy.get(TODO_REMOVE_DONE_BUTTON_SELECTOR).should('exist');",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#remover-finalizados', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#remover-finalizados', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#remover-finalizados', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "09acbe93-f83d-4202-9ba7-e220eaa97365",
-              "parentUUID": "c9f995e7-e8bb-4bdf-8260-f78d188c54b0",
+              "uuid": "6f8a8968-07f1-41d8-910f-53c1f031c01e",
+              "parentUUID": "88c24806-98ac-4da4-8397-8aa6f774e3dc",
               "isHook": false,
               "skipped": false
             },
@@ -581,7 +577,7 @@
               "title": "Será verificado que, ao clicar no botão, todos os elementos marcados como feitos são removidos da lista",
               "fullTitle": "11 - Adicione um botão com id=\"remover-finalizados\" que quando clicado remove **somente** os elementos finalizados da sua lista Será verificado que, ao clicar no botão, todos os elementos marcados como feitos são removidos da lista",
               "timedOut": null,
-              "duration": 6752,
+              "duration": 6716,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -591,11 +587,11 @@
               "code": "var todo1 = {\n  content: 'vou terminar essa tarefa logo'\n};\nvar todo2 = {\n  content: 'essa tarefa eu vou demorar para finalizar'\n};\nvar todo3 = {\n  content: 'essa tarefa tbm vai demorar...'\n};\nvar todos = [todo1, todo2, todo3];\naddTodos(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(2)\")).dblclick();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(3)\")).dblclick();\ncy.get(TODO_REMOVE_DONE_BUTTON_SELECTOR).click();\ncheckTodoList([todo1]);",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#remover-finalizados', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#remover-finalizados', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#remover-finalizados', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "de88c74c-7d63-4c68-b71a-a57b80601ea5",
-              "parentUUID": "c9f995e7-e8bb-4bdf-8260-f78d188c54b0",
+              "uuid": "79a05d26-b6ca-4927-b442-898ce38e9cc4",
+              "parentUUID": "88c24806-98ac-4da4-8397-8aa6f774e3dc",
               "isHook": false,
               "skipped": false
             }
@@ -603,18 +599,18 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "09acbe93-f83d-4202-9ba7-e220eaa97365",
-            "de88c74c-7d63-4c68-b71a-a57b80601ea5"
+            "6f8a8968-07f1-41d8-910f-53c1f031c01e",
+            "79a05d26-b6ca-4927-b442-898ce38e9cc4"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11389,
+          "duration": 11336,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "d431c9f6-fee0-41dc-b593-356acbf51503",
+          "uuid": "817916e9-4157-4464-9485-35d4803384d2",
           "title": "12 - Adicione um botão com id=\"salvar-tarefas\" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava",
           "fullFile": "",
           "file": "",
@@ -625,7 +621,7 @@
               "title": "Será verificado que existe um elemento `button` com o id `salvar-tarefas`",
               "fullTitle": "12 - Adicione um botão com id=\"salvar-tarefas\" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava Será verificado que existe um elemento `button` com o id `salvar-tarefas`",
               "timedOut": null,
-              "duration": 4486,
+              "duration": 4541,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -635,11 +631,11 @@
               "code": "cy.get(TODO_SAVE_LIST_BUTTON_SELECTOR).should('exist');",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#salvar-tarefas', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#salvar-tarefas', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#salvar-tarefas', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "5076fa1a-bf44-4594-b221-c7006c9221b8",
-              "parentUUID": "d431c9f6-fee0-41dc-b593-356acbf51503",
+              "uuid": "8ebc4dee-4a7e-4f98-98e5-51ffd84253b2",
+              "parentUUID": "817916e9-4157-4464-9485-35d4803384d2",
               "isHook": false,
               "skipped": false
             },
@@ -647,7 +643,7 @@
               "title": "Será verificado que, quando a lista tem vários elementos, alguns dos quais marcados como finalizados, um recarregamento da página mantém a lista exatamente como está.",
               "fullTitle": "12 - Adicione um botão com id=\"salvar-tarefas\" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava Será verificado que, quando a lista tem vários elementos, alguns dos quais marcados como finalizados, um recarregamento da página mantém a lista exatamente como está.",
               "timedOut": null,
-              "duration": 6346,
+              "duration": 6231,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -657,11 +653,11 @@
               "code": "var todo1 = {\n  content: 'primeira tarefa a ser salva'\n};\nvar todo2 = {\n  content: 'esta tarefa será salva também'\n};\nvar todo3 = {\n  content: 'mais uma para salvar'\n};\nvar todos = [todo1, todo2, todo3];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).first().dblclick();\ncy.get(TODO_SAVE_LIST_BUTTON_SELECTOR).click();\ncy.reload();\nvar newTodosState = [(0, _objectSpread2[\"default\"])({}, todo1, {\n  done: true\n}), todo2, todo3];\ncheckTodoList(newTodosState);",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#salvar-tarefas', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#salvar-tarefas', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#salvar-tarefas', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "91769b05-b242-46e8-812e-f79d02e0821e",
-              "parentUUID": "d431c9f6-fee0-41dc-b593-356acbf51503",
+              "uuid": "da285101-52f2-42a5-abe9-5e09a5b21721",
+              "parentUUID": "817916e9-4157-4464-9485-35d4803384d2",
               "isHook": false,
               "skipped": false
             }
@@ -669,18 +665,18 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "5076fa1a-bf44-4594-b221-c7006c9221b8",
-            "91769b05-b242-46e8-812e-f79d02e0821e"
+            "8ebc4dee-4a7e-4f98-98e5-51ffd84253b2",
+            "da285101-52f2-42a5-abe9-5e09a5b21721"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 10832,
+          "duration": 10772,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "45bf564a-41a3-47bc-abbb-beb918f5c521",
+          "uuid": "9e61b10b-61fb-44ba-bdd2-e29cee9c60de",
           "title": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas",
           "fullFile": "",
           "file": "",
@@ -691,7 +687,7 @@
               "title": "Será verificada a existência de dois elementos `button`, um com o id `mover-cima` e o outro com o id `mover-baixo`",
               "fullTitle": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas Será verificada a existência de dois elementos `button`, um com o id `mover-cima` e o outro com o id `mover-baixo`",
               "timedOut": null,
-              "duration": 4570,
+              "duration": 4712,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -701,11 +697,11 @@
               "code": "cy.get(TODO_MOVE_UP_BUTTON_SELECTOR).should('exist');\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).should('exist');",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "cc2de936-b78d-4624-a760-7eb745816835",
-              "parentUUID": "45bf564a-41a3-47bc-abbb-beb918f5c521",
+              "uuid": "30567dae-59c6-4072-bf40-19cea9c75f48",
+              "parentUUID": "9e61b10b-61fb-44ba-bdd2-e29cee9c60de",
               "isHook": false,
               "skipped": false
             },
@@ -713,7 +709,7 @@
               "title": "Será verificado que, dado que diversos elementos foram acrescentados à lista, movimentá-los de formas diversas os deixa nas posições esperadas",
               "fullTitle": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas Será verificado que, dado que diversos elementos foram acrescentados à lista, movimentá-los de formas diversas os deixa nas posições esperadas",
               "timedOut": null,
-              "duration": 6045,
+              "duration": 6225,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -723,11 +719,11 @@
               "code": "var todos = [{\n  content: 'primeira tarefa'\n}, {\n  content: 'segunda tarefa'\n}, {\n  content: 'terceira tarefa'\n}, {\n  content: 'quarta tarefa'\n}];\nvar newTodosState = [todos[3], todos[2], todos[1], todos[0]];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(2)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(4)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(3)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(1)\")).click();\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(4)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(3)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(newTodosState);",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "0d860418-dd54-41f9-b4d7-1b2958e4cb41",
-              "parentUUID": "45bf564a-41a3-47bc-abbb-beb918f5c521",
+              "uuid": "d4d2bda4-56f9-4d76-a732-886d700f4e49",
+              "parentUUID": "9e61b10b-61fb-44ba-bdd2-e29cee9c60de",
               "isHook": false,
               "skipped": false
             },
@@ -735,7 +731,7 @@
               "title": "Será verificado que, caso algum elemento esteja finalizado, este status deve persistir ainda que se mova o elemento",
               "fullTitle": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas Será verificado que, caso algum elemento esteja finalizado, este status deve persistir ainda que se mova o elemento",
               "timedOut": null,
-              "duration": 5342,
+              "duration": 5461,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -745,11 +741,11 @@
               "code": "var todos = [{\n  content: 'primeira tarefa',\n  done: true\n}, {\n  content: 'segunda tarefa'\n}];\naddTodos(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(1)\")).click().dblclick();\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(todos);",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "67c3f799-92f0-4d34-9f27-caa18089de51",
-              "parentUUID": "45bf564a-41a3-47bc-abbb-beb918f5c521",
+              "uuid": "edd9bc9a-4e25-46a5-a005-d2fa70a67dd8",
+              "parentUUID": "9e61b10b-61fb-44ba-bdd2-e29cee9c60de",
               "isHook": false,
               "skipped": false
             },
@@ -757,7 +753,7 @@
               "title": "Será verificado que, caso nenhum elemento esteja selecionado, clicar nos botões não altera a lista",
               "fullTitle": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas Será verificado que, caso nenhum elemento esteja selecionado, clicar nos botões não altera a lista",
               "timedOut": null,
-              "duration": 6152,
+              "duration": 6289,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -767,11 +763,11 @@
               "code": "var todos = [{\n  content: 'primeira tarefa'\n}, {\n  content: 'segunda tarefa'\n}, {\n  content: 'terceira tarefa'\n}, {\n  content: 'quarta tarefa'\n}];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(todos);",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "a985c104-8ac1-4a07-9002-e797cf93bc77",
-              "parentUUID": "45bf564a-41a3-47bc-abbb-beb918f5c521",
+              "uuid": "35058616-c879-40bf-96ef-339309c6ed91",
+              "parentUUID": "9e61b10b-61fb-44ba-bdd2-e29cee9c60de",
               "isHook": false,
               "skipped": false
             },
@@ -779,7 +775,7 @@
               "title": "Será verificado que um elemento que esteja selecionado deve se manter selecionado mesmo depois de movido",
               "fullTitle": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas Será verificado que um elemento que esteja selecionado deve se manter selecionado mesmo depois de movido",
               "timedOut": null,
-              "duration": 5482,
+              "duration": 5515,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -789,11 +785,11 @@
               "code": "var todos = [{\n  content: 'primeira tarefa'\n}, {\n  content: 'segunda tarefa'\n}];\naddTodos(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(1)\")).click();\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\nvar newTodos = [{\n  content: 'segunda tarefa'\n}, {\n  content: 'primeira tarefa'\n}];\ncheckTodoList(newTodos);\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(todos);",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-baixo', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "e9f5d74a-ea64-4189-a9da-07efcab5fe9b",
-              "parentUUID": "45bf564a-41a3-47bc-abbb-beb918f5c521",
+              "uuid": "b0293e07-0d2d-4b0b-9386-8268fd1715f5",
+              "parentUUID": "9e61b10b-61fb-44ba-bdd2-e29cee9c60de",
               "isHook": false,
               "skipped": false
             },
@@ -801,7 +797,7 @@
               "title": "_Caso especial!_ Será verificado que, caso se tente subir o elemento no topo da lista ou, caso se tente descer o último elemento da lista, esta não deve ser alterada",
               "fullTitle": "13 - Adicione dois botões, um com id=\"mover-cima\" e outro com id=\"mover-baixo\", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas _Caso especial!_ Será verificado que, caso se tente subir o elemento no topo da lista ou, caso se tente descer o último elemento da lista, esta não deve ser alterada",
               "timedOut": null,
-              "duration": 5464,
+              "duration": 5681,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -811,11 +807,11 @@
               "code": "var todos = [{\n  content: 'primeira tarefa'\n}, {\n  content: 'segunda tarefa'\n}];\naddTodos(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(1)\")).click();\ncy.get(TODO_MOVE_UP_BUTTON_SELECTOR).click();\ncheckTodoList(todos);\ncy.get(\"\".concat(TODO_LIST_LINE_SELECTOR, \":nth-child(2)\")).click();\ncy.get(TODO_MOVE_DOWN_BUTTON_SELECTOR).click();\ncheckTodoList(todos);",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#mover-cima', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "a7f0c524-fedc-47c7-994d-04e6d1f7042e",
-              "parentUUID": "45bf564a-41a3-47bc-abbb-beb918f5c521",
+              "uuid": "a5d2ca44-faef-4659-83b2-34d555bd1a75",
+              "parentUUID": "9e61b10b-61fb-44ba-bdd2-e29cee9c60de",
               "isHook": false,
               "skipped": false
             }
@@ -823,22 +819,22 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "cc2de936-b78d-4624-a760-7eb745816835",
-            "0d860418-dd54-41f9-b4d7-1b2958e4cb41",
-            "67c3f799-92f0-4d34-9f27-caa18089de51",
-            "a985c104-8ac1-4a07-9002-e797cf93bc77",
-            "e9f5d74a-ea64-4189-a9da-07efcab5fe9b",
-            "a7f0c524-fedc-47c7-994d-04e6d1f7042e"
+            "30567dae-59c6-4072-bf40-19cea9c75f48",
+            "d4d2bda4-56f9-4d76-a732-886d700f4e49",
+            "edd9bc9a-4e25-46a5-a005-d2fa70a67dd8",
+            "35058616-c879-40bf-96ef-339309c6ed91",
+            "b0293e07-0d2d-4b0b-9386-8268fd1715f5",
+            "a5d2ca44-faef-4659-83b2-34d555bd1a75"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 33055,
+          "duration": 33883,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "143f98ef-c5a2-4c32-91e4-5ea7427d0a02",
+          "uuid": "674c6e63-a4cc-4b44-a45e-fbf631fc218d",
           "title": "14 - Adicione um botão com id=\"remover-selecionado\" que, quando clicado, remove o item selecionado",
           "fullFile": "",
           "file": "",
@@ -849,7 +845,7 @@
               "title": "Será verificada a presença de um elemento `button` com um id `remover-selecionado`",
               "fullTitle": "14 - Adicione um botão com id=\"remover-selecionado\" que, quando clicado, remove o item selecionado Será verificada a presença de um elemento `button` com um id `remover-selecionado`",
               "timedOut": null,
-              "duration": 4567,
+              "duration": 4762,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -859,11 +855,11 @@
               "code": "cy.get(TODO_REMOVE_SELECTED_BUTTON_SELECTOR).should('exist');",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#remover-selecionado', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#remover-selecionado', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#remover-selecionado', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "8fb86a45-1aeb-463e-a514-b98e214804db",
-              "parentUUID": "143f98ef-c5a2-4c32-91e4-5ea7427d0a02",
+              "uuid": "47c7c5c2-f2bb-47b0-b613-2e9b48193544",
+              "parentUUID": "674c6e63-a4cc-4b44-a45e-fbf631fc218d",
               "isHook": false,
               "skipped": false
             },
@@ -871,7 +867,7 @@
               "title": "Será verificado que, no clicar no botão, somente o elemento selecionado é removido",
               "fullTitle": "14 - Adicione um botão com id=\"remover-selecionado\" que, quando clicado, remove o item selecionado Será verificado que, no clicar no botão, somente o elemento selecionado é removido",
               "timedOut": null,
-              "duration": 5923,
+              "duration": 6011,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -881,11 +877,11 @@
               "code": "var todo1 = {\n  content: 'não posso remover essa tarefa'\n};\nvar todo2 = {\n  content: 'essa tarefa aqui eu posso remover'\n};\nvar todos = [todo1, todo2];\naddTodos(todos);\ncheckTodoList(todos);\ncy.get(TODO_LIST_LINE_SELECTOR).last().click();\ncy.get(TODO_REMOVE_SELECTED_BUTTON_SELECTOR).click();\ncheckTodoList([todo1]);",
               "err": {
                 "message": "CypressError: Timed out retrying: Expected to find element: 'button#remover-selecionado', but never found it.",
-                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#remover-selecionado', but never found it.\n    at cypressErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:45703/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:45703/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:45703/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:45703/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:45703/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:45703/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:45703/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:45703/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:45703/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:45703/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:45703/__cypress/runner/cypress_runner.js:162024:14)",
+                "estack": "CypressError: Timed out retrying: Expected to find element: 'button#remover-selecionado', but never found it.\n    at cypressErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149934:9)\n    at throwErr (http://localhost:38283/__cypress/runner/cypress_runner.js:149867:11)\n    at Object.throwErrByPath (http://localhost:38283/__cypress/runner/cypress_runner.js:149915:3)\n    at retry (http://localhost:38283/__cypress/runner/cypress_runner.js:144197:19)\n    at onFailFn (http://localhost:38283/__cypress/runner/cypress_runner.js:132448:16)\n    at tryCatcher (http://localhost:38283/__cypress/runner/cypress_runner.js:167415:23)\n    at Promise._settlePromiseFromHandler (http://localhost:38283/__cypress/runner/cypress_runner.js:165351:31)\n    at Promise._settlePromise (http://localhost:38283/__cypress/runner/cypress_runner.js:165408:18)\n    at Promise._settlePromise0 (http://localhost:38283/__cypress/runner/cypress_runner.js:165453:10)\n    at Promise._settlePromises (http://localhost:38283/__cypress/runner/cypress_runner.js:165528:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:38283/__cypress/runner/cypress_runner.js:162140:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162150:10)\n    at Async.drainQueues (http://localhost:38283/__cypress/runner/cypress_runner.js:162024:14)",
                 "diff": null
               },
-              "uuid": "ca6a1c53-822e-474e-9790-12a4e56757c6",
-              "parentUUID": "143f98ef-c5a2-4c32-91e4-5ea7427d0a02",
+              "uuid": "d29a18d0-96d0-4dfa-80d0-e6eb1c49960c",
+              "parentUUID": "674c6e63-a4cc-4b44-a45e-fbf631fc218d",
               "isHook": false,
               "skipped": false
             }
@@ -893,12 +889,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "8fb86a45-1aeb-463e-a514-b98e214804db",
-            "ca6a1c53-822e-474e-9790-12a4e56757c6"
+            "47c7c5c2-f2bb-47b0-b613-2e9b48193544",
+            "d29a18d0-96d0-4dfa-80d0-e6eb1c49960c"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 10490,
+          "duration": 10773,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
