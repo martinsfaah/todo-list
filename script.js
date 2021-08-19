@@ -9,4 +9,12 @@ function addTask() {
     input.value = '';
     listOfTasks.appendChild(task);
 }
+listOfTasks.addEventListener('click', greyColor);
+function greyColor(event) {
+    event.target.className = 'selected'
+    let selectedTask = document.querySelector('.selected')
+    let style = getComputedStyle(selectedTask)
+    event.target.style.backgroundColor = style.backgroundColor
 }
+}
+
