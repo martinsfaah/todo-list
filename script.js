@@ -9,11 +9,15 @@ function adicionaTarefa() {
   tarefaNova.innerHTML = tarefa;
 
   lista.appendChild(tarefaNova);
-  tarefaNova.addEventListener('click', setBackgroundGray)
+
+  tarefaNova.addEventListener('click', setBackgroundGray);
+  tarefaNova.addEventListener('dblclick', riskLi);
 
   document.getElementById('texto-tarefa').value = '';
 };
 
+// Adiciona cor de fundo em apenas um elemento da lista
+// Recebi suporte do Matheus Monteiro e do Diego Brito
 function setBackgroundGray(evento) {
   let classLi = document.querySelector('.backgroundGray');
   
@@ -22,4 +26,14 @@ function setBackgroundGray(evento) {
   }
   
   evento.target.classList.add('backgroundGray');
-};
+}
+
+// Adiciona ou remove risco nos elementos da lista
+function riskLi(evento) {
+  let lineRisk = evento.target.classList;
+  if (lineRisk.contains('completed')) {
+    evento.target.classList.remove('completed');
+  } else {
+    evento.target.classList.add('completed');
+  }
+}
