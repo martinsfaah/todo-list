@@ -33,7 +33,7 @@ const ol = document.getElementById('lista-tarefas')
 ol.addEventListener('click', function (event) {
     let li = document.querySelectorAll('li')
     for (let i = 0; i < li.length; i += 1) {
-        if (li[i].style.backgroundColor = 'rgb(128, 128, 128)') {
+        if (li[i].style.backgroundColor == 'rgb(128, 128, 128)') {
             li[i].removeAttribute('style')
         }
     }
@@ -41,17 +41,31 @@ ol.addEventListener('click', function (event) {
     event.target.style.backgroundColor = 'rgb(128, 128, 128)'
 })
 // requisito 9
-ol.addEventListener('dblclick', (event) => {
-    // console.log(event.target)
-    // const li = document.getElementsByTagName('li')
-    console.log(event)
-    if (event.target.nodeName == 'LI') {
-       event.target.classList.add('completed')
-    console.log('cliquei em uma li')
-    }
-    //     console.log('fui clicado')
-    // }
-    
-})
+ol.addEventListener('dblclick', () => {
+    let lists = document.querySelectorAll('li')
+    for (let i = 0; i < lists.length; i += 1) {
+        if (lists[i].classList.contains('completed')) {
+            lists[i].classList.remove('completed')
+        } else {
+            lists[i].classList.add('completed')
+        }
+        // event.target.classList.add('completed')
+    }})
+//     }
+// } 
+// if(event.target.className = 'completed') {
+//     event.target.classList.remove('completed')
 
-// const li = document.getElementsByTagName('li')
+    // if (event.target.nodeName == 'LI') {
+    //    event.target.classList.add('completed')
+    // console.log('cliquei em uma li')
+    // }
+    //     console.log('fui clicado')
+    // }  
+
+let clear = document.getElementById('apaga-tudo')
+clear.addEventListener('click', () => {
+   let liss = document.querySelectorAll('li')
+   for (let index = 0; index < liss.length; index += 1)
+   liss[index].innerHTML = ''
+})
