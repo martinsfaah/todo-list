@@ -21,7 +21,7 @@ function changeColorBackground(evento) {
 }
 
 function markAndUnmark(evento) {
- evento.target.classList.toggle ("completed")
+ evento.target.classList.toggle ("completed") // para ligar e desligar uma ação quando clicado referencia https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
 }
 listOfOrder.addEventListener("dblclick", markAndUnmark);
 
@@ -41,11 +41,11 @@ function createButtonRemovefinishOrder() {
   buttonFinishOrder.innerText = "Remover finalizados";
   sectionButtonAll.appendChild(buttonFinishOrder);
 
-  buttonFinishOrder.addEventListener("click");
+  //buttonFinishOrder.addEventListener("click");
 }
 createButtonRemovefinishOrder();
 
-function createButtonClearAll(evento) {
+function createButtonClearAll() {
   const buttonClearAll = document.createElement("button");
   buttonClearAll.id = "apaga-tudo"
   buttonClearAll.innerText = "Botão de apagar";
@@ -57,9 +57,9 @@ createButtonClearAll();
 
 
 
-function clearList(){
+function clearList() {
   while (listOfOrder.lastChild) {
-    listOfOrder.removeChild(listOfOrder.lastChild);
+    listOfOrder.removeChild(listOfOrder.lastChild); 
   }
 }
 
