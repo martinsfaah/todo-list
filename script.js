@@ -51,5 +51,17 @@ function removeTasksCompleted() {
   }
 }
 
+//Salvar tarefas
+const btnSave = document.getElementById('salvar-tarefas');
+btnSave.addEventListener('click', saveTasks);
 
+function saveTasks() {
+  localStorage.setItem('tasksSaved', JSON.stringify(listTasks.innerHTML));
+}
+
+let savedList = JSON.parse(localStorage.getItem('tasksSaved'));
+
+window.onload = function () {
+  listTasks.innerHTML = savedList;
+}
 
